@@ -1,0 +1,20 @@
+typealias ExampleBlock = ((Example) -> Void)
+
+class Specification {
+    var name     : String
+    var examples : Example[] = []
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func example(desc: String, blk : ExampleBlock) {
+        var example = Example(desc: desc, blk : blk)
+        self.examples.append(example)
+    }
+    
+    func example(desc: String) {
+        var example = Example(desc: desc, blk : nil)
+        self.examples.append(example)
+    }
+}

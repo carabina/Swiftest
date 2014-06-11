@@ -8,13 +8,13 @@ class ExpectationResult {
   }
 }
 
-class Expectation<T:NSObject> {
-  var actual : T
+class Expectation<T:Comparable> {
+  var actual : T[] = []
   var result = ExpectationResult()
   var reverse = false
   
   init(actual : T) {
-    self.actual = actual
+    self.actual.append(actual)
   }
   
   func not() -> Expectation {
@@ -23,7 +23,7 @@ class Expectation<T:NSObject> {
   }
   
   func toEqual(expected : T) {
-    assert(actual == expected)
+    assert(actual[0] == expected)
   }
   
   func assert(cond:Bool) {

@@ -12,7 +12,7 @@ class Example {
     self.blk  = blk
   }
 
-  func expect<T:NSObject>(actual : T) -> Expectation<T> {
+  func expect<T:Comparable>(actual : T) -> Expectation<T> {
     let expectation = Expectation(actual: actual)
     results.append(expectation.result)
     return expectation

@@ -17,5 +17,17 @@ class Specification {
     var example = Example(desc: desc, blk : nil)
     self.examples.append(example)
   }
+  
+  func run() {
+    for example in self.examples {
+      example.run()
+    }
+  }
+  
+  func statuses() {
+    examples.map() { (let ex) -> ExampleStatus in
+      ex.getStatus()
+    }
+  }
 
 }

@@ -18,6 +18,12 @@ class Example {
     return expectation
   }
   
+  func run() {
+    if let exampleBlock = self.blk {
+      exampleBlock(self)
+    }
+  }
+  
   func getStatus() -> ExampleStatus {
     if hasStatus(ExampleStatus.Fail) {
       return ExampleStatus.Fail

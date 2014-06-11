@@ -13,4 +13,27 @@ class ExampleTest : XCTestCase {
     let expectation = example.expect("a")
     XCTAssertEqual(expectation.actual[0], "a")
   }
+  
+  func test_run() {
+    let example = Example(desc: "what") { (let ex) in
+      ex.expect(1).toEqual(1)
+    }
+  
+    example.run()
+    XCTAssertEqual(example.getStatus(), ExampleStatus.Pass)
+  }
+  
+  func test_run_fail() {
+    let example = Example(desc: "what") { (let ex) in
+      ex.expect(1).toEqual(1)
+      ex.expect(1).toEqual(2)
+    }
+    
+    example.run()
+    
+    XCTAssertEqual(example.results[0].status, ExampleStatus.Pass)
+    XCTAssertEqual(example.results[1].status, ExampleStatus.Fail)
+    
+    XCTAssertEqual(example.getStatus(), ExampleStatus.Fail)
+  }
 }

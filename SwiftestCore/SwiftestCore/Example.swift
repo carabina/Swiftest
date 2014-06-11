@@ -18,4 +18,18 @@ class Example {
     return expectation
   }
   
+  func getStatus() -> ExampleStatus {
+    if hasStatus(ExampleStatus.Fail) {
+      return ExampleStatus.Fail
+    } else if hasStatus(ExampleStatus.Pending) {
+      return ExampleStatus.Pending
+    }
+    
+    return ExampleStatus.Pass
+  }
+  
+  func hasStatus(status : ExampleStatus) -> Bool {
+    return results.filter({ ex in ex.status == status }).count > 0
+  }
+  
 }

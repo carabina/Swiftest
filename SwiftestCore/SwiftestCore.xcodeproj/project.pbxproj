@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		951719691948FD3600D68165 /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951719681948FD3600D68165 /* Spec.swift */; };
+		951719691948FD3600D68165 /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951719681948FD3600D68165 /* Swiftest.swift */; };
 		9517196B1948FEF200D68165 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9517196A1948FEF200D68165 /* Expectation.swift */; };
 		9517196D1948FFD100D68165 /* ExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9517196C1948FFD100D68165 /* ExpectationTest.swift */; };
+		9517196F19490C8200D68165 /* SwiftestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9517196E19490C8200D68165 /* SwiftestTest.swift */; };
 		9570FBF51946402A00D4DFF3 /* libSwiftestCore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */; };
 		9570FC051946418100D4DFF3 /* SpecificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570FC041946418100D4DFF3 /* SpecificationTest.swift */; };
 		9570FC081946438300D4DFF3 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570FC071946438300D4DFF3 /* Specification.swift */; };
@@ -29,9 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		951719681948FD3600D68165 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
+		951719681948FD3600D68165 /* Swiftest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftest.swift; sourceTree = "<group>"; };
 		9517196A1948FEF200D68165 /* Expectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
 		9517196C1948FFD100D68165 /* ExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectationTest.swift; sourceTree = "<group>"; };
+		9517196E19490C8200D68165 /* SwiftestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftestTest.swift; sourceTree = "<group>"; };
 		9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftestCore.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBF41946402A00D4DFF3 /* SwiftestCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBFA1946402A00D4DFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 				9570FC091946461600D4DFF3 /* Example.swift */,
 				9517196A1948FEF200D68165 /* Expectation.swift */,
 				9570FC0B1946491000D4DFF3 /* ExampleStatus.swift */,
-				951719681948FD3600D68165 /* Spec.swift */,
+				951719681948FD3600D68165 /* Swiftest.swift */,
 			);
 			path = SwiftestCore;
 			sourceTree = "<group>";
@@ -102,6 +104,7 @@
 				9570FC031946418100D4DFF3 /* SwiftestCoreTests-Bridging-Header.h */,
 				9570FC0D194655B000D4DFF3 /* ExampleTest.swift */,
 				9517196C1948FFD100D68165 /* ExpectationTest.swift */,
+				9517196E19490C8200D68165 /* SwiftestTest.swift */,
 			);
 			path = SwiftestCoreTests;
 			sourceTree = "<group>";
@@ -213,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				951719691948FD3600D68165 /* Spec.swift in Sources */,
+				951719691948FD3600D68165 /* Swiftest.swift in Sources */,
 				9570FC0A1946461600D4DFF3 /* Example.swift in Sources */,
 				9570FC0C1946491000D4DFF3 /* ExampleStatus.swift in Sources */,
 				9570FC081946438300D4DFF3 /* Specification.swift in Sources */,
@@ -227,6 +230,7 @@
 			files = (
 				9517196D1948FFD100D68165 /* ExpectationTest.swift in Sources */,
 				9570FC0E194655B000D4DFF3 /* ExampleTest.swift in Sources */,
+				9517196F19490C8200D68165 /* SwiftestTest.swift in Sources */,
 				9570FC051946418100D4DFF3 /* SpecificationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

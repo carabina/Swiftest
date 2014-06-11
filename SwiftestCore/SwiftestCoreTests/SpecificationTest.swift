@@ -22,12 +22,4 @@ class SpecificationTest : XCTestCase {
     XCTAssertEqual(spec.examples.count, 1);
     XCTAssertEqual(spec.examples[0].status, ExampleStatus.Pending)
   }
-  
-  func test_Describe() {
-    let result = Spec.describe("spec") { (let spec) in
-      spec.example("test")
-    }
-    
-    XCTAssertEqual(result.examples.count, 1)
-  }
 }

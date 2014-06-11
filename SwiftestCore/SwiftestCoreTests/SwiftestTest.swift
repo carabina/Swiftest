@@ -10,8 +10,15 @@ class SwiftestTest : XCTestCase {
         
         ex.expect("abc").toEqual("abc")
         ex.expect("abc").not().toEqual("def")
+        
+        ex.expect(["a", "b", "c"]).toEqual(["a","b","c"])
+        ex.expect(["a", "b", "c"]).not().toEqual([])
+        
+        ex.expect(["key" : "value"]).toEqual(["key" : "value"])
       }
     }
+    
+    result.run()
     
     XCTAssertEqual(result.examples.count, 1)
     XCTAssertEqual(result.examples[0].getStatus(), ExampleStatus.Pass)

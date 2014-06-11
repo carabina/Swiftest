@@ -28,7 +28,7 @@ class SwiftestDood : Comparable {
 
 class ExpectationTest : XCTestCase {
   
-  let expectation = Expectation(actual: "actual")
+  let expectation = ScalarExpectation(actual: "actual")
   
   func test_toEqual_pass() {
     expectation.toEqual("actual")
@@ -53,7 +53,7 @@ class ExpectationTest : XCTestCase {
   }
   
   func test_toEqual_int() {
-    let ex = Expectation(actual: 1)
+    let ex = ScalarExpectation(actual: 1)
     ex.toEqual(1)
     XCTAssertEqual(ex.result.status, ExampleStatus.Pass);
   }
@@ -61,7 +61,7 @@ class ExpectationTest : XCTestCase {
   func test_toEqual_withClass() {
     let dude1 = SwiftestDood(name: "dude1")
     let dude2 = SwiftestDood(name: "dude2")
-    let ex = Expectation(actual: dude1)
+    let ex = ScalarExpectation(actual: dude1)
     ex.toEqual(dude2)
     
     XCTAssertEqual(ex.result.status, ExampleStatus.Fail)

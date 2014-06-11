@@ -1,5 +1,6 @@
 import Foundation
 
+
 class Example {
   
   var description : String
@@ -12,12 +13,24 @@ class Example {
     self.blk  = blk
   }
 
-  func expect<T:Comparable>(actual : T) -> Expectation<T> {
-    let expectation = Expectation(actual: actual)
+  func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
+    let expectation = ScalarExpectation(actual: actual)
     results.append(expectation.result)
     return expectation
   }
   
+  func expect<T:Comparable>(actual : T[]) -> CollectionExpectation<T> {
+    let expectation = CollectionExpectation(actual : actual)
+    results.append(expectation.result)
+    return expectation
+  }
+  
+  func expect<K:Comparable,V:Comparable>(actual : Dictionary<K,V>) -> DictionaryExpectation<K, V> {
+    let expectation = DictionaryExpectation(actual : actual)
+    results.append(expectation.result)
+    return expectation
+  }
+
   func run() {
     if let exampleBlock = self.blk {
       exampleBlock(self)

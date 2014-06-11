@@ -1,7 +1,7 @@
 import XCTest
 import SwiftestCore
 
-class SwiftestTestClassDude : Comparable {
+class SwiftestDood : Comparable {
   var name : String
   
   init(name : String) {
@@ -9,22 +9,21 @@ class SwiftestTestClassDude : Comparable {
   }
 }
 
-@infix func ==(dude1 :SwiftestTestClassDude, dude2 : SwiftestTestClassDude) -> Bool {
+@infix func ==(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
   return dude1.name == dude2.name
 }
 
-@infix func <(dude1 : SwiftestTestClassDude, dude2 : SwiftestTestClassDude) -> Bool {
-  return dude1.name > dude2.name
+@infix func <(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
+  return dude1.name < dude2.name
 }
 
-@infix func >=(dude1 : SwiftestTestClassDude, dude2 : SwiftestTestClassDude) -> Bool {
+@infix func >=(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
   return dude1.name >= dude2.name
 }
 
-@infix func <=(dude1 : SwiftestTestClassDude, dude2 : SwiftestTestClassDude) -> Bool {
+@infix func <=(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
   return dude1.name <= dude2.name
 }
-
 
 
 class ExpectationTest : XCTestCase {
@@ -59,9 +58,9 @@ class ExpectationTest : XCTestCase {
     XCTAssertEqual(ex.result.status, ExampleStatus.Pass);
   }
   
-  func test_withObjC_Class() {
-    let dude1 = SwiftestTestClassDude(name: "dude1")
-    let dude2 = SwiftestTestClassDude(name: "dude2")
+  func test_toEqual_withClass() {
+    let dude1 = SwiftestDood(name: "dude1")
+    let dude2 = SwiftestDood(name: "dude2")
     let ex = Expectation(actual: dude1)
     ex.toEqual(dude2)
     

@@ -9,12 +9,12 @@ class ExpectationResult {
 }
 
 class Expectation<T:Comparable> {
-  var actual : T[] = []
+  var actual : T[]
   var result = ExpectationResult()
   var reverse = false
   
   init(actual : T) {
-    self.actual.append(actual)
+    self.actual = [actual]
   }
   
   func not() -> Expectation {

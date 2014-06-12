@@ -16,8 +16,8 @@ class Example {
     return _addExpectation(ScalarExpectation(actual: actual))
   }
   
-  func expect<T:Comparable>(actual : T[]) -> CollectionExpectation<T> {
-    return _addExpectation(CollectionExpectation(actual : actual))
+  func expect<T:Comparable>(actual : T[]) -> ArrayExpectation<T> {
+    return _addExpectation(ArrayExpectation(actual : actual))
   }
   
   func expect<K:Comparable,V:Comparable>(

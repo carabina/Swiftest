@@ -24,7 +24,7 @@ func describe(target : String, blk : DescribeBlk) -> Specification {
 func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
   return Swiftest.context.currentExample.expect(actual)}
 
-func expect<T:Comparable>(actual : T[]) -> CollectionExpectation<T> {
+func expect<T:Comparable>(actual : T[]) -> ArrayExpectation<T> {
   return Swiftest.context.currentExample.expect(actual)
 }
 

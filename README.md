@@ -5,7 +5,7 @@ BDD-Style "spec" framework for Swift. Total work-in-progress. Don't use it yet,
 because it's gonna change.
 
 ## TODO:
-* runner protocols + XCode integration
+* reporter protocols + XCode reporter / integration
 * more matchers
 * customizable matchers? (or just via extensions?)
 * command-line runner?

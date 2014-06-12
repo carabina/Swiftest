@@ -47,7 +47,4 @@ class DictionaryExpectationTest : XCTestCase {
     expect.toHaveValue("another-value")
     XCTAssertEqual(expect.result.status, ExampleStatus.Fail)
   }
-
-
-
 }

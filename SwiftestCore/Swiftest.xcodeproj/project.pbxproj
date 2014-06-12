@@ -84,8 +84,8 @@
 		9570FBE01946402A00D4DFF3 = {
 			isa = PBXGroup;
 			children = (
-				9570FBEB1946402A00D4DFF3 /* SwiftestCore */,
-				9570FBF81946402A00D4DFF3 /* SwiftestCoreTests */,
+				9570FBEB1946402A00D4DFF3 /* Swiftest */,
+				9570FBF81946402A00D4DFF3 /* Test */,
 				9570FBEA1946402A00D4DFF3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9570FBEB1946402A00D4DFF3 /* SwiftestCore */ = {
+		9570FBEB1946402A00D4DFF3 /* Swiftest */ = {
 			isa = PBXGroup;
 			children = (
 				951719701949410C00D68165 /* BaseExpectation.swift */,
@@ -114,10 +114,11 @@
 				951719681948FD3600D68165 /* Swiftest.swift */,
 				9570FC061946438300D4DFF3 /* SwiftestCore-Bridging-Header.h */,
 			);
+			name = Swiftest;
 			path = SwiftestCore;
 			sourceTree = "<group>";
 		};
-		9570FBF81946402A00D4DFF3 /* SwiftestCoreTests */ = {
+		9570FBF81946402A00D4DFF3 /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				95AF42AE19496265001A0D7E /* BoolExpectationTest.swift */,
@@ -130,6 +131,7 @@
 				9570FC031946418100D4DFF3 /* SwiftestCoreTests-Bridging-Header.h */,
 				9570FBF91946402A00D4DFF3 /* Supporting Files */,
 			);
+			name = Test;
 			path = SwiftestCoreTests;
 			sourceTree = "<group>";
 		};

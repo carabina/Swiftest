@@ -1,15 +1,29 @@
 Swiftest
 ========
 
-BDD-Style "spec" framework for Swift. Total work-in-progress. Don't use it yet,
-because it's gonna change.
+Experimental BDD "spec" framework for Apple's
+[Swift](https://developer.apple.com/swift/) language.
+Total work-in-progress. Goal is for this to be written in pure Swift, no
+Objective-C here.
 
-### TODO:
-* reporter protocols + XCode reporter / integration
+Inspired heavily by
+[RSpec](https://github.com/rspec/rspec), [Jasmine](http://jasmine.github.io/),
+[OCDSpec2](https://github.com/OCDSpec/OCDSpec2) and
+[Kiwi](https://github.com/kiwi-bdd/Kiwi)
+
+### What's done:
+* specification DSL
+* simple expectations and assertions for most types
+
+### To do:
+* console-based runner
+* reporter protocols + XCode reporter
+* XCode templates
+* nested descriptions
 * "example" project
-* more matchers
-* customizable matchers? (or just via extensions?)
-* command-line runner?
+* closure matchers (`expect(someAction()).toChange(someValue).to(otherValue)`)
+* command-line interface?
+* more + customizable matchers? (or just via extensions?)
 
 ### Example
 
@@ -54,4 +68,3 @@ describe() { (let spec) in
   }
 }
 ```
-

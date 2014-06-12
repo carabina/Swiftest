@@ -1,5 +1,5 @@
 enum ExampleStatus : String {
   case Pending = "Pending"
-  case Pass = "Pass"
-  case Fail = "Fail"
+  case Pass    = "Pass"
+  case Fail    = "Fail"
 }

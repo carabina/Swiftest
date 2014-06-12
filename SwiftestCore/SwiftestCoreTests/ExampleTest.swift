@@ -15,8 +15,8 @@ class ExampleTest : XCTestCase {
   }
   
   func test_run() {
-    let example = Example(desc: "what") { (let ex) in
-      ex.expect(1).toEqual(1)
+    let example = Example(desc: "what") {
+      expect(1).toEqual(1)
     }
   
     example.run()
@@ -24,9 +24,9 @@ class ExampleTest : XCTestCase {
   }
   
   func test_run_fail() {
-    let example = Example(desc: "what") { (let ex) in
-      ex.expect(1).toEqual(1)
-      ex.expect(1).toEqual(2)
+    let example = Example(desc: "what") {
+      expect(1).toEqual(1)
+      expect(1).toEqual(2)
     }
     
     example.run()

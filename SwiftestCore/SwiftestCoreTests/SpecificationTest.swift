@@ -24,8 +24,8 @@ class SpecificationTest : XCTestCase {
   }
   
   func test_run() {
-    spec.example("fails") { (let ex) in
-      ex.expect(1).toEqual(2)
+    spec.example("fails") {
+      expect(1).toEqual(2)
     }
     
     spec.run()
@@ -37,8 +37,8 @@ class SpecificationTest : XCTestCase {
     spec.it("is pending")
     XCTAssertEqual(spec.examples[0].status, ExampleStatus.Pending)
 
-    spec.it("passes") { (let ex) in
-      ex.expect(1).toEqual(1)
+    spec.it("passes") {
+      expect(1).toEqual(1)
     }
     
     spec.run()

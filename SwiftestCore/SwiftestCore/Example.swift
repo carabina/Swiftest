@@ -31,9 +31,12 @@ class Example {
   }
 
   func run() {
+    Swiftest.context.currentExample = self
     if let exampleBlock = blk {
-      exampleBlock(self)
+      exampleBlock()
     }
+    
+    Swiftest.context.currentExample = Swiftest.nullExample
   }
   
   func getStatus() -> ExampleStatus {

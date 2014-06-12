@@ -1,4 +1,4 @@
-typealias ExampleBlock = ((Example) -> Void)
+typealias ExampleBlock = ((Void) -> Void)
 
 class Specification {
   var name     : String

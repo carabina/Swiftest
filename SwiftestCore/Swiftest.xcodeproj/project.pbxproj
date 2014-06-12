@@ -14,7 +14,7 @@
 		951719711949410C00D68165 /* BaseExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951719701949410C00D68165 /* BaseExpectation.swift */; };
 		951719731949412700D68165 /* CollectionExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951719721949412700D68165 /* CollectionExpectation.swift */; };
 		951719751949414400D68165 /* DictionaryExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951719741949414400D68165 /* DictionaryExpectation.swift */; };
-		9570FBF51946402A00D4DFF3 /* libSwiftestCore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */; };
+		9570FBF51946402A00D4DFF3 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */; };
 		9570FC051946418100D4DFF3 /* SpecificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570FC041946418100D4DFF3 /* SpecificationTest.swift */; };
 		9570FC081946438300D4DFF3 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570FC071946438300D4DFF3 /* Specification.swift */; };
 		9570FC0A1946461600D4DFF3 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570FC091946461600D4DFF3 /* Example.swift */; };
@@ -45,8 +45,8 @@
 		951719701949410C00D68165 /* BaseExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseExpectation.swift; sourceTree = "<group>"; };
 		951719721949412700D68165 /* CollectionExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExpectation.swift; sourceTree = "<group>"; };
 		951719741949414400D68165 /* DictionaryExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExpectation.swift; sourceTree = "<group>"; };
-		9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftestCore.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9570FBF41946402A00D4DFF3 /* SwiftestCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9570FBF41946402A00D4DFF3 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBFA1946402A00D4DFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9570FC031946418100D4DFF3 /* SwiftestCoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftestCoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		9570FC041946418100D4DFF3 /* SpecificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificationTest.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9570FBF51946402A00D4DFF3 /* libSwiftestCore.dylib in Frameworks */,
+				9570FBF51946402A00D4DFF3 /* libSwiftest.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,8 +93,8 @@
 		9570FBEA1946402A00D4DFF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */,
-				9570FBF41946402A00D4DFF3 /* SwiftestCoreTests.xctest */,
+				9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */,
+				9570FBF41946402A00D4DFF3 /* SwiftestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,9 +154,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9570FBE81946402A00D4DFF3 /* SwiftestCore */ = {
+		9570FBE81946402A00D4DFF3 /* Swiftest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9570FBFD1946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestCore" */;
+			buildConfigurationList = 9570FBFD1946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "Swiftest" */;
 			buildPhases = (
 				9570FBE51946402A00D4DFF3 /* Sources */,
 				9570FBE61946402A00D4DFF3 /* Frameworks */,
@@ -166,14 +166,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftestCore;
+			name = Swiftest;
 			productName = SwiftestCore;
-			productReference = 9570FBE91946402A00D4DFF3 /* libSwiftestCore.dylib */;
+			productReference = 9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		9570FBF31946402A00D4DFF3 /* SwiftestCoreTests */ = {
+		9570FBF31946402A00D4DFF3 /* SwiftestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9570FC001946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestCoreTests" */;
+			buildConfigurationList = 9570FC001946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestTests" */;
 			buildPhases = (
 				9570FBF01946402A00D4DFF3 /* Sources */,
 				9570FBF11946402A00D4DFF3 /* Frameworks */,
@@ -184,9 +184,9 @@
 			dependencies = (
 				9570FBF71946402A00D4DFF3 /* PBXTargetDependency */,
 			);
-			name = SwiftestCoreTests;
+			name = SwiftestTests;
 			productName = SwiftestCoreTests;
-			productReference = 9570FBF41946402A00D4DFF3 /* SwiftestCoreTests.xctest */;
+			productReference = 9570FBF41946402A00D4DFF3 /* SwiftestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9570FBE41946402A00D4DFF3 /* Build configuration list for PBXProject "SwiftestCore" */;
+			buildConfigurationList = 9570FBE41946402A00D4DFF3 /* Build configuration list for PBXProject "Swiftest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -219,8 +219,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9570FBE81946402A00D4DFF3 /* SwiftestCore */,
-				9570FBF31946402A00D4DFF3 /* SwiftestCoreTests */,
+				9570FBE81946402A00D4DFF3 /* Swiftest */,
+				9570FBF31946402A00D4DFF3 /* SwiftestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,7 +272,7 @@
 /* Begin PBXTargetDependency section */
 		9570FBF71946402A00D4DFF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9570FBE81946402A00D4DFF3 /* SwiftestCore */;
+			target = 9570FBE81946402A00D4DFF3 /* Swiftest */;
 			targetProxy = 9570FBF61946402A00D4DFF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -360,7 +360,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swiftest;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCore/SwiftestCore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -374,7 +374,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swiftest;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCore/SwiftestCore-Bridging-Header.h";
 			};
 			name = Release;
@@ -395,7 +395,7 @@
 				INFOPLIST_FILE = SwiftestCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftestTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCoreTests/SwiftestCoreTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -413,7 +413,7 @@
 				INFOPLIST_FILE = SwiftestCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftestTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCoreTests/SwiftestCoreTests-Bridging-Header.h";
 			};
 			name = Release;
@@ -421,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9570FBE41946402A00D4DFF3 /* Build configuration list for PBXProject "SwiftestCore" */ = {
+		9570FBE41946402A00D4DFF3 /* Build configuration list for PBXProject "Swiftest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9570FBFB1946402A00D4DFF3 /* Debug */,
@@ -430,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9570FBFD1946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestCore" */ = {
+		9570FBFD1946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "Swiftest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9570FBFE1946402A00D4DFF3 /* Debug */,
@@ -439,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9570FC001946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestCoreTests" */ = {
+		9570FC001946402A00D4DFF3 /* Build configuration list for PBXNativeTarget "SwiftestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9570FC011946402A00D4DFF3 /* Debug */,

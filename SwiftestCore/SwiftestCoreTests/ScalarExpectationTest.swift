@@ -1,5 +1,5 @@
 import XCTest
-import SwiftestCore
+import Swiftest
 
 class SwiftestDood : Comparable {
   var name : String

@@ -11,7 +11,7 @@ because it's gonna change.
 * command-line runner?
 
 ```swift
-import SwiftestCore
+import Swiftest
 
 describe() { (let spec) in
   spec.it("adds 1 + 1!") { (let test) in

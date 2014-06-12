@@ -1,5 +1,5 @@
 import Foundation
-import SwiftestCore
+import Swiftest
 import XCTest
 
 class CollectionExpectationTest : XCTestCase {

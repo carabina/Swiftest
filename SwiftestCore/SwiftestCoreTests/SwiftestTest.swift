@@ -1,4 +1,4 @@
-import SwiftestCore
+import Swiftest
 import XCTest
 
 class SwiftestTest : XCTestCase {

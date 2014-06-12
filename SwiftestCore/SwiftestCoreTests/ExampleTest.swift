@@ -1,5 +1,5 @@
 import XCTest
-import SwiftestCore
+import Swiftest
 
 class ExampleTest : XCTestCase {
   var example = Example(desc : "the-description", blk : nil)

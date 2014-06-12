@@ -18,6 +18,9 @@ class Specification {
     examples.append(example)
   }
   
+  func it(desc : String) { example(desc) }
+  func it(desc : String, blk : ExampleBlock) { example(desc, blk) }
+  
   func run() {
     for example in self.examples {
       example.run()

@@ -8,35 +8,40 @@ because it's gonna change.
 import SwiftestCore
 
 describe() { (let spec) in
-  spec.example("1 + 1!") { (let ex) in
-    ex.expect(1 + 1).toEqual(2)
+  spec.it("adds 1 + 1!") { (let test) in
+    test.expect(1 + 1).toEqual(2)
   }
 
-  spec.example("the alphabet!") { (let ex) in
-    ex.expect("abc").toEqual("abc")
+  spec.it("knows true from false!") { (let test) in
+    test.expect(true).toBeTrue()
+    test.expect(true).not().toBeFalse()
   }
 
-  spec.example("not stuff!") { (let ex) in
-    ex.expect(2 + 2).not().toEqual(5)
+  spec.testample("comparing letters of the alphabet!") { (let test) in
+    test.expect("abc").toEqual("abc")
   }
 
-  spec.example("arrays!") { (let ex) in
-    ex.expect([1, 2, 3]).toEqual([1, 2, 3])
-    ex.expect([1, 2, 3]).toContain(1)
+  spec.it("knows what stuff is NOT other stuff!") { (let test) in
+    test.expect(2 + 2).not().toEqual(5)
   }
 
-  spec.example("dictionaries!") { (let ex) in
-    ex.expect([ "key" : "val" ]).toEqual([ "key" : "val"])
-    ex.expect([ "key" : "val" ]).toHaveKey("key")
-    ex.expect([ "key" : "val" ]).toHaveValue("val")
+  spec.example("arrays!") { (let test) in
+    test.expect([1, 2, 3]).toEqual([1, 2, 3])
+    test.expect([1, 2, 3]).toContain(1)
   }
 
-  spec.example("user defined classes") { (let ex) in
+  spec.example("dictionaries!") { (let test) in
+    test.expect([ "key" : "val" ]).toEqual([ "key" : "val"])
+    test.expect([ "key" : "val" ]).toHaveKey("key")
+    test.expect([ "key" : "val" ]).toHaveValue("val")
+  }
+
+  spec.example("your own classes!") { (let test) in
     // Person is a class that implements Comparable
     var person1 = Person(name: "Bob")
     var person2 = Person(name: "Alice")
 
-    ex.expect(person1).not().toEqual(person2)
+    test.expect(person1).not().toEqual(person2)
   }
 }
 ```

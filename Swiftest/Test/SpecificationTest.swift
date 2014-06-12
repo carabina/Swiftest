@@ -1,5 +1,5 @@
-import XCTest
 import Swiftest
+import XCTest
 
 class SpecificationTest : XCTestCase {
   

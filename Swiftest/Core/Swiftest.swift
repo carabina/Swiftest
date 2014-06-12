@@ -1,5 +1,3 @@
-import Foundation
-
 typealias DescribeBlk = ((Specification) -> Void)
 
 struct Swiftest {

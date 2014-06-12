@@ -1,5 +1,3 @@
-import Foundation
-
 class ExpectationResult {
   var status = ExampleStatus.Pending
   

@@ -1,6 +1,3 @@
-import Foundation
-
-
 class ArrayExpectation<T:Comparable> : BaseExpectation {
   typealias List = T[]
   var actual : List[]

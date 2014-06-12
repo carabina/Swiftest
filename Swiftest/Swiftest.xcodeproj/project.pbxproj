@@ -72,6 +72,13 @@
 			remoteGlobalIDString = 9570FBE81946402A00D4DFF3;
 			remoteInfo = Swiftest;
 		};
+		95F952E3194A6967003A77A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9570FBE11946402A00D4DFF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9570FBE81946402A00D4DFF3;
+			remoteInfo = Swiftest;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +248,7 @@
 				95A23FCF194A060500276922 /* PBXTargetDependency */,
 				95A23FD1194A07C900276922 /* PBXTargetDependency */,
 				95A23FD3194A07C900276922 /* PBXTargetDependency */,
+				95F952E4194A6967003A77A9 /* PBXTargetDependency */,
 			);
 			name = SwiftestTests;
 			productName = SwiftestCoreTests;
@@ -359,6 +367,11 @@
 			isa = PBXTargetDependency;
 			target = 9570FBE81946402A00D4DFF3 /* Swiftest */;
 			targetProxy = 95A23FD2194A07C900276922 /* PBXContainerItemProxy */;
+		};
+		95F952E4194A6967003A77A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9570FBE81946402A00D4DFF3 /* Swiftest */;
+			targetProxy = 95F952E3194A6967003A77A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

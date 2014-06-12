@@ -1,5 +1,6 @@
-import XCTest
 import Swiftest
+import XCTest
+
 
 class ExampleTest : XCTestCase {
   var example = Example(desc : "the-description", blk : nil)

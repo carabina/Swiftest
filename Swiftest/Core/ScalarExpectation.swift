@@ -1,5 +1,3 @@
-import Foundation
-
 class ScalarExpectation<T:Comparable> : BaseExpectation {
   var actual : T?[]
   

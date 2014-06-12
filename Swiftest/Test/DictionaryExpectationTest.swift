@@ -1,6 +1,5 @@
-import Foundation
-import XCTest
 import Swiftest
+import XCTest
 
 class DictionaryExpectationTest : XCTestCase {
   var dict = ["key" : "value"]

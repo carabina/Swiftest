@@ -1,4 +1,3 @@
-import Foundation
 import Swiftest
 import XCTest
 

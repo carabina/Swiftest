@@ -9,3 +9,7 @@ class Swiftest {
     return spec
   }
 }
+
+func describe(target : String, blk : DescribeBlk) -> Specification {
+  return Swiftest.describe(target, blk)
+}

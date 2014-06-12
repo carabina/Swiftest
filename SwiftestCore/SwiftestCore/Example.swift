@@ -1,6 +1,5 @@
 import Foundation
 
-
 class Example {
   
   var description : String
@@ -14,17 +13,17 @@ class Example {
   }
 
   func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
-    return addExpectation(ScalarExpectation(actual: actual))
+    return _addExpectation(ScalarExpectation(actual: actual))
   }
   
   func expect<T:Comparable>(actual : T[]) -> CollectionExpectation<T> {
-    return addExpectation(CollectionExpectation(actual : actual))
+    return _addExpectation(CollectionExpectation(actual : actual))
   }
   
   func expect<K:Comparable,V:Comparable>(
     actual : Dictionary<K,V>
   ) -> DictionaryExpectation<K, V> {
-    return addExpectation(DictionaryExpectation(actual : actual))
+    return _addExpectation(DictionaryExpectation(actual : actual))
   }
 
   func run() {
@@ -34,20 +33,20 @@ class Example {
   }
   
   func getStatus() -> ExampleStatus {
-    if hasStatus(ExampleStatus.Fail) {
+    if _hasStatus(ExampleStatus.Fail) {
       return ExampleStatus.Fail
-    } else if hasStatus(ExampleStatus.Pending) {
+    } else if _hasStatus(ExampleStatus.Pending) {
       return ExampleStatus.Pending
     }
     
     return ExampleStatus.Pass
   }
   
-  func hasStatus(status : ExampleStatus) -> Bool {
+  func _hasStatus(status : ExampleStatus) -> Bool {
     return results.filter({ ex in ex.status == status }).count > 0
   }
   
-  func addExpectation<T:BaseExpectation>(ex : T) -> T {
+  func _addExpectation<T:BaseExpectation>(ex : T) -> T {
     results.append(ex.result)
     return ex
   }

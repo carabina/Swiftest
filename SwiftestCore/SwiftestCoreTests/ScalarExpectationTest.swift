@@ -67,4 +67,35 @@ class ExpectationTest : XCTestCase {
     XCTAssertEqual(ex.result.status, ExampleStatus.Fail)
   }
   
+  func test_toBeNil_withNil() {
+    var dude1 : SwiftestDood?
+    let ex = ScalarExpectation(actual: dude1)
+
+    ex.toBeNil()
+    
+    XCTAssertEqual(ex.result.status, ExampleStatus.Pass)
+  }
+  
+  func test_toBeNil_withNonNil() {
+    var dude1 : SwiftestDood? = SwiftestDood(name: "dude1")
+    let ex = ScalarExpectation(actual: dude1)
+    
+    ex.toBeNil()
+    
+    XCTAssertEqual(ex.result.status, ExampleStatus.Fail)
+  }
+  
+  func testComparisons() {
+    let ex = ScalarExpectation(actual: 1)
+    
+    ex.toBeGreaterThan(0)
+    ex.toBeGreaterThanOrEqualTo(0)
+    ex.toBeGreaterThanOrEqualTo(1)
+    ex.toBeLessThan(2)
+    ex.toBeLessThanOrEqualTo(2)
+    ex.toBeLessThanOrEqualTo(1)
+    ex.toBeGreaterThanOrEqualTo(nil)
+    
+    XCTAssertEqual(ex.result.status, ExampleStatus.Pass)
+  }
 }

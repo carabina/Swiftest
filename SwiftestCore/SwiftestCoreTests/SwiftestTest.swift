@@ -4,7 +4,7 @@ import XCTest
 class SwiftestTest : XCTestCase {
   
   func test_Describe() {
-    let result = Swiftest.describe("a-spec") { (let spec) in
+    let result = describe("a-spec") { (let spec) in
       spec.example("test-one") { (let ex) in
         ex.expect(1).toEqual(1)
         

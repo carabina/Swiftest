@@ -11,6 +11,8 @@ because it's gonna change.
 * customizable matchers? (or just via extensions?)
 * command-line runner?
 
+### Example
+
 ```swift
 import Swiftest
 

@@ -23,7 +23,7 @@ describe() { (let spec) in
     test.expect(true).not().toBeFalse()
   }
 
-  spec.testample("comparing letters of the alphabet!") { (let test) in
+  spec.example("comparing letters of the alphabet!") { (let test) in
     test.expect("abc").toEqual("abc")
   }
 

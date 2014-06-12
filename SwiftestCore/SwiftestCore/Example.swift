@@ -14,21 +14,17 @@ class Example {
   }
 
   func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
-    let expectation = ScalarExpectation(actual: actual)
-    results.append(expectation.result)
-    return expectation
+    return addExpectation(ScalarExpectation(actual: actual))
   }
   
   func expect<T:Comparable>(actual : T[]) -> CollectionExpectation<T> {
-    let expectation = CollectionExpectation(actual : actual)
-    results.append(expectation.result)
-    return expectation
+    return addExpectation(CollectionExpectation(actual : actual))
   }
   
-  func expect<K:Comparable,V:Comparable>(actual : Dictionary<K,V>) -> DictionaryExpectation<K, V> {
-    let expectation = DictionaryExpectation(actual : actual)
-    results.append(expectation.result)
-    return expectation
+  func expect<K:Comparable,V:Comparable>(
+    actual : Dictionary<K,V>
+  ) -> DictionaryExpectation<K, V> {
+    return addExpectation(DictionaryExpectation(actual : actual))
   }
 
   func run() {
@@ -49,6 +45,11 @@ class Example {
   
   func hasStatus(status : ExampleStatus) -> Bool {
     return results.filter({ ex in ex.status == status }).count > 0
+  }
+  
+  func addExpectation<T:BaseExpectation>(ex : T) -> T {
+    results.append(ex.result)
+    return ex
   }
   
 }

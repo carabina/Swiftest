@@ -4,8 +4,9 @@ Swiftest
 BDD-Style "spec" framework for Swift. Total work-in-progress. Don't use it yet,
 because it's gonna change.
 
-## TODO:
+### TODO:
 * reporter protocols + XCode reporter / integration
+* "example" project
 * more matchers
 * customizable matchers? (or just via extensions?)
 * command-line runner?

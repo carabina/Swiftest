@@ -14,6 +14,14 @@ class CollectionExpectation<T:Comparable> : BaseExpectation {
   }
   
   func toEqual(expected : T[]) {
-    _assert(actual[0] == expected)
+    _assert(_subject() == expected)
+  }
+  
+  func toContain(expected : T) {
+    _assert(_subject().filter({ el in el == expected }).count > 0)
+  }
+  
+  func _subject() -> T[] {
+    return actual[0]
   }
 }

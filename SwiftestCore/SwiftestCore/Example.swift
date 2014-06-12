@@ -25,9 +25,13 @@ class Example {
   ) -> DictionaryExpectation<K, V> {
     return _addExpectation(DictionaryExpectation(actual : actual))
   }
+  
+  func expect(actual : Bool) -> BoolExpectation {
+    return _addExpectation(BoolExpectation(actual: actual))
+  }
 
   func run() {
-    if let exampleBlock = self.blk {
+    if let exampleBlock = blk {
       exampleBlock(self)
     }
   }

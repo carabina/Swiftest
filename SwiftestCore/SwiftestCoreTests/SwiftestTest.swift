@@ -6,6 +6,9 @@ class SwiftestTest : XCTestCase {
   func test_Describe() {
     let result = describe("a-spec") { (let spec) in
       spec.example("test-one") { (let ex) in
+        ex.expect(true).toEqual(true)
+        ex.expect(true).not().toBe(false)
+        
         ex.expect(1).toEqual(1)
         
         ex.expect("abc").toEqual("abc")

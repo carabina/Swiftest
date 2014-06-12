@@ -23,6 +23,8 @@
 		95AF42841949429C001A0D7E /* CollectionExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF42831949429C001A0D7E /* CollectionExpectationTest.swift */; };
 		95AF42861949440B001A0D7E /* DictionaryExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF42851949440B001A0D7E /* DictionaryExpectationTest.swift */; };
 		95AF428819494B39001A0D7E /* ExpectationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF428719494B39001A0D7E /* ExpectationResult.swift */; };
+		95AF42AD1949610C001A0D7E /* BoolExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF42AC1949610C001A0D7E /* BoolExpectation.swift */; };
+		95AF42AF19496265001A0D7E /* BoolExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF42AE19496265001A0D7E /* BoolExpectationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		95AF42831949429C001A0D7E /* CollectionExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExpectationTest.swift; sourceTree = "<group>"; };
 		95AF42851949440B001A0D7E /* DictionaryExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExpectationTest.swift; sourceTree = "<group>"; };
 		95AF428719494B39001A0D7E /* ExpectationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectationResult.swift; sourceTree = "<group>"; };
+		95AF42AC1949610C001A0D7E /* BoolExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExpectation.swift; sourceTree = "<group>"; };
+		95AF42AE19496265001A0D7E /* BoolExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExpectationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				951719701949410C00D68165 /* BaseExpectation.swift */,
+				95AF42AC1949610C001A0D7E /* BoolExpectation.swift */,
 				951719721949412700D68165 /* CollectionExpectation.swift */,
 				951719741949414400D68165 /* DictionaryExpectation.swift */,
 				9570FC091946461600D4DFF3 /* Example.swift */,
@@ -115,6 +120,7 @@
 		9570FBF81946402A00D4DFF3 /* SwiftestCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				95AF42AE19496265001A0D7E /* BoolExpectationTest.swift */,
 				95AF42831949429C001A0D7E /* CollectionExpectationTest.swift */,
 				95AF42851949440B001A0D7E /* DictionaryExpectationTest.swift */,
 				9570FC0D194655B000D4DFF3 /* ExampleTest.swift */,
@@ -236,6 +242,7 @@
 			files = (
 				951719751949414400D68165 /* DictionaryExpectation.swift in Sources */,
 				951719731949412700D68165 /* CollectionExpectation.swift in Sources */,
+				95AF42AD1949610C001A0D7E /* BoolExpectation.swift in Sources */,
 				95AF428819494B39001A0D7E /* ExpectationResult.swift in Sources */,
 				951719691948FD3600D68165 /* Swiftest.swift in Sources */,
 				951719711949410C00D68165 /* BaseExpectation.swift in Sources */,
@@ -253,6 +260,7 @@
 				9517196D1948FFD100D68165 /* ScalarExpectationTest.swift in Sources */,
 				9570FC0E194655B000D4DFF3 /* ExampleTest.swift in Sources */,
 				95AF42861949440B001A0D7E /* DictionaryExpectationTest.swift in Sources */,
+				95AF42AF19496265001A0D7E /* BoolExpectationTest.swift in Sources */,
 				9517196F19490C8200D68165 /* SwiftestTest.swift in Sources */,
 				95AF42841949429C001A0D7E /* CollectionExpectationTest.swift in Sources */,
 				9570FC051946418100D4DFF3 /* SpecificationTest.swift in Sources */,

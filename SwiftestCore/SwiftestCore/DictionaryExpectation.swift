@@ -1,9 +1,11 @@
 import Foundation
 
-class DictionaryExpectation<K, V where K:Hashable, V:Comparable> : BaseExpectation {
-  var actual : Dictionary<K,V>[]
+class DictionaryExpectation<Key, Value where Key:Hashable, Value:Comparable> : BaseExpectation {
+  typealias Dict = Dictionary<Key,Value>
   
-  init(actual : Dictionary<K,V>) {
+  var actual : Dict[]
+  
+  init(actual : Dict) {
     self.actual = [actual]
   }
   
@@ -12,7 +14,27 @@ class DictionaryExpectation<K, V where K:Hashable, V:Comparable> : BaseExpectati
     return self
   }
   
-  func toEqual(expected: Dictionary<K,V>) {
-    _assert(actual[0] == expected)
+  func toEqual(expected : Dict) {
+    _assert(_subject() == expected)
+  }
+  
+  func toHaveKey(key : Key) {
+    for k in _subject().keys {
+      if(k == key) { return _assert(true) }
+    }
+
+    return(_assert(false))
+  }
+  
+  func toHaveValue(value : Value) {
+    for v in _subject().values {
+      if(v == value) { return _assert(true) }
+    }
+    
+    return(_assert(false))
+  }
+  
+  func _subject() -> Dict {
+    return actual[0]
   }
 }

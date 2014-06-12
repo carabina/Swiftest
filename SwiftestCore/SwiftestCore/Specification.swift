@@ -10,12 +10,12 @@ class Specification {
   
   func example(desc: String, blk : ExampleBlock) {
     var example = Example(desc: desc, blk : blk)
-    self.examples.append(example)
+    examples.append(example)
   }
   
   func example(desc: String) {
     var example = Example(desc: desc, blk : nil)
-    self.examples.append(example)
+    examples.append(example)
   }
   
   func run() {

@@ -4,14 +4,14 @@ Swiftest
 BDD-Style "spec" framework for Swift. Total work-in-progress. Don't use it yet,
 because it's gonna change.
 
-```swift
-import SwiftestCore
-
 ## TODO:
 * runner protocols + XCode integration
 * more matchers
 * customizable matchers? (or just via extensions?)
 * command-line runner?
+
+```swift
+import SwiftestCore
 
 describe() { (let spec) in
   spec.it("adds 1 + 1!") { (let test) in

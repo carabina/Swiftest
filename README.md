@@ -7,6 +7,12 @@ because it's gonna change.
 ```swift
 import SwiftestCore
 
+## TODO:
+* runner protocols + XCode integration
+* more matchers
+* customizable matchers? (or just via extensions?)
+* command-line runner?
+
 describe() { (let spec) in
   spec.it("adds 1 + 1!") { (let test) in
     test.expect(1 + 1).toEqual(2)
@@ -46,7 +52,3 @@ describe() { (let spec) in
 }
 ```
 
-## TODO:
-* matchers. Lots of matchers.
-* runner / XCode integration
-* command-line runner?

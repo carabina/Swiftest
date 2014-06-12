@@ -26,6 +26,7 @@
 		95A23FF5194A090C00276922 /* ScalarExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FED194A090C00276922 /* ScalarExpectationTest.swift */; };
 		95A23FF6194A090C00276922 /* SpecificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FEE194A090C00276922 /* SpecificationTest.swift */; };
 		95A23FF7194A090C00276922 /* SwiftestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FEF194A090C00276922 /* SwiftestTest.swift */; };
+		95F952E2194A6476003A77A9 /* ExpectationResultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		95A23FED194A090C00276922 /* ScalarExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScalarExpectationTest.swift; path = Test/ScalarExpectationTest.swift; sourceTree = SOURCE_ROOT; };
 		95A23FEE194A090C00276922 /* SpecificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificationTest.swift; path = Test/SpecificationTest.swift; sourceTree = SOURCE_ROOT; };
 		95A23FEF194A090C00276922 /* SwiftestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftestTest.swift; path = Test/SwiftestTest.swift; sourceTree = SOURCE_ROOT; };
+		95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectationResultTest.swift; path = Test/ExpectationResultTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,14 +138,10 @@
 		9570FBEB1946402A00D4DFF3 /* Swiftest */ = {
 			isa = PBXGroup;
 			children = (
-				95A23FD6194A08EE00276922 /* ArrayExpectation.swift */,
-				95A23FD4194A08EE00276922 /* BaseExpectation.swift */,
-				95A23FD5194A08EE00276922 /* BoolExpectation.swift */,
-				95A23FD7194A08EE00276922 /* DictionaryExpectation.swift */,
+				95F952DD194A6363003A77A9 /* Expectations */,
 				95A23FD8194A08EE00276922 /* Example.swift */,
 				95A23FD9194A08EE00276922 /* ExampleStatus.swift */,
 				95A23FDA194A08EE00276922 /* ExpectationResult.swift */,
-				95A23FDB194A08EE00276922 /* ScalarExpectation.swift */,
 				95A23FDC194A08EE00276922 /* Specification.swift */,
 				95A23FDD194A08EE00276922 /* Swiftest.swift */,
 			);
@@ -154,11 +152,9 @@
 		9570FBF81946402A00D4DFF3 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				95A23FE9194A090C00276922 /* ArrayExpectationTest.swift */,
-				95A23FE8194A090C00276922 /* BoolExpectationTest.swift */,
-				95A23FEA194A090C00276922 /* DictionaryExpectationTest.swift */,
+				95F952DE194A636D003A77A9 /* Expectations */,
 				95A23FEB194A090C00276922 /* ExampleTest.swift */,
-				95A23FED194A090C00276922 /* ScalarExpectationTest.swift */,
+				95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */,
 				95A23FEE194A090C00276922 /* SpecificationTest.swift */,
 				95A23FEF194A090C00276922 /* SwiftestTest.swift */,
 				95A23FF8194A091100276922 /* Supporting Files */,
@@ -173,6 +169,29 @@
 				95A23FEC194A090C00276922 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95F952DD194A6363003A77A9 /* Expectations */ = {
+			isa = PBXGroup;
+			children = (
+				95A23FD6194A08EE00276922 /* ArrayExpectation.swift */,
+				95A23FD4194A08EE00276922 /* BaseExpectation.swift */,
+				95A23FD5194A08EE00276922 /* BoolExpectation.swift */,
+				95A23FD7194A08EE00276922 /* DictionaryExpectation.swift */,
+				95A23FDB194A08EE00276922 /* ScalarExpectation.swift */,
+			);
+			name = Expectations;
+			sourceTree = "<group>";
+		};
+		95F952DE194A636D003A77A9 /* Expectations */ = {
+			isa = PBXGroup;
+			children = (
+				95A23FE9194A090C00276922 /* ArrayExpectationTest.swift */,
+				95A23FE8194A090C00276922 /* BoolExpectationTest.swift */,
+				95A23FEA194A090C00276922 /* DictionaryExpectationTest.swift */,
+				95A23FED194A090C00276922 /* ScalarExpectationTest.swift */,
+			);
+			name = Expectations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +321,7 @@
 				95A23FF1194A090C00276922 /* ArrayExpectationTest.swift in Sources */,
 				95A23FF6194A090C00276922 /* SpecificationTest.swift in Sources */,
 				95A23FF0194A090C00276922 /* BoolExpectationTest.swift in Sources */,
+				95F952E2194A6476003A77A9 /* ExpectationResultTest.swift in Sources */,
 				95A23FF7194A090C00276922 /* SwiftestTest.swift in Sources */,
 				95A23FF2194A090C00276922 /* DictionaryExpectationTest.swift in Sources */,
 			);

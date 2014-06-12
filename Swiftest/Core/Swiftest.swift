@@ -2,12 +2,12 @@ import Foundation
 
 typealias DescribeBlk = ((Specification) -> Void)
 
-struct SwiftestContext {
-  var currentExample : Example
-}
-
 struct Swiftest {
-  static var context = SwiftestContext(currentExample: nullExample)
+  struct Context {
+    var currentExample : Example
+  }
+  
+  static var context = Context(currentExample: nullExample)
   static var nullExample = Example(desc : "null example") {}
   
   static func describe(target : String, blk : DescribeBlk) -> Specification {

@@ -22,9 +22,7 @@ class Specification {
   func it(desc : String, blk : ExampleBlock) { example(desc, blk) }
   
   func run() {
-    for example in self.examples {
-      example.run()
-    }
+    for example in examples { example.run() }
   }
   
   func statuses() {

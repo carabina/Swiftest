@@ -1,6 +1,6 @@
 import Foundation
 
-class DictionaryExpectation<Key, Value where Key:Hashable, Value:Comparable> : BaseExpectation {
+class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
   typealias Dict = Dictionary<Key,Value>
   
   var actual : Dict[]

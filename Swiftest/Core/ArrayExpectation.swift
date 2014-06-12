@@ -2,9 +2,10 @@ import Foundation
 
 
 class ArrayExpectation<T:Comparable> : BaseExpectation {
-  var actual : T[][]
+  typealias List = T[]
+  var actual : List[]
 
-  init(actual : T[]) {
+  init(actual : List) {
     self.actual = [actual]
   }
 
@@ -13,7 +14,7 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
     return self
   }
 
-  func toEqual(expected : T[]) {
+  func toEqual(expected : List) {
     _assert(_subject() == expected)
   }
 
@@ -21,7 +22,7 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
     _assert(_subject().filter({ el in el == expected }).count > 0)
   }
 
-  func _subject() -> T[] {
+  func _subject() -> List {
     return actual[0]
   }
 }

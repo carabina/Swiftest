@@ -38,8 +38,8 @@ describe() { (let spec) in
 
   spec.example("your own classes!") { (let test) in
     // Person is a class that implements Comparable
-    var person1 = Person(name: "Bob")
-    var person2 = Person(name: "Alice")
+    let person1 = Person(name: "Bob")
+    let person2 = Person(name: "Alice")
 
     test.expect(person1).not().toEqual(person2)
   }

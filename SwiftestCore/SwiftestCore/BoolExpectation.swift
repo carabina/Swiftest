@@ -20,7 +20,7 @@ class BoolExpectation : BaseExpectation {
   }
   
   func not() -> BoolExpectation {
-    self.reverse = !reverse
+    self._reverse = !_reverse
     return self
   }
   

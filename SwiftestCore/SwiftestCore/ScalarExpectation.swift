@@ -8,7 +8,7 @@ class ScalarExpectation<T:Comparable> : BaseExpectation {
   }
   
   func not() -> ScalarExpectation {
-    self.reverse = !reverse
+    self._reverse = !_reverse
     return self
   }
   

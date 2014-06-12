@@ -9,7 +9,7 @@ class CollectionExpectation<T:Comparable> : BaseExpectation {
   }
   
   func not() -> CollectionExpectation {
-    self.reverse = !reverse
+    self._reverse = !_reverse
     return self
   }
   

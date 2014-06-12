@@ -10,7 +10,7 @@ class DictionaryExpectation<Key, Value where Key:Hashable, Value:Comparable> : B
   }
   
   func not() -> DictionaryExpectation {
-    self.reverse = !reverse
+    self._reverse = !_reverse
     return self
   }
   

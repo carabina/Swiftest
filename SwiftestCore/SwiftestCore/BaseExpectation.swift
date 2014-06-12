@@ -2,9 +2,9 @@ import Foundation
 
 class BaseExpectation {
   var result = ExpectationResult()
-  var reverse = false
+  var _reverse = false
   
   func _assert(cond:Bool) {
-    result.assert(cond || reverse)
+    result.assert(cond || _reverse)
   }
 }

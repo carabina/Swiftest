@@ -48,9 +48,7 @@
 		9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBF41946402A00D4DFF3 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBFA1946402A00D4DFF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9570FC031946418100D4DFF3 /* SwiftestCoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftestCoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		9570FC041946418100D4DFF3 /* SpecificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificationTest.swift; sourceTree = "<group>"; };
-		9570FC061946438300D4DFF3 /* SwiftestCore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftestCore-Bridging-Header.h"; sourceTree = "<group>"; };
 		9570FC071946438300D4DFF3 /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 		9570FC091946461600D4DFF3 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		9570FC0B1946491000D4DFF3 /* ExampleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleStatus.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				9517196A1948FEF200D68165 /* ScalarExpectation.swift */,
 				9570FC071946438300D4DFF3 /* Specification.swift */,
 				951719681948FD3600D68165 /* Swiftest.swift */,
-				9570FC061946438300D4DFF3 /* SwiftestCore-Bridging-Header.h */,
 			);
 			name = Swiftest;
 			path = SwiftestCore;
@@ -128,7 +125,6 @@
 				9517196C1948FFD100D68165 /* ScalarExpectationTest.swift */,
 				9570FC041946418100D4DFF3 /* SpecificationTest.swift */,
 				9517196E19490C8200D68165 /* SwiftestTest.swift */,
-				9570FC031946418100D4DFF3 /* SwiftestCoreTests-Bridging-Header.h */,
 				9570FBF91946402A00D4DFF3 /* Supporting Files */,
 			);
 			name = Test;
@@ -363,7 +359,8 @@
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = Swiftest;
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCore/SwiftestCore-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -377,7 +374,8 @@
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = Swiftest;
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCore/SwiftestCore-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -398,7 +396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = SwiftestTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCoreTests/SwiftestCoreTests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -416,7 +414,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SwiftestTests;
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftestCoreTests/SwiftestCoreTests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};

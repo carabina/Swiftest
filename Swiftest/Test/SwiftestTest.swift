@@ -4,8 +4,8 @@ import XCTest
 class SwiftestTest : XCTestCase {
   
   func test_Describe() {
-    let result = describe("a-spec") { (let spec) in
-      spec.example("test-one") {
+    let result = describe("a-spec") {
+      example("test-one") {
         expect(true).toEqual(true)
         expect(true).not().toBe(false)
         
@@ -20,7 +20,7 @@ class SwiftestTest : XCTestCase {
         expect(["key" : "value"]).toEqual(["key" : "value"])
       }
       
-      spec.it("fails") {
+      it("fails") {
         expect(true).not().toBe(true)
       }
     }

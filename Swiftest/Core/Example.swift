@@ -24,7 +24,7 @@ extension Swiftest {
     
     func expect<K:Comparable,V:Comparable>(
       actual : Dictionary<K,V>
-      ) -> DictionaryExpectation<K, V> {
+    ) -> DictionaryExpectation<K, V> {
         return _addExpectation(DictionaryExpectation(actual : actual))
     }
     

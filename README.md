@@ -31,36 +31,36 @@ Inspired heavily by
 ```swift
 import Swiftest
 
-describe() { (let spec) in
-  spec.it("adds 1 + 1!") {
+describe() {
+  it("adds 1 + 1!") {
     expect(1 + 1).toEqual(2)
   }
 
-  spec.it("knows true from false!") {
+  it("knows true from false!") {
     expect(true).toBeTrue()
     expect(true).not().toBeFalse()
   }
 
-  spec.example("comparing letters of the alphabet!") {
+  example("comparing letters of the alphabet!") {
     expect("abc").toEqual("abc")
   }
 
-  spec.it("knows what stuff is NOT other stuff!") {
+  it("knows what stuff is NOT other stuff!") {
     expect(2 + 2).not().toEqual(5)
   }
 
-  spec.example("arrays!") {
+  example("arrays!") {
     expect([1, 2, 3]).toEqual([1, 2, 3])
     expect([1, 2, 3]).toContain(1)
   }
 
-  spec.example("dictionaries!") {
+  example("dictionaries!") {
     expect([ "key" : "val" ]).toEqual([ "key" : "val"])
     expect([ "key" : "val" ]).toHaveKey("key")
     expect([ "key" : "val" ]).toHaveValue("val")
   }
 
-  spec.example("your own classes!") {
+  example("your own classes!") {
     // Person is a class that implements Comparable
     let person1 = Person(name: "Bob")
     let person2 = Person(name: "Alice")

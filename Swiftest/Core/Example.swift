@@ -10,6 +10,10 @@ extension Swiftest {
       self.blk  = blk
     }
     
+    init(desc: String) {
+      self.description = desc
+    }
+    
     func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
       return _addExpectation(ScalarExpectation(actual: actual))
     }

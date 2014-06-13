@@ -3,16 +3,15 @@ typealias DescribeBlk = ((Swiftest.Specification) -> Void)
 struct Swiftest {
   struct Context {
     var currentExample : Example
-    var listeners : Swiftest.BaseListener[]
     
     init(currentExample : Example) {
       self.currentExample = currentExample
-      self.listeners = []
     }
   }
   
-  static var context = Context(currentExample: nullExample)
-  static var nullExample = Example(desc : "null example") {}
+  static let reporter    = Swiftest.Reporter()
+  static let nullExample = Example(desc : "null example") {}
+  static var context     = Context(currentExample: nullExample)
   
   static func describe(target : String, blk : DescribeBlk) -> Specification {
     let spec = Specification(name: target)

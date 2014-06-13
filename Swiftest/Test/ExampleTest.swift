@@ -1,7 +1,6 @@
 import Swiftest
 import XCTest
 
-
 class ExampleTest : XCTestCase {
   var example = Swiftest.Example(desc : "the-description", blk : nil)
   

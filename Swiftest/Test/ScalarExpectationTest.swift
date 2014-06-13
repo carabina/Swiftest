@@ -1,31 +1,6 @@
 import Swiftest
 import XCTest
 
-class SwiftestDood : Comparable {
-  var name : String
-  
-  init(name : String) {
-    self.name = name
-  }
-}
-
-@infix func ==(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
-  return dude1.name == dude2.name
-}
-
-@infix func <(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
-  return dude1.name < dude2.name
-}
-
-@infix func >=(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
-  return dude1.name >= dude2.name
-}
-
-@infix func <=(dude1 : SwiftestDood, dude2 : SwiftestDood) -> Bool {
-  return dude1.name <= dude2.name
-}
-
-
 class ExpectationTest : XCTestCase {
   
   let expectation = Swiftest.ScalarExpectation(actual: "actual")
@@ -59,17 +34,17 @@ class ExpectationTest : XCTestCase {
   }
   
   func test_toEqual_withClass() {
-    let dude1 = SwiftestDood(name: "dude1")
-    let dude2 = SwiftestDood(name: "dude2")
-    let ex = Swiftest.ScalarExpectation(actual: dude1)
-    ex.toEqual(dude2)
+    let p1 = SwiftestTests.Person(name: "p1")
+    let p2 = SwiftestTests.Person(name: "p2")
+    let ex = Swiftest.ScalarExpectation(actual: p1)
+    ex.toEqual(p2)
     
     XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Fail)
   }
   
   func test_toBeNil_withNil() {
-    var dude1 : SwiftestDood?
-    let ex = Swiftest.ScalarExpectation(actual: dude1)
+    var p1 :  SwiftestTests.Person?
+    let ex = Swiftest.ScalarExpectation(actual: p1)
 
     ex.toBeNil()
     
@@ -77,8 +52,8 @@ class ExpectationTest : XCTestCase {
   }
   
   func test_toBeNil_withNonNil() {
-    var dude1 : SwiftestDood? = SwiftestDood(name: "dude1")
-    let ex = Swiftest.ScalarExpectation(actual: dude1)
+    var p1 :  SwiftestTests.Person? =  SwiftestTests.Person(name: "p1")
+    let ex = Swiftest.ScalarExpectation(actual: p1)
     
     ex.toBeNil()
     

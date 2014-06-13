@@ -19,11 +19,16 @@ class SwiftestTest : XCTestCase {
         
         expect(["key" : "value"]).toEqual(["key" : "value"])
       }
+      
+      spec.it("fails") {
+        expect(true).not().toBe(true)
+      }
     }
     
     result.run()
     
-    XCTAssertEqual(result.examples.count, 1)
+    XCTAssertEqual(result.examples.count, 2)
     XCTAssertEqual(result.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(result.examples[1].getStatus(), Swiftest.ExampleStatus.Fail)
   }
 }

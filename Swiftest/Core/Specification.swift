@@ -5,9 +5,7 @@ extension Swiftest {
     var name     : String
     var examples : Example[] = []
     
-    init(name: String) {
-      self.name = name
-    }
+    init(name: String) { self.name = name }
     
     func example(desc: String, blk : ExampleBlock) {
       var example = Example(desc: desc, blk : blk)
@@ -26,8 +24,8 @@ extension Swiftest {
       for example in examples { example.run() }
     }
     
-    func statuses() {
-      examples.map() { (let ex) -> ExampleStatus in
+    func statuses() -> ExampleStatus[] {
+      return examples.map() {(let ex) -> ExampleStatus in
         ex.getStatus()
       }
     }

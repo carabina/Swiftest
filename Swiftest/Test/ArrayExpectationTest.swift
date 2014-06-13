@@ -30,5 +30,19 @@ class ArrayExpectationTest : XCTestCase {
     expect.toContain(3)
     XCTAssertEqual(expect.result.status, ExampleStatus.Fail)
   }
+  
+  func test_not_toContain_Pass() {
+    let expect = ArrayExpectation(actual : [1, 2])
+    
+    expect.not().toContain(3)
+    XCTAssertEqual(expect.result.status, ExampleStatus.Pass)
+  }
+  
+  func test_not_toContain_Fail() {
+    let expect = ArrayExpectation(actual : [1, 2])
+    
+    expect.not().toContain(2)
+    XCTAssertEqual(expect.result.status, ExampleStatus.Fail)
+  }
 
 }

@@ -3,6 +3,6 @@ class BaseExpectation {
   var _reverse = false
   
   func _assert(cond:Bool) {
-    result.assert(cond || _reverse)
+    result.assert(cond ^ _reverse)
   }
 }

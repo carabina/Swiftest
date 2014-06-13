@@ -31,7 +31,7 @@ Inspired heavily by
 ```swift
 import Swiftest
 
-describe() {
+describe("Swiftest") {
   it("adds 1 + 1!") {
     expect(1 + 1).toEqual(2)
   }

@@ -3,11 +3,11 @@ import XCTest
 
 
 class ExampleTest : XCTestCase {
-  var example = Example(desc : "the-description", blk : nil)
+  var example = Swiftest.Example(desc : "the-description", blk : nil)
   
   func test_init() {
     XCTAssertEqual(example.description, "the-description")
-    XCTAssertEqual(example.status, ExampleStatus.Pending)
+    XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pass)
   }
   
   func test_expect() {
@@ -16,25 +16,25 @@ class ExampleTest : XCTestCase {
   }
   
   func test_run() {
-    let example = Example(desc: "what") {
+    let example = Swiftest.Example(desc: "what") {
       expect(1).toEqual(1)
     }
   
     example.run()
-    XCTAssertEqual(example.getStatus(), ExampleStatus.Pass)
+    XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pass)
   }
   
   func test_run_fail() {
-    let example = Example(desc: "what") {
+    let example = Swiftest.Example(desc: "what") {
       expect(1).toEqual(1)
       expect(1).toEqual(2)
     }
     
     example.run()
     
-    XCTAssertEqual(example.results[0].status, ExampleStatus.Pass)
-    XCTAssertEqual(example.results[1].status, ExampleStatus.Fail)
+    XCTAssertEqual(example.results[0].status, Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(example.results[1].status, Swiftest.ExampleStatus.Fail)
     
-    XCTAssertEqual(example.getStatus(), ExampleStatus.Fail)
+    XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Fail)
   }
 }

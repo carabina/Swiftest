@@ -28,65 +28,65 @@ class SwiftestDood : Comparable {
 
 class ExpectationTest : XCTestCase {
   
-  let expectation = ScalarExpectation(actual: "actual")
+  let expectation = Swiftest.ScalarExpectation(actual: "actual")
   
   func test_toEqual_pass() {
     expectation.toEqual("actual")
-    XCTAssertEqual(expectation.result.status, ExampleStatus.Pass);
+    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_fail() {
     expectation.toEqual("not-actual")
-    XCTAssertEqual(expectation.result.status, ExampleStatus.Fail);
+    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Fail);
   }
   
   func test_toEqual_multiple() {
     expectation.toEqual("actual")
     expectation.toEqual("not-actual")
     
-    XCTAssertEqual(expectation.result.status, ExampleStatus.Fail);
+    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Fail);
   }
   
   func test_not_toEqual() {
     expectation.not().toEqual("not-actual")
-    XCTAssertEqual(expectation.result.status, ExampleStatus.Pass);
+    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_int() {
-    let ex = ScalarExpectation(actual: 1)
+    let ex = Swiftest.ScalarExpectation(actual: 1)
     ex.toEqual(1)
-    XCTAssertEqual(ex.result.status, ExampleStatus.Pass);
+    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_withClass() {
     let dude1 = SwiftestDood(name: "dude1")
     let dude2 = SwiftestDood(name: "dude2")
-    let ex = ScalarExpectation(actual: dude1)
+    let ex = Swiftest.ScalarExpectation(actual: dude1)
     ex.toEqual(dude2)
     
-    XCTAssertEqual(ex.result.status, ExampleStatus.Fail)
+    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Fail)
   }
   
   func test_toBeNil_withNil() {
     var dude1 : SwiftestDood?
-    let ex = ScalarExpectation(actual: dude1)
+    let ex = Swiftest.ScalarExpectation(actual: dude1)
 
     ex.toBeNil()
     
-    XCTAssertEqual(ex.result.status, ExampleStatus.Pass)
+    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass)
   }
   
   func test_toBeNil_withNonNil() {
     var dude1 : SwiftestDood? = SwiftestDood(name: "dude1")
-    let ex = ScalarExpectation(actual: dude1)
+    let ex = Swiftest.ScalarExpectation(actual: dude1)
     
     ex.toBeNil()
     
-    XCTAssertEqual(ex.result.status, ExampleStatus.Fail)
+    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Fail)
   }
   
   func testComparisons() {
-    let ex = ScalarExpectation(actual: 1)
+    let ex = Swiftest.ScalarExpectation(actual: 1)
     
     ex.toBeGreaterThan(0)
     ex.toBeGreaterThanOrEqualTo(0)
@@ -96,6 +96,6 @@ class ExpectationTest : XCTestCase {
     ex.toBeLessThanOrEqualTo(1)
     ex.toBeGreaterThanOrEqualTo(nil)
     
-    XCTAssertEqual(ex.result.status, ExampleStatus.Pass)
+    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass)
   }
 }

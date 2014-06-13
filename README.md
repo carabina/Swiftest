@@ -18,6 +18,7 @@ Inspired heavily by
 ### To do:
 * console-based runner
 * reporter protocols + XCode reporter
+* setup/teardown
 * XCode templates
 * nested descriptions
 * "example" project

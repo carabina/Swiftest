@@ -1,5 +1,7 @@
-enum ExampleStatus : String {
-  case Pending = "Pending"
-  case Pass    = "Pass"
-  case Fail    = "Fail"
+extension Swiftest {
+  enum ExampleStatus : String {
+    case Pending = "Pending"
+    case Pass    = "Pass"
+    case Fail    = "Fail"
+  }
 }

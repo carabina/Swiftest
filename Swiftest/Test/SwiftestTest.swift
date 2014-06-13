@@ -24,6 +24,6 @@ class SwiftestTest : XCTestCase {
     result.run()
     
     XCTAssertEqual(result.examples.count, 1)
-    XCTAssertEqual(result.examples[0].getStatus(), ExampleStatus.Pass)
+    XCTAssertEqual(result.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
   }
 }

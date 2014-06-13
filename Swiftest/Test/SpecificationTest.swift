@@ -3,7 +3,7 @@ import XCTest
 
 class SpecificationTest : XCTestCase {
   
-  let spec = Specification(name: "the-name")
+  let spec = Swiftest.Specification(name: "the-name")
   
   func test_init() {
     XCTAssertEqual(spec.name, "the-name")
@@ -14,13 +14,13 @@ class SpecificationTest : XCTestCase {
     spec.example("does something")
     
     XCTAssertEqual(spec.examples.count, 1)
-    XCTAssertEqual(spec.examples[0].status, ExampleStatus.Pending)
+    XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
   }
   
   func test_createExampleWithBlock() {
     spec.example("does something") { (let ex) in }
     XCTAssertEqual(spec.examples.count, 1);
-    XCTAssertEqual(spec.examples[0].status, ExampleStatus.Pending)
+    XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
   }
   
   func test_run() {
@@ -30,18 +30,18 @@ class SpecificationTest : XCTestCase {
     
     spec.run()
     
-    XCTAssertEqual(spec.examples[0].getStatus(), ExampleStatus.Fail)
+    XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Fail)
   }
   
   func test_it_aliasForExample() {
     spec.it("is pending")
-    XCTAssertEqual(spec.examples[0].status, ExampleStatus.Pending)
+    XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
 
     spec.it("passes") {
       expect(1).toEqual(1)
     }
     
     spec.run()
-    XCTAssertEqual(spec.examples[1].getStatus(), ExampleStatus.Pass)
+    XCTAssertEqual(spec.examples[1].getStatus(), Swiftest.ExampleStatus.Pass)
   }
 }

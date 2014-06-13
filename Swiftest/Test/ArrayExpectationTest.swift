@@ -4,31 +4,31 @@ import XCTest
 class ArrayExpectationTest : XCTestCase {
 
   func test_Collection() {
-    let expect = ArrayExpectation(actual : [1, 2])
+    let expect = Swiftest.ArrayExpectation(actual : [1, 2])
     expect.toEqual([1, 2])
 
-    XCTAssertEqual(expect.result.status, ExampleStatus.Pass)
+    XCTAssertEqual(expect.result.status, Swiftest.ExampleStatus.Pass)
   }
 
   func test_toEqual_Fail() {
-    let expect = ArrayExpectation(actual : [1, 2])
+    let expect = Swiftest.ArrayExpectation(actual : [1, 2])
     expect.toEqual([1, 2, 3])
 
-    XCTAssertEqual(expect.result.status, ExampleStatus.Fail)
+    XCTAssertEqual(expect.result.status, Swiftest.ExampleStatus.Fail)
   }
 
   func test_toContain() {
-    let expect = ArrayExpectation(actual: [1, 2])
+    let expect = Swiftest.ArrayExpectation(actual: [1, 2])
 
     expect.toContain(1)
-    XCTAssertEqual(expect.result.status, ExampleStatus.Pass)
+    XCTAssertEqual(expect.result.status, Swiftest.ExampleStatus.Pass)
   }
 
   func test_toContain_Fail() {
-    let expect = ArrayExpectation(actual : [1, 2])
+    let expect = Swiftest.ArrayExpectation(actual : [1, 2])
 
     expect.toContain(3)
-    XCTAssertEqual(expect.result.status, ExampleStatus.Fail)
+    XCTAssertEqual(expect.result.status, Swiftest.ExampleStatus.Fail)
   }
   
   func test_not_toContain_Pass() {

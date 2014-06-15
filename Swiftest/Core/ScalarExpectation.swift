@@ -12,27 +12,45 @@ extension Swiftest {
     }
     
     func toEqual(expected : T?) {
-      _assert(actual[0] == expected)
+      _assert(
+        _subject() == expected,
+        msg : "expected \(_subject()) to\(_includeNot()) equal \(expected)"
+      )
     }
     
     func toBeNil() {
-      _assert(_subject() == nil)
+      _assert(
+        _subject() == nil,
+        msg : "expected \(_subject()) to\(_includeNot()) be nil"
+      )
     }
     
     func toBeGreaterThan(expected : T?) {
-      _assert(_subject() > expected)
+      _assert(
+        _subject() > expected,
+        msg: "expected \(_subject()) to\(_includeNot()) be greater than \(expected)"
+      )
     }
     
     func toBeLessThan(expected : T?) {
-      _assert(_subject() < expected)
+      _assert(
+        _subject() < expected,
+        msg: "expected \(_subject()) to\(_includeNot()) be less than \(expected)"
+      )
     }
     
     func toBeLessThanOrEqualTo(expected: T?) {
-      _assert(_subject() < expected)
+      _assert(
+        _subject() <= expected,
+        msg: "expected \(_subject()) to\(_includeNot()) be less than or equal to \(expected)"
+      )
     }
     
     func toBeGreaterThanOrEqualTo(expected : T?) {
-      _assert(_subject() >= expected)
+      _assert(
+        _subject() >= expected,
+        msg: "expected \(_subject()) to\(_includeNot()) be greater than or equal to \(expected)"
+      )
     }
     
     func _subject() -> T? {

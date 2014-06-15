@@ -28,12 +28,12 @@ struct SwiftestTests {
       self.exampleFinishedCalls.append(example.description)
     }
     
-    override func expectationPassed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {
-      self.expectationPassedCalls.append(expectation.result.status)
+    override func expectationPassed(expectation: Swiftest.BaseExpectation) {
+      self.expectationPassedCalls.append(expectation.status)
     }
     
-    override func expectationFailed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {
-      self.expectationFailedCalls.append(expectation.result.status)
+    override func expectationFailed(expectation: Swiftest.BaseExpectation) {
+      self.expectationFailedCalls.append(expectation.status)
     }
     
     override func suiteStarted() {

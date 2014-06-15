@@ -32,13 +32,13 @@ extension Swiftest {
     
     func expectationPassed(expectation : BaseExpectation, example : Example) {
       _notify({
-        listener in listener.expectationPassed(expectation, example: example)
+        listener in listener.expectationPassed(expectation)
       })
     }
     
     func expectationFailed(expectation : BaseExpectation, example : Example) {
       _notify({
-        listener in listener.expectationFailed(expectation, example: example)
+        listener in listener.expectationFailed(expectation)
       })
     }
     

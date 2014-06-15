@@ -22,12 +22,14 @@ extension Swiftest {
     func it(desc : String, blk : ExampleBlock) { example(desc, blk) }
     
     func run() {
+      Swiftest.reporter.specificationStarted(self)
       for example in examples {
         self.currentExample = example
         example.run()
         self.currentExample = Swiftest.nullExample
       }
       
+      Swiftest.reporter.specificationFinished(self)
     }
     
     func statuses() -> ExampleStatus[] {

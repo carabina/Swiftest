@@ -13,11 +13,17 @@ extension Swiftest {
     }
     
     func toEqual(expected : List) {
-      _assert(_subject() == expected)
+      _assert(
+        _subject() == expected,
+        msg: "expected \(actual) to\(_includeNot()) equal \(expected)"
+      )
     }
     
     func toContain(expected : T) {
-      _assert(_subject().filter({ el in el == expected }).count > 0)
+      _assert(
+        _subject().filter({ el in el == expected }).count > 0,
+        msg: "expected \(actual)\(_includeNot()) to contain \(expected)"
+      )
     }
     
     func _subject() -> List {

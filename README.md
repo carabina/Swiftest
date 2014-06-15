@@ -14,10 +14,10 @@ Inspired heavily by
 ### What's done:
 * specification DSL
 * simple expectations and assertions for most types
+* console reporter
 
 ### To do:
-* console runner
-* XCode runner
+* XCode reporter
 * setup / teardown
 * XCode templates
 * nested descriptions

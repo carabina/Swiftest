@@ -44,7 +44,11 @@ class SwiftestTest : XCTestCase {
   
   class MyFailingTest : SwiftestSuite {
     var spec = Swiftest.describe("failure") {
-      it("fails") { expect(true).not().toBe(true) }
+      it("fails") {
+        expect(true).not().toBe(true)
+        expect(1 + 1).toEqual(2)
+        expect(true).toBeFalse()
+      }
     }
   }
   
@@ -58,6 +62,7 @@ class SwiftestTest : XCTestCase {
     }
 
     Swiftest.register([MyTest(), MyFailingTest()])
+    Swiftest.reporter.addListener(Swiftest.ConsoleListener())
     Swiftest.run()
     
     let passingResult = Swiftest.specs[0]
@@ -74,5 +79,7 @@ class SwiftestTest : XCTestCase {
       failingResult.examples.count,
       "all 'failing' examples fail"
     )
+    
+    Swiftest.reporter.listeners = []
   }
 }

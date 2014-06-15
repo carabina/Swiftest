@@ -14,7 +14,7 @@ extension Swiftest {
     }
     
     func toEqual(expected : Dict) {
-      _assert(_subject() == expected)
+      _assert(_subject() == expected, msg : "expected \(_subject()) to\(_includeNot()) equal \(expected)")
     }
     
     func toHaveKey(key : Key) {
@@ -22,7 +22,7 @@ extension Swiftest {
         if(k == key) { return _assert(true) }
       }
       
-      return _assert(false)
+      return _assert(false, msg: "expected \(_subject()) to\(_includeNot()) have key \(key)")
     }
     
     func toHaveValue(value : Value) {
@@ -30,7 +30,7 @@ extension Swiftest {
         if(v == value) { return _assert(true) }
       }
       
-      return _assert(false)
+      return _assert(false, msg: "expected \(_subject()) to\(_includeNot()) have key \(value)")
     }
     
     func toContain(pair : Dict) {
@@ -38,7 +38,7 @@ extension Swiftest {
         if([k : v] == pair) { return _assert(true) }
       }
       
-      return _assert(false)
+      return _assert(false, msg: "expected \(_subject()) to have entry \(pair)")
     }
     
     func _subject() -> Dict {

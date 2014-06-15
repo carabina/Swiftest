@@ -15,7 +15,6 @@
 		95A23FE1194A08EE00276922 /* DictionaryExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FD7194A08EE00276922 /* DictionaryExpectation.swift */; };
 		95A23FE2194A08EE00276922 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FD8194A08EE00276922 /* Example.swift */; };
 		95A23FE3194A08EE00276922 /* ExampleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FD9194A08EE00276922 /* ExampleStatus.swift */; };
-		95A23FE4194A08EE00276922 /* ExpectationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FDA194A08EE00276922 /* ExpectationResult.swift */; };
 		95A23FE5194A08EE00276922 /* ScalarExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FDB194A08EE00276922 /* ScalarExpectation.swift */; };
 		95A23FE6194A08EE00276922 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FDC194A08EE00276922 /* Specification.swift */; };
 		95A23FE7194A08EE00276922 /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FDD194A08EE00276922 /* Swiftest.swift */; };
@@ -27,11 +26,12 @@
 		95A23FF5194A090C00276922 /* ScalarExpectationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FED194A090C00276922 /* ScalarExpectationTest.swift */; };
 		95A23FF6194A090C00276922 /* SpecificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FEE194A090C00276922 /* SpecificationTest.swift */; };
 		95A23FF7194A090C00276922 /* SwiftestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FEF194A090C00276922 /* SwiftestTest.swift */; };
+		95AC84EF194E375C00268E9F /* ConsoleListenerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC84EE194E375C00268E9F /* ConsoleListenerTest.swift */; };
 		95ACB878194E2CBB008A28B9 /* MockListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACB876194E2CBB008A28B9 /* MockListener.swift */; };
 		95ACB879194E2CBB008A28B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACB877194E2CBB008A28B9 /* Person.swift */; };
+		95ACB87B194E2D06008A28B9 /* ConsoleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */; };
 		95B21603194B233400856F96 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21602194B233400856F96 /* Reporter.swift */; };
 		95B21605194B24F900856F96 /* ReporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21604194B24F900856F96 /* ReporterTest.swift */; };
-		95F952E2194A6476003A77A9 /* ExpectationResultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,6 @@
 		95A23FD7194A08EE00276922 /* DictionaryExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryExpectation.swift; path = Core/DictionaryExpectation.swift; sourceTree = SOURCE_ROOT; };
 		95A23FD8194A08EE00276922 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Core/Example.swift; sourceTree = SOURCE_ROOT; };
 		95A23FD9194A08EE00276922 /* ExampleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleStatus.swift; path = Core/ExampleStatus.swift; sourceTree = SOURCE_ROOT; };
-		95A23FDA194A08EE00276922 /* ExpectationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectationResult.swift; path = Core/ExpectationResult.swift; sourceTree = SOURCE_ROOT; };
 		95A23FDB194A08EE00276922 /* ScalarExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScalarExpectation.swift; path = Core/ScalarExpectation.swift; sourceTree = SOURCE_ROOT; };
 		95A23FDC194A08EE00276922 /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Specification.swift; path = Core/Specification.swift; sourceTree = SOURCE_ROOT; };
 		95A23FDD194A08EE00276922 /* Swiftest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swiftest.swift; path = Core/Swiftest.swift; sourceTree = SOURCE_ROOT; };
@@ -129,11 +128,12 @@
 		95A23FED194A090C00276922 /* ScalarExpectationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScalarExpectationTest.swift; path = Test/ScalarExpectationTest.swift; sourceTree = SOURCE_ROOT; };
 		95A23FEE194A090C00276922 /* SpecificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificationTest.swift; path = Test/SpecificationTest.swift; sourceTree = SOURCE_ROOT; };
 		95A23FEF194A090C00276922 /* SwiftestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftestTest.swift; path = Test/SwiftestTest.swift; sourceTree = SOURCE_ROOT; };
+		95AC84EE194E375C00268E9F /* ConsoleListenerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleListenerTest.swift; path = Test/ConsoleListenerTest.swift; sourceTree = SOURCE_ROOT; };
 		95ACB876194E2CBB008A28B9 /* MockListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockListener.swift; path = Test/MockListener.swift; sourceTree = SOURCE_ROOT; };
 		95ACB877194E2CBB008A28B9 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Test/Person.swift; sourceTree = SOURCE_ROOT; };
+		95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleListener.swift; path = Core/ConsoleListener.swift; sourceTree = SOURCE_ROOT; };
 		95B21602194B233400856F96 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reporter.swift; path = Core/Reporter.swift; sourceTree = SOURCE_ROOT; };
 		95B21604194B24F900856F96 /* ReporterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReporterTest.swift; path = Test/ReporterTest.swift; sourceTree = SOURCE_ROOT; };
-		95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectationResultTest.swift; path = Test/ExpectationResultTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,9 +178,9 @@
 			children = (
 				95F952DD194A6363003A77A9 /* Expectations */,
 				95783574194A8EB600D3A49E /* BaseListener.swift */,
+				95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */,
 				95A23FD8194A08EE00276922 /* Example.swift */,
 				95A23FD9194A08EE00276922 /* ExampleStatus.swift */,
-				95A23FDA194A08EE00276922 /* ExpectationResult.swift */,
 				95B21602194B233400856F96 /* Reporter.swift */,
 				95A23FDC194A08EE00276922 /* Specification.swift */,
 				95A23FDD194A08EE00276922 /* Swiftest.swift */,
@@ -194,8 +194,8 @@
 			children = (
 				95960AB7194B4074005828FB /* Util */,
 				95F952DE194A636D003A77A9 /* Expectations */,
+				95AC84EE194E375C00268E9F /* ConsoleListenerTest.swift */,
 				95A23FEB194A090C00276922 /* ExampleTest.swift */,
-				95F952E1194A6476003A77A9 /* ExpectationResultTest.swift */,
 				95B21604194B24F900856F96 /* ReporterTest.swift */,
 				95A23FEE194A090C00276922 /* SpecificationTest.swift */,
 				95A23FEF194A090C00276922 /* SwiftestTest.swift */,
@@ -354,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95ACB87B194E2D06008A28B9 /* ConsoleListener.swift in Sources */,
 				95A23FE6194A08EE00276922 /* Specification.swift in Sources */,
 				95A23FE1194A08EE00276922 /* DictionaryExpectation.swift in Sources */,
 				95A23FE7194A08EE00276922 /* Swiftest.swift in Sources */,
@@ -364,7 +365,6 @@
 				95A23FDE194A08EE00276922 /* BaseExpectation.swift in Sources */,
 				95A23FE5194A08EE00276922 /* ScalarExpectation.swift in Sources */,
 				95A23FE3194A08EE00276922 /* ExampleStatus.swift in Sources */,
-				95A23FE4194A08EE00276922 /* ExpectationResult.swift in Sources */,
 				95A23FE2194A08EE00276922 /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +381,7 @@
 				95A23FF6194A090C00276922 /* SpecificationTest.swift in Sources */,
 				95B21605194B24F900856F96 /* ReporterTest.swift in Sources */,
 				95A23FF0194A090C00276922 /* BoolExpectationTest.swift in Sources */,
-				95F952E2194A6476003A77A9 /* ExpectationResultTest.swift in Sources */,
+				95AC84EF194E375C00268E9F /* ConsoleListenerTest.swift in Sources */,
 				95A23FF7194A090C00276922 /* SwiftestTest.swift in Sources */,
 				95A23FF2194A090C00276922 /* DictionaryExpectationTest.swift in Sources */,
 			);

@@ -31,8 +31,8 @@ class ExampleTest : XCTestCase {
     
     example.run()
     
-    XCTAssertEqual(example.results[0].status, Swiftest.ExampleStatus.Pass)
-    XCTAssertEqual(example.results[1].status, Swiftest.ExampleStatus.Fail)
+    XCTAssertEqual(example.expectations[0].status, Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(example.expectations[1].status, Swiftest.ExampleStatus.Fail)
     
     XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Fail)
   }

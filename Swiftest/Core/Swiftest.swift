@@ -24,7 +24,9 @@ struct Swiftest {
   }
   
   static func run() {
+    reporter.suiteStarted()
     for spec in specs { spec.run() }
+    reporter.suiteFinished()
   }
   
   static func register(suite : SwiftestSuite) {

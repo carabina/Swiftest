@@ -7,30 +7,30 @@ class ExpectationTest : XCTestCase {
   
   func test_toEqual_pass() {
     expectation.toEqual("actual")
-    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Pass);
+    XCTAssertEqual(expectation.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_fail() {
     expectation.toEqual("not-actual")
-    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Fail);
+    XCTAssertEqual(expectation.status, Swiftest.ExampleStatus.Fail);
   }
   
   func test_toEqual_multiple() {
     expectation.toEqual("actual")
     expectation.toEqual("not-actual")
     
-    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Fail);
+    XCTAssertEqual(expectation.status, Swiftest.ExampleStatus.Fail);
   }
   
   func test_not_toEqual() {
     expectation.not().toEqual("not-actual")
-    XCTAssertEqual(expectation.result.status, Swiftest.ExampleStatus.Pass);
+    XCTAssertEqual(expectation.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_int() {
     let ex = Swiftest.ScalarExpectation(actual: 1)
     ex.toEqual(1)
-    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass);
+    XCTAssertEqual(ex.status, Swiftest.ExampleStatus.Pass);
   }
   
   func test_toEqual_withClass() {
@@ -39,7 +39,7 @@ class ExpectationTest : XCTestCase {
     let ex = Swiftest.ScalarExpectation(actual: p1)
     ex.toEqual(p2)
     
-    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Fail)
+    XCTAssertEqual(ex.status, Swiftest.ExampleStatus.Fail)
   }
   
   func test_toBeNil_withNil() {
@@ -48,7 +48,7 @@ class ExpectationTest : XCTestCase {
 
     ex.toBeNil()
     
-    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(ex.status, Swiftest.ExampleStatus.Pass)
   }
   
   func test_toBeNil_withNonNil() {
@@ -57,7 +57,7 @@ class ExpectationTest : XCTestCase {
     
     ex.toBeNil()
     
-    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Fail)
+    XCTAssertEqual(ex.status, Swiftest.ExampleStatus.Fail)
   }
   
   func testComparisons() {
@@ -71,6 +71,6 @@ class ExpectationTest : XCTestCase {
     ex.toBeLessThanOrEqualTo(1)
     ex.toBeGreaterThanOrEqualTo(nil)
     
-    XCTAssertEqual(ex.result.status, Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(ex.status, Swiftest.ExampleStatus.Pass)
   }
 }

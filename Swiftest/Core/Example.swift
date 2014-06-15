@@ -3,7 +3,7 @@ extension Swiftest {
     
     var description : String
     var blk : ExampleBlock?
-    var results : ExpectationResult[] = []
+    var expectations : BaseExpectation[] = []
     
     init(desc: String, blk: ExampleBlock?) {
       self.description = desc
@@ -35,7 +35,9 @@ extension Swiftest {
     func run() {
       Swiftest.currentSpec().currentExample = self
       if let exampleBlock = blk {
+        Swiftest.reporter.exampleStarted(self)
         exampleBlock()
+        Swiftest.reporter.exampleFinished(self)
       }
       
       Swiftest.currentSpec().currentExample = Swiftest.nullExample
@@ -52,11 +54,12 @@ extension Swiftest {
     }
     
     func _hasStatus(status : ExampleStatus) -> Bool {
-      return results.filter({ ex in ex.status == status }).count > 0
+      return expectations.filter({ ex in ex.status == status }).count > 0
     }
     
     func _addExpectation<T:BaseExpectation>(ex : T) -> T {
-      results.append(ex.result)
+      ex.example = self
+      expectations.append(ex)
       return ex
     }
   }

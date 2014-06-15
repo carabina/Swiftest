@@ -7,15 +7,18 @@ extension Swiftest {
     }
     
     func toBe(bool:Bool) {
-      _assert(actual == bool)
+      _assert(
+        actual == bool,
+        msg: "expected \(actual) to\(_includeNot()) be \(bool)"
+      )
     }
     
     func toBeFalse() {
-      _assert(!actual)
+      _assert(!actual, msg: "expected \(actual) to\(_includeNot()) be false")
     }
     
     func toBeTrue() {
-      _assert(actual)
+      _assert(actual, msg : "expected \(actual) to\(_includeNot()) be true")
     }
     
     func not() -> BoolExpectation {

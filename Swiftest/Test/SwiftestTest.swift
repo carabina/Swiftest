@@ -1,12 +1,6 @@
 import Swiftest
 import XCTest
 
-extension Array {
-  func last() -> T {
-    return self[self.count - 1]
-  }
-}
-
 class SwiftestTest : XCTestCase {
   class MyTest : SwiftestSuite {
     var spec =  describe("Swiftest") {

@@ -36,6 +36,12 @@ extension Swiftest {
       })
     }
     
+    func expectationFailed(expectation : BaseExpectation, example : Example) {
+      _notify({
+        listener in listener.expectationFailed(expectation, example: example)
+      })
+    }
+    
     func _notify(fn : BaseListener -> Void) {
       for listener in listeners { fn(listener) }
     }

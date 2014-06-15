@@ -10,6 +10,7 @@ struct SwiftestTests {
     var suiteStartedCalls : String[]          = []
     var suiteFinishedCalls : String[]         = []
     var expectationPassedCalls : Swiftest.ExampleStatus[]  = []
+    var expectationFailedCalls : Swiftest.ExampleStatus[] = []
     
     override func specificationStarted(spec: Swiftest.Specification) {
       self.specificationStartedCalls.append(spec.name)
@@ -29,6 +30,10 @@ struct SwiftestTests {
     
     override func expectationPassed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {
       self.expectationPassedCalls.append(expectation.result.status)
+    }
+    
+    override func expectationFailed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {
+      self.expectationFailedCalls.append(expectation.result.status)
     }
     
     override func suiteStarted() {

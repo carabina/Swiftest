@@ -33,12 +33,12 @@ extension Swiftest {
     }
     
     func run() {
-      Swiftest.context.currentExample = self
+      Swiftest.currentSpec().currentExample = self
       if let exampleBlock = blk {
         exampleBlock()
       }
       
-      Swiftest.context.currentExample = Swiftest.nullExample
+      Swiftest.currentSpec().currentExample = Swiftest.nullExample
     }
     
     func getStatus() -> ExampleStatus {

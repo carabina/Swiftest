@@ -80,10 +80,10 @@ class ReporterTest : XCTestCase {
   func test_notifyExpectationFailed() {
     let expectation = Swiftest.ScalarExpectation(actual: 1)
     expectation.toEqual(2)
-    XCTAssertEqual(listener.expectationPassedCalls.count, 0)
+    XCTAssertEqual(listener.expectationFailedCalls.count, 0)
     
-    reporter.expectationPassed(expectation, example: example)
-    XCTAssertEqual(listener.expectationPassedCalls.count, 1)
-    XCTAssertEqual(listener.expectationPassedCalls[0], Swiftest.ExampleStatus.Fail)
+    reporter.expectationFailed(expectation, example: example)
+    XCTAssertEqual(listener.expectationFailedCalls.count, 1)
+    XCTAssertEqual(listener.expectationFailedCalls[0], Swiftest.ExampleStatus.Fail)
   }
 }

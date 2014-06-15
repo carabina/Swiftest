@@ -15,6 +15,6 @@ extension Swiftest {
     func exampleFinished(example:Swiftest.Example) {}
     
     func expectationPassed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {}
-    func expectationFailed(context:Swiftest.Context) {}
+    func expectationFailed(expectation: Swiftest.BaseExpectation, example: Swiftest.Example) {}
   }
 }

@@ -1,34 +1,85 @@
 import Swiftest
 import XCTest
 
+extension Array {
+  func last() -> T {
+    return self[self.count - 1]
+  }
+}
+
 class SwiftestTest : XCTestCase {
-  
-  func test_Describe() {
-    let result = describe("a-spec") {
-      example("test-one") {
-        expect(true).toEqual(true)
-        expect(true).not().toBe(false)
-        
-        expect(1).toEqual(1)
-        
-        expect("abc").toEqual("abc")
-        expect("abc").not().toEqual("def")
-        
-        expect(["a", "b", "c"]).toEqual(["a","b","c"])
-        expect(["a", "b", "c"]).not().toEqual([])
-        
-        expect(["key" : "value"]).toEqual(["key" : "value"])
+  class MyTest : SwiftestSuite {
+    var spec =  describe("Swiftest") {
+      it("adds 1 + 1!") {
+        expect(1 + 1).toEqual(2)
       }
       
+      it("knows true from false!") {
+        expect(true).toBeTrue()
+        expect(true).not().toBeFalse()
+      }
+      
+      example("comparing letters of the alphabet!") {
+        expect("abc").toEqual("abc")
+      }
+      
+      it("knows what stuff is NOT other stuff!") {
+        expect(2 + 2).not().toEqual(5)
+      }
+      
+      example("arrays!") {
+        expect([1, 2, 3]).toEqual([1, 2, 3])
+        expect([1, 2, 3]).toContain(1)
+      }
+      
+      example("dictionaries!") {
+        expect([ "key" : "val" ]).toEqual([ "key" : "val"])
+        expect([ "key" : "val" ]).toHaveKey("key")
+        expect([ "key" : "val" ]).toHaveValue("val")
+      }
+      
+      example("your own classes!") {
+        let person1 = SwiftestTests.Person(name: "Bob")
+        let person2 = SwiftestTests.Person(name: "Alice")
+        
+        expect(person1).not().toEqual(person2)
+      }
+    }
+  }
+  
+  class MyFailingTest : SwiftestSuite {
+    var spec = Swiftest.describe("failure") {
       it("fails") {
         expect(true).not().toBe(true)
       }
     }
+  }
+  
+  func test_describe() {
+    let isPassing:Swiftest.Example -> Bool = { (let ex) in
+      return ex.getStatus() == Swiftest.ExampleStatus.Pass
+    }
     
-    result.run()
+    let isFailing:Swiftest.Example -> Bool = { (let ex) in
+      return ex.getStatus() == Swiftest.ExampleStatus.Fail
+    }
+
+    Swiftest.register([MyTest(), MyFailingTest()])
+    Swiftest.run()
     
-    XCTAssertEqual(result.examples.count, 2)
-    XCTAssertEqual(result.examples[0].getStatus(), Swiftest.ExampleStatus.Pass)
-    XCTAssertEqual(result.examples[1].getStatus(), Swiftest.ExampleStatus.Fail)
+    let passingResult = Swiftest.specs[0]
+    let failingResult = Swiftest.specs[1]
+    
+    XCTAssertEqual(
+      passingResult.examples.filter(isPassing).count,
+      passingResult.examples.count,
+      "all 'passing' examples pass"
+    )
+    
+    XCTAssertEqual(
+      failingResult.examples.filter(isFailing).count,
+      failingResult.examples.count,
+      "all 'failing' examples fail"
+    )
   }
 }

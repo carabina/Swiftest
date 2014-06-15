@@ -4,6 +4,7 @@ extension Swiftest {
   class Specification {
     var name     : String
     var examples : Example[] = []
+    var currentExample : Example = Swiftest.nullExample
     
     init(name: String) { self.name = name }
     
@@ -21,7 +22,12 @@ extension Swiftest {
     func it(desc : String, blk : ExampleBlock) { example(desc, blk) }
     
     func run() {
-      for example in examples { example.run() }
+      for example in examples {
+        self.currentExample = example
+        example.run()
+        self.currentExample = Swiftest.nullExample
+      }
+      
     }
     
     func statuses() -> ExampleStatus[] {

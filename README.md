@@ -16,9 +16,9 @@ Inspired heavily by
 * simple expectations and assertions for most types
 
 ### To do:
-* console-based runner
-* reporter protocols + XCode reporter
-* setup/teardown
+* console runner
+* XCode runner
+* setup / teardown
 * XCode templates
 * nested descriptions
 * "example" project
@@ -29,43 +29,58 @@ Inspired heavily by
 ### Example
 
 ```swift
+// SwiftestSpec.swift
 import Swiftest
 
-describe("Swiftest") {
-  it("adds 1 + 1!") {
-    expect(1 + 1).toEqual(2)
-  }
+// create a class that implements the SwiftestSuite interface,
+// and define the 'spec' member property of that class
 
-  it("knows true from false!") {
-    expect(true).toBeTrue()
-    expect(true).not().toBeFalse()
-  }
+class SwiftestSpec : SwiftestSuite {
+  var spec = describe("Swiftest") {
+    it("adds 1 + 1!") {
+      expect(1 + 1).toEqual(2)
+    }
 
-  example("comparing letters of the alphabet!") {
-    expect("abc").toEqual("abc")
-  }
+    it("knows true from false!") {
+      expect(true).toBeTrue()
+      expect(true).not().toBeFalse()
+    }
 
-  it("knows what stuff is NOT other stuff!") {
-    expect(2 + 2).not().toEqual(5)
-  }
+    example("comparing letters of the alphabet!") {
+      expect("abc").toEqual("abc")
+    }
 
-  example("arrays!") {
-    expect([1, 2, 3]).toEqual([1, 2, 3])
-    expect([1, 2, 3]).toContain(1)
-  }
+    it("knows what stuff is NOT other stuff!") {
+      expect(2 + 2).not().toEqual(5)
+    }
 
-  example("dictionaries!") {
-    expect([ "key" : "val" ]).toEqual([ "key" : "val"])
-    expect([ "key" : "val" ]).toHaveKey("key")
-    expect([ "key" : "val" ]).toHaveValue("val")
-  }
+    example("arrays!") {
+      expect([1, 2, 3]).toEqual([1, 2, 3])
+      expect([1, 2, 3]).toContain(1)
+    }
 
-  example("your own classes!") {
-    // Person is a class that implements Comparable
-    let person1 = Person(name: "Bob")
-    let person2 = Person(name: "Alice")
+    example("dictionaries!") {
+      expect([ "key" : "val" ]).toEqual([ "key" : "val"])
+      expect([ "key" : "val" ]).toHaveKey("key")
+      expect([ "key" : "val" ]).toHaveValue("val")
+    }
 
-    expect(person1).not().toEqual(person2)
+    example("your own classes!") {
+      // Person is a class that implements Comparable
+      let person1 = Person(name: "Bob")
+      let person2 = Person(name: "Alice")
+
+      expect(person1).not().toEqual(person2)
+    }
   }
 }
 ```
+
+```swift
+// main.swift
+import Swiftest
+
+Swiftest.register(SwiftestSpec())
+Swiftest.run()
+```
+

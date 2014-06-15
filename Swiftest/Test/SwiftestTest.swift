@@ -30,6 +30,7 @@ class SwiftestTest : XCTestCase {
         expect([ "key" : "val" ]).toEqual([ "key" : "val"])
         expect([ "key" : "val" ]).toHaveKey("key")
         expect([ "key" : "val" ]).toHaveValue("val")
+        expect([ "key" : "val", "key2" : "val2"]).toContain([ "key2" : "val2"])
       }
       
       example("your own classes!") {
@@ -43,9 +44,7 @@ class SwiftestTest : XCTestCase {
   
   class MyFailingTest : SwiftestSuite {
     var spec = Swiftest.describe("failure") {
-      it("fails") {
-        expect(true).not().toBe(true)
-      }
+      it("fails") { expect(true).not().toBe(true) }
     }
   }
   

@@ -22,7 +22,7 @@ extension Swiftest {
         if(k == key) { return _assert(true) }
       }
       
-      return(_assert(false))
+      return _assert(false)
     }
     
     func toHaveValue(value : Value) {
@@ -30,7 +30,15 @@ extension Swiftest {
         if(v == value) { return _assert(true) }
       }
       
-      return(_assert(false))
+      return _assert(false)
+    }
+    
+    func toContain(pair : Dict) {
+      for (k, v) in _subject() {
+        if([k : v] == pair) { return _assert(true) }
+      }
+      
+      return _assert(false)
     }
     
     func _subject() -> Dict {

@@ -6,13 +6,27 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		958C71B3194F9F7200C92ED3 /* SwiftestMain */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 958C71B4194F9F7200C92ED3 /* Build configuration list for PBXAggregateTarget "SwiftestMain" */;
+			buildPhases = (
+				958C71B7194F9F7600C92ED3 /* Generate Swiftest "main.swift" File */,
+			);
+			dependencies = (
+			);
+			name = SwiftestMain;
+			productName = SwiftestMain;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		95774470194EA39A00DE21B8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577446F194EA39A00DE21B8 /* Person.swift */; };
-		95774471194EA40200DE21B8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577446B194EA2FB00DE21B8 /* main.swift */; };
 		95774473194EA40B00DE21B8 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95774472194EA40B00DE21B8 /* libSwiftest.dylib */; };
 		95774474194EA40F00DE21B8 /* libExample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95774445194EA29200DE21B8 /* libExample.dylib */; };
 		9577447B194EA6B100DE21B8 /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95774479194EA6B100DE21B8 /* PersonSpec.swift */; };
 		9577447C194EA6B100DE21B8 /* SwiftestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */; };
+		958C71BC194FA13B00C92ED3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C71BA194FA12400C92ED3 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +36,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 95774444194EA29200DE21B8;
 			remoteInfo = Example;
+		};
+		958C71B8194F9FD100C92ED3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9577443D194EA29200DE21B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 958C71B3194F9F7200C92ED3;
+			remoteInfo = SwiftestMain;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,11 +61,11 @@
 /* Begin PBXFileReference section */
 		95774445194EA29200DE21B8 /* libExample.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libExample.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		95774464194EA2E800DE21B8 /* ExampleSpecs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExampleSpecs; sourceTree = BUILT_PRODUCTS_DIR; };
-		9577446B194EA2FB00DE21B8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = ExampleSpecs/main.swift; sourceTree = "<group>"; };
 		9577446F194EA39A00DE21B8 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		95774472194EA40B00DE21B8 /* libSwiftest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSwiftest.dylib; path = "../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/libSwiftest.dylib"; sourceTree = "<group>"; };
 		95774479194EA6B100DE21B8 /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonSpec.swift; path = ExampleSpecs/PersonSpec.swift; sourceTree = "<group>"; };
 		9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftestSpec.swift; path = ExampleSpecs/SwiftestSpec.swift; sourceTree = "<group>"; };
+		958C71BA194FA12400C92ED3 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = ExampleSpecs/main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +118,9 @@
 		9577445F194EA2BF00DE21B8 /* ExampleSpecs */ = {
 			isa = PBXGroup;
 			children = (
+				958C71BA194FA12400C92ED3 /* main.swift */,
 				95774479194EA6B100DE21B8 /* PersonSpec.swift */,
 				9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */,
-				9577446B194EA2FB00DE21B8 /* main.swift */,
 			);
 			name = ExampleSpecs;
 			sourceTree = "<group>";
@@ -145,6 +166,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				958C71B9194F9FD100C92ED3 /* PBXTargetDependency */,
 				95774476194EA41500DE21B8 /* PBXTargetDependency */,
 			);
 			name = ExampleSpecs;
@@ -167,6 +189,9 @@
 					95774463194EA2E800DE21B8 = {
 						CreatedOnToolsVersion = 6.0;
 					};
+					958C71B3194F9F7200C92ED3 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 				};
 			};
 			buildConfigurationList = 95774440194EA29200DE21B8 /* Build configuration list for PBXProject "Example" */;
@@ -183,9 +208,27 @@
 			targets = (
 				95774444194EA29200DE21B8 /* Example */,
 				95774463194EA2E800DE21B8 /* ExampleSpecs */,
+				958C71B3194F9F7200C92ED3 /* SwiftestMain */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		958C71B7194F9F7600C92ED3 /* Generate Swiftest "main.swift" File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Swiftest \"main.swift\" File";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "function _join { local IFS=\"$1\"; shift; echo \"$*\"; }\n\nSWIFTEST_ROOT=\"$SRCROOT/ExampleSpecs\"\n\nSPEC_CLASSES=`find \"$SWIFTEST_ROOT\" -name *[sS]pec.swift | sed 's!.*/!!' | sed 's!\\.swift!()!'`\nSPECS=`_join \", \" $SPEC_CLASSES`\nSWIFTEST_MAIN=\"$SWIFTEST_ROOT/main.swift\"\n\necho -e \"import Swiftest\\n\\n\\\nSwiftest.reporter.addListener(Swiftest.ConsoleListener())\\n\\\nSwiftest.register([\\n  $SPECS\\n])\\n\\n\\\nSwiftest.run()\" > $SWIFTEST_MAIN";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		95774441194EA29200DE21B8 /* Sources */ = {
@@ -200,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95774471194EA40200DE21B8 /* main.swift in Sources */,
+				958C71BC194FA13B00C92ED3 /* main.swift in Sources */,
 				9577447B194EA6B100DE21B8 /* PersonSpec.swift in Sources */,
 				9577447C194EA6B100DE21B8 /* SwiftestSpec.swift in Sources */,
 			);
@@ -213,6 +256,11 @@
 			isa = PBXTargetDependency;
 			target = 95774444194EA29200DE21B8 /* Example */;
 			targetProxy = 95774475194EA41500DE21B8 /* PBXContainerItemProxy */;
+		};
+		958C71B9194F9FD100C92ED3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 958C71B3194F9F7200C92ED3 /* SwiftestMain */;
+			targetProxy = 958C71B8194F9FD100C92ED3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -344,6 +392,20 @@
 			};
 			name = Release;
 		};
+		958C71B5194F9F7200C92ED3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		958C71B6194F9F7200C92ED3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -363,12 +425,22 @@
 				9577445B194EA29200DE21B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95774468194EA2E900DE21B8 /* Build configuration list for PBXNativeTarget "ExampleSpecs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95774469194EA2E900DE21B8 /* Debug */,
 				9577446A194EA2E900DE21B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		958C71B4194F9F7200C92ED3 /* Build configuration list for PBXAggregateTarget "SwiftestMain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				958C71B5194F9F7200C92ED3 /* Debug */,
+				958C71B6194F9F7200C92ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

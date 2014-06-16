@@ -32,8 +32,8 @@ Inspired heavily by
 // SwiftestSpec.swift
 import Swiftest
 
-// create a class that implements the SwiftestSuite interface,
-// and define the 'spec' member property of that class
+// create a class that implements the SwiftestSuite protocol
+// and define the 'spec' member property of that class using `describe`
 
 class SwiftestSpec : SwiftestSuite {
   var spec = describe("Swiftest") {
@@ -75,13 +75,3 @@ class SwiftestSpec : SwiftestSuite {
   }
 }
 ```
-
-```swift
-// main.swift
-import Swiftest
-
-Swiftest.reporter.addListener(Swiftest.ConsoleListener())
-Swiftest.register(SwiftestSpec())
-Swiftest.run()
-```
-

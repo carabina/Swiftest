@@ -21,7 +21,7 @@ class SwiftestSpec : SwiftestSuite {
     
     example("arrays!") {
       expect([1, 2, 3]).toEqual([1, 2, 3])
-      expect([1, 2, 3]).toContain(3)
+      expect([1, 2, 3]).toContain(1)
     }
     
     example("dictionaries!") {
@@ -30,5 +30,6 @@ class SwiftestSpec : SwiftestSuite {
       expect([ "key" : "val" ]).toHaveValue("val")
       expect([ "key" : "val", "key2" : "val2"]).toContain([ "key2" : "val2"])
     }
+
   }
 }

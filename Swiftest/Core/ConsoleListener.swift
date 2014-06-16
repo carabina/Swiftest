@@ -7,11 +7,13 @@ extension Swiftest {
     var runCount = 0
     var passedCount = 0
     var failedCount = 0
+    var pendingCount = 0
 
     override func suiteStarted() { printer("\nSwiftest suite\n") }
     
     override func suiteFinished() {
-      printer("\n:: RESULTS :: ✓ \(passedCount)/\(runCount) examples :: × \(failedCount) failure\n\n")
+      printer("\n:: RESULTS ::")
+      print("✓ \(passedCount)/\(runCount) examples passed :: × \(failedCount) failed :: ★ \(pendingCount) pending\n\n")
       assert(failedCount == 0, "exiting with failure status")
     }
 
@@ -37,6 +39,7 @@ extension Swiftest {
           }
         }
       } else {
+        pendingCount++
         printer(" ★ \(example.description)")
       }
     }

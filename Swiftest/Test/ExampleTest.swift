@@ -6,7 +6,7 @@ class ExampleTest : XCTestCase {
   
   func test_init() {
     XCTAssertEqual(example.description, "the-description")
-    XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pass)
+    XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pending)
   }
   
   func test_expect() {

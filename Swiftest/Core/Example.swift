@@ -50,7 +50,7 @@ extension Swiftest {
         return ExampleStatus.Pending
       }
       
-      return ExampleStatus.Pass
+      return expectations.count > 0 ? ExampleStatus.Pass : ExampleStatus.Pending
     }
     
     func _hasStatus(status : ExampleStatus) -> Bool {

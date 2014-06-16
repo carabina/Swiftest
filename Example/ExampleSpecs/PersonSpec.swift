@@ -13,6 +13,10 @@ class PersonSpec : SwiftestSuite {
     it("has an age") {
       expect(person.age).toEqual(42)
     }
+
+    it("gets to be pending") {
+
+    }
     
     it("ASPLODES") {
       expect(person.name).toEqual("a-different-name")

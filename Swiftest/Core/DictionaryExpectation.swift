@@ -14,35 +14,44 @@ extension Swiftest {
     }
     
     func toEqual(expected : Dict) {
-      _assert(_subject() == expected, msg : "expected \(_subject()) to\(_includeNot()) equal \(expected)")
+      _assert(
+        _subject() == expected,
+        msg : "expected <\(_subject())> to\(_includeNot()) equal <\(expected)>")
     }
     
     func toHaveKey(key : Key) {
-      for k in _subject().keys {
-        if(k == key) { return _assert(true) }
-      }
-      
-      return _assert(false, msg: "expected \(_subject()) to\(_includeNot()) have key \(key)")
+      _assert(
+        _contains({ (k, v) in k == key }),
+        msg: "expected <\(_subject())> to\(_includeNot()) have key <\(key)>"
+      )
     }
     
     func toHaveValue(value : Value) {
-      for v in _subject().values {
-        if(v == value) { return _assert(true) }
-      }
-      
-      return _assert(false, msg: "expected \(_subject()) to\(_includeNot()) have key \(value)")
+      _assert(
+        _contains({ (k, v) in v == value }),
+        msg: "expected <\(_subject())> to\(_includeNot()) have key <\(value)>"
+      )
     }
     
     func toContain(pair : Dict) {
-      for (k, v) in _subject() {
-        if([k : v] == pair) { return _assert(true) }
-      }
-      
-      return _assert(false, msg: "expected \(_subject()) to have entry \(pair)")
+      _assert(
+        _contains({ (k, v) in [k : v] == pair }),
+        msg: "expected <\(_subject())> to\(_includeNot()) have entry <\(pair)>"
+      )
     }
     
     func _subject() -> Dict {
       return actual[0]
+    }
+    
+    func _contains(blk : (Key, Value) -> Bool) -> Bool {
+      var found = false
+
+      for (key, value) in _subject() {
+        if blk(key, value) { found = true }
+      }
+      
+      return found
     }
   }
 }

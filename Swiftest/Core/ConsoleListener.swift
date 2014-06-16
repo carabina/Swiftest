@@ -8,12 +8,10 @@ extension Swiftest {
     var passedCount = 0
     var failedCount = 0
 
-    override func suiteStarted() {
-      printer("\nSwiftest test suite started\n")
-    }
+    override func suiteStarted() { printer("\nSwiftest suite\n") }
     
     override func suiteFinished() {
-      printer("\nRESULTS : ✓ \(passedCount)/\(runCount), × \(failedCount)\n\n")
+      printer("\n:: RESULTS :: ✓ \(passedCount)/\(runCount) examples :: × \(failedCount) failure\n\n")
       assert(failedCount == 0, "exiting with failure status")
     }
 
@@ -24,18 +22,22 @@ extension Swiftest {
       runCount++
       if example.getStatus() == ExampleStatus.Pass {
         passedCount++
-        printer("✓ \(example.description)")
+        printer(" ✓ \(example.description)")
       } else if example.getStatus() == ExampleStatus.Fail {
         failedCount++
-        printer("× \(example.description)")
+        printer(" × \(example.description)")
 
         for expectation in example.expectations {
           if expectation.status == ExampleStatus.Fail {
-            printer("  × \(expectation.msg)")
+            printer("   × \(expectation.msg)")
           } else if expectation.status == ExampleStatus.Pass {
-            printer("  ✓ \(expectation.msg)")
+            printer("   ✓ \(expectation.msg)")
+          } else {
+            printer("   ★ \(expectation.msg)")
           }
         }
+      } else {
+        printer(" ★ \(example.description)")
       }
     }
   }

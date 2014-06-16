@@ -2,17 +2,15 @@ extension Swiftest {
   class Example {
     
     var description : String
-    var blk : ExampleBlock?
+    var blk : ExampleBlock = Swiftest.nullBlock
     var expectations : BaseExpectation[] = []
     
-    init(desc: String, blk: ExampleBlock?) {
+    init(desc: String, blk: ExampleBlock) {
       self.description = desc
       self.blk  = blk
     }
     
-    init(desc: String) {
-      self.description = desc
-    }
+    init(desc: String) { self.description = desc }
     
     func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
       return _addExpectation(ScalarExpectation(actual: actual))
@@ -34,11 +32,10 @@ extension Swiftest {
     
     func run() {
       Swiftest.currentSpec().currentExample = self
-      if let exampleBlock = blk {
-        Swiftest.reporter.exampleStarted(self)
-        exampleBlock()
-        Swiftest.reporter.exampleFinished(self)
-      }
+      
+      Swiftest.reporter.exampleStarted(self)
+      blk()
+      Swiftest.reporter.exampleFinished(self)
       
       Swiftest.currentSpec().currentExample = Swiftest.nullExample
     }

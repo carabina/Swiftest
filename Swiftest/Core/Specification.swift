@@ -14,7 +14,7 @@ extension Swiftest {
     }
     
     func example(desc: String) {
-      var example = Example(desc: desc, blk : nil)
+      var example = Example(desc: desc, blk : Swiftest.nullBlock)
       examples.append(example)
     }
     

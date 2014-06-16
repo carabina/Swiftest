@@ -8,6 +8,7 @@ struct Swiftest {
   static let reporter = Swiftest.Reporter()
   static let nullExample = Example(desc : "null example") {}
   static let nullSpec = Specification(name: "null spec")
+  static let nullBlock: DescribeBlk = {}
 
   static var specs : Specification[]  = []
   static var specStack : Specification[] = []
@@ -70,4 +71,8 @@ func example(desc : String, blk : ExampleBlock) {
 
 func it(desc: String, blk: ExampleBlock) {
   Swiftest.currentSpec().it(desc, blk)
+}
+
+func it(desc: String) {
+  Swiftest.currentSpec().it(desc, Swiftest.nullBlock)
 }

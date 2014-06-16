@@ -2,7 +2,7 @@ import Swiftest
 import XCTest
 
 class ExampleTest : XCTestCase {
-  var example = Swiftest.Example(desc : "the-description", blk : nil)
+  var example = Swiftest.Example(desc : "the-description")
   
   func test_init() {
     XCTAssertEqual(example.description, "the-description")

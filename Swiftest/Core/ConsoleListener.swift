@@ -7,23 +7,17 @@ extension Swiftest {
     var runCount = 0
     var passedCount = 0
     var failedCount = 0
-    var startTime = 0
 
     override func suiteStarted() {
       printer("\nSwiftest test suite started\n")
     }
     
-    override func specificationStarted(spec: Swiftest.Specification) {
-      printer(spec.name)
-    }
-    
-    override func specificationFinished(spec: Swiftest.Specification) {
-      printer("")
-    }
-    
     override func suiteFinished() {
       printer("\nRESULTS : ✓ \(passedCount)/\(runCount), × \(failedCount)\n\n")
     }
+
+    override func specificationStarted(spec: Swiftest.Specification) { printer(spec.name) }
+    override func specificationFinished(spec: Swiftest.Specification) { printer("") }
     
     override func exampleFinished(example: Swiftest.Example) {
       runCount++

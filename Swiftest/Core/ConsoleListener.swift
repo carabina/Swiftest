@@ -14,6 +14,7 @@ extension Swiftest {
     
     override func suiteFinished() {
       printer("\nRESULTS : ✓ \(passedCount)/\(runCount), × \(failedCount)\n\n")
+      assert(failedCount == 0, "exiting with failure status")
     }
 
     override func specificationStarted(spec: Swiftest.Specification) { printer(spec.name) }

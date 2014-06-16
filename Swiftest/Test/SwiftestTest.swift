@@ -62,7 +62,6 @@ class SwiftestTest : XCTestCase {
     }
 
     Swiftest.register([MyTest(), MyFailingTest()])
-    Swiftest.reporter.addListener(Swiftest.ConsoleListener())
     Swiftest.run()
     
     let passingResult = Swiftest.specs[0]
@@ -79,7 +78,5 @@ class SwiftestTest : XCTestCase {
       failingResult.examples.count,
       "all 'failing' examples fail"
     )
-    
-    Swiftest.reporter.listeners = []
   }
 }

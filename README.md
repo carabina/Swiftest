@@ -3,8 +3,8 @@ Swiftest
 
 Experimental BDD "spec" framework for Apple's
 [Swift](https://developer.apple.com/swift/) language.
-Total work-in-progress. Goal is for this to be written in pure Swift, no
-Objective-C here.
+Total work-in-progress, but it is currently usable, if you check out the Example
+project. Goal is for this to be written in pure Swift.
 
 Inspired heavily by
 [RSpec](https://github.com/rspec/rspec), [Jasmine](http://jasmine.github.io/),
@@ -15,13 +15,13 @@ Inspired heavily by
 * specification DSL
 * simple expectations and assertions for most types
 * console reporter
+* "example" project
 
 ### To do:
 * XCode reporter
 * setup / teardown
 * XCode templates
 * nested descriptions
-* "example" project
 * closure matchers (`expect(someAction()).toChange(someValue).to(otherValue)`)
 * command-line interface?
 * more + customizable matchers? (or just via extensions?)
@@ -80,6 +80,7 @@ class SwiftestSpec : SwiftestSuite {
 // main.swift
 import Swiftest
 
+Swiftest.reporter.addListener(Swiftest.ConsoleListener())
 Swiftest.register(SwiftestSpec())
 Swiftest.run()
 ```

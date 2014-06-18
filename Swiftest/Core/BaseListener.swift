@@ -8,13 +8,13 @@ extension Swiftest {
     func suiteStarted() {}
     func suiteFinished() {}
     
-    func specificationStarted(spec: Swiftest.Specification) {}
-    func specificationFinished(spec: Swiftest.Specification) {}
+    func specificationStarted(spec: Specification) {}
+    func specificationFinished(spec: Specification) {}
     
-    func exampleStarted(example:Swiftest.Example) {}
-    func exampleFinished(example:Swiftest.Example) {}
+    func exampleStarted(example: Example) {}
+    func exampleFinished(example: Example) {}
     
-    func expectationPassed(expectation: Swiftest.BaseExpectation) {}
-    func expectationFailed(expectation: Swiftest.BaseExpectation) {}
+    func expectationPassed(expectation: BaseExpectation) {}
+    func expectationFailed(expectation: BaseExpectation) {}
   }
 }

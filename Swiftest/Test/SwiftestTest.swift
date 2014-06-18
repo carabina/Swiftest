@@ -64,8 +64,8 @@ class SwiftestTest : XCTestCase {
     Swiftest.register([MyTest(), MyFailingTest()])
     Swiftest.run()
     
-    let passingResult = Swiftest.specs[0]
-    let failingResult = Swiftest.specs[1]
+    let passingResult = Swiftest.context.specs[0]
+    let failingResult = Swiftest.context.specs[1]
     
     XCTAssertEqual(
       passingResult.examples.filter(isPassing).count,

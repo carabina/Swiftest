@@ -3,7 +3,7 @@ import XCTest
 
 class BoolExpectationTest : XCTestCase {
   
-  let ex = Swiftest.BoolExpectation(actual : true)
+  let ex = Swiftest.BoolExpectation(subject : true)
   
   func test_truth_pass() {
     ex.toBe(true)

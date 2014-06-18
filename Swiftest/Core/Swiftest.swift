@@ -1,78 +1,33 @@
-typealias DescribeBlk = (Void -> Void)
-
-protocol SwiftestSuite {
-  var spec : Swiftest.Specification { get }
-}
-
 struct Swiftest {
-  static let reporter = Swiftest.Reporter()
-  static let nullExample = Example(desc : "null example") {}
-  static let nullSpec = Specification(name: "null spec")
-  static let nullBlock: DescribeBlk = {}
+  typealias DescribeBlk = (Void -> Void)
+  typealias Runner = (Context -> Void)
 
-  static var specs : Specification[]  = []
-  static var specStack : Specification[] = []
+  static let reporter = Reporter()
+  static let nullExample = Example(desc : "null example") {}
+  static let nullSpec = Specification(subject: "null spec")
+  static let nullBlock : DescribeBlk = {}
   
+  static var context = Context()
+  static var runner : Runner = { (let context) in
+    for spec in context.specs { spec.run() }
+  }
+
   static func describe(target : String, blk : DescribeBlk) -> Specification {
-    _addSpec(Specification(name: target))
+    context.addSpec(Specification(subject: target))
+
     blk()
 
-    return specStack.removeLast()
+    return context.popSpec()
   }
   
-  static func currentSpec() -> Specification {
-    return specStack.count > 0 ? specStack[specStack.count - 1] : nullSpec
+  static func register(suites:SwiftestSuite[]) -> SwiftestSuite[] {
+    for suite in suites { suite.spec }; return suites
   }
   
   static func run() {
     reporter.suiteStarted()
-    for spec in specs { spec.run() }
+    runner(context)
     reporter.suiteFinished()
   }
-  
-  static func register(suite : SwiftestSuite) {
-    var spec = suite.spec
-  }
-  
-  static func register(suites : SwiftestSuite[]) {
-    suites.map({ s in s.spec })
-  }
-  
-  static func _addSpec(spec : Specification) {
-    specStack.append(spec)
-    specs.append(spec)
-  }
 }
 
-func describe(target : String, blk :DescribeBlk) -> Swiftest.Specification {
-  return Swiftest.describe(target, blk)
-}
-
-func expect<T:Comparable>(actual : T) -> Swiftest.ScalarExpectation<T> {
-  return Swiftest.currentSpec().currentExample.expect(actual)}
-
-func expect<T:Comparable>(actual : T[]) -> Swiftest.ArrayExpectation<T> {
-  return Swiftest.currentSpec().currentExample.expect(actual)
-}
-
-func expect<K:Comparable,V:Comparable>(
-  actual : Dictionary<K,V>
-) -> Swiftest.DictionaryExpectation<K, V> {
-  return Swiftest.currentSpec().currentExample.expect(actual)
-}
-
-func expect(actual : Bool) -> Swiftest.BoolExpectation {
-  return Swiftest.currentSpec().currentExample.expect(actual)
-}
-
-func example(desc : String, blk : ExampleBlock) {
-  Swiftest.currentSpec().example(desc, blk)
-}
-
-func it(desc: String, blk: ExampleBlock) {
-  Swiftest.currentSpec().it(desc, blk)
-}
-
-func it(desc: String) {
-  Swiftest.currentSpec().it(desc, Swiftest.nullBlock)
-}

@@ -3,10 +3,10 @@ import XCTest
 
 class SpecificationTest : XCTestCase {
   
-  let spec = Swiftest.Specification(name: "the-name")
+  let spec = Swiftest.Specification(subject: "the-name")
   
   func test_init() {
-    XCTAssertEqual(spec.name, "the-name")
+    XCTAssertEqual(spec.subject, "the-name")
     XCTAssertEqual(spec.examples.count, 0)
   }
   
@@ -33,15 +33,4 @@ class SpecificationTest : XCTestCase {
     XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Fail)
   }
   
-  func test_it_aliasForExample() {
-    spec.it("is pending")
-    XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pending)
-
-    spec.it("passes") {
-      expect(1).toEqual(1)
-    }
-    
-    spec.run()
-    XCTAssertEqual(spec.examples[1].getStatus(), Swiftest.ExampleStatus.Pass)
-  }
 }

@@ -1,8 +1,6 @@
 import Swiftest
 
 Swiftest.reporter.addListener(Swiftest.ConsoleListener())
-Swiftest.register([
-  PersonSpec(),SwiftestSpec()
-])
 
+SwiftestConfig()
 Swiftest.run()

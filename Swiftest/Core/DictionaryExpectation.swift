@@ -2,10 +2,10 @@ extension Swiftest {
   class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
     typealias Dict = Dictionary<Key,Value>
     
-    var actual : Dict[]
+    var subject : Dict[]
     
-    init(actual : Dict) {
-      self.actual = [actual]
+    init(subject : Dict) {
+      self.subject = [subject]
     }
     
     func not() -> DictionaryExpectation {
@@ -41,7 +41,7 @@ extension Swiftest {
     }
     
     func _subject() -> Dict {
-      return actual[0]
+      return subject[0]
     }
     
     func _contains(blk : (Key, Value) -> Bool) -> Bool {

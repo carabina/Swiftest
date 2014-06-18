@@ -2,48 +2,44 @@ extension Swiftest {
   class Reporter {
     var listeners : BaseListener[] = []
     
-    func addListener(listener : BaseListener) {
-      listeners.append(listener)
+    func addListener(lsn : BaseListener) {
+      listeners.append(lsn)
     }
     
     func suiteStarted() {
-      _notify({ listener in listener.suiteStarted() })
+      notify({ lsn in lsn.suiteStarted() })
     }
     
     func suiteFinished() {
-      _notify({ listener in listener.suiteFinished() })
+      notify({ lsn in lsn.suiteFinished() })
     }
     
     func specificationStarted(spec : Specification) {
-      _notify({ listener in listener.specificationStarted(spec) })
+      notify({ lsn in lsn.specificationStarted(spec) })
     }
     
     func specificationFinished(spec : Specification) {
-      _notify({ listener in listener.specificationFinished(spec) })
+      notify({ lsn in lsn.specificationFinished(spec) })
     }
     
     func exampleStarted(example : Example) {
-      _notify({ listener in listener.exampleStarted(example) })
+      notify({ lsn in lsn.exampleStarted(example) })
     }
     
     func exampleFinished(example : Example) {
-      _notify({ listener in listener.exampleFinished(example) })
+      notify({ lsn in lsn.exampleFinished(example) })
     }
     
-    func expectationPassed(expectation : BaseExpectation, example : Example) {
-      _notify({
-        listener in listener.expectationPassed(expectation)
-      })
+    func expectationPassed(expectation : BaseExpectation) {
+      notify({ lsn in lsn.expectationPassed(expectation) })
     }
     
-    func expectationFailed(expectation : BaseExpectation, example : Example) {
-      _notify({
-        listener in listener.expectationFailed(expectation)
-      })
+    func expectationFailed(expectation : BaseExpectation) {
+      notify({ lsn in lsn.expectationFailed(expectation) })
     }
     
-    func _notify(fn : BaseListener -> Void) {
-      for listener in listeners { fn(listener) }
+    func notify(fn : BaseListener -> Void) {
+      for lsn in listeners { fn(lsn) }
     }
   }
 }

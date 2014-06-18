@@ -27,6 +27,7 @@
 		9577447B194EA6B100DE21B8 /* PersonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95774479194EA6B100DE21B8 /* PersonSpec.swift */; };
 		9577447C194EA6B100DE21B8 /* SwiftestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */; };
 		958C71BC194FA13B00C92ED3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C71BA194FA12400C92ED3 /* main.swift */; };
+		95CAD0E2195131A600D654FD /* SwiftestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E1195131A600D654FD /* SwiftestConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 			remoteGlobalIDString = 95774444194EA29200DE21B8;
 			remoteInfo = Example;
 		};
-		958C71B8194F9FD100C92ED3 /* PBXContainerItemProxy */ = {
+		95CAD0E31951385100D654FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9577443D194EA29200DE21B8 /* Project object */;
 			proxyType = 1;
@@ -66,6 +67,7 @@
 		95774479194EA6B100DE21B8 /* PersonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonSpec.swift; path = ExampleSpecs/PersonSpec.swift; sourceTree = "<group>"; };
 		9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftestSpec.swift; path = ExampleSpecs/SwiftestSpec.swift; sourceTree = "<group>"; };
 		958C71BA194FA12400C92ED3 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = ExampleSpecs/main.swift; sourceTree = "<group>"; };
+		95CAD0E1195131A600D654FD /* SwiftestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftestConfig.swift; path = ExampleSpecs/SwiftestConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,11 +120,20 @@
 		9577445F194EA2BF00DE21B8 /* ExampleSpecs */ = {
 			isa = PBXGroup;
 			children = (
-				958C71BA194FA12400C92ED3 /* main.swift */,
+				95CAD0E51951396500D654FD /* Config */,
 				95774479194EA6B100DE21B8 /* PersonSpec.swift */,
 				9577447A194EA6B100DE21B8 /* SwiftestSpec.swift */,
 			);
 			name = ExampleSpecs;
+			sourceTree = "<group>";
+		};
+		95CAD0E51951396500D654FD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				958C71BA194FA12400C92ED3 /* main.swift */,
+				95CAD0E1195131A600D654FD /* SwiftestConfig.swift */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +177,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				958C71B9194F9FD100C92ED3 /* PBXTargetDependency */,
 				95774476194EA41500DE21B8 /* PBXTargetDependency */,
+				95CAD0E41951385100D654FD /* PBXTargetDependency */,
 			);
 			name = ExampleSpecs;
 			productName = ExampleSpecs;
@@ -226,7 +237,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "function _join { local IFS=\"$1\"; shift; echo \"$*\"; }\n\nSWIFTEST_ROOT=\"$SRCROOT/ExampleSpecs\"\n\nSPEC_CLASSES=`find \"$SWIFTEST_ROOT\" -name *[sS]pec.swift | sed 's!.*/!!' | sed 's!\\.swift!()!'`\nSPECS=`_join \", \" $SPEC_CLASSES`\nSWIFTEST_MAIN=\"$SWIFTEST_ROOT/main.swift\"\n\necho -e \"import Swiftest\\n\\n\\\nSwiftest.reporter.addListener(Swiftest.ConsoleListener())\\n\\\nSwiftest.register([\\n  $SPECS\\n])\\n\\n\\\nSwiftest.run()\" > $SWIFTEST_MAIN";
+			shellScript = "function _join { local IFS=\"$1\"; shift; echo \"$*\"; }\n\nSWIFTEST_ROOT=\"$SRCROOT/ExampleSpecs\"\n\nSPEC_CLASSES=`find \"$SWIFTEST_ROOT\" -name *[sS]pec.swift | sed 's!.*/!!' | sed 's!\\.swift!()!'`\nSPECS=`_join \", \" $SPEC_CLASSES`\nSWIFTEST_CONFIG=\"$SWIFTEST_ROOT/SwiftestConfig.swift\"\n\necho -e \"import Swiftest\\nclass SwiftestConfig {\\n\\\n  var suites = Swiftest.register([\\n    $SPECS\\n  ])\\n\\\n}\" > $SWIFTEST_CONFIG";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -245,6 +256,7 @@
 			files = (
 				958C71BC194FA13B00C92ED3 /* main.swift in Sources */,
 				9577447B194EA6B100DE21B8 /* PersonSpec.swift in Sources */,
+				95CAD0E2195131A600D654FD /* SwiftestConfig.swift in Sources */,
 				9577447C194EA6B100DE21B8 /* SwiftestSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,10 +269,10 @@
 			target = 95774444194EA29200DE21B8 /* Example */;
 			targetProxy = 95774475194EA41500DE21B8 /* PBXContainerItemProxy */;
 		};
-		958C71B9194F9FD100C92ED3 /* PBXTargetDependency */ = {
+		95CAD0E41951385100D654FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 958C71B3194F9F7200C92ED3 /* SwiftestMain */;
-			targetProxy = 958C71B8194F9FD100C92ED3 /* PBXContainerItemProxy */;
+			targetProxy = 95CAD0E31951385100D654FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -443,6 +455,7 @@
 				958C71B6194F9F7200C92ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

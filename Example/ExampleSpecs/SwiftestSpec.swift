@@ -1,7 +1,7 @@
 import Swiftest
 
 class SwiftestSpec : SwiftestSuite {
-  let spec = describe("Swiftest") {
+  var spec = describe("Swiftest") {
     it("adds 1 + 1!") {
       expect(1 + 1).toEqual(2)
     }

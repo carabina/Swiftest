@@ -4,14 +4,14 @@ extension Swiftest {
     var _reverse = false
     var msg = "expectation failed"
 
-    var example = Swiftest.nullExample
+    var example = nullExample
     
     func _assert(cond:Bool) {
       self.status = cond ^ _reverse ? ExampleStatus.Pass : ExampleStatus.Fail
       
       switch status {
-      case ExampleStatus.Pass: Swiftest.reporter.expectationPassed(self, example: example)
-      case ExampleStatus.Fail: Swiftest.reporter.expectationFailed(self, example: example)
+      case ExampleStatus.Pass: reporter.expectationPassed(self)
+      case ExampleStatus.Fail: reporter.expectationFailed(self)
       default: ()
       }
     }

@@ -13,34 +13,35 @@ extension Swiftest {
     
     override func suiteFinished() {
       printer("\n:: RESULTS ::")
-      print("✓ \(passedCount)/\(runCount) examples passed :: × \(failedCount) failed :: ★ \(pendingCount) pending\n\n")
+      printer("✓ \(passedCount)/\(runCount) examples passed :: × \(failedCount) failed :: ★ \(pendingCount) pending\n\n")
       assert(failedCount == 0, "exiting with failure status")
     }
 
-    override func specificationStarted(spec: Swiftest.Specification) { printer(spec.name) }
-    override func specificationFinished(spec: Swiftest.Specification) { printer("") }
+    override func specificationStarted(spec: Specification) { printer(spec.subject) }
+    override func specificationFinished(spec: Specification) { printer("") }
     
     override func exampleFinished(example: Swiftest.Example) {
       runCount++
       if example.getStatus() == ExampleStatus.Pass {
         passedCount++
-        printer(" ✓ \(example.description)")
+        printer(" ✓ \(example.subject)")
       } else if example.getStatus() == ExampleStatus.Fail {
         failedCount++
-        printer(" × \(example.description)")
-
-        for expectation in example.expectations {
-          if expectation.status == ExampleStatus.Fail {
-            printer("   × \(expectation.msg)")
-          } else if expectation.status == ExampleStatus.Pass {
-            printer("   ✓ \(expectation.msg)")
-          } else {
-            printer("   ★ \(expectation.msg)")
-          }
-        }
+        printer(" × \(example.subject)")
+        for ex in example.expectations { printStatus(ex) }
       } else {
         pendingCount++
-        printer(" ★ \(example.description)")
+        printer(" ★ \(example.subject)")
+      }
+    }
+    
+    func printStatus(expectation : BaseExpectation) {
+      if expectation.status == ExampleStatus.Fail {
+        printer("   × \(expectation.msg)")
+      } else if expectation.status == ExampleStatus.Pass {
+        printer("   ✓ \(expectation.msg)")
+      } else {
+        printer("   ★ \(expectation.msg)")
       }
     }
   }

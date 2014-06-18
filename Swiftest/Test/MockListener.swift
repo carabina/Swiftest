@@ -13,19 +13,19 @@ struct SwiftestTests {
     var expectationFailedCalls : Swiftest.ExampleStatus[] = []
     
     override func specificationStarted(spec: Swiftest.Specification) {
-      self.specificationStartedCalls.append(spec.name)
+      self.specificationStartedCalls.append(spec.subject)
     }
     
     override func specificationFinished(spec: Swiftest.Specification) {
-      self.specificationFinishedCalls.append(spec.name)
+      self.specificationFinishedCalls.append(spec.subject)
     }
     
     override func exampleStarted(example: Swiftest.Example) {
-      self.exampleStartedCalls.append(example.description)
+      self.exampleStartedCalls.append(example.subject)
     }
     
     override func exampleFinished(example: Swiftest.Example) {
-      self.exampleFinishedCalls.append(example.description)
+      self.exampleFinishedCalls.append(example.subject)
     }
     
     override func expectationPassed(expectation: Swiftest.BaseExpectation) {

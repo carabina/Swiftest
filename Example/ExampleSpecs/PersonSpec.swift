@@ -2,8 +2,7 @@ import Swiftest
 import Example
 
 class PersonSpec : SwiftestSuite {
-  let spec = describe("Person") {
-    
+  var spec = describe("Person") {
     let person = Person(name : "name", age : 42)
     
     it("has a name") {
@@ -19,6 +18,5 @@ class PersonSpec : SwiftestSuite {
     it("ASPLODES") {
       expect(person.name).toEqual("a-different-name")
     }
-    
   }
 }

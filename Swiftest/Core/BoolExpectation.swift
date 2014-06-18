@@ -1,24 +1,24 @@
 extension Swiftest {
   class BoolExpectation : BaseExpectation {
-    var actual : Bool
+    var subject : Bool
     
-    init(actual : Bool) {
-      self.actual = actual
+    init(subject : Bool) {
+      self.subject = subject
     }
     
     func toBe(bool:Bool) {
       _assert(
-        actual == bool,
-        msg: "expected <\(actual)> to\(_includeNot()) be <\(bool)>"
+        subject == bool,
+        msg: "expected <\(subject)> to\(_includeNot()) be <\(bool)>"
       )
     }
     
     func toBeFalse() {
-      _assert(!actual, msg: "expected <\(actual)> to\(_includeNot()) be false")
+      _assert(!subject, msg: "expected <\(subject)> to\(_includeNot()) be false")
     }
     
     func toBeTrue() {
-      _assert(actual, msg : "expected <\(actual)> to\(_includeNot()) be true")
+      _assert(subject, msg : "expected <\(subject)> to\(_includeNot()) be true")
     }
     
     func not() -> BoolExpectation {

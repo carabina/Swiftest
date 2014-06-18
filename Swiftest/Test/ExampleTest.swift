@@ -2,16 +2,16 @@ import Swiftest
 import XCTest
 
 class ExampleTest : XCTestCase {
-  var example = Swiftest.Example(desc : "the-description")
+  var example = Swiftest.Example(subject : "the-description")
   
   func test_init() {
-    XCTAssertEqual(example.description, "the-description")
+    XCTAssertEqual(example.subject, "the-description")
     XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pending)
   }
   
   func test_expect() {
     let expectation = example.expect("a")
-    XCTAssertEqual(expectation.actual[0]!, "a")
+    XCTAssertEqual(expectation.subject[0]!, "a")
   }
   
   func test_run() {

@@ -4,7 +4,12 @@ Swiftest
 Experimental BDD "spec" framework for Apple's
 [Swift](https://developer.apple.com/swift/) language.
 Total work-in-progress, but it is currently usable, if you check out the Example
-project. Goal is for this to be written in pure Swift.
+project. The goal is for the core components to be written in pure Swift (with
+the exception of the XCTest integration), in a cleanly extendable way.
+
+Swiftest's runner is configurable with a simple closure, so the behavior can be
+easily overridden, while still preserving the internal components. You can
+register listeners that will fire as the test suite executes.
 
 Inspired heavily by
 [RSpec](https://github.com/rspec/rspec), [Jasmine](http://jasmine.github.io/),
@@ -18,13 +23,13 @@ Inspired heavily by
 * "example" project
 
 ### To do:
-* XCode reporter
-* setup / teardown
-* XCode templates
+* XCTest integration (WIP)
+* XCode target, project, and file templates
 * nested descriptions
+* setup / teardown
 * closure matchers (`expect(someAction()).toChange(someValue).to(otherValue)`)
 * command-line interface?
-* more + customizable matchers? (or just via extensions?)
+* more + customizable matchers? (or just allow via extensions?)
 
 ### Example
 

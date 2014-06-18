@@ -1,9 +1,9 @@
 extension Swiftest {
   class ScalarExpectation<T:Comparable> : BaseExpectation {
-    var actual : T?[]
+    var subject : T?[]
     
-    init(actual : T?) {
-      self.actual = [actual]
+    init(subject : T?) {
+      self.subject = [subject]
     }
     
     func not() -> ScalarExpectation {
@@ -54,7 +54,7 @@ extension Swiftest {
     }
     
     func _subject() -> T? {
-      return actual[0]
+      return subject[0]
     }
   }
 }

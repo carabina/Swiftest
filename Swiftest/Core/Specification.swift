@@ -2,40 +2,26 @@ typealias ExampleBlock = ((Void) -> Void)
 
 extension Swiftest {
   class Specification {
-    var name     : String
+    var subject  : String
     var examples : Example[] = []
-    var currentExample : Example = Swiftest.nullExample
+    var onExample : Example = nullExample
     
-    init(name: String) { self.name = name }
+    init(subject : String) { self.subject = subject }
     
-    func example(desc: String, blk : ExampleBlock) {
-      var example = Example(desc: desc, blk : blk)
-      examples.append(example)
+    func example(desc : String, blk : ExampleBlock = nullBlock) {
+      examples.append(Example(desc: desc, blk : blk))
     }
-    
-    func example(desc: String) {
-      var example = Example(desc: desc, blk : Swiftest.nullBlock)
-      examples.append(example)
-    }
-    
-    func it(desc : String) { example(desc) }
-    func it(desc : String, blk : ExampleBlock) { example(desc, blk) }
     
     func run() {
-      Swiftest.reporter.specificationStarted(self)
-      for example in examples {
-        self.currentExample = example
-        example.run()
-        self.currentExample = Swiftest.nullExample
-      }
-      
-      Swiftest.reporter.specificationFinished(self)
+      reporter.specificationStarted(self)
+      for example in examples { example.run() }
+      reporter.specificationFinished(self)
     }
     
-    func statuses() -> ExampleStatus[] {
-      return examples.map() {(let ex) -> ExampleStatus in
-        ex.getStatus()
-      }
+    func withExample(ex: Example, fn: Void -> Void) {
+      onExample = ex
+      fn()
+      onExample = nullExample
     }
   }
 }

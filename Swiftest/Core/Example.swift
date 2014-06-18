@@ -1,43 +1,41 @@
 extension Swiftest {
   class Example {
     
-    var description : String
-    var blk : ExampleBlock = Swiftest.nullBlock
+    var subject : String
+    var blk : ExampleBlock = nullBlock
     var expectations : BaseExpectation[] = []
     
     init(desc: String, blk: ExampleBlock) {
-      self.description = desc
+      self.subject = desc
       self.blk  = blk
     }
     
-    init(desc: String) { self.description = desc }
+    init(subject: String) { self.subject = subject }
     
-    func expect<T:Comparable>(actual : T) -> ScalarExpectation<T> {
-      return _addExpectation(ScalarExpectation(actual: actual))
+    func expect<T:Comparable>(subject : T) -> ScalarExpectation<T> {
+      return _addExpectation(ScalarExpectation(subject: subject))
     }
     
-    func expect<T:Comparable>(actual : T[]) -> ArrayExpectation<T> {
-      return _addExpectation(ArrayExpectation(actual : actual))
+    func expect<T:Comparable>(subject : T[]) -> ArrayExpectation<T> {
+      return _addExpectation(ArrayExpectation(subject : subject))
     }
     
     func expect<K:Comparable,V:Comparable>(
-      actual : Dictionary<K,V>
+      subject : Dictionary<K,V>
     ) -> DictionaryExpectation<K, V> {
-        return _addExpectation(DictionaryExpectation(actual : actual))
+        return _addExpectation(DictionaryExpectation(subject : subject))
     }
     
-    func expect(actual : Bool) -> BoolExpectation {
-      return _addExpectation(BoolExpectation(actual: actual))
+    func expect(subject : Bool) -> BoolExpectation {
+      return _addExpectation(BoolExpectation(subject: subject))
     }
     
     func run() {
-      Swiftest.currentSpec().currentExample = self
-      
-      Swiftest.reporter.exampleStarted(self)
-      blk()
-      Swiftest.reporter.exampleFinished(self)
-      
-      Swiftest.currentSpec().currentExample = Swiftest.nullExample
+      context.current().withExample(self) {
+        reporter.exampleStarted(self)
+        self.blk()
+        reporter.exampleFinished(self)
+      }
     }
     
     func getStatus() -> ExampleStatus {

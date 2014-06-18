@@ -4,8 +4,8 @@ import XCTest
 class ReporterTest : XCTestCase {
   var reporter = Swiftest.Reporter()
   var listener = SwiftestTests.MockListener(name : "my-listener")
-  let spec = Swiftest.Specification(name : "test-spec")
-  let example = Swiftest.Example(desc : "test-example")
+  let spec = Swiftest.Specification(subject : "test-spec")
+  let example = Swiftest.Example(subject : "test-example")
   
   override func setUp() {
     reporter.addListener(listener)
@@ -40,7 +40,7 @@ class ReporterTest : XCTestCase {
     XCTAssertEqual(listener.specificationStartedCalls.count, 0)
     reporter.specificationStarted(spec)
     
-    XCTAssertEqual(listener.specificationStartedCalls[0], spec.name)
+    XCTAssertEqual(listener.specificationStartedCalls[0], spec.subject)
   }
   
   func test_notifySpecificationFinished() {
@@ -48,7 +48,7 @@ class ReporterTest : XCTestCase {
     reporter.specificationFinished(spec)
     
     XCTAssertEqual(listener.specificationFinishedCalls.count, 1)
-    XCTAssertEqual(listener.specificationFinishedCalls[0], spec.name)
+    XCTAssertEqual(listener.specificationFinishedCalls[0], spec.subject)
   }
   
   func test_notifyExampleStarted() {
@@ -56,7 +56,7 @@ class ReporterTest : XCTestCase {
     reporter.exampleStarted(example)
 
     XCTAssertEqual(listener.exampleStartedCalls.count, 1)
-    XCTAssertEqual(listener.exampleStartedCalls[0], example.description)
+    XCTAssertEqual(listener.exampleStartedCalls[0], example.subject)
   }
   
   func test_notifyExampleFinished() {
@@ -64,25 +64,25 @@ class ReporterTest : XCTestCase {
     
     reporter.exampleFinished(example)
     XCTAssertEqual(listener.exampleFinishedCalls.count, 1)
-    XCTAssertEqual(listener.exampleFinishedCalls[0], example.description)
+    XCTAssertEqual(listener.exampleFinishedCalls[0], example.subject)
   }
   
   func test_notifyExpectationPassed() {
-    let expectation = Swiftest.ScalarExpectation(actual: 1)
+    let expectation = Swiftest.ScalarExpectation(subject: 1)
     expectation.toEqual(1)
     XCTAssertEqual(listener.expectationPassedCalls.count, 0)
     
-    reporter.expectationPassed(expectation, example: example)
+    reporter.expectationPassed(expectation)
     XCTAssertEqual(listener.expectationPassedCalls.count, 1)
     XCTAssertEqual(listener.expectationPassedCalls[0], Swiftest.ExampleStatus.Pass)
   }
   
   func test_notifyExpectationFailed() {
-    let expectation = Swiftest.ScalarExpectation(actual: 1)
+    let expectation = Swiftest.ScalarExpectation(subject: 1)
     expectation.toEqual(2)
     XCTAssertEqual(listener.expectationFailedCalls.count, 0)
     
-    reporter.expectationFailed(expectation, example: example)
+    reporter.expectationFailed(expectation)
     XCTAssertEqual(listener.expectationFailedCalls.count, 1)
     XCTAssertEqual(listener.expectationFailedCalls[0], Swiftest.ExampleStatus.Fail)
   }

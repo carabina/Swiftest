@@ -32,6 +32,9 @@
 		95ACB87B194E2D06008A28B9 /* ConsoleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */; };
 		95B21603194B233400856F96 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21602194B233400856F96 /* Reporter.swift */; };
 		95B21605194B24F900856F96 /* ReporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21604194B24F900856F96 /* ReporterTest.swift */; };
+		95CAD0E019512CD400D654FD /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0DF19512CD400D654FD /* Suite.swift */; };
+		95CAD0E7195141B300D654FD /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E6195141B300D654FD /* DSL.swift */; };
+		95CAD0E91951421300D654FD /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E81951421300D654FD /* Context.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,9 @@
 		95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleListener.swift; path = Core/ConsoleListener.swift; sourceTree = SOURCE_ROOT; };
 		95B21602194B233400856F96 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reporter.swift; path = Core/Reporter.swift; sourceTree = SOURCE_ROOT; };
 		95B21604194B24F900856F96 /* ReporterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReporterTest.swift; path = Test/ReporterTest.swift; sourceTree = SOURCE_ROOT; };
+		95CAD0DF19512CD400D654FD /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Suite.swift; path = Core/Suite.swift; sourceTree = SOURCE_ROOT; };
+		95CAD0E6195141B300D654FD /* DSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Core/DSL.swift; sourceTree = SOURCE_ROOT; };
+		95CAD0E81951421300D654FD /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Core/Context.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +192,14 @@
 				95F952DD194A6363003A77A9 /* Expectations */,
 				95783574194A8EB600D3A49E /* BaseListener.swift */,
 				95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */,
+				95CAD0E6195141B300D654FD /* DSL.swift */,
+				95CAD0E81951421300D654FD /* Context.swift */,
 				95A23FD8194A08EE00276922 /* Example.swift */,
 				95A23FD9194A08EE00276922 /* ExampleStatus.swift */,
 				95B21602194B233400856F96 /* Reporter.swift */,
 				95A23FDC194A08EE00276922 /* Specification.swift */,
 				95A23FDD194A08EE00276922 /* Swiftest.swift */,
+				95CAD0DF19512CD400D654FD /* Suite.swift */,
 			);
 			name = Swiftest;
 			path = SwiftestCore;
@@ -363,7 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				95ACB87B194E2D06008A28B9 /* ConsoleListener.swift in Sources */,
+				95CAD0E7195141B300D654FD /* DSL.swift in Sources */,
 				95A23FE6194A08EE00276922 /* Specification.swift in Sources */,
+				95CAD0E91951421300D654FD /* Context.swift in Sources */,
 				95A23FE1194A08EE00276922 /* DictionaryExpectation.swift in Sources */,
 				95A23FE7194A08EE00276922 /* Swiftest.swift in Sources */,
 				95A23FDF194A08EE00276922 /* BoolExpectation.swift in Sources */,
@@ -372,6 +383,7 @@
 				95A23FE0194A08EE00276922 /* ArrayExpectation.swift in Sources */,
 				95A23FDE194A08EE00276922 /* BaseExpectation.swift in Sources */,
 				95A23FE5194A08EE00276922 /* ScalarExpectation.swift in Sources */,
+				95CAD0E019512CD400D654FD /* Suite.swift in Sources */,
 				95A23FE3194A08EE00276922 /* ExampleStatus.swift in Sources */,
 				95A23FE2194A08EE00276922 /* Example.swift in Sources */,
 			);

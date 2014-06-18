@@ -1,10 +1,10 @@
 extension Swiftest {
   class ArrayExpectation<T:Comparable> : BaseExpectation {
     typealias List = T[]
-    var actual : List[]
+    var subject : List[]
     
-    init(actual : List) {
-      self.actual = [actual]
+    init(subject : List) {
+      self.subject = [subject]
     }
     
     func not() -> ArrayExpectation {
@@ -27,7 +27,7 @@ extension Swiftest {
     }
     
     func _subject() -> List {
-      return actual[0]
+      return subject[0]
     }
   }
 }

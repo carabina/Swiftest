@@ -7,9 +7,7 @@ extension Swiftest {
     
     var cursor : Cursor?
     
-    init() {
-      
-    }
+    init() {}
     
     func _assert(cond:Bool) {
       self.status = cond ^ _reverse ? ExampleStatus.Pass : ExampleStatus.Fail

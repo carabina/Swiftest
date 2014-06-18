@@ -30,5 +30,9 @@ class SwiftestSpec : SwiftestSuite {
       expect([ "key" : "val" ]).toHaveValue("val")
       expect([ "key" : "val", "key2" : "val2"]).toContain([ "key2" : "val2"])
     }
+    
+    it("compares 'comparable' enums") {
+      expect(Swiftest.ExampleStatus.Pass).toEqual(Swiftest.ExampleStatus.Pass)
+    }
   }
 }

@@ -17,6 +17,9 @@ func expect<K:Comparable,V:Comparable>(
   return __currentEx().expect(subject, file: file, line: line)
 }
 
+//func expect<T:enum.type>(subject : T, file: String = __FILE__, line:Int = __LINE__) {
+//}
+
 func __currentEx() -> Swiftest.Example {
   return Swiftest.context.currentExample()
 }

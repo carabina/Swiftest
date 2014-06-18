@@ -2,8 +2,10 @@ extension Swiftest {
   class BoolExpectation : BaseExpectation {
     var subject : Bool
     
-    init(subject : Bool) {
+    init(subject : Bool, file:String = __FILE__, line:Int = __LINE__) {
       self.subject = subject
+      super.init()
+      self.cursor = Cursor(file: file, line: line)
     }
     
     func toBe(bool:Bool) {

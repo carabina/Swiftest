@@ -1,22 +1,20 @@
 struct Swiftest {
-  typealias DescribeBlk = (Void -> Void)
-  typealias Runner = (Context -> Void)
+  typealias VoidFn = Void -> Void
+  typealias Runner = Context -> Void
 
   static let reporter = Reporter()
-  static let nullExample = Example(desc : "null example") {}
+  static let nullExample = Example(subject : "null example", fn: nullFn)
   static let nullSpec = Specification(subject: "null spec")
-  static let nullBlock : DescribeBlk = {}
+  static let nullFn : VoidFn = {}
   
   static var context = Context()
   static var runner : Runner = { (let context) in
     for spec in context.specs { spec.run() }
   }
 
-  static func describe(target : String, blk : DescribeBlk) -> Specification {
-    context.addSpec(Specification(subject: target))
-
-    blk()
-
+  static func describe(target:String, fn:VoidFn, file:String = __FILE__, line:Int = __LINE__) -> Specification {
+    context.addSpec(Specification(subject: target, file: file, line: line))
+    fn()
     return context.popSpec()
   }
   

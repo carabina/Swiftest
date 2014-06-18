@@ -43,13 +43,13 @@ class SwiftestTest : XCTestCase {
   }
   
   class MyFailingTest : SwiftestSuite {
-    var spec = Swiftest.describe("failure") {
+    var spec = Swiftest.describe("failure", fn: {
       it("fails") {
         expect(true).not().toBe(true)
         expect(1 + 1).toEqual(2)
         expect(true).toBeFalse()
       }
-    }
+    })
   }
   
   func test_describe() {

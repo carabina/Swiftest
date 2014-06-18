@@ -2,8 +2,10 @@ extension Swiftest {
   class ScalarExpectation<T:Comparable> : BaseExpectation {
     var subject : T?[]
     
-    init(subject : T?) {
+    init(subject : T?, file:String = __FILE__, line:Int = __LINE__) {
       self.subject = [subject]
+      super.init()
+      self.cursor = Cursor(file: file, line: line)
     }
     
     func not() -> ScalarExpectation {

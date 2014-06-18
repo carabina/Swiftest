@@ -3,8 +3,13 @@ extension Swiftest {
     var status = ExampleStatus.Pending
     var _reverse = false
     var msg = "expectation failed"
-
     var example = nullExample
+    
+    var cursor : Cursor?
+    
+    init() {
+      
+    }
     
     func _assert(cond:Bool) {
       self.status = cond ^ _reverse ? ExampleStatus.Pass : ExampleStatus.Fail

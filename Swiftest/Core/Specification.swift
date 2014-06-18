@@ -1,15 +1,18 @@
-typealias ExampleBlock = ((Void) -> Void)
-
 extension Swiftest {
   class Specification {
-    var subject  : String
     var examples : Example[] = []
     var onExample : Example = nullExample
+
+    let subject  : String
+    let cursor : Cursor
     
-    init(subject : String) { self.subject = subject }
+    init(subject:String, file:String = __FILE__, line:Int = __LINE__) {
+      self.subject = subject
+      self.cursor = Cursor(file: file, line: line)
+    }
     
-    func example(desc : String, blk : ExampleBlock = nullBlock) {
-      examples.append(Example(desc: desc, blk : blk))
+    func example(subject:String, fn:VoidFn, file:String = __FILE__, line:Int = __LINE__) {
+      examples.append(Example(subject: subject, fn: fn, file: file, line: line))
     }
     
     func run() {

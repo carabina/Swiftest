@@ -2,9 +2,11 @@ extension Swiftest {
   class ArrayExpectation<T:Comparable> : BaseExpectation {
     typealias List = T[]
     var subject : List[]
-    
-    init(subject : List) {
+
+    init(subject : List, file:String = __FILE__, line:Int = __LINE__) {
       self.subject = [subject]
+      super.init()
+      self.cursor = Cursor(file: file, line: line)
     }
     
     func not() -> ArrayExpectation {

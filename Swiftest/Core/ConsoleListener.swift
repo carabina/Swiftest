@@ -37,11 +37,12 @@ extension Swiftest {
     
     func printStatus(expectation : BaseExpectation) {
       if expectation.status == ExampleStatus.Fail {
-        printer("   × \(expectation.msg)")
+        printer("  × \(expectation.msg)")
+        printer("     at \(expectation.cursor!.file):\(expectation.cursor!.line)")
       } else if expectation.status == ExampleStatus.Pass {
-        printer("   ✓ \(expectation.msg)")
+        printer("  ✓ \(expectation.msg)")
       } else {
-        printer("   ★ \(expectation.msg)")
+        printer("  ★ \(expectation.msg)")
       }
     }
   }

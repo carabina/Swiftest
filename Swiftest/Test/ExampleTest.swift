@@ -2,7 +2,7 @@ import Swiftest
 import XCTest
 
 class ExampleTest : XCTestCase {
-  var example = Swiftest.Example(subject : "the-description")
+  var example = Swiftest.Example(subject : "the-description", fn:Swiftest.nullFn)
   
   func test_init() {
     XCTAssertEqual(example.subject, "the-description")
@@ -15,19 +15,19 @@ class ExampleTest : XCTestCase {
   }
   
   func test_run() {
-    let example = Swiftest.Example(desc: "what") {
+    let example = Swiftest.Example(subject: "what", fn: {
       expect(1).toEqual(1)
-    }
+    })
   
     example.run()
     XCTAssertEqual(example.getStatus(), Swiftest.ExampleStatus.Pass)
   }
   
   func test_run_fail() {
-    let example = Swiftest.Example(desc: "what") {
+    let example = Swiftest.Example(subject: "what", fn: {
       expect(1).toEqual(1)
       expect(1).toEqual(2)
-    }
+    })
     
     example.run()
     

@@ -5,7 +5,7 @@ class ReporterTest : XCTestCase {
   var reporter = Swiftest.Reporter()
   var listener = SwiftestTests.MockListener(name : "my-listener")
   let spec = Swiftest.Specification(subject : "test-spec")
-  let example = Swiftest.Example(subject : "test-example")
+  let example = Swiftest.Example(subject : "test-example", fn:{})
   
   override func setUp() {
     reporter.addListener(listener)

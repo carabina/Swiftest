@@ -11,22 +11,22 @@ class SpecificationTest : XCTestCase {
   }
   
   func test_createBlankExample() {
-    spec.example("does something")
+    spec.example("does something", fn:Swiftest.nullFn)
     
     XCTAssertEqual(spec.examples.count, 1)
     XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pending)
   }
   
   func test_createExampleWithBlock() {
-    spec.example("does something") { (let ex) in }
+    spec.example("does something", fn: {})
     XCTAssertEqual(spec.examples.count, 1);
     XCTAssertEqual(spec.examples[0].getStatus(), Swiftest.ExampleStatus.Pending)
   }
   
   func test_run() {
-    spec.example("fails") {
+    spec.example("fails", fn: {
       expect(1).toEqual(2)
-    }
+    })
     
     spec.run()
     

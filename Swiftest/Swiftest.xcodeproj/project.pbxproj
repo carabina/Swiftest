@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		956EF02219515B1D00D38074 /* ExpectDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EF02119515B1D00D38074 /* ExpectDSL.swift */; };
+		956EF02419515B8200D38074 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EF02319515B8200D38074 /* Cursor.swift */; };
 		9570FBF51946402A00D4DFF3 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */; };
 		95783575194A8EB600D3A49E /* BaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95783574194A8EB600D3A49E /* BaseListener.swift */; };
 		95A23FDE194A08EE00276922 /* BaseExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A23FD4194A08EE00276922 /* BaseExpectation.swift */; };
@@ -33,7 +35,7 @@
 		95B21603194B233400856F96 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21602194B233400856F96 /* Reporter.swift */; };
 		95B21605194B24F900856F96 /* ReporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B21604194B24F900856F96 /* ReporterTest.swift */; };
 		95CAD0E019512CD400D654FD /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0DF19512CD400D654FD /* Suite.swift */; };
-		95CAD0E7195141B300D654FD /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E6195141B300D654FD /* DSL.swift */; };
+		95CAD0E7195141B300D654FD /* SpecDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E6195141B300D654FD /* SpecDSL.swift */; };
 		95CAD0E91951421300D654FD /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD0E81951421300D654FD /* Context.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		956EF02119515B1D00D38074 /* ExpectDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectDSL.swift; path = Core/ExpectDSL.swift; sourceTree = SOURCE_ROOT; };
+		956EF02319515B8200D38074 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cursor.swift; path = Core/Cursor.swift; sourceTree = SOURCE_ROOT; };
 		9570FBE91946402A00D4DFF3 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9570FBF41946402A00D4DFF3 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95783574194A8EB600D3A49E /* BaseListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseListener.swift; path = Core/BaseListener.swift; sourceTree = SOURCE_ROOT; };
@@ -145,7 +149,7 @@
 		95B21602194B233400856F96 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reporter.swift; path = Core/Reporter.swift; sourceTree = SOURCE_ROOT; };
 		95B21604194B24F900856F96 /* ReporterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReporterTest.swift; path = Test/ReporterTest.swift; sourceTree = SOURCE_ROOT; };
 		95CAD0DF19512CD400D654FD /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Suite.swift; path = Core/Suite.swift; sourceTree = SOURCE_ROOT; };
-		95CAD0E6195141B300D654FD /* DSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Core/DSL.swift; sourceTree = SOURCE_ROOT; };
+		95CAD0E6195141B300D654FD /* SpecDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecDSL.swift; path = Core/SpecDSL.swift; sourceTree = SOURCE_ROOT; };
 		95CAD0E81951421300D654FD /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Core/Context.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -192,14 +196,16 @@
 				95F952DD194A6363003A77A9 /* Expectations */,
 				95783574194A8EB600D3A49E /* BaseListener.swift */,
 				95ACB87A194E2D06008A28B9 /* ConsoleListener.swift */,
-				95CAD0E6195141B300D654FD /* DSL.swift */,
 				95CAD0E81951421300D654FD /* Context.swift */,
+				956EF02319515B8200D38074 /* Cursor.swift */,
 				95A23FD8194A08EE00276922 /* Example.swift */,
 				95A23FD9194A08EE00276922 /* ExampleStatus.swift */,
+				956EF02119515B1D00D38074 /* ExpectDSL.swift */,
 				95B21602194B233400856F96 /* Reporter.swift */,
+				95CAD0E6195141B300D654FD /* SpecDSL.swift */,
 				95A23FDC194A08EE00276922 /* Specification.swift */,
-				95A23FDD194A08EE00276922 /* Swiftest.swift */,
 				95CAD0DF19512CD400D654FD /* Suite.swift */,
+				95A23FDD194A08EE00276922 /* Swiftest.swift */,
 			);
 			name = Swiftest;
 			path = SwiftestCore;
@@ -372,11 +378,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95ACB87B194E2D06008A28B9 /* ConsoleListener.swift in Sources */,
-				95CAD0E7195141B300D654FD /* DSL.swift in Sources */,
+				95CAD0E7195141B300D654FD /* SpecDSL.swift in Sources */,
 				95A23FE6194A08EE00276922 /* Specification.swift in Sources */,
 				95CAD0E91951421300D654FD /* Context.swift in Sources */,
 				95A23FE1194A08EE00276922 /* DictionaryExpectation.swift in Sources */,
+				956EF02419515B8200D38074 /* Cursor.swift in Sources */,
 				95A23FE7194A08EE00276922 /* Swiftest.swift in Sources */,
+				956EF02219515B1D00D38074 /* ExpectDSL.swift in Sources */,
 				95A23FDF194A08EE00276922 /* BoolExpectation.swift in Sources */,
 				95B21603194B233400856F96 /* Reporter.swift in Sources */,
 				95783575194A8EB600D3A49E /* BaseListener.swift in Sources */,

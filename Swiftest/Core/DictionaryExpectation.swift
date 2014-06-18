@@ -4,8 +4,10 @@ extension Swiftest {
     
     var subject : Dict[]
     
-    init(subject : Dict) {
+    init(subject : Dict, file:String = __FILE__, line:Int = __LINE__) {
       self.subject = [subject]
+      super.init()
+      self.cursor = Cursor(file: file, line: line)
     }
     
     func not() -> DictionaryExpectation {
@@ -44,11 +46,11 @@ extension Swiftest {
       return subject[0]
     }
     
-    func _contains(blk : (Key, Value) -> Bool) -> Bool {
+    func _contains(fn : (Key, Value) -> Bool) -> Bool {
       var found = false
 
       for (key, value) in _subject() {
-        if blk(key, value) { found = true }
+        if fn(key, value) { found = true }
       }
       
       return found

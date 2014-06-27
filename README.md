@@ -21,11 +21,11 @@ Inspired heavily by
 * simple expectations and assertions for most types
 * console reporter
 * "example" project
+* nested describe blocks
 
 ### To do:
-* XCTest integration (WIP)
+* XCode reporter integration
 * XCode target, project, and file templates
-* nested descriptions
 * setup / teardown
 * closure matchers (`expect(someAction()).toChange(someValue).to(otherValue)`)
 * command-line interface?

@@ -1,4 +1,4 @@
 struct Cursor {
-  var file : String
-  var line : Int
+  var file: String
+  var line: Int
 }

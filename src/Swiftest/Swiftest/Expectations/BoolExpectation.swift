@@ -1,13 +1,13 @@
 class BoolExpectation : BaseExpectation {
   var subject : Bool
 
-  init(subject : Bool, file:String = __FILE__, line:Int = __LINE__) {
+  init(subject: Bool, file: String = __FILE__, line: Int = __LINE__) {
     self.subject = subject
     super.init()
     self.cursor = Cursor(file: file, line: line)
   }
 
-  func toBe(bool:Bool) {
+  func toBe(bool: Bool) {
     _assert(
       subject == bool,
       msg: "expected <\(subject)> to\(_includeNot()) be <\(bool)>"
@@ -19,7 +19,7 @@ class BoolExpectation : BaseExpectation {
   }
 
   func toBeTrue() {
-    _assert(subject, msg : "expected <\(subject)> to\(_includeNot()) be true")
+    _assert(subject, msg: "expected <\(subject)> to\(_includeNot()) be true")
   }
 
   func not() -> BoolExpectation {
@@ -27,5 +27,5 @@ class BoolExpectation : BaseExpectation {
     return self
   }
 
-  func toEqual(bool:Bool) { toBe(bool) }
+  func toEqual(bool: Bool) { toBe(bool) }
 }

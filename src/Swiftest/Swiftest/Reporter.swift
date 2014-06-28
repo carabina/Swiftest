@@ -1,8 +1,7 @@
-
 class Reporter {
-  var listeners : BaseListener[] = []
+  var listeners: BaseListener[] = []
 
-  func addListener(lsn : BaseListener) {
+  func addListener(lsn: BaseListener) {
     listeners.append(lsn)
   }
 
@@ -14,31 +13,31 @@ class Reporter {
     notify({ lsn in lsn.suiteFinished() })
   }
 
-  func specificationStarted(spec : Specification) {
+  func specificationStarted(spec: Specification) {
     notify({ lsn in lsn.specificationStarted(spec) })
   }
 
-  func specificationFinished(spec : Specification) {
+  func specificationFinished(spec: Specification) {
     notify({ lsn in lsn.specificationFinished(spec) })
   }
 
-  func exampleStarted(example : Example) {
+  func exampleStarted(example: Example) {
     notify({ lsn in lsn.exampleStarted(example) })
   }
 
-  func exampleFinished(example : Example) {
+  func exampleFinished(example: Example) {
     notify({ lsn in lsn.exampleFinished(example) })
   }
 
-  func expectationPassed(expectation : BaseExpectation) {
+  func expectationPassed(expectation: BaseExpectation) {
     notify({ lsn in lsn.expectationPassed(expectation) })
   }
 
-  func expectationFailed(expectation : BaseExpectation) {
+  func expectationFailed(expectation: BaseExpectation) {
     notify({ lsn in lsn.expectationFailed(expectation) })
   }
 
-  func notify(fn : BaseListener -> Void) {
+  func notify(fn: BaseListener -> Void) {
     for lsn in listeners { fn(lsn) }
   }
 }

@@ -9,16 +9,20 @@ class BaseExpectation {
   var cursor = nullCursor
 
   func _assert(cond:Bool) {
-    self.status = cond ^ _reverse ? ExampleStatus.Pass : ExampleStatus.Fail
+    self.status = cond ^ _reverse ? .Pass : .Fail
 
     switch status {
-    case ExampleStatus.Pass: Swiftest.reporter.expectationPassed(self)
-    case ExampleStatus.Fail: Swiftest.reporter.expectationFailed(self)
+    case .Pass: Swiftest.reporter.expectationPassed(self)
+    case .Fail: Swiftest.reporter.expectationFailed(self)
     default: ()
     }
   }
 
-  func _assert(cond:Bool, msg:String) {
+  func getStatus() -> ExampleStatus {
+    return self.status
+  }
+
+  func _assert(cond: Bool, msg: String) {
     self.msg = msg
     _assert(cond)
   }

@@ -6,7 +6,9 @@ class XCListener : BaseListener {
   var messages:String[] = []
 
   override func expectationFailed(expectation: BaseExpectation) {
-    messages.append("\(expectation.cursor.file):\(expectation.cursor.line): error : \(expectation.msg)\n")
+    messages.append(
+      "\(expectation.cursor.file):\(expectation.cursor.line): error : \(expectation.msg)\n"
+    )
   }
 
   override func suiteFinished() {

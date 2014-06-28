@@ -1,15 +1,10 @@
 struct Context {
 
-  var specs : Specification[] = []
-  var stack : Specification[] = []
+  var specs: Specification[] = []
+  var stack: Specification[] = []
 
-  mutating func addSpec(spec : Specification) {
-    if(stack.count == 0) {
-      specs.append(spec)
-    } else {
-      current().addSpec(spec)
-    }
-
+  mutating func addSpec(spec: Specification) {
+    stack.isEmpty ? specs.append(spec) : current().addSpec(spec)
     stack.append(spec)
   }
 
@@ -18,7 +13,7 @@ struct Context {
   }
 
   func current() -> Specification {
-    return stack.count > 0 ? stack[stack.count - 1] : Swiftest.nullSpec
+    return stack.isEmpty ? Swiftest.nullSpec : stack[stack.count - 1]
   }
 
   func currentExample() -> Example {

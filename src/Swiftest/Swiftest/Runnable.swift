@@ -3,3 +3,4 @@ protocol Runnable {
   func getStatus() -> ExampleStatus
   var ofType : String { get }
 }
+

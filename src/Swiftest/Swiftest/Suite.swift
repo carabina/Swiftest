@@ -1,3 +1,3 @@
 protocol SwiftestSuite {
-  var spec : Specification { get }
+  var spec: Specification { get }
 }

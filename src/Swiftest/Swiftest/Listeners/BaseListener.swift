@@ -2,7 +2,7 @@ class BaseListener {
   var name = ""
 
   init() {}
-  init(name:String) { self.name = name }
+  init(name: String) { self.name = name }
 
   func suiteStarted() {}
   func suiteFinished() {}

@@ -2,61 +2,60 @@ import Foundation
 
 class ConsoleListener : BaseListener {
 
-  var printer : String -> Void = println
+  var printer: String -> Void = println
   var passedCount = 0
   var failedCount = 0
   var pendingCount = 0
   var offset = 0
 
-  override func suiteStarted() { printer("\nSwiftest suite\n") }
-
   override func suiteFinished() {
-    printer("\n:: RESULTS ::")
-    printer("✓ \(passedCount)/\(runCount()) examples passed :: × \(failedCount) failed :: ★ \(pendingCount) pending\n\n")
-    printer("")
+    printer(
+      "\n:: RESULTS :: \n" +
+      "✓ \(passedCount)/\(runCount()) examples passed :: " +
+      "× \(failedCount) failed :: " +
+      "★ \(pendingCount) pending\n"
+    )
   }
 
   override func specificationStarted(spec: Specification) {
-    indent(spec.subject)
+    indentPrint(spec.subject)
     offset += 1
   }
 
   override func specificationFinished(spec: Specification) {
     offset -= 1
-    if offset > 0 {
-      printer("")
-    }
+    if offset > 0 { printer("") }
   }
 
   override func exampleFinished(example: Example) {
-    if example.getStatus() == ExampleStatus.Pass {
+    if example.getStatus() == .Pass {
       passedCount++
-      indent("✓ \(example.subject)")
-    } else if example.getStatus() == ExampleStatus.Fail {
+      indentPrint("✓ \(example.subject)")
+    } else if example.getStatus() == .Fail {
       failedCount++
-      indent("× \(example.subject)")
+      indentPrint("× \(example.subject)")
       offset += 1
       for ex in example.expectations { printStatus(ex) }
       offset -= 1
     } else {
       pendingCount++
-      indent("★ \(example.subject)")
+      indentPrint("★ \(example.subject)")
     }
   }
 
   func printStatus(expectation: BaseExpectation) {
-    if expectation.status == ExampleStatus.Fail {
-      indent("× \(expectation.msg)")
-      indent("  at \(expectation.cursor.file):\(expectation.cursor.line)")
-    } else if expectation.status == ExampleStatus.Pass {
-      indent("✓ \(expectation.msg)")
+    if expectation.status == .Fail {
+      indentPrint("× \(expectation.msg)")
+      indentPrint("  at \(expectation.cursor.file):\(expectation.cursor.line)")
+    } else if expectation.status == .Pass {
+      indentPrint("✓ \(expectation.msg)")
     } else {
-      indent("★ \(expectation.msg)")
+      indentPrint("★ \(expectation.msg)")
     }
     printer("")
   }
 
-  func indent(msg: String) {
+  func indentPrint(msg: String) {
     var str = ""
     for _ in 0..self.offset { str += "  " }
 

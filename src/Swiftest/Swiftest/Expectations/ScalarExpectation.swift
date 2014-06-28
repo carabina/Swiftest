@@ -1,7 +1,7 @@
 class ScalarExpectation<T:Comparable> : BaseExpectation {
-  var subject : T?[]
+  var subject: T?[]
 
-  init(subject : T?, file:String = __FILE__, line:Int = __LINE__) {
+  init(subject: T?, file: String = __FILE__, line: Int = __LINE__) {
     self.subject = [subject]
     super.init()
     self.cursor = Cursor(file: file, line: line)
@@ -12,7 +12,7 @@ class ScalarExpectation<T:Comparable> : BaseExpectation {
     return self
   }
 
-  func toEqual(expected : T?) {
+  func toEqual(expected: T?) {
     _assert(
       _subject() == expected,
       msg : "expected <\(_subject())> to\(_includeNot()) equal <\(expected)>"
@@ -26,14 +26,14 @@ class ScalarExpectation<T:Comparable> : BaseExpectation {
     )
   }
 
-  func toBeGreaterThan(expected : T?) {
+  func toBeGreaterThan(expected: T?) {
     _assert(
       _subject() > expected,
       msg: "expected <\(_subject())> to\(_includeNot()) be greater than <\(expected)>"
     )
   }
 
-  func toBeLessThan(expected : T?) {
+  func toBeLessThan(expected: T?) {
     _assert(
       _subject() < expected,
       msg: "expected <\(_subject())> to\(_includeNot()) be less than <\(expected)>"
@@ -47,7 +47,7 @@ class ScalarExpectation<T:Comparable> : BaseExpectation {
     )
   }
 
-  func toBeGreaterThanOrEqualTo(expected : T?) {
+  func toBeGreaterThanOrEqualTo(expected: T?) {
     _assert(
       _subject() >= expected,
       msg: "expected <\(_subject())> to\(_includeNot()) be greater than or equal to <\(expected)>"

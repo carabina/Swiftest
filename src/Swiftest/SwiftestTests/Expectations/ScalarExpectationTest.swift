@@ -7,30 +7,30 @@ class ExpectationTest : XCTestCase {
 
   func test_toEqual_pass() {
     expectation.toEqual("subject")
-    XCTAssertEqual(expectation.status, ExampleStatus.Pass);
+    XCTAssertEqual(expectation.status, .Pass);
   }
 
   func test_toEqual_fail() {
     expectation.toEqual("not-subject")
-    XCTAssertEqual(expectation.status, ExampleStatus.Fail);
+    XCTAssertEqual(expectation.status, .Fail);
   }
 
   func test_toEqual_multiple() {
     expectation.toEqual("subject")
     expectation.toEqual("not-subject")
 
-    XCTAssertEqual(expectation.status, ExampleStatus.Fail);
+    XCTAssertEqual(expectation.status, .Fail);
   }
 
   func test_not_toEqual() {
     expectation.not().toEqual("not-subject")
-    XCTAssertEqual(expectation.status, ExampleStatus.Pass);
+    XCTAssertEqual(expectation.status, .Pass);
   }
 
   func test_toEqual_int() {
     let ex = ScalarExpectation(subject: 1)
     ex.toEqual(1)
-    XCTAssertEqual(ex.status, ExampleStatus.Pass);
+    XCTAssertEqual(ex.status, .Pass);
   }
 
   func test_toEqual_withClass() {
@@ -39,7 +39,7 @@ class ExpectationTest : XCTestCase {
     let ex = ScalarExpectation(subject: p1)
     ex.toEqual(p2)
 
-    XCTAssertEqual(ex.status, ExampleStatus.Fail)
+    XCTAssertEqual(ex.status, .Fail)
   }
 
   func test_toBeNil_withNil() {
@@ -48,7 +48,7 @@ class ExpectationTest : XCTestCase {
 
     ex.toBeNil()
 
-    XCTAssertEqual(ex.status, ExampleStatus.Pass)
+    XCTAssertEqual(ex.status, .Pass)
   }
 
   func test_toBeNil_withNonNil() {
@@ -57,7 +57,7 @@ class ExpectationTest : XCTestCase {
 
     ex.toBeNil()
 
-    XCTAssertEqual(ex.status, ExampleStatus.Fail)
+    XCTAssertEqual(ex.status, .Fail)
   }
 
   func testComparisons() {
@@ -71,6 +71,6 @@ class ExpectationTest : XCTestCase {
     ex.toBeLessThanOrEqualTo(1)
     ex.toBeGreaterThanOrEqualTo(nil)
 
-    XCTAssertEqual(ex.status, ExampleStatus.Pass)
+    XCTAssertEqual(ex.status, .Pass)
   }
 }

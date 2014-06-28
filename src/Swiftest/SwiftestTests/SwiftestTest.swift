@@ -54,11 +54,11 @@ class SwiftestTest : XCTestCase {
 
   func test_describe() {
     let isPassing:Runnable -> Bool = { (let ex) in
-      return ex.getStatus() == ExampleStatus.Pass
+      return ex.getStatus() == .Pass
     }
 
     let isFailing:Runnable -> Bool = { (let ex) in
-      return ex.getStatus() == ExampleStatus.Fail
+      return ex.getStatus() == .Fail
     }
 
     Swiftest.register([MyTest(), MyFailingTest()])

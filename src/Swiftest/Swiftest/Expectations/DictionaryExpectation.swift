@@ -3,7 +3,7 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
 
   var subject : Dict[]
 
-  init(subject : Dict, file:String = __FILE__, line:Int = __LINE__) {
+  init(subject : Dict, file: String = __FILE__, line: Int = __LINE__) {
     self.subject = [subject]
     super.init()
     self.cursor = Cursor(file: file, line: line)
@@ -14,27 +14,27 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
     return self
   }
 
-  func toEqual(expected : Dict) {
+  func toEqual(expected: Dict) {
     _assert(
       _subject() == expected,
       msg : "expected <\(_subject())> to\(_includeNot()) equal <\(expected)>")
   }
 
-  func toHaveKey(key : Key) {
+  func toHaveKey(key: Key) {
     _assert(
       _contains({ (k, v) in k == key }),
       msg: "expected <\(_subject())> to\(_includeNot()) have key <\(key)>"
     )
   }
 
-  func toHaveValue(value : Value) {
+  func toHaveValue(value: Value) {
     _assert(
       _contains({ (k, v) in v == value }),
       msg: "expected <\(_subject())> to\(_includeNot()) have key <\(value)>"
     )
   }
 
-  func toContain(pair : Dict) {
+  func toContain(pair: Dict) {
     _assert(
       _contains({ (k, v) in [k : v] == pair }),
       msg: "expected <\(_subject())> to\(_includeNot()) have entry <\(pair)>"
@@ -45,7 +45,7 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
     return subject[0]
   }
 
-  func _contains(fn : (Key, Value) -> Bool) -> Bool {
+  func _contains(fn: (Key, Value) -> Bool) -> Bool {
     var found = false
 
     for (key, value) in _subject() {

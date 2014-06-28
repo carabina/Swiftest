@@ -18,6 +18,14 @@ func it(desc: String, file:String = __FILE__, line:Int = __LINE__) {
   __current().example(desc, fn: Swiftest.nullFn, file: file, line: line)
 }
 
+func xit(desc: String, fn: VoidFn, file: String = __FILE__, line: Int = __LINE__) {
+  it(desc, file: file, line: line)
+}
+
+func xit(desc: String, file: String = __FILE__, line: Int = __LINE__) {
+  it(desc, file: file, line: line)
+}
+
 func __current() -> Specification {
   return Swiftest.context.current()
 }

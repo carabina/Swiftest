@@ -27,8 +27,9 @@ Inspired heavily by
 * "void" closure matchers
 
 ### To do:
-* XCode reporter integration
+* CocoaPod installation
 * XCode target, project, and file templates
+* XCode error/warn reporter integration
 * setup / teardown / hooks
 * command-line interface?
 

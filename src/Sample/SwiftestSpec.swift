@@ -44,7 +44,7 @@ class SwiftestSpec : SwiftestSuite {
     }
 
     it("allows pending specs")
-    
+
     xit("allows you to turn off a test") {
       expect(1).toEqual(2)
     }

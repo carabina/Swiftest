@@ -42,10 +42,10 @@ class ConsoleListener : BaseListener {
   }
 
   func printStatus(expectation: BaseExpectation) {
-    if expectation.status == .Fail {
+    if expectation.getStatus() == .Fail {
       indentPrint("× \(expectation.msg)")
       indentPrint("  at \(expectation.cursor.file):\(expectation.cursor.line)")
-    } else if expectation.status == .Pass {
+    } else if expectation.getStatus() == .Pass {
       indentPrint("✓ \(expectation.msg)")
     } else {
       indentPrint("★ \(expectation.msg)")

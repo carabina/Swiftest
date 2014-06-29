@@ -1,9 +1,10 @@
 class BaseExpectation {
+  let defaultMessage = "expectation failed"
+
   var status = ExampleStatus.Pending
   var _reverse = false
-  var msg = "expectation failed"
+  var msg : String
   var example = Util.nullExample
-
   var cursor = Util.nullCursor
 
   func _assert(cond:Bool) {
@@ -14,6 +15,10 @@ class BaseExpectation {
     case .Fail: Swiftest.reporter.expectationFailed(self)
     default: ()
     }
+  }
+
+  init() {
+    msg = defaultMessage
   }
 
   func getStatus() -> ExampleStatus {

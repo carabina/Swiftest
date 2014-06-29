@@ -4,7 +4,7 @@ class BaseExpectation {
   var status = ExampleStatus.Pending
   var _reverse = false
   var msg = "expectation failed"
-  var example = Swiftest.nullExample
+  var example = Swiftest.Util.nullExample
 
   var cursor = nullCursor
 

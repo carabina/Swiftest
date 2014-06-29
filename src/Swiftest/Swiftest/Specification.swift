@@ -1,11 +1,11 @@
-let sorter : (Runnable, Runnable) -> Bool = { (let r1, r2) in
+let _sorter : (Runnable, Runnable) -> Bool = { (let r1, r2) in
   return r1.ofType < r2.ofType
 }
 
 class Specification : Runnable {
   class Context {
     var children: Runnable[] = []
-    var onExample : Example = Swiftest.nullExample
+    var onExample : Example = Swiftest.Util.nullExample
 
     func add(child: Runnable) {
       children.append(child)
@@ -38,7 +38,7 @@ class Specification : Runnable {
 
   func run() {
     Swiftest.reporter.specificationStarted(self)
-    for child in sort(context.children, sorter) { child.run() }
+    for child in sort(context.children, _sorter) { child.run() }
     Swiftest.reporter.specificationFinished(self)
   }
 
@@ -51,6 +51,6 @@ class Specification : Runnable {
   func withExample(ex: Example, fn: Void -> Void) {
     context.onExample = ex
     fn()
-    context.onExample = Swiftest.nullExample
+    context.onExample = Swiftest.Util.nullExample
   }
 }

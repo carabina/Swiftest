@@ -17,7 +17,7 @@ func example(
 }
 
 func example(desc: String, file: String = __FILE__, line: Int = __LINE__) {
-  __current().example(desc, fn: Swiftest.nullFn, file: file, line: line)
+  __current().example(desc, fn: Swiftest.Util.nullFn, file: file, line: line)
 }
 
 func it(
@@ -34,7 +34,7 @@ func it(
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  __current().example(desc, fn: Swiftest.nullFn, file: file, line: line)
+  __current().example(desc, fn: Swiftest.Util.nullFn, file: file, line: line)
 }
 
 func xit(desc: String, fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) {

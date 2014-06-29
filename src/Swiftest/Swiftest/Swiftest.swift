@@ -1,11 +1,11 @@
-typealias VoidFn = Void -> Void
 typealias Runner = Context -> Void
 
 struct Swiftest {
   static let reporter = Reporter()
   static let nullExample = Example(subject : "null example", fn: nullFn)
   static let nullSpec = Specification(subject: "null spec")
-  static let nullFn: VoidFn = {}
+  static let nullFn: VoidBlk = {}
+  static let systemListener = SystemListener()
 
   static var context = Context()
   static var runner: Runner = { (let context) in
@@ -14,7 +14,7 @@ struct Swiftest {
 
   static func describe(
     target: String,
-    fn: VoidFn,
+    fn: VoidBlk,
     file: String = __FILE__,
     line: Int = __LINE__
   ) -> Specification {
@@ -23,11 +23,8 @@ struct Swiftest {
     return context.popSpec()
   }
 
-  static func register(suites: SwiftestSuite[]) -> SwiftestSuite[] {
-    for suite in suites { suite.spec }; return suites
-  }
-
   static func run() {
+    Registrar.registerAll()
     reporter.suiteStarted()
     runner(context)
     reporter.suiteFinished()

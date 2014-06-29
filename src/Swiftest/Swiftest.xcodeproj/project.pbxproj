@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95091300195F7A7F00F672FE /* Registrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 950912FF195F7A7F00F672FE /* Registrar.h */; };
+		95091303195F7AD300F672FE /* Registrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95091302195F7AD300F672FE /* Registrar.m */; };
+		95091305195F887800F672FE /* SystemListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95091304195F887800F672FE /* SystemListener.swift */; };
+		95091309195FC71000F672FE /* SwiftestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 95091308195FC71000F672FE /* SwiftestSuite.h */; };
+		9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509130A195FC73E00F672FE /* SwiftestSuite.m */; };
 		95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B47195E0BA90092F6A8 /* Runnable.swift */; };
 		95F05B55195CE07800B529D1 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F05B49195CE07800B529D1 /* libSwiftest.dylib */; };
 		95F05B80195CE35600B529D1 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6A195CE35600B529D1 /* Context.swift */; };
@@ -17,7 +22,6 @@
 		95F05B85195CE35600B529D1 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6F195CE35600B529D1 /* Reporter.swift */; };
 		95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B70195CE35600B529D1 /* SpecDSL.swift */; };
 		95F05B87195CE35600B529D1 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B71195CE35600B529D1 /* Specification.swift */; };
-		95F05B88195CE35600B529D1 /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B72195CE35600B529D1 /* Suite.swift */; };
 		95F05B89195CE35600B529D1 /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B73195CE35600B529D1 /* Swiftest.swift */; };
 		95F05B8A195CE35600B529D1 /* ArrayExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B75195CE35600B529D1 /* ArrayExpectation.swift */; };
 		95F05B8B195CE35600B529D1 /* BaseExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B76195CE35600B529D1 /* BaseExpectation.swift */; };
@@ -51,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		950912FF195F7A7F00F672FE /* Registrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrar.h; sourceTree = "<group>"; };
+		95091301195F7AD300F672FE /* Swiftest-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swiftest-Bridge.h"; sourceTree = "<group>"; };
+		95091302195F7AD300F672FE /* Registrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registrar.m; sourceTree = "<group>"; };
+		95091304195F887800F672FE /* SystemListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemListener.swift; sourceTree = "<group>"; };
+		95091308195FC71000F672FE /* SwiftestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftestSuite.h; sourceTree = "<group>"; };
+		9509130A195FC73E00F672FE /* SwiftestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSuite.m; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
 		95F05B49195CE07800B529D1 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F05B54195CE07800B529D1 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +73,6 @@
 		95F05B6F195CE35600B529D1 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		95F05B70195CE35600B529D1 /* SpecDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDSL.swift; sourceTree = "<group>"; };
 		95F05B71195CE35600B529D1 /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
-		95F05B72195CE35600B529D1 /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suite.swift; sourceTree = "<group>"; };
 		95F05B73195CE35600B529D1 /* Swiftest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftest.swift; sourceTree = "<group>"; };
 		95F05B75195CE35600B529D1 /* ArrayExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExpectation.swift; sourceTree = "<group>"; };
 		95F05B76195CE35600B529D1 /* BaseExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseExpectation.swift; sourceTree = "<group>"; };
@@ -105,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9509130C195FC9EA00F672FE /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				950912FF195F7A7F00F672FE /* Registrar.h */,
+				95091302195F7AD300F672FE /* Registrar.m */,
+				95091308195FC71000F672FE /* SwiftestSuite.h */,
+				9509130A195FC73E00F672FE /* SwiftestSuite.m */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
 		95F05B40195CE07800B529D1 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +148,7 @@
 			children = (
 				95F05B74195CE35600B529D1 /* Expectations */,
 				95F05B63195CE35600B529D1 /* Listeners */,
+				9509130C195FC9EA00F672FE /* Registration */,
 				95F05B6A195CE35600B529D1 /* Context.swift */,
 				95F05B6B195CE35600B529D1 /* Cursor.swift */,
 				95F05B6C195CE35600B529D1 /* Example.swift */,
@@ -137,8 +158,8 @@
 				95E87B47195E0BA90092F6A8 /* Runnable.swift */,
 				95F05B70195CE35600B529D1 /* SpecDSL.swift */,
 				95F05B71195CE35600B529D1 /* Specification.swift */,
-				95F05B72195CE35600B529D1 /* Suite.swift */,
 				95F05B73195CE35600B529D1 /* Swiftest.swift */,
+				95091301195F7AD300F672FE /* Swiftest-Bridge.h */,
 			);
 			path = Swiftest;
 			sourceTree = "<group>";
@@ -173,6 +194,7 @@
 				95F05B8F195CE43900B529D1 /* BaseListener.swift */,
 				95F05B90195CE43900B529D1 /* ConsoleListener.swift */,
 				95F05B91195CE43900B529D1 /* XCListener.swift */,
+				95091304195F887800F672FE /* SystemListener.swift */,
 			);
 			path = Listeners;
 			sourceTree = "<group>";
@@ -207,6 +229,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95091309195FC71000F672FE /* SwiftestSuite.h in Headers */,
+				95091300195F7A7F00F672FE /* Registrar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +326,16 @@
 				95F05B8B195CE35600B529D1 /* BaseExpectation.swift in Sources */,
 				95F05B89195CE35600B529D1 /* Swiftest.swift in Sources */,
 				95F05B94195CE43900B529D1 /* XCListener.swift in Sources */,
+				95091303195F7AD300F672FE /* Registrar.m in Sources */,
 				95F05B93195CE43900B529D1 /* ConsoleListener.swift in Sources */,
 				95F05B83195CE35600B529D1 /* ExampleStatus.swift in Sources */,
 				95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */,
+				9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */,
 				95F05B85195CE35600B529D1 /* Reporter.swift in Sources */,
 				95F05B84195CE35600B529D1 /* ExpectDSL.swift in Sources */,
 				95F05B80195CE35600B529D1 /* Context.swift in Sources */,
+				95091305195F887800F672FE /* SystemListener.swift in Sources */,
 				95F05B8E195CE35600B529D1 /* ScalarExpectation.swift in Sources */,
-				95F05B88195CE35600B529D1 /* Suite.swift in Sources */,
 				95F05B81195CE35600B529D1 /* Cursor.swift in Sources */,
 				95F05B8C195CE35600B529D1 /* BoolExpectation.swift in Sources */,
 				95F05B87195CE35600B529D1 /* Specification.swift in Sources */,
@@ -428,11 +454,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_MODULE_NAME = Swiftest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiftest/Swiftest-Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -441,11 +471,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_MODULE_NAME = Swiftest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swiftest/Swiftest-Bridge.h";
 			};
 			name = Release;
 		};

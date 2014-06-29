@@ -4,7 +4,7 @@ let _has: ExampleStatus -> (BaseExpectation -> Bool) = { (let status) in
 
 class Example : Runnable {
   var subject: String
-  var fn: VoidFn = Swiftest.nullFn
+  var fn: VoidBlk = Swiftest.nullFn
   var expectations: BaseExpectation[] = []
   
   let cursor: Cursor
@@ -12,7 +12,7 @@ class Example : Runnable {
 
   init(
     subject: String,
-    fn: VoidFn,
+    fn: VoidBlk,
     file: String = __FILE__,
     line: Int = __LINE__
   ) {

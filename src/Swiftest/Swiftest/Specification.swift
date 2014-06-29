@@ -25,7 +25,7 @@ class Specification : Runnable {
 
   func example(
     subject: String,
-    fn: VoidFn,
+    fn: VoidBlk,
     file: String = __FILE__,
     line: Int = __LINE__
   ) {

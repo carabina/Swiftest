@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		95E87B1D195DDA960092F6A8 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B19195DDA960092F6A8 /* Human.swift */; };
 		95E87B2C195DDAC60092F6A8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B1A195DDA960092F6A8 /* main.swift */; };
-		95E87B2D195DDAC60092F6A8 /* SwiftestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B1B195DDA960092F6A8 /* SwiftestConfig.swift */; };
 		95E87B2E195DDAC60092F6A8 /* SwiftestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B1C195DDA960092F6A8 /* SwiftestSpec.swift */; };
 		95E87B2F195DDACC0092F6A8 /* libSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E87AF7195DDA240092F6A8 /* libSample.dylib */; };
 		95E87B31195DDACD0092F6A8 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E87B30195DDACD0092F6A8 /* libSwiftest.dylib */; };
@@ -31,7 +30,6 @@
 		95E87AF7195DDA240092F6A8 /* libSample.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSample.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E87B19195DDA960092F6A8 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = SOURCE_ROOT; };
 		95E87B1A195DDA960092F6A8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = SOURCE_ROOT; };
-		95E87B1B195DDA960092F6A8 /* SwiftestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftestConfig.swift; sourceTree = SOURCE_ROOT; };
 		95E87B1C195DDA960092F6A8 /* SwiftestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftestSpec.swift; sourceTree = SOURCE_ROOT; };
 		95E87B25195DDAA80092F6A8 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E87B30195DDACD0092F6A8 /* libSwiftest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSwiftest.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/libSwiftest.dylib"; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				95E87B1A195DDA960092F6A8 /* main.swift */,
-				95E87B1B195DDA960092F6A8 /* SwiftestConfig.swift */,
 				95E87B1C195DDA960092F6A8 /* SwiftestSpec.swift */,
 			);
 			path = Specs;
@@ -207,7 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E87B2C195DDAC60092F6A8 /* main.swift in Sources */,
-				95E87B2D195DDAC60092F6A8 /* SwiftestConfig.swift in Sources */,
 				95E87B2E195DDAC60092F6A8 /* SwiftestSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,6 @@
 func describe(
   target: String,
-  fn: VoidFn,
+  fn: VoidBlk,
   file: String = __FILE__,
   line: Int = __LINE__
 ) -> Specification {
@@ -9,7 +9,7 @@ func describe(
 
 func example(
   subject: String,
-  fn: VoidFn,
+  fn: VoidBlk,
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
@@ -22,7 +22,7 @@ func example(desc: String, file: String = __FILE__, line: Int = __LINE__) {
 
 func it(
   desc: String,
-  fn: VoidFn,
+  fn: VoidBlk,
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
@@ -37,7 +37,7 @@ func it(
   __current().example(desc, fn: Swiftest.nullFn, file: file, line: line)
 }
 
-func xit(desc: String, fn: VoidFn, file: String = __FILE__, line: Int = __LINE__) {
+func xit(desc: String, fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) {
   it(desc, file: file, line: line)
 }
 

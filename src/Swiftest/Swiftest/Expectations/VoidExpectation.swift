@@ -7,7 +7,7 @@ class VoidExpectation : BaseExpectation {
     self.cursor = cursor
   }
 
-  func changes<T:Comparable>(predicate: Void -> T) -> VoidPredicate<T> {
+  func toChange<T:Comparable>(predicate: Void -> T) -> VoidPredicate<T> {
     return VoidPredicate(predicate: predicate, subject: subject, parent: self)
   }
 }

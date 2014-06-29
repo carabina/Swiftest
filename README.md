@@ -64,7 +64,9 @@ class SampleSpec : SwiftestSuite {
     describe("arrays!") {
       example("special assertions for array types!") {
         expect([1, 2, 3]).toEqual([1, 2, 3])
+
         expect([1, 2, 3]).toContain(1)
+        expect([1, 2, 3]).toContain(1, 3)
       }
     }
 

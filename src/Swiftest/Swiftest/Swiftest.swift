@@ -1,4 +1,5 @@
 typealias Runner = Context -> Void
+typealias VoidBlk = Void -> Void
 
 struct Swiftest {
   static let reporter = Reporter()

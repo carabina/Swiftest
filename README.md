@@ -24,12 +24,12 @@ Inspired heavily by
 * "example" project
 * nested describe blocks
 * auto-loading spec files
+* "void" closure matchers
 
 ### To do:
 * XCode reporter integration
 * XCode target, project, and file templates
 * setup / teardown / hooks
-* closure matchers (`expect(someAction()).toChange(someValue).to(otherValue)`)
 * command-line interface?
 
 ### Example
@@ -65,6 +65,13 @@ class SampleSpec : SwiftestSuite {
         expect([1, 2, 3]).toEqual([1, 2, 3])
         expect([1, 2, 3]).toContain(1)
       }
+    }
+
+    it("does nifty stuff with closures") {
+      var a = 0
+
+      expect({ a += 1 }).changes({ a }).to(1)
+      expect({ a += 2 }).changes({ a }).by(2)
     }
 
     example("dictionaries have special assertions too!") {

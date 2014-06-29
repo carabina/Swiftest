@@ -30,6 +30,10 @@ func expect<K:Comparable,V:Comparable>(
   return __currentEx().expect(subject, cursor: Cursor(file: file, line: line))
 }
 
+func expect(fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) -> VoidExpectation {
+  return __currentEx().expect(fn, cursor: Cursor(file: file, line: line))
+}
+
 func __currentEx() -> Example {
   return Swiftest.context.currentExample()
 }

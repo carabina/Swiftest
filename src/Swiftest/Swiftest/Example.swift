@@ -51,6 +51,13 @@ class Example : Runnable {
     )
   }
 
+  func expect(
+    fn: VoidBlk,
+    cursor: Cursor = Util.nullCursor
+  ) -> VoidExpectation {
+    return _addExpectation(VoidExpectation(subject: fn, cursor: cursor))
+  }
+
   func run() {
     Swiftest.context.current().withExample(self) {
       Swiftest.reporter.exampleStarted(self)

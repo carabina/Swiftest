@@ -11,7 +11,7 @@ class SpecificationTest : XCTestCase {
   }
 
   func test_createBlankExample() {
-    spec.example("does something", fn:Swiftest.Util.nullFn)
+    spec.example("does something", fn:Util.nullFn)
 
     XCTAssertEqual(spec.context.children.count, 1)
     XCTAssertEqual(spec.context.children[0].getStatus(), .Pending)

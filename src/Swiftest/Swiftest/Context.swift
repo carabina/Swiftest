@@ -13,7 +13,7 @@ struct Context {
   }
 
   func current() -> Specification {
-    return stack.isEmpty ? Swiftest.Util.nullSpec : stack[stack.count - 1]
+    return stack.isEmpty ? Util.nullSpec : stack[stack.count - 1]
   }
 
   func currentExample() -> Example {

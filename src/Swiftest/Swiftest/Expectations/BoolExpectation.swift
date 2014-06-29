@@ -1,10 +1,10 @@
 class BoolExpectation : BaseExpectation {
   var subject : Bool
 
-  init(subject: Bool, file: String = __FILE__, line: Int = __LINE__) {
+  init(subject: Bool, cursor: Cursor = Util.nullCursor) {
     self.subject = subject
     super.init()
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func toBe(bool: Bool) {

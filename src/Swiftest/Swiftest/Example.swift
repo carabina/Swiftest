@@ -4,7 +4,7 @@ let _has: ExampleStatus -> (BaseExpectation -> Bool) = { (let status) in
 
 class Example : Runnable {
   var subject: String
-  var fn: VoidBlk = Swiftest.Util.nullFn
+  var fn: VoidBlk = Util.nullFn
   var expectations: BaseExpectation[] = []
   
   let cursor: Cursor
@@ -13,51 +13,45 @@ class Example : Runnable {
   init(
     subject: String,
     fn: VoidBlk,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) {
     self.subject = subject
     self.fn = fn
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func expect<T:Comparable>(
-    subject: T,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    subject: T, cursor: Cursor = Util.nullCursor
   ) -> ScalarExpectation<T> {
     return _addExpectation(
-      ScalarExpectation(subject: subject, file: file, line: line)
+      ScalarExpectation(subject: subject, cursor: cursor)
     )
   }
 
   func expect<T:Comparable>(
     subject: T[],
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) -> ArrayExpectation<T> {
     return _addExpectation(
-      ArrayExpectation(subject: subject, file: file, line: line)
+      ArrayExpectation(subject: subject, cursor: cursor)
     )
   }
 
   func expect<K:Comparable, V:Comparable>(
     subject: Dictionary<K, V>,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) -> DictionaryExpectation<K, V> {
     return _addExpectation(
-      DictionaryExpectation(subject: subject, file: file, line: line)
+      DictionaryExpectation(subject: subject, cursor: cursor)
     )
   }
 
   func expect(
     subject: Bool,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) -> BoolExpectation {
     return _addExpectation(
-      BoolExpectation(subject: subject, file: file, line: line)
+      BoolExpectation(subject: subject, cursor: cursor)
     )
   }
 

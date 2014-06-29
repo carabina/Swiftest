@@ -1,10 +1,10 @@
 class ScalarExpectation<T:Comparable> : BaseExpectation {
   var subject: T?[]
 
-  init(subject: T?, file: String = __FILE__, line: Int = __LINE__) {
+  init(subject: T?, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]
     super.init()
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func not() -> ScalarExpectation {

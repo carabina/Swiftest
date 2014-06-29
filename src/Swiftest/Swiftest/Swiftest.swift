@@ -12,10 +12,9 @@ struct Swiftest {
   static func describe(
     target: String,
     fn: VoidBlk,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) -> Specification {
-    context.addSpec(Specification(subject: target, file: file, line: line))
+    context.addSpec(Specification(subject: target, cursor: cursor))
     fn()
     return context.popSpec()
   }

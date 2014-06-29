@@ -2,10 +2,10 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
   typealias List = T[]
   var subject : List[]
 
-  init(subject: List, file: String = __FILE__, line: Int = __LINE__) {
+  init(subject: List, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]
     super.init()
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func not() -> ArrayExpectation {

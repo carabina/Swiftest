@@ -1,12 +1,10 @@
-let nullCursor = Cursor(file: "Swiftest", line: 0)
-
 class BaseExpectation {
   var status = ExampleStatus.Pending
   var _reverse = false
   var msg = "expectation failed"
-  var example = Swiftest.Util.nullExample
+  var example = Util.nullExample
 
-  var cursor = nullCursor
+  var cursor = Util.nullCursor
 
   func _assert(cond:Bool) {
     self.status = cond ^ _reverse ? .Pass : .Fail

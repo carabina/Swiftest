@@ -3,10 +3,10 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
 
   var subject : Dict[]
 
-  init(subject : Dict, file: String = __FILE__, line: Int = __LINE__) {
+  init(subject : Dict, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]
     super.init()
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func not() -> DictionaryExpectation {

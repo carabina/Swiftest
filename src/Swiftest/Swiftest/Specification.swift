@@ -3,33 +3,23 @@ let _sorter : (Runnable, Runnable) -> Bool = { (let r1, r2) in
 }
 
 class Specification : Runnable {
-  class Context {
-    var children: Runnable[] = []
-    var onExample : Example = Swiftest.Util.nullExample
-
-    func add(child: Runnable) {
-      children.append(child)
-    }
-  }
-
   let ofType = "Spec"
   var context = Specification.Context()
 
   let subject : String
   let cursor : Cursor
 
-  init(subject:String, file: String = __FILE__, line: Int = __LINE__) {
+  init(subject:String, cursor: Cursor = Util.nullCursor) {
     self.subject = subject
-    self.cursor = Cursor(file: file, line: line)
+    self.cursor = cursor
   }
 
   func example(
     subject: String,
     fn: VoidBlk,
-    file: String = __FILE__,
-    line: Int = __LINE__
+    cursor: Cursor = Util.nullCursor
   ) {
-    context.add(Example(subject: subject, fn: fn, file: file, line: line))
+    context.add(Example(subject: subject, fn: fn, cursor: cursor))
   }
 
   func addSpec(spec: Specification) {
@@ -43,14 +33,12 @@ class Specification : Runnable {
   }
 
   func getStatus() -> ExampleStatus {
-    return context.children.filter() { (let child) in
-      child.getStatus() == .Fail
-    }.isEmpty ? .Pass : .Fail
+    return context.children.filter(Util.hasStatus(.Fail)).isEmpty ? .Pass: .Fail
   }
 
-  func withExample(ex: Example, fn: Void -> Void) {
+  func withExample(ex: Example, fn: VoidBlk) {
     context.onExample = ex
     fn()
-    context.onExample = Swiftest.Util.nullExample
+    context.onExample = Util.nullExample
   }
 }

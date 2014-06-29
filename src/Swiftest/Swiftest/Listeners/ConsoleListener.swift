@@ -1,5 +1,3 @@
-import Foundation
-
 class ConsoleListener : BaseListener {
 
   var printer: String -> Void = println

@@ -14,6 +14,7 @@
 		9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509130A195FC73E00F672FE /* SwiftestSuite.m */; };
 		95478BAD195FEEBB0019CFB3 /* Specification+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */; };
 		95478BAF195FF7B00019CFB3 /* VoidExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */; };
+		95772DAD1960036A00A66370 /* Example+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95772DAC1960036A00A66370 /* Example+Expect.swift */; };
 		95C05986195FE85D0084D04C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C05985195FE85D0084D04C /* Util.swift */; };
 		95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B47195E0BA90092F6A8 /* Runnable.swift */; };
 		95F05B55195CE07800B529D1 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F05B49195CE07800B529D1 /* libSwiftest.dylib */; };
@@ -66,6 +67,7 @@
 		9509130A195FC73E00F672FE /* SwiftestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSuite.m; sourceTree = "<group>"; };
 		95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Specification+Context.swift"; sourceTree = "<group>"; };
 		95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
+		95772DAC1960036A00A66370 /* Example+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Example+Expect.swift"; sourceTree = "<group>"; };
 		95C05985195FE85D0084D04C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
 		95F05B49195CE07800B529D1 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				95F05B6A195CE35600B529D1 /* Context.swift */,
 				95F05B6B195CE35600B529D1 /* Cursor.swift */,
 				95F05B6C195CE35600B529D1 /* Example.swift */,
+				95772DAC1960036A00A66370 /* Example+Expect.swift */,
 				95F05B6D195CE35600B529D1 /* ExampleStatus.swift */,
 				95F05B6E195CE35600B529D1 /* ExpectDSL.swift */,
 				95F05B6F195CE35600B529D1 /* Reporter.swift */,
@@ -356,6 +359,7 @@
 				95F05B92195CE43900B529D1 /* BaseListener.swift in Sources */,
 				95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */,
 				95F05B8A195CE35600B529D1 /* ArrayExpectation.swift in Sources */,
+				95772DAD1960036A00A66370 /* Example+Expect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95772DAB196002F000A66370 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				95E87B1A195DDA960092F6A8 /* main.swift */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		95E87AEE195DDA240092F6A8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +93,7 @@
 		95E87B26195DDAA80092F6A8 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				95E87B1A195DDA960092F6A8 /* main.swift */,
+				95772DAB196002F000A66370 /* Support */,
 				95E87B1C195DDA960092F6A8 /* SwiftestSpec.swift */,
 			);
 			path = Specs;

@@ -7,4 +7,12 @@ struct Util {
   static func hasStatus(status: ExampleStatus) -> (Runnable -> Bool) {
     return { obj in obj.getStatus() == status }
   }
+
+  static func hasStatus(status: ExampleStatus) -> (BaseExpectation -> Bool) {
+    return { spec in spec.getStatus() == status }
+  }
+
+  static func sortRunnables() -> (Runnable, Runnable) -> Bool {
+    return { (r1, r2) in r1.ofType < r2.ofType }
+  }
 }

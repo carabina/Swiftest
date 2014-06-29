@@ -20,9 +20,11 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
     )
   }
 
-  func toContain(expected: T) {
+  func toContain(expected: T...) {
     _assert(
-      !_subject().filter({ el in el == expected }).isEmpty,
+      !_subject().filter() { (let el) in
+        !expected.filter({ expEl in expEl == el }).isEmpty
+      }.isEmpty,
       msg: "expected <\(_subject())>\(_includeNot()) to contain <\(expected)>"
     )
   }

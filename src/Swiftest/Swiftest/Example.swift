@@ -1,7 +1,3 @@
-let _has: ExampleStatus -> (BaseExpectation -> Bool) = { (let status) in
-  return { exp in exp.getStatus() == status }
-}
-
 class Example : Runnable {
   var subject: String
   var fn: VoidBlk = Util.nullFn
@@ -64,9 +60,9 @@ class Example : Runnable {
   }
 
   func getStatus() -> ExampleStatus {
-    if !(expectations.filter(_has(.Fail)).isEmpty) {
+    if !(expectations.filter(Util.hasStatus(.Fail)).isEmpty) {
       return .Fail
-    } else if !(expectations.filter(_has(.Pending)).isEmpty) {
+    } else if !(expectations.filter(Util.hasStatus(.Pending)).isEmpty) {
       return .Pending
     }
 

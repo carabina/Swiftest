@@ -17,6 +17,7 @@ class SwiftestSpec : SwiftestSuite {
     describe("arrays") {
       it("has special array expectations") {
         expect([1, 2, 3]).toContain(2)
+        expect([1, 2, 3]).toContain(1, 3)
         expect([1, 2]).toEqual([1, 2])
       }
     }

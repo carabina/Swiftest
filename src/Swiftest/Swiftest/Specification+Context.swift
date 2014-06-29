@@ -6,5 +6,11 @@ extension Specification {
     func add(child: Runnable) {
       children.append(child)
     }
+
+    func withExample(ex: Example, fn: VoidBlk) {
+      onExample = ex
+      fn()
+      onExample = Util.nullExample
+    }
   }
 }

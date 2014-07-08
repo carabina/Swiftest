@@ -123,6 +123,8 @@ class DefinitionExample : SwiftestSuite {
 ### Installation
 NOTE: We're working on improving the installation process.
 
+Swiftest requires XCode6-Beta3
+
 For now, clone this repository and add the Swiftest `xcodeproj` to your own
 project. Create a command-line executable target and place the following in
 `main.swift`:

@@ -14,22 +14,22 @@ class BoolExpectationTest : XCTestCase {
     ex.not().toEqual(false)
     ex.not().toBeFalse()
 
-    XCTAssertEqual(ex.status, .Pass)
+    XCTAssertEqual(ex.status, ExampleStatus.Pass)
   }
 
   func test_truth_toBe_fail() {
     ex.toBe(false)
-    XCTAssertEqual(ex.status, .Fail)
+    XCTAssertEqual(ex.status, ExampleStatus.Fail)
   }
 
   func test_truth_toEqual_fail() {
     ex.toEqual(false)
-    XCTAssertEqual(ex.status, .Fail)
+    XCTAssertEqual(ex.status, ExampleStatus.Fail)
   }
 
   func test_truth_toBeFalse_fail() {
     ex.toBeFalse()
-    XCTAssertEqual(ex.status, .Fail)
+    XCTAssertEqual(ex.status, ExampleStatus.Fail)
   }
 
 

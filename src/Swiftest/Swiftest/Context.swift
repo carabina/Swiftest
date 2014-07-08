@@ -1,7 +1,7 @@
 struct Context {
 
-  var specs: Specification[] = []
-  var stack: Specification[] = []
+  var specs: [Specification] = []
+  var stack: [Specification] = []
 
   mutating func addSpec(spec: Specification) {
     stack.isEmpty ? specs.append(spec) : current().addSpec(spec)

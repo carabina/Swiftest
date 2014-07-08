@@ -1,9 +1,12 @@
+import Foundation
+
 class Specification : Runnable {
   let ofType = "Spec"
   var context = Specification.Context()
 
   let subject : String
   let cursor : Cursor
+  var definitions : [Resettable] = []
 
   init(subject:String, cursor: Cursor = Util.nullCursor) {
     self.subject = subject
@@ -18,13 +21,17 @@ class Specification : Runnable {
     context.add(Example(subject: subject, fn: fn, cursor: cursor))
   }
 
-  func addSpec(spec: Specification) {
-    context.add(spec)
-  }
+  func addSpec(spec: Specification) { context.add(spec) }
 
   func run() {
     Swiftest.reporter.specificationStarted(self)
-    for child in sort(context.children, Util.sortRunnables()) { child.run() }
+    sort(&context.children, Util.sortRunnables())
+
+    for child in context.children {
+      for defn in definitions { defn.reset() }
+      child.run()
+    }
+    
     Swiftest.reporter.specificationFinished(self)
   }
 
@@ -32,7 +39,11 @@ class Specification : Runnable {
     return context.children.filter(Util.hasStatus(.Fail)).isEmpty ? .Pass: .Fail
   }
 
-  func withExample(ex: Example, fn: VoidBlk) {
-    context.withExample(ex, fn: fn)
+  func withExample(ex: Example, fn: VoidBlk) { context.withExample(ex, fn: fn) }
+
+  func define<T>(fn: Void -> T) -> Void -> T {
+    let defn = Definition(fn: fn)
+    self.definitions.append(defn)
+    return defn.block()
   }
 }

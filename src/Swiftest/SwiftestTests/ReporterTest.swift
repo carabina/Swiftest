@@ -75,7 +75,7 @@ class ReporterTest : XCTestCase {
 
     reporter.expectationPassed(expectation)
     XCTAssertEqual(listener.expectationPassedCalls.count, 1)
-    XCTAssertEqual(listener.expectationPassedCalls[0], .Pass)
+    XCTAssertEqual(listener.expectationPassedCalls[0], ExampleStatus.Pass)
   }
 
   func test_notifyExpectationFailed() {
@@ -85,6 +85,6 @@ class ReporterTest : XCTestCase {
 
     reporter.expectationFailed(expectation)
     XCTAssertEqual(listener.expectationFailedCalls.count, 1)
-    XCTAssertEqual(listener.expectationFailedCalls[0], .Fail)
+    XCTAssertEqual(listener.expectationFailedCalls[0], ExampleStatus.Fail)
   }
 }

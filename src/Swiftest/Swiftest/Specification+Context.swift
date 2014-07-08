@@ -1,6 +1,7 @@
 extension Specification {
   class Context {
-    var children: Runnable[] = []
+
+    var children: [Runnable] = []
     var onExample : Example = Util.nullExample
 
     func add(child: Runnable) {
@@ -12,5 +13,6 @@ extension Specification {
       fn()
       onExample = Util.nullExample
     }
+
   }
 }

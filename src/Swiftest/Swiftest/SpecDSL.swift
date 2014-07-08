@@ -45,6 +45,10 @@ func xit(desc: String, file: String = __FILE__, line: Int = __LINE__) {
   it(desc, file: file, line: line)
 }
 
+func define<T>(fn: @auto_closure () -> T) -> Void -> T {
+  return __current().define(fn)
+}
+
 func __current() -> Specification {
   return Swiftest.context.current()
 }

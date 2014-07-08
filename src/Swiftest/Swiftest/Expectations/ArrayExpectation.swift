@@ -1,6 +1,6 @@
 class ArrayExpectation<T:Comparable> : BaseExpectation {
-  typealias List = T[]
-  var subject : List[]
+  typealias List = [T]
+  var subject : [List]
 
   init(subject: List, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]

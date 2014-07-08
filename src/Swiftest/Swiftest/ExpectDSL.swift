@@ -7,7 +7,7 @@ func expect<T:Comparable>(
 }
 
 func expect<T:Comparable>(
-  subject: T[],
+  subject: [T],
   file: String = __FILE__,
   line: Int = __LINE__
 ) -> ArrayExpectation<T> {

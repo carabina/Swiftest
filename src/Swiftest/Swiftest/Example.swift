@@ -1,7 +1,7 @@
 class Example : Runnable {
   var subject: String
   var fn: VoidBlk = Util.nullFn
-  var expectations: BaseExpectation[] = []
+  var expectations: [BaseExpectation] = []
   
   let cursor: Cursor
   let ofType = "Example"

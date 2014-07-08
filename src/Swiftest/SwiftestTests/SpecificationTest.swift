@@ -1,6 +1,14 @@
 import Swiftest
 import XCTest
 
+class Counter {
+  var num = 0
+
+  func increment() {
+    num += 1
+  }
+}
+
 class SpecificationTest : XCTestCase {
 
   let spec = Specification(subject: "the-name")
@@ -14,13 +22,23 @@ class SpecificationTest : XCTestCase {
     spec.example("does something", fn:Util.nullFn)
 
     XCTAssertEqual(spec.context.children.count, 1)
-    XCTAssertEqual(spec.context.children[0].getStatus(), .Pending)
+    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Pending)
   }
 
   func test_createExampleWithBlock() {
     spec.example("does something", fn: {})
     XCTAssertEqual(spec.context.children.count, 1);
-    XCTAssertEqual(spec.context.children[0].getStatus(), .Pending)
+    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Pending)
+  }
+
+  func test_define() {
+    let counter = spec.define() { Counter() }
+    counter().increment()
+
+    XCTAssertEqual(counter().num, 1)
+
+    spec.definitions[0].reset()
+    XCTAssertEqual(counter().num, 0)
   }
 
   func test_run() {
@@ -30,7 +48,7 @@ class SpecificationTest : XCTestCase {
 
     spec.run()
 
-    XCTAssertEqual(spec.context.children[0].getStatus(), .Fail)
+    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Fail)
   }
 
 }

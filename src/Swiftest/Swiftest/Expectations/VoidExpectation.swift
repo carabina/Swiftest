@@ -1,6 +1,6 @@
 class VoidExpectation : BaseExpectation {
   var subject: VoidBlk
-  var assertions : Bool[] = []
+  var assertions : [Bool] = []
 
   init(subject: VoidBlk, cursor: Cursor = Util.nullCursor) {
     self.subject = subject
@@ -27,7 +27,7 @@ class VoidExpectation : BaseExpectation {
 }
 
 class VoidPredicate<T:Comparable> {
-  var originalValue : T[]
+  var originalValue : [T]
   let predicate : Void -> T
   let subject: VoidBlk
   let parent: VoidExpectation

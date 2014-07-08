@@ -95,6 +95,31 @@ class SampleSpec : SwiftestSuite {
 }
 ```
 
+### Definitions
+Definitions are a simple way to define lazily-evaluated functions to
+encapsulate values your specs may need, similar to RSpecs `let`. The values
+are memoized in each example, and reset after each example is run.
+
+Compare this to declaring an optional value and then setting that value in a
+`beforeEach` block and unwrapping it explicity before use.
+
+```swift
+class DefinitionExample : SwiftestSuite {
+  let spec = describe("definitions") {
+    var subject = define() { Counter(number: 5) }
+
+    it("creates the object when you call the function") {
+      subject().increment()
+      expect(subject().number).toEqual(6)
+    }
+
+    it("resets the object between each example") {
+      expect(subject().number).toEqual(5)
+    }
+  }
+}
+```
+
 ### Installation
 NOTE: We're working on improving the installation process.
 

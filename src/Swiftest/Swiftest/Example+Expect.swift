@@ -7,7 +7,7 @@ extension Example {
   }
 
   func expect<T:Comparable>(
-    subject: T[],
+    subject: [T],
     cursor: Cursor = Util.nullCursor
   ) -> ArrayExpectation<T> {
     return _addExpectation(ArrayExpectation(subject: subject, cursor: cursor))

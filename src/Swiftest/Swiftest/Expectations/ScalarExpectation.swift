@@ -1,5 +1,5 @@
 class ScalarExpectation<T:Comparable> : BaseExpectation {
-  var subject: T?[]
+  var subject: [T?]
 
   init(subject: T?, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]

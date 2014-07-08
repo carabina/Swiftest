@@ -1,7 +1,7 @@
 class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
   typealias Dict = Dictionary<Key,Value>
 
-  var subject : Dict[]
+  var subject : [Dict]
 
   init(subject : Dict, cursor: Cursor = Util.nullCursor) {
     self.subject = [subject]

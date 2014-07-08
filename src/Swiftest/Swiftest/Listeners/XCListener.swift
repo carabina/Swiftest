@@ -3,7 +3,7 @@ import Foundation
 class XCListener : BaseListener {
   let printer = NSFileHandle.fileHandleWithStandardError()
 
-  var messages:String[] = []
+  var messages:[String] = []
 
   override func expectationFailed(expectation: BaseExpectation) {
     messages.append(

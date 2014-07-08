@@ -3,14 +3,14 @@ import Swiftest
 struct SwiftestTests {
   class MockListener : BaseListener {
 
-    var specificationStartedCalls : String[]  = []
-    var specificationFinishedCalls : String[] = []
-    var exampleStartedCalls : String[]        = []
-    var exampleFinishedCalls : String[]       = []
-    var suiteStartedCalls : String[]          = []
-    var suiteFinishedCalls : String[]         = []
-    var expectationPassedCalls : ExampleStatus[]  = []
-    var expectationFailedCalls : ExampleStatus[] = []
+    var specificationStartedCalls : [String]  = []
+    var specificationFinishedCalls : [String] = []
+    var exampleStartedCalls : [String]        = []
+    var exampleFinishedCalls : [String]       = []
+    var suiteStartedCalls : [String]          = []
+    var suiteFinishedCalls : [String]         = []
+    var expectationPassedCalls : [ExampleStatus]  = []
+    var expectationFailedCalls : [ExampleStatus] = []
 
     override func specificationStarted(spec: Specification) {
       self.specificationStartedCalls.append(spec.subject)

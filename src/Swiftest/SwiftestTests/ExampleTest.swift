@@ -6,7 +6,7 @@ class ExampleTest : XCTestCase {
 
   func test_init() {
     XCTAssertEqual(example.subject, "the-description")
-    XCTAssertEqual(example.getStatus(), .Pending)
+    XCTAssertEqual(example.getStatus(), ExampleStatus.Pending)
   }
 
   func test_expect() {
@@ -20,7 +20,7 @@ class ExampleTest : XCTestCase {
     })
 
     example.run()
-    XCTAssertEqual(example.getStatus(), .Pass)
+    XCTAssertEqual(example.getStatus(), ExampleStatus.Pass)
   }
 
   func test_run_fail() {
@@ -31,9 +31,9 @@ class ExampleTest : XCTestCase {
 
     example.run()
 
-    XCTAssertEqual(example.expectations[0].status, .Pass)
-    XCTAssertEqual(example.expectations[1].status, .Fail)
+    XCTAssertEqual(example.expectations[0].status, ExampleStatus.Pass)
+    XCTAssertEqual(example.expectations[1].status, ExampleStatus.Fail)
 
-    XCTAssertEqual(example.getStatus(), .Fail)
+    XCTAssertEqual(example.getStatus(), ExampleStatus.Fail)
   }
 }

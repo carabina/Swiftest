@@ -1,5 +1,5 @@
 class Reporter {
-  var listeners: BaseListener[] = [Swiftest.systemListener]
+  var listeners: [BaseListener] = [Swiftest.systemListener]
 
   func addListener(lsn: BaseListener) {
     listeners.insert(lsn, atIndex: 0)

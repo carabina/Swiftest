@@ -11,7 +11,7 @@ class ExampleTest : XCTestCase {
 
   func test_expect() {
     let expectation = example.expect("a")
-    XCTAssertEqual(expectation.subject[0]!, "a")
+    XCTAssertEqual(expectation.subject!, "a")
   }
 
   func test_run() {

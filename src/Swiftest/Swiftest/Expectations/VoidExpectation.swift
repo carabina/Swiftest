@@ -27,7 +27,7 @@ class VoidExpectation : BaseExpectation {
 }
 
 class VoidPredicate<T:Comparable> {
-  var originalValue : [T]
+  var originalValue : T
   let predicate : Void -> T
   let subject: VoidBlk
   let parent: VoidExpectation
@@ -35,14 +35,14 @@ class VoidPredicate<T:Comparable> {
   init(predicate: Void -> T, subject: VoidBlk, parent: VoidExpectation) {
     self.subject = subject
     self.predicate = predicate
-    self.originalValue = [predicate()]
+    self.originalValue = predicate()
     self.parent = parent
   }
 
   func from(expected: T) -> VoidPredicate {
     _assert(
-      _orig() == expected,
-      msg: "expected an original value of \(expected), but was \(_orig())"
+      originalValue == expected,
+      msg: "expected an original value of \(expected), but was \(originalValue)"
     )
 
     return self
@@ -52,17 +52,17 @@ class VoidPredicate<T:Comparable> {
     subject()
     _assert(
       predicate() == expected,
-      msg: "expected \(_orig()) to change to \(expected), " +
+      msg: "expected \(originalValue) to change to \(expected), " +
         "changed to \(predicate())"
     )
   }
 
   func by(delta: Int) {
-    if let oldVal = _orig() as? Int {
+    if let oldVal = originalValue as? Int {
       subject()
       _assert(
         predicate() as Int == oldVal + delta,
-        msg: "expected change (by \(delta)) from \(_orig()) to " +
+        msg: "expected change (by \(delta)) from \(originalValue) to " +
           "\(oldVal + delta), changed to \(predicate())"
       )
     } else {
@@ -72,9 +72,5 @@ class VoidPredicate<T:Comparable> {
 
   func _assert(cond: Bool, msg: String) {
     parent._assert(cond, msg: msg)
-  }
-
-  func _orig() -> T {
-    return originalValue[0]
   }
 }

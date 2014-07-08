@@ -1,9 +1,9 @@
 class ArrayExpectation<T:Comparable> : BaseExpectation {
   typealias List = [T]
-  var subject : [List]
+  var subject : List
 
   init(subject: List, cursor: Cursor = Util.nullCursor) {
-    self.subject = [subject]
+    self.subject = subject
     super.init()
     self.cursor = cursor
   }
@@ -15,21 +15,17 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
 
   func toEqual(expected: List) {
     _assert(
-      _subject() == expected,
-      msg: "expected <\(_subject())> to\(_includeNot()) equal <\(expected)>"
+      subject == expected,
+      msg: "expected <\(subject)> to\(_includeNot()) equal <\(expected)>"
     )
   }
 
   func toContain(expected: T...) {
     _assert(
-      !_subject().filter() { (let subjectEl) in
+      !subject.filter() { (let subjectEl) in
         !expected.filter({ el in el == subjectEl }).isEmpty
       }.isEmpty,
-      msg: "expected <\(_subject())>\(_includeNot()) to contain <\(expected)>"
+      msg: "expected <\(subject)>\(_includeNot()) to contain <\(expected)>"
     )
-  }
-
-  func _subject() -> List {
-    return subject[0]
   }
 }

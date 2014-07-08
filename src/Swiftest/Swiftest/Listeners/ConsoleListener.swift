@@ -55,7 +55,7 @@ class ConsoleListener : BaseListener {
 
   func indentPrint(msg: String) {
     var str = ""
-    for _ in 0...self.offset { str += "  " }
+    for _ in 1...self.offset { str += "  " }
 
     printer(str + msg)
   }

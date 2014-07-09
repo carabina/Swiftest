@@ -3,7 +3,7 @@ import XCTest
 
 class SwiftestTest : XCTestCase {
   class MyTest : SwiftestSuite {
-    var spec =  describe("Swiftest") {
+    var spec = describe("A") {
       it("adds 1 + 1!") {
         expect(1 + 1).toEqual(2)
       }
@@ -44,7 +44,7 @@ class SwiftestTest : XCTestCase {
 
   class MyFailingTest : SwiftestSuite {
     var spec = Swiftest.describe("failure", fn: {
-      it("fails") {
+      it("B") {
         expect(true).not().toBe(true)
         expect(1 + 1).toEqual(2)
         expect(true).toBeFalse()
@@ -61,7 +61,6 @@ class SwiftestTest : XCTestCase {
       return ex.getStatus() == .Fail
     }
 
-    let specs = [MyTest(), MyFailingTest()]
     Swiftest.systemListener.onFinish = {}
     Swiftest.run()
 

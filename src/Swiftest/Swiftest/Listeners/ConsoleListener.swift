@@ -22,7 +22,7 @@ class ConsoleListener : BaseListener {
 
   override func specificationFinished(spec: Specification) {
     offset -= 1
-    if offset > 0 { printer("") }
+    if offset == 0 { printer("") }
   }
 
   override func exampleFinished(example: Example) {

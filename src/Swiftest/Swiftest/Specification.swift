@@ -21,14 +21,28 @@ class Specification : Runnable {
     context.add(Example(subject: subject, fn: fn, cursor: cursor))
   }
 
+  func beforeEach(fn: VoidBlk) {
+    context.beforeEach.append(fn)
+  }
+
+  func beforeAll(fn: VoidBlk) {
+    context.beforeAll.append(fn)
+  }
+
   func addSpec(spec: Specification) { context.add(spec) }
 
   func run() {
+    context.children.sort(Util.sortRunnables())
     Swiftest.reporter.specificationStarted(self)
-    sort(&context.children, Util.sortRunnables())
+
+    for blk in context.beforeAll { blk() }
 
     for child in context.children {
-      for defn in definitions { defn.reset() }
+      if child.ofType == "Example" {
+        for defn in definitions { defn.reset() }
+        for blk in context.beforeEach { blk() }
+      }
+
       child.run()
     }
     

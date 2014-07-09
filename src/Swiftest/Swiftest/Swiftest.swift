@@ -23,6 +23,7 @@ struct Swiftest {
   static func run() {
     Registrar.registerAll()
     reporter.suiteStarted()
+    context.specs.sort({ (let s1, s2) in s2.subject > s1.subject })
     runner(context)
     reporter.suiteFinished()
   }

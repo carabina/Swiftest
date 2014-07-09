@@ -37,6 +37,14 @@ func it(
   __current().example(desc, fn: Util.nullFn, cursor: Cursor(file: file, line: line))
 }
 
+func beforeEach(fn: VoidBlk) {
+  __current().beforeEach(fn)
+}
+
+func beforeAll(fn: VoidBlk) {
+  __current().beforeAll(fn)
+}
+
 func xit(desc: String, fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) {
   it(desc, file: file, line: line)
 }

@@ -6,6 +6,15 @@ func expect<T:Comparable>(
   return __currentEx().expect(subject, cursor: Cursor(file: file, line: line))
 }
 
+func expect(
+  subject: String,
+  file:String = __FILE__,
+  line:Int = __LINE__
+
+) -> StringExpectation {
+  return __currentEx().expect(subject, cursor: Cursor(file: file, line: line))
+}
+
 func expect<T:Comparable>(
   subject: [T],
   file: String = __FILE__,

@@ -1,7 +1,7 @@
 import Swiftest
 
 class DictionarySpec : SwiftestSuite {
-  let spec = describe("dictionaries") {
+  let spec = describe("dictionary assertions") {
     let dict = [ "key" : "val" ]
 
     it("equals") {

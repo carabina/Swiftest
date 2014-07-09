@@ -1,7 +1,7 @@
 import Swiftest
 
 class ArraySpec : SwiftestSuite {
-  let spec = describe("arrays") {
+  let spec = describe("array assertions") {
     it("contains an element") {
       expect([1, 2, 3]).toContain(1)
     }

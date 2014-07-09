@@ -6,6 +6,13 @@ extension Example {
     return _addExpectation(ScalarExpectation(subject: subject, cursor: cursor))
   }
 
+  func expect(
+    subject: String,
+    cursor: Cursor = Util.nullCursor
+  ) -> StringExpectation {
+    return _addExpectation(StringExpectation(subject: subject, cursor: cursor))
+  }
+
   func expect<T:Comparable>(
     subject: [T],
     cursor: Cursor = Util.nullCursor

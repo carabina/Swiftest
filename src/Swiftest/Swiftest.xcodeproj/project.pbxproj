@@ -15,6 +15,7 @@
 		95478BAD195FEEBB0019CFB3 /* Specification+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */; };
 		95478BAF195FF7B00019CFB3 /* VoidExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */; };
 		955240F8196C5D9F0059DD53 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955240F7196C5D9F0059DD53 /* Definition.swift */; };
+		956F673E196DB6E500D456B8 /* StringExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F673D196DB6E500D456B8 /* StringExpectation.swift */; };
 		95772DAD1960036A00A66370 /* Example+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95772DAC1960036A00A66370 /* Example+Expect.swift */; };
 		95C05986195FE85D0084D04C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C05985195FE85D0084D04C /* Util.swift */; };
 		95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B47195E0BA90092F6A8 /* Runnable.swift */; };
@@ -69,6 +70,7 @@
 		95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Specification+Context.swift"; sourceTree = "<group>"; };
 		95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
 		955240F7196C5D9F0059DD53 /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		956F673D196DB6E500D456B8 /* StringExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExpectation.swift; sourceTree = "<group>"; };
 		95772DAC1960036A00A66370 /* Example+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Example+Expect.swift"; sourceTree = "<group>"; };
 		95C05985195FE85D0084D04C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				95F05B77195CE35600B529D1 /* BoolExpectation.swift */,
 				95F05B78195CE35600B529D1 /* DictionaryExpectation.swift */,
 				95F05B79195CE35600B529D1 /* ScalarExpectation.swift */,
+				956F673D196DB6E500D456B8 /* StringExpectation.swift */,
 				95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */,
 			);
 			path = Expectations;
@@ -341,6 +344,7 @@
 				95F05B8B195CE35600B529D1 /* BaseExpectation.swift in Sources */,
 				95F05B89195CE35600B529D1 /* Swiftest.swift in Sources */,
 				95F05B94195CE43900B529D1 /* XCListener.swift in Sources */,
+				956F673E196DB6E500D456B8 /* StringExpectation.swift in Sources */,
 				95091303195F7AD300F672FE /* Registrar.m in Sources */,
 				95F05B93195CE43900B529D1 /* ConsoleListener.swift in Sources */,
 				95F05B83195CE35600B529D1 /* ExampleStatus.swift in Sources */,

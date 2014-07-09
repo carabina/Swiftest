@@ -55,6 +55,9 @@ class SampleSpec : SwiftestSuite {
 
     example("comparing letters of the alphabet!") {
       expect("abc").toEqual("abc")
+      expect("abc").toContain("b")
+      expect("abc").toStartWith("a")
+      expect("abc").toEndWith("c")
     }
 
     it("knows what stuff is NOT other stuff!") {
@@ -106,7 +109,7 @@ Compare this to declaring an optional value and then setting that value in a
 ```swift
 class DefinitionExample : SwiftestSuite {
   let spec = describe("definitions") {
-    var subject = define() { Counter(number: 5) }
+    var subject = define(Counter(number: 5))
 
     it("creates the object when you call the function") {
       subject().increment()

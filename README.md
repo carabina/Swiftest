@@ -24,13 +24,13 @@ Inspired heavily by
 * "example" project
 * nested describe blocks
 * auto-loading spec files
-* "void" closure matchers
+* "void" closure matchers (more to come)
+* beforeEach / beforeAll hooks
 
 ### To do:
 * CocoaPod installation
 * XCode target, project, and file templates
 * XCode error/warn reporter integration
-* setup / teardown / hooks
 * command-line interface?
 
 ### Example
@@ -40,7 +40,6 @@ import Swiftest
 
 // create a class that inherits from SwiftestSuite (it's just NSObject)
 // and define the 'spec' member property of that class using `describe`
-// be sure to use `let` and not `var` here!
 
 class SampleSpec : SwiftestSuite {
   let spec = describe("Swiftest") {

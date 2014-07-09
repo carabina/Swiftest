@@ -7,9 +7,9 @@ extension Example {
   }
 
   func expect(
-    subject: String,
+    subject: String?,
     cursor: Cursor = Util.nullCursor
-  ) -> StringExpectation {
+  ) -> StringExpectation<String> {
     return _addExpectation(StringExpectation(subject: subject, cursor: cursor))
   }
 

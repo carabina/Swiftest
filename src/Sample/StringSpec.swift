@@ -17,5 +17,18 @@ class StringSpec : SwiftestSuite {
     it("contains another string") {
       expect("abcdefg").toContain("bcdef")
     }
+
+    it("is greater than another string") {
+      expect("def").toBeGreaterThan("abc")
+    }
+
+    it("is less than another string") {
+      expect("def").toBeLessThan("jkl")
+    }
+
+    it("can be nil") {
+      var str : String?
+      expect(str).toBeNil()
+    }
   }
 }

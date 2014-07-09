@@ -7,11 +7,11 @@ func expect<T:Comparable>(
 }
 
 func expect(
-  subject: String,
+  subject: String?,
   file:String = __FILE__,
   line:Int = __LINE__
 
-) -> StringExpectation {
+) -> StringExpectation<String> {
   return __currentEx().expect(subject, cursor: Cursor(file: file, line: line))
 }
 

@@ -27,11 +27,11 @@ struct Swiftest {
   static func run() -> Int {
     Registrar.registerAll()
     context.sort()
-    
+
     reporter.suiteStarted()
     runner(context)
     reporter.suiteFinished()
-    
+
     return reporter.failedExamples.count
   }
 }

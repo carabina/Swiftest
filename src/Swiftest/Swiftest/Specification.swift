@@ -40,9 +40,9 @@ class Specification : Runnable {
       for blk in context.beforeEach { blk() }
       ex.run()
     }
-    
+
     for spec in context.specs() { spec.run() }
-    
+
     Swiftest.reporter.specificationFinished(self)
   }
 

@@ -6,7 +6,7 @@ enum Status : String, Comparable {
   static func has(status: Status) -> (Runnable -> Bool) {
     return { obj in obj.getStatus() == status }
   }
-  
+
   static func has(status: Status) -> (BaseExpectation -> Bool) {
     return { spec in spec.getStatus() == status }
   }

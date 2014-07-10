@@ -5,7 +5,7 @@ class Reporter {
   func addListener(lsn: BaseListener) {
     listeners.append(lsn)
   }
-  
+
   func notify(fn: BaseListener -> Void) {
     for lsn in listeners { fn(lsn) }
   }
@@ -34,7 +34,7 @@ class Reporter {
     if(example.getStatus() == .Fail) {
       failedExamples.append(example)
     }
-    
+
     notify({ lsn in lsn.exampleFinished(example) })
   }
 

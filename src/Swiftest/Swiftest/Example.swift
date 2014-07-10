@@ -1,7 +1,7 @@
 class Example : Runnable {
-  
+
   var expectations: [BaseExpectation] = []
-  
+
   let subject: String
   let fn: VoidBlk = nullFn
   let cursor: Cursor
@@ -30,7 +30,7 @@ class Example : Runnable {
 
     return expectations.isEmpty ? .Pending : .Pass
   }
-  
+
   func addExpectation<T:BaseExpectation>(exp: T) -> T {
     exp.example = self
     expectations.append(exp)

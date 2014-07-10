@@ -19,7 +19,7 @@ struct Context {
   func currentExample() -> Example {
     return current().context.onExample
   }
-  
+
   mutating func sort() {
     specs.sort({ (s1, s2) in s1.subject < s2.subject })
   }

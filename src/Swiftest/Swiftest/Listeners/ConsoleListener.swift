@@ -7,8 +7,20 @@ class ConsoleListener : BaseListener {
   var offset = 0
 
   override func suiteFinished() {
+    for ex in Swiftest.reporter.failedExamples {
+      indentPrint("× \(ex.subject) failed:")
+      offset += 1
+      for exp in ex.expectations.filter(Status.has(.Fail)) {
+        indentPrint("\(exp.msg) (\(exp.cursor.relativePath()):\(exp.cursor.line))")
+      }
+
+      printer("")
+
+      offset -= 1
+    }
+
     printer(
-      "\n:: RESULTS :: \n" +
+      ":: RESULTS :: \n" +
       "✓ \(passedCount)/\(runCount()) examples passed :: " +
       "× \(failedCount) failed :: " +
       "★ \(pendingCount) pending\n"
@@ -32,25 +44,10 @@ class ConsoleListener : BaseListener {
     } else if example.getStatus() == .Fail {
       failedCount++
       indentPrint("× \(example.subject)")
-      offset += 1
-      for ex in example.expectations { printStatus(ex) }
-      offset -= 1
     } else {
       pendingCount++
       indentPrint("★ \(example.subject)")
     }
-  }
-
-  func printStatus(expectation: BaseExpectation) {
-    if expectation.getStatus() == .Fail {
-      indentPrint("× \(expectation.msg)")
-      indentPrint("  at \(expectation.cursor.file):\(expectation.cursor.line)")
-    } else if expectation.getStatus() == .Pass {
-      indentPrint("✓ \(expectation.msg)")
-    } else {
-      indentPrint("★ \(expectation.msg)")
-    }
-    printer("")
   }
 
   func indentPrint(msg: String) {

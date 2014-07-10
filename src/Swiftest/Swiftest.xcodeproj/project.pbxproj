@@ -20,7 +20,7 @@
 		95F05B80195CE35600B529D1 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6A195CE35600B529D1 /* Context.swift */; };
 		95F05B81195CE35600B529D1 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6B195CE35600B529D1 /* Cursor.swift */; };
 		95F05B82195CE35600B529D1 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6C195CE35600B529D1 /* Example.swift */; };
-		95F05B83195CE35600B529D1 /* ExampleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6D195CE35600B529D1 /* ExampleStatus.swift */; };
+		95F05B83195CE35600B529D1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6D195CE35600B529D1 /* Status.swift */; };
 		95F05B85195CE35600B529D1 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6F195CE35600B529D1 /* Reporter.swift */; };
 		95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B70195CE35600B529D1 /* SpecDSL.swift */; };
 		95F05B87195CE35600B529D1 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B71195CE35600B529D1 /* Specification.swift */; };
@@ -74,7 +74,7 @@
 		95F05B6A195CE35600B529D1 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		95F05B6B195CE35600B529D1 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		95F05B6C195CE35600B529D1 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
-		95F05B6D195CE35600B529D1 /* ExampleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleStatus.swift; sourceTree = "<group>"; };
+		95F05B6D195CE35600B529D1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		95F05B6F195CE35600B529D1 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		95F05B70195CE35600B529D1 /* SpecDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDSL.swift; sourceTree = "<group>"; };
 		95F05B71195CE35600B529D1 /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
@@ -159,12 +159,12 @@
 				95F05B6B195CE35600B529D1 /* Cursor.swift */,
 				955240F7196C5D9F0059DD53 /* Definition.swift */,
 				95F05B6C195CE35600B529D1 /* Example.swift */,
-				95F05B6D195CE35600B529D1 /* ExampleStatus.swift */,
 				95F05B6F195CE35600B529D1 /* Reporter.swift */,
 				95E87B47195E0BA90092F6A8 /* Runnable.swift */,
 				95F05B70195CE35600B529D1 /* SpecDSL.swift */,
 				95F05B71195CE35600B529D1 /* Specification.swift */,
 				95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */,
+				95F05B6D195CE35600B529D1 /* Status.swift */,
 				95F05B73195CE35600B529D1 /* Swiftest.swift */,
 				95091301195F7AD300F672FE /* Swiftest-Bridge.h */,
 			);
@@ -338,7 +338,7 @@
 				956F673E196DB6E500D456B8 /* StringExpectation.swift in Sources */,
 				95091303195F7AD300F672FE /* Registrar.m in Sources */,
 				95F05B93195CE43900B529D1 /* ConsoleListener.swift in Sources */,
-				95F05B83195CE35600B529D1 /* ExampleStatus.swift in Sources */,
+				95F05B83195CE35600B529D1 /* Status.swift in Sources */,
 				95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */,
 				9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */,
 				95F05B85195CE35600B529D1 /* Reporter.swift in Sources */,

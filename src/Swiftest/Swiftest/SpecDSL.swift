@@ -41,13 +41,8 @@ func it(
   __current().example(desc, fn: nullFn, cursor: Cursor(file: file, line: line))
 }
 
-func beforeEach(fn: VoidBlk) {
-  __current().beforeEach(fn)
-}
-
-func beforeAll(fn: VoidBlk) {
-  __current().beforeAll(fn)
-}
+func before(hook: HookType, fn: VoidBlk) { __current().before(hook, fn: fn) }
+func before(fn: VoidBlk) { before(.each, fn) }
 
 func xit(desc: String, fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) {
   it(desc, file: file, line: line)

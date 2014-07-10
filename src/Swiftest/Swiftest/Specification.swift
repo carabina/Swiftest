@@ -19,12 +19,8 @@ class Specification : Runnable {
     context.add(Example(subject: subject, fn: fn, cursor: cursor))
   }
 
-  func beforeEach(fn: VoidBlk) {
-    context.beforeEach.append(fn)
-  }
-
-  func beforeAll(fn: VoidBlk) {
-    context.beforeAll.append(fn)
+  func before(hook: HookType, fn: VoidBlk) {
+    context.addHook(hook, fn: fn)
   }
 
   func addSpec(spec: Specification) { context.add(spec) }
@@ -33,11 +29,11 @@ class Specification : Runnable {
     Swiftest.reporter.specificationStarted(self)
 
     context.sort()
-    for blk in context.beforeAll { blk() }
+    for blk in context.hooksFor(.all) { blk() }
 
     for ex in context.examples() {
       for defn in definitions { defn.reset() }
-      for blk in context.beforeEach { blk() }
+      for blk in context.hooksFor(.each) { blk() }
       ex.run()
     }
 

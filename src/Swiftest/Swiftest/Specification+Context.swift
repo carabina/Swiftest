@@ -3,16 +3,34 @@ enum RunnableType : String {
   case Specification = "Specification"
 }
 
+enum HookType : String {
+  case each = "each"
+  case all = "all"
+}
+
 extension Specification {
   class Context {
 
     var children : [Runnable] = []
-    var beforeEach : [VoidBlk] = []
-    var beforeAll : [VoidBlk]  = []
+    var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
+      HookType.each : [],
+      HookType.all  : []
+    ]
+    
     var onExample : Example = nullExample
 
     func add(child: Runnable) {
       children.append(child)
+    }
+    
+    func addHook(hook: HookType, fn: VoidBlk) {
+      if var result = beforeHooks[hook] {
+        beforeHooks[hook] = result + [fn]
+      }
+    }
+    
+    func hooksFor(hook: HookType) -> [VoidBlk] {
+      return beforeHooks[hook]!
     }
 
     func withExample(ex: Example, fn: VoidBlk) {

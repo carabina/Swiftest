@@ -4,7 +4,7 @@ class HooksSpec : SwiftestSuite {
     var (beforeEachCount, beforeAllCount) = (0, 0)
 
     describe("before each") {
-      beforeEach() { beforeEachCount += 1 }
+      before() { beforeEachCount += 1 }
 
       it("runs a function before each example") {
         expect(beforeEachCount).toEqual(1)
@@ -15,7 +15,7 @@ class HooksSpec : SwiftestSuite {
       }
 
       describe("nesting") {
-        beforeEach() { beforeEachCount += 1 }
+        before(.each) { beforeEachCount += 1 }
 
         it("runs all the beforeEach blocks preceding it") {
           expect(beforeEachCount).toEqual(3)
@@ -24,7 +24,7 @@ class HooksSpec : SwiftestSuite {
     }
 
     describe("before all") {
-      beforeAll() { beforeAllCount += 1 }
+      before(.all) { beforeAllCount += 1 }
 
       it("increments the variable") {
         expect(beforeAllCount).toEqual(1)

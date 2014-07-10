@@ -1,3 +1,9 @@
+func before(hook: HookType, fn: VoidBlk) {
+  __current().before(hook, fn: fn)
+}
+
+func before(fn: VoidBlk) { before(.each, fn) }
+
 func describe(
   subject: String,
   fn: VoidBlk,
@@ -11,52 +17,37 @@ func describe(
   )
 }
 
+func define<T>(fn: @auto_closure () -> T) -> Void -> T {
+  return __current().define(fn)
+}
+
 func example(
   subject: String,
-  fn: VoidBlk,
+  _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
   __current().example(subject, fn: fn, cursor: Cursor(file: file, line: line))
 }
 
-func example(desc: String, file: String = __FILE__, line: Int = __LINE__) {
-  __current().example(desc, fn: nullFn, cursor: Cursor(file: file, line: line))
-}
-
 func it(
   desc: String,
-  fn: VoidBlk,
+  _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  __current().example(desc, fn: fn, cursor: Cursor(file: file, line: line))
+  example(desc, fn, file: file, line: line)
 }
 
-func it(
+func xit(
   desc: String,
+  _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  __current().example(desc, fn: nullFn, cursor: Cursor(file: file, line: line))
-}
-
-func before(hook: HookType, fn: VoidBlk) { __current().before(hook, fn: fn) }
-func before(fn: VoidBlk) { before(.each, fn) }
-
-func xit(desc: String, fn: VoidBlk, file: String = __FILE__, line: Int = __LINE__) {
   it(desc, file: file, line: line)
-}
-
-func xit(desc: String, file: String = __FILE__, line: Int = __LINE__) {
-  it(desc, file: file, line: line)
-}
-
-func define<T>(fn: @auto_closure () -> T) -> Void -> T {
-  return __current().define(fn)
 }
 
 func __current() -> Specification {
   return Swiftest.context.current()
 }
-

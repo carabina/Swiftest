@@ -45,7 +45,7 @@ func xit(
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  it(desc, file: file, line: line)
+  example(desc, file: file, line: line)
 }
 
 func __current() -> Specification {

@@ -61,7 +61,6 @@ class SwiftestTest : XCTestCase {
       return ex.getStatus() == .Fail
     }
 
-    Swiftest.systemListener.onFinish = {}
     Swiftest.run()
 
     let passingResult = Swiftest.context.specs[0]

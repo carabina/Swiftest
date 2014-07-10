@@ -1,11 +1,11 @@
 class BaseExpectation {
   let defaultMessage = "expectation failed"
 
-  var status = ExampleStatus.Pending
+  var status = Status.Pending
   var _reverse = false
   var msg : String
-  var example = Util.nullExample
-  var cursor = Util.nullCursor
+  var example = nullExample
+  var cursor = nullCursor
 
   func _assert(cond:Bool) {
     self.status = cond ^ _reverse ? .Pass : .Fail
@@ -21,7 +21,7 @@ class BaseExpectation {
     msg = defaultMessage
   }
 
-  func getStatus() -> ExampleStatus {
+  func getStatus() -> Status {
     return self.status
   }
 

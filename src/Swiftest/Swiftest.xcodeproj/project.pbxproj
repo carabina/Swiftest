@@ -9,22 +9,18 @@
 /* Begin PBXBuildFile section */
 		95091300195F7A7F00F672FE /* Registrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 950912FF195F7A7F00F672FE /* Registrar.h */; };
 		95091303195F7AD300F672FE /* Registrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95091302195F7AD300F672FE /* Registrar.m */; };
-		95091305195F887800F672FE /* SystemListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95091304195F887800F672FE /* SystemListener.swift */; };
 		95091309195FC71000F672FE /* SwiftestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 95091308195FC71000F672FE /* SwiftestSuite.h */; };
 		9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509130A195FC73E00F672FE /* SwiftestSuite.m */; };
 		95478BAD195FEEBB0019CFB3 /* Specification+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */; };
 		95478BAF195FF7B00019CFB3 /* VoidExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */; };
 		955240F8196C5D9F0059DD53 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955240F7196C5D9F0059DD53 /* Definition.swift */; };
 		956F673E196DB6E500D456B8 /* StringExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F673D196DB6E500D456B8 /* StringExpectation.swift */; };
-		95772DAD1960036A00A66370 /* Example+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95772DAC1960036A00A66370 /* Example+Expect.swift */; };
-		95C05986195FE85D0084D04C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C05985195FE85D0084D04C /* Util.swift */; };
 		95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B47195E0BA90092F6A8 /* Runnable.swift */; };
 		95F05B55195CE07800B529D1 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F05B49195CE07800B529D1 /* libSwiftest.dylib */; };
 		95F05B80195CE35600B529D1 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6A195CE35600B529D1 /* Context.swift */; };
 		95F05B81195CE35600B529D1 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6B195CE35600B529D1 /* Cursor.swift */; };
 		95F05B82195CE35600B529D1 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6C195CE35600B529D1 /* Example.swift */; };
 		95F05B83195CE35600B529D1 /* ExampleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6D195CE35600B529D1 /* ExampleStatus.swift */; };
-		95F05B84195CE35600B529D1 /* ExpectDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6E195CE35600B529D1 /* ExpectDSL.swift */; };
 		95F05B85195CE35600B529D1 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B6F195CE35600B529D1 /* Reporter.swift */; };
 		95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B70195CE35600B529D1 /* SpecDSL.swift */; };
 		95F05B87195CE35600B529D1 /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B71195CE35600B529D1 /* Specification.swift */; };
@@ -48,6 +44,7 @@
 		95F05BA9195CE44F00B529D1 /* ReporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B9E195CE44F00B529D1 /* ReporterTest.swift */; };
 		95F05BAA195CE44F00B529D1 /* SpecificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B9F195CE44F00B529D1 /* SpecificationTest.swift */; };
 		95F05BAB195CE44F00B529D1 /* SwiftestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05BA0195CE44F00B529D1 /* SwiftestTest.swift */; };
+		95F208AA196E2E10000EF0CA /* VoidPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F208A9196E2E10000EF0CA /* VoidPredicate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,15 +61,12 @@
 		950912FF195F7A7F00F672FE /* Registrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrar.h; sourceTree = "<group>"; };
 		95091301195F7AD300F672FE /* Swiftest-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swiftest-Bridge.h"; sourceTree = "<group>"; };
 		95091302195F7AD300F672FE /* Registrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registrar.m; sourceTree = "<group>"; };
-		95091304195F887800F672FE /* SystemListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemListener.swift; sourceTree = "<group>"; };
 		95091308195FC71000F672FE /* SwiftestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftestSuite.h; sourceTree = "<group>"; };
 		9509130A195FC73E00F672FE /* SwiftestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSuite.m; sourceTree = "<group>"; };
 		95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Specification+Context.swift"; sourceTree = "<group>"; };
 		95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
 		955240F7196C5D9F0059DD53 /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		956F673D196DB6E500D456B8 /* StringExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExpectation.swift; sourceTree = "<group>"; };
-		95772DAC1960036A00A66370 /* Example+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Example+Expect.swift"; sourceTree = "<group>"; };
-		95C05985195FE85D0084D04C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
 		95F05B49195CE07800B529D1 /* libSwiftest.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSwiftest.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F05B54195CE07800B529D1 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +75,6 @@
 		95F05B6B195CE35600B529D1 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		95F05B6C195CE35600B529D1 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		95F05B6D195CE35600B529D1 /* ExampleStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleStatus.swift; sourceTree = "<group>"; };
-		95F05B6E195CE35600B529D1 /* ExpectDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectDSL.swift; sourceTree = "<group>"; };
 		95F05B6F195CE35600B529D1 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		95F05B70195CE35600B529D1 /* SpecDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDSL.swift; sourceTree = "<group>"; };
 		95F05B71195CE35600B529D1 /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
@@ -105,6 +98,7 @@
 		95F05B9E195CE44F00B529D1 /* ReporterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReporterTest.swift; sourceTree = "<group>"; };
 		95F05B9F195CE44F00B529D1 /* SpecificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificationTest.swift; sourceTree = "<group>"; };
 		95F05BA0195CE44F00B529D1 /* SwiftestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftestTest.swift; sourceTree = "<group>"; };
+		95F208A9196E2E10000EF0CA /* VoidPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidPredicate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,16 +159,13 @@
 				95F05B6B195CE35600B529D1 /* Cursor.swift */,
 				955240F7196C5D9F0059DD53 /* Definition.swift */,
 				95F05B6C195CE35600B529D1 /* Example.swift */,
-				95772DAC1960036A00A66370 /* Example+Expect.swift */,
 				95F05B6D195CE35600B529D1 /* ExampleStatus.swift */,
-				95F05B6E195CE35600B529D1 /* ExpectDSL.swift */,
 				95F05B6F195CE35600B529D1 /* Reporter.swift */,
 				95E87B47195E0BA90092F6A8 /* Runnable.swift */,
 				95F05B70195CE35600B529D1 /* SpecDSL.swift */,
 				95F05B71195CE35600B529D1 /* Specification.swift */,
 				95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */,
 				95F05B73195CE35600B529D1 /* Swiftest.swift */,
-				95C05985195FE85D0084D04C /* Util.swift */,
 				95091301195F7AD300F672FE /* Swiftest-Bridge.h */,
 			);
 			path = Swiftest;
@@ -210,7 +201,6 @@
 				95F05B8F195CE43900B529D1 /* BaseListener.swift */,
 				95F05B90195CE43900B529D1 /* ConsoleListener.swift */,
 				95F05B91195CE43900B529D1 /* XCListener.swift */,
-				95091304195F887800F672FE /* SystemListener.swift */,
 			);
 			path = Listeners;
 			sourceTree = "<group>";
@@ -225,6 +215,7 @@
 				95F05B79195CE35600B529D1 /* ScalarExpectation.swift */,
 				956F673D196DB6E500D456B8 /* StringExpectation.swift */,
 				95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */,
+				95F208A9196E2E10000EF0CA /* VoidPredicate.swift */,
 			);
 			path = Expectations;
 			sourceTree = "<group>";
@@ -351,13 +342,11 @@
 				95F05B86195CE35600B529D1 /* SpecDSL.swift in Sources */,
 				9509130B195FC73E00F672FE /* SwiftestSuite.m in Sources */,
 				95F05B85195CE35600B529D1 /* Reporter.swift in Sources */,
-				95F05B84195CE35600B529D1 /* ExpectDSL.swift in Sources */,
 				95F05B80195CE35600B529D1 /* Context.swift in Sources */,
-				95C05986195FE85D0084D04C /* Util.swift in Sources */,
 				95478BAD195FEEBB0019CFB3 /* Specification+Context.swift in Sources */,
-				95091305195F887800F672FE /* SystemListener.swift in Sources */,
 				95478BAF195FF7B00019CFB3 /* VoidExpectation.swift in Sources */,
 				95F05B8E195CE35600B529D1 /* ScalarExpectation.swift in Sources */,
+				95F208AA196E2E10000EF0CA /* VoidPredicate.swift in Sources */,
 				95F05B81195CE35600B529D1 /* Cursor.swift in Sources */,
 				95F05B8C195CE35600B529D1 /* BoolExpectation.swift in Sources */,
 				955240F8196C5D9F0059DD53 /* Definition.swift in Sources */,
@@ -367,7 +356,6 @@
 				95F05B92195CE43900B529D1 /* BaseListener.swift in Sources */,
 				95E87B48195E0BA90092F6A8 /* Runnable.swift in Sources */,
 				95F05B8A195CE35600B529D1 /* ArrayExpectation.swift in Sources */,
-				95772DAD1960036A00A66370 /* Example+Expect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

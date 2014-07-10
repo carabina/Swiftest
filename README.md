@@ -28,10 +28,12 @@ Inspired heavily by
 * beforeEach / beforeAll hooks
 
 ### To do:
-* CocoaPod installation
+* iPhone runner (scripts exist for this, just need to implement)
+* change to framework
 * XCode target, project, and file templates
 * XCode error/warn reporter integration
-* command-line interface?
+* CocoaPod installation (?)
+* command-line interface (?)
 
 ### Example
 

@@ -1,6 +1,6 @@
 class StringExpectation<T> : ScalarExpectation<String> {
 
-  init(subject: String?, cursor: Cursor = Util.nullCursor) {
+  init(subject: String?, cursor: Cursor = nullCursor) {
     super.init(subject: subject, cursor: cursor)
   }
 
@@ -29,4 +29,14 @@ class StringExpectation<T> : ScalarExpectation<String> {
       msg: "expected <\(subject)> to\(_includeNot()) contain <\(fragment)>"
     )
   }
+}
+
+func expect(
+  subject: String?,
+  file:String = __FILE__,
+  line:Int = __LINE__
+) -> StringExpectation<String> {
+  return Swiftest.context.currentExample().addExpectation(
+    StringExpectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
 }

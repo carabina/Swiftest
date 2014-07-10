@@ -2,7 +2,7 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
   typealias List = [T]
   var subject : List
 
-  init(subject: List, cursor: Cursor = Util.nullCursor) {
+  init(subject: List, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
@@ -29,3 +29,14 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
     )
   }
 }
+
+func expect<T:Comparable>(
+  subject: [T],
+  file: String = __FILE__,
+  line: Int = __LINE__
+) -> ArrayExpectation<T> {
+  return Swiftest.context.currentExample().addExpectation(
+    ArrayExpectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
+}
+

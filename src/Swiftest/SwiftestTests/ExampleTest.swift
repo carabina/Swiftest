@@ -2,15 +2,15 @@ import Swiftest
 import XCTest
 
 class ExampleTest : XCTestCase {
-  var example = Example(subject : "the-description", fn:Util.nullFn)
+  var example = Example(subject : "the-description", fn: nullFn)
 
   func test_init() {
     XCTAssertEqual(example.subject, "the-description")
-    XCTAssertEqual(example.getStatus(), ExampleStatus.Pending)
+    XCTAssertEqual(example.getStatus(), Status.Pending)
   }
 
   func test_expect() {
-    let expectation = example.expect("a")
+    let expectation = example.addExpectation(ScalarExpectation(subject: "a"))
     XCTAssertEqual(expectation.subject!, "a")
   }
 
@@ -20,7 +20,7 @@ class ExampleTest : XCTestCase {
     })
 
     example.run()
-    XCTAssertEqual(example.getStatus(), ExampleStatus.Pass)
+    XCTAssertEqual(example.getStatus(), Status.Pass)
   }
 
   func test_run_fail() {
@@ -31,9 +31,9 @@ class ExampleTest : XCTestCase {
 
     example.run()
 
-    XCTAssertEqual(example.expectations[0].status, ExampleStatus.Pass)
-    XCTAssertEqual(example.expectations[1].status, ExampleStatus.Fail)
+    XCTAssertEqual(example.expectations[0].status, Status.Pass)
+    XCTAssertEqual(example.expectations[1].status, Status.Fail)
 
-    XCTAssertEqual(example.getStatus(), ExampleStatus.Fail)
+    XCTAssertEqual(example.getStatus(), Status.Fail)
   }
 }

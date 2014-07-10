@@ -1,5 +1,6 @@
 import Swiftest
+import Foundation
 
 Swiftest.reporter.addListener(ConsoleListener())
 
-Swiftest.run()
+exit(CInt(Swiftest.run()))

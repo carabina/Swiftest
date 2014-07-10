@@ -9,8 +9,8 @@ struct SwiftestTests {
     var exampleFinishedCalls : [String]       = []
     var suiteStartedCalls : [String]          = []
     var suiteFinishedCalls : [String]         = []
-    var expectationPassedCalls : [ExampleStatus]  = []
-    var expectationFailedCalls : [ExampleStatus] = []
+    var expectationPassedCalls : [Status]  = []
+    var expectationFailedCalls : [Status] = []
 
     override func specificationStarted(spec: Specification) {
       self.specificationStartedCalls.append(spec.subject)

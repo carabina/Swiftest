@@ -13,11 +13,15 @@ struct Context {
   }
 
   func current() -> Specification {
-    return stack.isEmpty ? Util.nullSpec : stack[stack.count - 1]
+    return stack.isEmpty ? nullSpec : stack[stack.count - 1]
   }
 
   func currentExample() -> Example {
     return current().context.onExample
+  }
+  
+  mutating func sort() {
+    specs.sort({ (s1, s2) in s1.subject < s2.subject })
   }
 
 }

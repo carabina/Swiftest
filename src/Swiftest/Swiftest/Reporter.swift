@@ -1,8 +1,13 @@
 class Reporter {
-  var listeners: [BaseListener] = [Swiftest.systemListener]
+  var listeners: [BaseListener] = []
+  var failedExamples : [Example] = []
 
   func addListener(lsn: BaseListener) {
-    listeners.insert(lsn, atIndex: 0)
+    listeners.append(lsn)
+  }
+  
+  func notify(fn: BaseListener -> Void) {
+    for lsn in listeners { fn(lsn) }
   }
 
   func suiteStarted() {
@@ -26,6 +31,10 @@ class Reporter {
   }
 
   func exampleFinished(example: Example) {
+    if(example.getStatus() == .Fail) {
+      failedExamples.append(example)
+    }
+    
     notify({ lsn in lsn.exampleFinished(example) })
   }
 
@@ -37,7 +46,4 @@ class Reporter {
     notify({ lsn in lsn.expectationFailed(expectation) })
   }
 
-  func notify(fn: BaseListener -> Void) {
-    for lsn in listeners { fn(lsn) }
-  }
 }

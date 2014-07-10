@@ -1,10 +1,14 @@
 func describe(
-  target: String,
+  subject: String,
   fn: VoidBlk,
   file: String = __FILE__,
   line: Int = __LINE__
 ) -> Specification {
-  return Swiftest.describe(target, fn: fn, cursor: Cursor(file: file, line: line))
+  return Swiftest.describe(
+    subject,
+    fn: fn,
+    cursor: Cursor(file: file, line: line)
+  )
 }
 
 func example(
@@ -17,7 +21,7 @@ func example(
 }
 
 func example(desc: String, file: String = __FILE__, line: Int = __LINE__) {
-  __current().example(desc, fn: Util.nullFn, cursor: Cursor(file: file, line: line))
+  __current().example(desc, fn: nullFn, cursor: Cursor(file: file, line: line))
 }
 
 func it(
@@ -34,7 +38,7 @@ func it(
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  __current().example(desc, fn: Util.nullFn, cursor: Cursor(file: file, line: line))
+  __current().example(desc, fn: nullFn, cursor: Cursor(file: file, line: line))
 }
 
 func beforeEach(fn: VoidBlk) {

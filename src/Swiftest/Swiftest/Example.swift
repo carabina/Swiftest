@@ -1,12 +1,13 @@
 class Example : Runnable {
-  var subject: String
-  var fn: VoidBlk = Util.nullFn
+  
   var expectations: [BaseExpectation] = []
   
+  let subject: String
+  let fn: VoidBlk = nullFn
   let cursor: Cursor
   let ofType = "Example"
 
-  init(subject: String, fn: VoidBlk, cursor: Cursor = Util.nullCursor) {
+  init(subject: String, fn: VoidBlk, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.fn = fn
     self.cursor = cursor
@@ -20,13 +21,19 @@ class Example : Runnable {
     }
   }
 
-  func getStatus() -> ExampleStatus {
-    for status in [ExampleStatus.Fail, ExampleStatus.Pending] {
-      if !(expectations.filter(Util.hasStatus(status))).isEmpty {
+  func getStatus() -> Status {
+    for status in [Status.Fail, Status.Pending] {
+      if !(expectations.filter(Status.has(status))).isEmpty {
         return status
       }
     }
 
     return expectations.isEmpty ? .Pending : .Pass
+  }
+  
+  func addExpectation<T:BaseExpectation>(exp: T) -> T {
+    exp.example = self
+    expectations.append(exp)
+    return exp
   }
 }

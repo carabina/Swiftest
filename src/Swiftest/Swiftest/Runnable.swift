@@ -1,6 +1,6 @@
 protocol Runnable {
   func run()
-  func getStatus() -> ExampleStatus
+  func getStatus() -> Status
   var ofType : String { get }
 }
 

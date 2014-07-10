@@ -1,5 +1,3 @@
-import Foundation
-
 class Specification : Runnable {
   let ofType = "Spec"
   var context = Specification.Context()
@@ -8,7 +6,7 @@ class Specification : Runnable {
   let cursor : Cursor
   var definitions : [Resettable] = []
 
-  init(subject:String, cursor: Cursor = Util.nullCursor) {
+  init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.cursor = cursor
   }
@@ -16,7 +14,7 @@ class Specification : Runnable {
   func example(
     subject: String,
     fn: VoidBlk,
-    cursor: Cursor = Util.nullCursor
+    cursor: Cursor = nullCursor
   ) {
     context.add(Example(subject: subject, fn: fn, cursor: cursor))
   }
@@ -32,25 +30,24 @@ class Specification : Runnable {
   func addSpec(spec: Specification) { context.add(spec) }
 
   func run() {
-    context.children.sort(Util.sortRunnables())
     Swiftest.reporter.specificationStarted(self)
 
+    context.sort()
     for blk in context.beforeAll { blk() }
 
-    for child in context.children {
-      if child.ofType == "Example" {
-        for defn in definitions { defn.reset() }
-        for blk in context.beforeEach { blk() }
-      }
-
-      child.run()
+    for ex in context.examples() {
+      for defn in definitions { defn.reset() }
+      for blk in context.beforeEach { blk() }
+      ex.run()
     }
+    
+    for spec in context.specs() { spec.run() }
     
     Swiftest.reporter.specificationFinished(self)
   }
 
-  func getStatus() -> ExampleStatus {
-    return context.children.filter(Util.hasStatus(.Fail)).isEmpty ? .Pass: .Fail
+  func getStatus() -> Status {
+    return context.children.filter(Status.has(.Fail)).isEmpty ? .Pass: .Fail
   }
 
   func withExample(ex: Example, fn: VoidBlk) { context.withExample(ex, fn: fn) }

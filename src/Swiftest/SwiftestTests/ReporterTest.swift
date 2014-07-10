@@ -13,11 +13,11 @@ class ReporterTest : XCTestCase {
 
   func test_zeroListenersOnInit() {
     var reporter = Reporter()
-    XCTAssertEqual(reporter.listeners.count, 1)
+    XCTAssertEqual(reporter.listeners.count, 0)
   }
 
   func test_addListener() {
-    XCTAssertEqual(reporter.listeners.count, 2)
+    XCTAssertEqual(reporter.listeners.count, 1)
 
     let addedListener = reporter.listeners[0]
 
@@ -31,7 +31,6 @@ class ReporterTest : XCTestCase {
   }
 
   func test_notifySuiteFinished() {
-    Swiftest.systemListener.onFinish = {}
     XCTAssertEqual(listener.suiteFinishedCalls.count, 0)
     reporter.suiteFinished()
     XCTAssertEqual(listener.suiteFinishedCalls.count, 1)
@@ -75,7 +74,7 @@ class ReporterTest : XCTestCase {
 
     reporter.expectationPassed(expectation)
     XCTAssertEqual(listener.expectationPassedCalls.count, 1)
-    XCTAssertEqual(listener.expectationPassedCalls[0], ExampleStatus.Pass)
+    XCTAssertEqual(listener.expectationPassedCalls[0], Status.Pass)
   }
 
   func test_notifyExpectationFailed() {
@@ -85,6 +84,6 @@ class ReporterTest : XCTestCase {
 
     reporter.expectationFailed(expectation)
     XCTAssertEqual(listener.expectationFailedCalls.count, 1)
-    XCTAssertEqual(listener.expectationFailedCalls[0], ExampleStatus.Fail)
+    XCTAssertEqual(listener.expectationFailedCalls[0], Status.Fail)
   }
 }

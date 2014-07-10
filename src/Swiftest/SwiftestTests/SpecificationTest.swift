@@ -19,16 +19,16 @@ class SpecificationTest : XCTestCase {
   }
 
   func test_createBlankExample() {
-    spec.example("does something", fn:Util.nullFn)
+    spec.example("does something", fn: nullFn)
 
     XCTAssertEqual(spec.context.children.count, 1)
-    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Pending)
+    XCTAssertEqual(spec.context.children[0].getStatus(), Status.Pending)
   }
 
   func test_createExampleWithBlock() {
     spec.example("does something", fn: {})
     XCTAssertEqual(spec.context.children.count, 1);
-    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Pending)
+    XCTAssertEqual(spec.context.children[0].getStatus(), Status.Pending)
   }
 
   func test_define() {
@@ -48,7 +48,7 @@ class SpecificationTest : XCTestCase {
 
     spec.run()
 
-    XCTAssertEqual(spec.context.children[0].getStatus(), ExampleStatus.Fail)
+    XCTAssertEqual(spec.context.children[0].getStatus(), Status.Fail)
   }
 
 }

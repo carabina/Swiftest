@@ -1,7 +1,7 @@
 class BoolExpectation : BaseExpectation {
   var subject : Bool
 
-  init(subject: Bool, cursor: Cursor = Util.nullCursor) {
+  init(subject: Bool, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
@@ -28,4 +28,14 @@ class BoolExpectation : BaseExpectation {
   }
 
   func toEqual(bool: Bool) { toBe(bool) }
+}
+
+func expect(
+  subject: Bool,
+  file: String = __FILE__,
+  line: Int = __LINE__
+) -> BoolExpectation {
+  return Swiftest.context.currentExample().addExpectation(
+    BoolExpectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
 }

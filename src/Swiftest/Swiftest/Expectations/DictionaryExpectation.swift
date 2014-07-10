@@ -3,7 +3,7 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
 
   var subject : Dict
 
-  init(subject : Dict, cursor: Cursor = Util.nullCursor) {
+  init(subject : Dict, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
@@ -50,4 +50,15 @@ class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
 
     return found
   }
+}
+
+
+func expect<K:Comparable,V:Comparable>(
+  subject: Dictionary<K,V>,
+  file: String = __FILE__,
+  line: Int = __LINE__
+) -> DictionaryExpectation<K, V> {
+  return Swiftest.context.currentExample().addExpectation(
+    DictionaryExpectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
 }

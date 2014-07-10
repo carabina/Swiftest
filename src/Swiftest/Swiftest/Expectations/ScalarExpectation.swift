@@ -1,7 +1,7 @@
 class ScalarExpectation<T:Comparable> : BaseExpectation {
   var subject: T?
 
-  init(subject: T?, cursor: Cursor = Util.nullCursor) {
+  init(subject: T?, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
@@ -55,3 +55,14 @@ class ScalarExpectation<T:Comparable> : BaseExpectation {
   }
 
 }
+
+func expect<T:Comparable>(
+  subject: T,
+  file:String = __FILE__,
+  line:Int = __LINE__
+) -> ScalarExpectation<T> {
+  return Swiftest.context.currentExample().addExpectation(
+    ScalarExpectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
+}
+

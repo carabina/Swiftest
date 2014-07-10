@@ -1,9 +1,13 @@
 typealias Runner = Context -> Void
 typealias VoidBlk = Void -> Void
 
+let nullExample = Example(subject : "null example", fn: nullFn)
+let nullSpec = Specification(subject: "null spec")
+let nullFn: VoidBlk = {}
+let nullCursor = Cursor(file: "null", line: 0)
+
 struct Swiftest {
   static let reporter = Reporter()
-  static let systemListener = SystemListener()
 
   static var context = Context()
   static var runner: Runner = { (let context) in
@@ -11,20 +15,23 @@ struct Swiftest {
   }
 
   static func describe(
-    target: String,
+    subject: String,
     fn: VoidBlk,
-    cursor: Cursor = Util.nullCursor
+    cursor: Cursor = nullCursor
   ) -> Specification {
-    context.addSpec(Specification(subject: target, cursor: cursor))
+    context.addSpec(Specification(subject: subject, cursor: cursor))
     fn()
     return context.popSpec()
   }
 
-  static func run() {
+  static func run() -> Int {
     Registrar.registerAll()
+    context.sort()
+    
     reporter.suiteStarted()
-    context.specs.sort({ (let s1, s2) in s2.subject > s1.subject })
     runner(context)
     reporter.suiteFinished()
+    
+    return reporter.failedExamples.count
   }
 }

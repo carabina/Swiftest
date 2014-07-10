@@ -1,5 +1,5 @@
 class Specification : Runnable {
-  let ofType = "Spec"
+  let ofType = RunnableType.Specification
   var context = Specification.Context()
 
   let subject : String

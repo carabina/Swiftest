@@ -5,7 +5,7 @@ class Example : Runnable {
   let subject: String
   let fn: VoidBlk = nullFn
   let cursor: Cursor
-  let ofType = "Example"
+  let ofType = RunnableType.Example
 
   init(subject: String, fn: VoidBlk, cursor: Cursor = nullCursor) {
     self.subject = subject

@@ -10,7 +10,7 @@ class ExampleTest : XCTestCase {
   }
 
   func test_expect() {
-    let expectation = example.addExpectation(ScalarExpectation(subject: "a"))
+    let expectation = example.addExpectation(ScalarComparison(subject: "a"))
     XCTAssertEqual(expectation.subject!, "a")
   }
 

@@ -68,7 +68,7 @@ class ReporterTest : XCTestCase {
   }
 
   func test_notifyExpectationPassed() {
-    let expectation = ScalarExpectation(subject: 1)
+    let expectation = ScalarComparison(subject: 1)
     expectation.toEqual(1)
     XCTAssertEqual(listener.expectationPassedCalls.count, 0)
 
@@ -78,7 +78,7 @@ class ReporterTest : XCTestCase {
   }
 
   func test_notifyExpectationFailed() {
-    let expectation = ScalarExpectation(subject: 1)
+    let expectation = ScalarComparison(subject: 1)
     expectation.toEqual(2)
     XCTAssertEqual(listener.expectationFailedCalls.count, 0)
 

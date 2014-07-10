@@ -3,7 +3,7 @@ import XCTest
 
 class ExpectationTest : XCTestCase {
 
-  let expectation = ScalarExpectation(subject: "subject")
+  let expectation = ScalarComparison(subject: "subject")
 
   func test_toEqual_pass() {
     expectation.toEqual("subject")
@@ -28,7 +28,7 @@ class ExpectationTest : XCTestCase {
   }
 
   func test_toEqual_int() {
-    let ex = ScalarExpectation(subject: 1)
+    let ex = ScalarComparison(subject: 1)
     ex.toEqual(1)
     XCTAssertEqual(ex.status, Status.Pass);
   }
@@ -61,7 +61,7 @@ class ExpectationTest : XCTestCase {
   }
 
   func testComparisons() {
-    let ex = ScalarExpectation(subject: 1)
+    let ex = ScalarComparison(subject: 1)
 
     ex.toBeGreaterThan(0)
     ex.toBeGreaterThanOrEqualTo(0)

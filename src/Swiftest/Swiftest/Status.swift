@@ -1,4 +1,4 @@
-enum Status : String, Comparable {
+enum Status : String, Equatable {
   case Fail    = "Fail"
   case Pass    = "Pass"
   case Pending = "Pending"
@@ -14,16 +14,4 @@ enum Status : String, Comparable {
 
 @infix func == (p1: Status, p2: Status) -> Bool {
   return p1.toRaw() == p2.toRaw()
-}
-
-@infix func < (p1: Status, p2: Status) -> Bool {
-  return p1.toRaw() < p2.toRaw()
-}
-
-@infix func >= (p1: Status, p2: Status) -> Bool {
-  return p1.toRaw() >= p2.toRaw()
-}
-
-@infix func <= (p1: Status, p2: Status) -> Bool {
-  return p1.toRaw() <= p2.toRaw()
 }

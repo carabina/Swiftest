@@ -1,4 +1,4 @@
-class StringExpectation<T> : ScalarExpectation<String> {
+class StringExpectation<T> : ScalarComparison<String> {
 
   init(subject: String?, cursor: Cursor = nullCursor) {
     super.init(subject: subject, cursor: cursor)

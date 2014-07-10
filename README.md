@@ -77,9 +77,9 @@ class SampleSpec : SwiftestSuite {
     it("does nifty stuff with closures") {
       var a = 0
 
-      expect({ a += 1 }).toChange({ a }).to(1)
-      expect({ a += 1 }).toChange({ a }).from(1).to(2)
-      expect({ a += 2 }).toChange({ a }).by(2)
+      expect({ a += 1 }).toChange(a).to(1)
+      expect({ a += 1 }).toChange(a).from(1).to(2)
+      expect({ a += 2 }).toChange(a).by(2)
     }
 
     example("dictionaries have special assertions too!") {

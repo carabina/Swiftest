@@ -8,7 +8,8 @@ struct Cursor {
       .filter({ s in origin.filter({ o in o == s}).isEmpty })
       .reduce("") { (let acc, s) in
         return "\(acc)/\(s)"
-      }.substringFromIndex(1)
+      }
+      .substringFromIndex(1)
 
   }
 }

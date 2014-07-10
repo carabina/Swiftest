@@ -4,7 +4,6 @@ class Specification : Runnable {
 
   let subject : String
   let cursor : Cursor
-  var definitions : [Resettable] = []
 
   init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
@@ -32,7 +31,7 @@ class Specification : Runnable {
     for blk in context.hooksFor(.all) { blk() }
 
     for ex in context.examples() {
-      for defn in definitions { defn.reset() }
+      for defn in context.definitions { defn.reset() }
       for blk in context.hooksFor(.each) { blk() }
       ex.run()
     }
@@ -50,7 +49,7 @@ class Specification : Runnable {
 
   func define<T>(fn: Void -> T) -> Void -> T {
     let defn = Definition(fn: fn)
-    self.definitions.append(defn)
+    context.definitions.append(defn)
     return defn.block()
   }
 }

@@ -12,12 +12,12 @@ extension Specification {
   class Context {
 
     var children : [Runnable] = []
-    var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
-      HookType.each : [],
-      HookType.all  : []
-    ]
-    
+    var definitions : [Resettable] = []
     var onExample : Example = nullExample
+    var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
+      .each : [],
+      .all  : []
+    ]
 
     func add(child: Runnable) {
       children.append(child)
@@ -30,7 +30,8 @@ extension Specification {
     }
     
     func hooksFor(hook: HookType) -> [VoidBlk] {
-      return beforeHooks[hook]!
+      if let hooks = beforeHooks[hook] { return hooks }
+      return []
     }
 
     func withExample(ex: Example, fn: VoidBlk) {

@@ -37,7 +37,7 @@ class SpecificationTest : XCTestCase {
 
     XCTAssertEqual(counter().num, 1)
 
-    spec.definitions[0].reset()
+    spec.context.definitions[0].reset()
     XCTAssertEqual(counter().num, 0)
   }
 

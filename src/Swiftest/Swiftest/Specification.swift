@@ -27,16 +27,23 @@ class Specification : Runnable {
   func run() {
     Swiftest.reporter.specificationStarted(self)
 
+    let runHooks : HookType -> Void = { (let hookType) in
+      for blk in self.context.hooksFor(hookType) { blk() }
+    }
+
     context.sort()
-    for blk in context.hooksFor(.all) { blk() }
+    runHooks(.all)
 
     for ex in context.examples() {
       for defn in context.definitions { defn.reset() }
-      for blk in context.hooksFor(.each) { blk() }
+      runHooks(.each)
       ex.run()
     }
 
-    for spec in context.specs() { spec.run() }
+    for spec in context.specs() {
+      runHooks(.each)
+      spec.run()
+    }
 
     Swiftest.reporter.specificationFinished(self)
   }

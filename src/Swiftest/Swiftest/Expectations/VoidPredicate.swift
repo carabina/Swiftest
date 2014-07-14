@@ -1,4 +1,4 @@
-class VoidPredicate<T:Comparable> {
+class VoidPredicate<T:Equatable> {
   var originalValue : T
   let predicate : Void -> T
   let subject: VoidBlk

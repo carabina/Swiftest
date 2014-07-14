@@ -1,6 +1,7 @@
 import Swiftest
 class HooksSpec : SwiftestSuite {
   let spec = describe("hooks") {
+
     var (beforeEachCount, beforeAllCount) = (0, 0)
 
     describe("before each") {
@@ -18,7 +19,8 @@ class HooksSpec : SwiftestSuite {
         before(.each) { beforeEachCount += 1 }
 
         it("runs all the beforeEach blocks preceding it") {
-          expect(beforeEachCount).toEqual(3)
+          // this should increment TWICE (once for the preceding block)
+          expect(beforeEachCount).toEqual(4)
         }
       }
     }

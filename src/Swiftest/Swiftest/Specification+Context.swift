@@ -11,9 +11,9 @@ enum HookType : String {
 extension Specification {
   class Context {
 
-    var children : [Runnable] = []
+    var children    : [Runnable] = []
     var definitions : [Resettable] = []
-    var onExample : Example = nullExample
+    var onExample   : Example = nullExample
     var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
       .each : [],
       .all  : []

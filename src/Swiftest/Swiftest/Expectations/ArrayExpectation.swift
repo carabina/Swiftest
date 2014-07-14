@@ -1,4 +1,4 @@
-class ArrayExpectation<T:Comparable> : BaseExpectation {
+class ArrayExpectation<T:Equatable> : BaseExpectation {
   typealias List = [T]
   var subject : List
 
@@ -30,7 +30,7 @@ class ArrayExpectation<T:Comparable> : BaseExpectation {
   }
 }
 
-func expect<T:Comparable>(
+func expect<T:Equatable>(
   subject: [T],
   file: String = __FILE__,
   line: Int = __LINE__

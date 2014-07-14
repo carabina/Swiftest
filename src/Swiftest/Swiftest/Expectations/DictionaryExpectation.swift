@@ -1,4 +1,4 @@
-class DictionaryExpectation<Key:Hashable, Value:Comparable> : BaseExpectation {
+class DictionaryExpectation<Key:Hashable, Value:Equatable> : BaseExpectation {
   typealias Dict = Dictionary<Key,Value>
 
   var subject : Dict

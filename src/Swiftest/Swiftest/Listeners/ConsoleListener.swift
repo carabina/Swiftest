@@ -38,7 +38,7 @@ class ConsoleListener : BaseListener {
   }
 
   override func exampleFinished(example: Example) {
-    if example.getStatus() == .Pass {
+    if example.getStatus() == Status.Pass {
       passedCount++
       indentPrint("✓ \(example.subject)")
     } else if example.getStatus() == .Fail {

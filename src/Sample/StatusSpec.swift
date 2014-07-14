@@ -2,9 +2,9 @@ import Swiftest
 
 class StatusSpec : SwiftestSuite {
   let spec = describe("status") {
-    xit("compares enums that are 'equatable'")
-    
-    // except, it doesn't -- some issue with the way the method is dispatched
-    // filed a bug with Apple on this one
+    it("compares enums that are 'equatable'") {
+      expect(Status.Fail).toEqual(Status.Fail)
+      expect(Status.Fail).not().toEqual(Status.Pass)
+    }
   }
 }

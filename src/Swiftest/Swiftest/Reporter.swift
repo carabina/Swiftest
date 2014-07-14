@@ -31,7 +31,7 @@ class Reporter {
   }
 
   func exampleFinished(example: Example) {
-    if(example.getStatus() == .Fail) {
+    if(example.getStatus() == Status.Fail) {
       failedExamples.append(example)
     }
 

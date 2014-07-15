@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		956245AD19817E550062C8FD /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956245AC19817E550062C8FD /* Swiftest.framework */; };
 		956F6741196DC8FD00D456B8 /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F673F196DC80C00D456B8 /* StringSpec.swift */; };
 		958F8C2B196D949B00F60474 /* HooksSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F8C2A196D949B00F60474 /* HooksSpec.swift */; };
 		958F8C2D196D975800F60474 /* PendingSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958F8C2C196D975800F60474 /* PendingSpec.swift */; };
@@ -18,7 +19,6 @@
 		95E87B1D195DDA960092F6A8 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B19195DDA960092F6A8 /* Human.swift */; };
 		95E87B2C195DDAC60092F6A8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87B1A195DDA960092F6A8 /* main.swift */; };
 		95E87B2F195DDACC0092F6A8 /* libSample.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E87AF7195DDA240092F6A8 /* libSample.dylib */; };
-		95E87B31195DDACD0092F6A8 /* libSwiftest.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E87B30195DDACD0092F6A8 /* libSwiftest.dylib */; };
 		95F208AE196E57ED000EF0CA /* NumberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F208AD196E57ED000EF0CA /* NumberSpec.swift */; };
 		95F208B2196E5FCD000EF0CA /* StatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F208B1196E5FCD000EF0CA /* StatusSpec.swift */; };
 		95F208B4196E608B000EF0CA /* HumanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F208B3196E608B000EF0CA /* HumanSpec.swift */; };
@@ -37,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		952E6A4819782A58001DEA20 /* Swiftest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swiftest.framework; path = Library/Frameworks/Swiftest.framework; sourceTree = DEVELOPER_DIR; };
+		956245AC19817E550062C8FD /* Swiftest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swiftest.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/Swiftest.framework"; sourceTree = "<group>"; };
 		956F673F196DC80C00D456B8 /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSpec.swift; sourceTree = SOURCE_ROOT; };
 		958F8C2A196D949B00F60474 /* HooksSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HooksSpec.swift; sourceTree = SOURCE_ROOT; };
 		958F8C2C196D975800F60474 /* PendingSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingSpec.swift; sourceTree = SOURCE_ROOT; };
@@ -49,7 +51,6 @@
 		95E87B19195DDA960092F6A8 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = SOURCE_ROOT; };
 		95E87B1A195DDA960092F6A8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = SOURCE_ROOT; };
 		95E87B25195DDAA80092F6A8 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
-		95E87B30195DDACD0092F6A8 /* libSwiftest.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSwiftest.dylib; path = "../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/libSwiftest.dylib"; sourceTree = "<group>"; };
 		95F208AD196E57ED000EF0CA /* NumberSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberSpec.swift; sourceTree = SOURCE_ROOT; };
 		95F208B1196E5FCD000EF0CA /* StatusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusSpec.swift; sourceTree = SOURCE_ROOT; };
 		95F208B3196E608B000EF0CA /* HumanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanSpec.swift; sourceTree = SOURCE_ROOT; };
@@ -67,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E87B31195DDACD0092F6A8 /* libSwiftest.dylib in Frameworks */,
+				956245AD19817E550062C8FD /* Swiftest.framework in Frameworks */,
 				95E87B2F195DDACC0092F6A8 /* libSample.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,12 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		956F673C196DAE5600D456B8 /* Libraries */ = {
+		952E6A4719782A58001DEA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95E87B30195DDACD0092F6A8 /* libSwiftest.dylib */,
+				956245AC19817E550062C8FD /* Swiftest.framework */,
+				952E6A4819782A58001DEA20 /* Swiftest.framework */,
 			);
-			name = Libraries;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		95772DAB196002F000A66370 /* Support */ = {
@@ -96,7 +98,7 @@
 			children = (
 				95E87AF9195DDA240092F6A8 /* Sample */,
 				95E87B26195DDAA80092F6A8 /* Specs */,
-				956F673C196DAE5600D456B8 /* Libraries */,
+				952E6A4719782A58001DEA20 /* Frameworks */,
 				95E87AF8195DDA240092F6A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -364,6 +366,10 @@
 		95E87B2A195DDAA80092F6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -381,6 +387,10 @@
 		95E87B2B195DDAA80092F6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug",

@@ -22,13 +22,13 @@ extension Specification {
     func add(child: Runnable) {
       children.append(child)
     }
-    
+
     func addHook(hook: HookType, fn: VoidBlk) {
       if var result = beforeHooks[hook] {
         beforeHooks[hook] = result + [fn]
       }
     }
-    
+
     func hooksFor(hook: HookType) -> [VoidBlk] {
       if let hooks = beforeHooks[hook] { return hooks }
       return []

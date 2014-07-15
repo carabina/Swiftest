@@ -32,6 +32,6 @@ public struct Swiftest {
     runner(context)
     reporter.suiteFinished()
 
-    return reporter.failedExamples.count
+    return reporter.failedExamples.count == 0 ? 0 : 1
   }
 }

@@ -1,19 +1,19 @@
-class Example : Runnable {
+public class Example : Runnable {
 
-  var expectations: [BaseExpectation] = []
+  public var expectations: [BaseExpectation] = []
 
-  let subject: String
+  public let subject: String
   let fn: VoidBlk = nullFn
   let cursor: Cursor
-  let ofType = RunnableType.Example
+  public let ofType = RunnableType.Example
 
-  init(subject: String, fn: VoidBlk, cursor: Cursor = nullCursor) {
+  public init(subject: String, fn: VoidBlk, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.fn = fn
     self.cursor = cursor
   }
 
-  func run() {
+  public func run() {
     Swiftest.context.current().withExample(self) {
       Swiftest.reporter.exampleStarted(self)
       self.fn()
@@ -21,7 +21,7 @@ class Example : Runnable {
     }
   }
 
-  func getStatus() -> Status {
+  public func getStatus() -> Status {
     for status in [Status.Fail, Status.Pending] {
       if !(expectations.filter(Status.has(status))).isEmpty {
         return status
@@ -31,7 +31,7 @@ class Example : Runnable {
     return expectations.isEmpty ? .Pending : .Pass
   }
 
-  func addExpectation<T:BaseExpectation>(exp: T) -> T {
+  public func addExpectation<T:BaseExpectation>(exp: T) -> T {
     exp.example = self
     expectations.append(exp)
     return exp

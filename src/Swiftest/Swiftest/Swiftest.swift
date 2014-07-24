@@ -1,20 +1,20 @@
-typealias Runner = Context -> Void
-typealias VoidBlk = Void -> Void
+public typealias Runner = Context -> Void
+public typealias VoidBlk = Void -> Void
 
 let nullExample = Example(subject : "null example", fn: nullFn)
 let nullSpec = Specification(subject: "null spec")
-let nullFn: VoidBlk = {}
+public let nullFn: VoidBlk = {}
 let nullCursor = Cursor(file: "null", line: 0)
 
-struct Swiftest {
-  static let reporter = Reporter()
+public struct Swiftest {
+  public static let reporter = Reporter()
 
-  static var context = Context()
-  static var runner: Runner = { (let context) in
+  public static var context = Context()
+  public static var runner: Runner = { (let context) in
     for spec in context.specs { spec.run() }
   }
 
-  static func describe(
+  public static func describe(
     subject: String,
     fn: VoidBlk,
     cursor: Cursor = nullCursor
@@ -24,7 +24,7 @@ struct Swiftest {
     return context.popSpec()
   }
 
-  static func run() -> Int {
+  public static func run() -> Int {
     Registrar.registerAll()
     context.sort()
 

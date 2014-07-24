@@ -1,7 +1,7 @@
-class BaseExpectation {
+public class BaseExpectation {
   let defaultMessage = "expectation failed"
 
-  var status = Status.Pending
+  public var status = Status.Pending
   var _reverse = false
   var msg : String
   var example = nullExample

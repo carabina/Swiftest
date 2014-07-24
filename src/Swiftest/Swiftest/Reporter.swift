@@ -1,36 +1,38 @@
-class Reporter {
-  var listeners: [BaseListener] = []
+public class Reporter {
+  public var listeners: [BaseListener] = []
   var failedExamples : [Example] = []
+    
+  public init() {}
 
-  func addListener(lsn: BaseListener) {
+  public func addListener(lsn: BaseListener) {
     listeners.append(lsn)
   }
 
-  func notify(fn: BaseListener -> Void) {
+  public func notify(fn: BaseListener -> Void) {
     for lsn in listeners { fn(lsn) }
   }
 
-  func suiteStarted() {
+  public func suiteStarted() {
     notify({ lsn in lsn.suiteStarted() })
   }
 
-  func suiteFinished() {
+  public func suiteFinished() {
     notify({ lsn in lsn.suiteFinished() })
   }
 
-  func specificationStarted(spec: Specification) {
+  public func specificationStarted(spec: Specification) {
     notify({ lsn in lsn.specificationStarted(spec) })
   }
 
-  func specificationFinished(spec: Specification) {
+  public func specificationFinished(spec: Specification) {
     notify({ lsn in lsn.specificationFinished(spec) })
   }
 
-  func exampleStarted(example: Example) {
+  public func exampleStarted(example: Example) {
     notify({ lsn in lsn.exampleStarted(example) })
   }
 
-  func exampleFinished(example: Example) {
+  public func exampleFinished(example: Example) {
     if(example.getStatus() == Status.Fail) {
       failedExamples.append(example)
     }
@@ -38,11 +40,11 @@ class Reporter {
     notify({ lsn in lsn.exampleFinished(example) })
   }
 
-  func expectationPassed(expectation: BaseExpectation) {
+  public func expectationPassed(expectation: BaseExpectation) {
     notify({ lsn in lsn.expectationPassed(expectation) })
   }
 
-  func expectationFailed(expectation: BaseExpectation) {
+  public func expectationFailed(expectation: BaseExpectation) {
     notify({ lsn in lsn.expectationFailed(expectation) })
   }
 

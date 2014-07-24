@@ -1,17 +1,17 @@
-class VoidPredicate<T:Equatable> {
+public class VoidPredicate<T:Equatable> {
   var originalValue : T
   let predicate : Void -> T
   let subject: VoidBlk
   let parent: VoidExpectation
 
-  init(predicate: Void -> T, subject: VoidBlk, parent: VoidExpectation) {
+  public init(predicate: Void -> T, subject: VoidBlk, parent: VoidExpectation) {
     self.subject = subject
     self.predicate = predicate
     self.originalValue = predicate()
     self.parent = parent
   }
 
-  func from(expected: T) -> VoidPredicate {
+  public func from(expected: T) -> VoidPredicate {
     _assert(
       originalValue == expected,
       msg: "expected an original value of \(expected), but was \(originalValue)"
@@ -20,7 +20,7 @@ class VoidPredicate<T:Equatable> {
     return self
   }
 
-  func to(expected: T) {
+  public func to(expected: T) {
     subject()
     _assert(
       predicate() == expected,
@@ -29,7 +29,7 @@ class VoidPredicate<T:Equatable> {
     )
   }
 
-  func by(delta: Int) {
+  public func by(delta: Int) {
     if let oldVal = originalValue as? Int {
       subject()
       _assert(
@@ -42,7 +42,7 @@ class VoidPredicate<T:Equatable> {
     }
   }
 
-  func _assert(cond: Bool, msg: String) {
+  public func _assert(cond: Bool, msg: String) {
     parent._assert(cond, msg: msg)
   }
 }

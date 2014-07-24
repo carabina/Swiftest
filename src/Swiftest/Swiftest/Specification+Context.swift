@@ -1,18 +1,18 @@
-enum RunnableType : String {
+public enum RunnableType : String {
   case Example = "Example"
   case Specification = "Specification"
 }
 
-enum HookType : String {
+public enum HookType : String {
   case each = "each"
   case all = "all"
 }
 
 extension Specification {
-  class Context {
+  public class Context {
 
-    var children    : [Runnable] = []
-    var definitions : [Resettable] = []
+    public var children    : [Runnable] = []
+    public var definitions : [Resettable] = []
     var onExample   : Example = nullExample
     var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
       .each : [],

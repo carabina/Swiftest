@@ -1,10 +1,10 @@
-func before(hook: HookType, fn: VoidBlk) {
+public func before(hook: HookType, fn: VoidBlk) {
   __current().before(hook, fn: fn)
 }
 
-func before(fn: VoidBlk) { before(.each, fn) }
+public func before(fn: VoidBlk) { before(.each, fn) }
 
-func describe(
+public func describe(
   subject: String,
   fn: VoidBlk,
   file: String = __FILE__,
@@ -17,11 +17,11 @@ func describe(
   )
 }
 
-func define<T>(fn: @auto_closure () -> T) -> Void -> T {
+public func define<T>(fn: @auto_closure () -> T) -> Void -> T {
   return __current().define(fn)
 }
 
-func example(
+public func example(
   subject: String,
   _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
@@ -30,7 +30,7 @@ func example(
   __current().example(subject, fn: fn, cursor: Cursor(file: file, line: line))
 }
 
-func it(
+public func it(
   desc: String,
   _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
@@ -39,7 +39,7 @@ func it(
   example(desc, fn, file: file, line: line)
 }
 
-func xit(
+public func xit(
   desc: String,
   _ fn: VoidBlk = nullFn,
   file: String = __FILE__,
@@ -48,6 +48,6 @@ func xit(
   example(desc, file: file, line: line)
 }
 
-func __current() -> Specification {
+public func __current() -> Specification {
   return Swiftest.context.current()
 }

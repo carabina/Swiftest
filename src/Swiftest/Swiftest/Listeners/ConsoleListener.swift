@@ -1,12 +1,14 @@
-class ConsoleListener : BaseListener {
+public class ConsoleListener : BaseListener {
 
-  var printer: String -> Void = println
+  public var printer: String -> Void = println
   var passedCount = 0
   var failedCount = 0
   var pendingCount = 0
   var offset = 0
+    
+  public init() { super.init() }
 
-  override func suiteFinished() {
+  public override func suiteFinished() {
     for ex in Swiftest.reporter.failedExamples {
       indentPrint("× \(ex.subject) failed:")
       offset += 1
@@ -27,17 +29,17 @@ class ConsoleListener : BaseListener {
     )
   }
 
-  override func specificationStarted(spec: Specification) {
+  public override func specificationStarted(spec: Specification) {
     indentPrint(spec.subject)
     offset += 1
   }
 
-  override func specificationFinished(spec: Specification) {
+  public override func specificationFinished(spec: Specification) {
     offset -= 1
     if offset == 0 { printer("") }
   }
 
-  override func exampleFinished(example: Example) {
+  public override func exampleFinished(example: Example) {
     if example.getStatus() == Status.Pass {
       passedCount++
       indentPrint("✓ \(example.subject)")

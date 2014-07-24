@@ -1,36 +1,36 @@
-class BoolExpectation : BaseExpectation {
-  var subject : Bool
+public class BoolExpectation : BaseExpectation {
+  public var subject : Bool
 
-  init(subject: Bool, cursor: Cursor = nullCursor) {
+  public init(subject: Bool, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
   }
 
-  func toBe(bool: Bool) {
+  public func toBe(bool: Bool) {
     _assert(
       subject == bool,
       msg: "expected <\(subject)> to\(_includeNot()) be <\(bool)>"
     )
   }
 
-  func toBeFalse() {
+  public func toBeFalse() {
     _assert(!subject, msg: "expected <\(subject)> to\(_includeNot()) be false")
   }
 
-  func toBeTrue() {
+  public func toBeTrue() {
     _assert(subject, msg: "expected <\(subject)> to\(_includeNot()) be true")
   }
 
-  func not() -> BoolExpectation {
+  public func not() -> BoolExpectation {
     self._reverse = !_reverse
     return self
   }
 
-  func toEqual(bool: Bool) { toBe(bool) }
+  public func toEqual(bool: Bool) { toBe(bool) }
 }
 
-func expect(
+public func expect(
   subject: Bool,
   file: String = __FILE__,
   line: Int = __LINE__

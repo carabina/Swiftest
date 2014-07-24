@@ -1,9 +1,9 @@
-class Human : Equatable {
-  var name : String
+public class Human : Equatable {
+  public var name : String
 
-  init(name : String) { self.name = name }
+  public init(name : String) { self.name = name }
 }
 
-@infix func ==(p1:Human, p2:Human) -> Bool {
+@infix public func ==(p1:Human, p2:Human) -> Bool {
   return p1.name == p2.name
 }

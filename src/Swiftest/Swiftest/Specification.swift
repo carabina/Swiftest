@@ -1,16 +1,16 @@
-class Specification : Runnable {
-  let ofType = RunnableType.Specification
-  var context = Specification.Context()
+public class Specification : Runnable {
+  public let ofType = RunnableType.Specification
+  public var context = Specification.Context()
 
-  let subject : String
+  public let subject : String
   let cursor : Cursor
 
-  init(subject:String, cursor: Cursor = nullCursor) {
+  public init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.cursor = cursor
   }
 
-  func example(
+  public func example(
     subject: String,
     fn: VoidBlk,
     cursor: Cursor = nullCursor
@@ -24,7 +24,7 @@ class Specification : Runnable {
 
   func addSpec(spec: Specification) { context.add(spec) }
 
-  func run() {
+  public func run() {
     Swiftest.reporter.specificationStarted(self)
 
     let runHooks : HookType -> Void = { (let hookType) in
@@ -48,13 +48,13 @@ class Specification : Runnable {
     Swiftest.reporter.specificationFinished(self)
   }
 
-  func getStatus() -> Status {
+  public func getStatus() -> Status {
     return context.children.filter(Status.has(.Fail)).isEmpty ? .Pass: .Fail
   }
 
   func withExample(ex: Example, fn: VoidBlk) { context.withExample(ex, fn: fn) }
 
-  func define<T>(fn: Void -> T) -> Void -> T {
+  public func define<T>(fn: Void -> T) -> Void -> T {
     let defn = Definition(fn: fn)
     context.definitions.append(defn)
     return defn.block()

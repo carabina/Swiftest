@@ -1,6 +1,6 @@
-struct Context {
+public struct Context {
 
-  var specs: [Specification] = []
+  public var specs: [Specification] = []
   var stack: [Specification] = []
 
   mutating func addSpec(spec: Specification) {

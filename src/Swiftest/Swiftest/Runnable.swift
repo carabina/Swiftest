@@ -1,4 +1,4 @@
-protocol Runnable {
+public protocol Runnable {
   func run()
   func getStatus() -> Status
   var ofType : RunnableType { get }

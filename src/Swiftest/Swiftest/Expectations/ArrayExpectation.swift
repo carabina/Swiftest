@@ -1,26 +1,26 @@
-class ArrayExpectation<T:Equatable> : BaseExpectation {
+public class ArrayExpectation<T:Equatable> : BaseExpectation {
   typealias List = [T]
   var subject : List
 
-  init(subject: List, cursor: Cursor = nullCursor) {
+  public init(subject: List, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init()
     self.cursor = cursor
   }
 
-  func not() -> ArrayExpectation {
+  public func not() -> ArrayExpectation {
     self._reverse = !_reverse
     return self
   }
 
-  func toEqual(expected: List) {
+  public func toEqual(expected: List) {
     _assert(
       subject == expected,
       msg: "expected <\(subject)> to\(_includeNot()) equal <\(expected)>"
     )
   }
 
-  func toContain(expected: T...) {
+  public func toContain(expected: T...) {
     _assert(
       !subject.filter() { (let subjectEl) in
         !expected.filter({ el in el == subjectEl }).isEmpty
@@ -30,7 +30,7 @@ class ArrayExpectation<T:Equatable> : BaseExpectation {
   }
 }
 
-func expect<T:Equatable>(
+public func expect<T:Equatable>(
   subject: [T],
   file: String = __FILE__,
   line: Int = __LINE__

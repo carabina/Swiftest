@@ -1,18 +1,18 @@
-class BaseListener {
-  var name = ""
+public class BaseListener {
+  public var name = ""
 
-  init() {}
-  init(name: String) { self.name = name }
+  public init() {}
+  public init(name: String) { self.name = name }
 
-  func suiteStarted() {}
-  func suiteFinished() {}
+  public func suiteStarted() {}
+  public func suiteFinished() {}
 
-  func specificationStarted(spec: Specification) {}
-  func specificationFinished(spec: Specification) {}
+  public func specificationStarted(spec: Specification) {}
+  public func specificationFinished(spec: Specification) {}
 
-  func exampleStarted(example: Example) {}
-  func exampleFinished(example: Example) {}
+  public func exampleStarted(example: Example) {}
+  public func exampleFinished(example: Example) {}
 
-  func expectationPassed(expectation: BaseExpectation) {}
-  func expectationFailed(expectation: BaseExpectation) {}
+  public func expectationPassed(expectation: BaseExpectation) {}
+  public func expectationFailed(expectation: BaseExpectation) {}
 }

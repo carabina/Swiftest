@@ -33,7 +33,7 @@ class NumberSpec : SwiftestSuite {
     }
     
     it("is a nil number") {
-      let a : Int?
+      var a : Int?
       expect(a).toBeNil()
     }
   }

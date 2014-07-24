@@ -1,4 +1,4 @@
-protocol Resettable {
+public protocol Resettable {
   func reset()
 }
 

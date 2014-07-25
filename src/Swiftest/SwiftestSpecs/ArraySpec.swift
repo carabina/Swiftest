@@ -1,7 +1,7 @@
 import Swiftest
 
 class ArraySpec : SwiftestSuite {
-  let spec = describe("array assertions") {
+  let spec = describe("arrays") {
     describe("toContain") {
       it("contains an element") {
         expect([1, 2, 3]).toContain(1)
@@ -24,6 +24,10 @@ class ArraySpec : SwiftestSuite {
 
     it("equals another array") {
       expect([1, 2, 3]).toEqual([1, 2, 3])
+    }
+    
+    it("does not equal another array") {
+      expect([1, 2, 3]).not().toEqual([1, 2])
     }
   }
 }

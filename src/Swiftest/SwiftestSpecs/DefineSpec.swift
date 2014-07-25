@@ -1,8 +1,7 @@
 import Swiftest
 
 class Counter {
-  var num = 0
-  func inc() { num += 1 }
+  var num = 0; func inc() { num += 1 }
 }
 
 class DefineSpec : SwiftestSuite {

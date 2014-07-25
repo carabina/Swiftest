@@ -5,6 +5,10 @@ class StringSpec : SwiftestSuite {
     it("equals another string") {
       expect("abcdefg").toEqual("abcdefg")
     }
+    
+    it("does not equal another string") {
+      expect("abcdefg").not().toEqual("hijkl")
+    }
 
     it("ends with another string") {
       expect("abcdefg").toEndWith("efg")

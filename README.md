@@ -29,8 +29,11 @@ Inspired heavily by
 * Mac OSX target template
 * File template
 
-### To do:
+### Stuff to Do (before any kind of "version")
 * iPhone target (scripts exist for this, just need to implement)
+* Time output for test suite stuff
+
+## Down the Road
 * XCode error/warn reporter integration
 * CocoaPod installation (?)
 * command-line interface (?)

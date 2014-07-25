@@ -35,7 +35,6 @@
 		953F37431975915600718CF1 /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B73195CE35600B529D1 /* Swiftest.swift */; };
 		953F37441975915F00718CF1 /* Registrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 950912FF195F7A7F00F672FE /* Registrar.h */; };
 		953F37451975915F00718CF1 /* SwiftestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 95091308195FC71000F672FE /* SwiftestSuite.h */; };
-		953F3746197592A800718CF1 /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953F36F819758D1700718CF1 /* Swiftest.framework */; };
 		956FD60719820D5700699AD8 /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951F25C71978293F0000C532 /* Swiftest.framework */; };
 		956FD60B19820D5700699AD8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD60A19820D5700699AD8 /* main.swift */; };
 		956FD61A19820DBD00699AD8 /* ArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD60F19820DBD00699AD8 /* ArraySpec.swift */; };
@@ -71,7 +70,6 @@
 		956FD61819820DBD00699AD8 /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSpec.swift; sourceTree = "<group>"; };
 		956FD61919820DBD00699AD8 /* VoidClosureSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidClosureSpec.swift; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
-		95F05B54195CE07800B529D1 /* SwiftestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F05B6A195CE35600B529D1 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		95F05B6B195CE35600B529D1 /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		95F05B6C195CE35600B529D1 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
@@ -109,14 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95F05B51195CE07800B529D1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				953F3746197592A800718CF1 /* Swiftest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,11 +127,13 @@
 				951F25C71978293F0000C532 /* Swiftest.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		956FD60819820D5700699AD8 /* SwiftestSpecs */ = {
 			isa = PBXGroup;
 			children = (
+				951F25C61978293F0000C532 /* Frameworks */,
 				956FD60F19820DBD00699AD8 /* ArraySpec.swift */,
 				956FD61019820DBD00699AD8 /* DefineSpec.swift */,
 				956FD61119820DBD00699AD8 /* DictionarySpec.swift */,
@@ -168,7 +160,6 @@
 			children = (
 				95F05B4B195CE07800B529D1 /* Swiftest */,
 				956FD60819820D5700699AD8 /* SwiftestSpecs */,
-				951F25C61978293F0000C532 /* Frameworks */,
 				95F05B4A195CE07800B529D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -176,7 +167,6 @@
 		95F05B4A195CE07800B529D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95F05B54195CE07800B529D1 /* SwiftestTests.xctest */,
 				953F36F819758D1700718CF1 /* Swiftest.framework */,
 				956FD60619820D5700699AD8 /* SwiftestSpecs */,
 			);
@@ -281,23 +271,6 @@
 			productReference = 956FD60619820D5700699AD8 /* SwiftestSpecs */;
 			productType = "com.apple.product-type.tool";
 		};
-		95F05B53195CE07800B529D1 /* SwiftestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95F05B60195CE07800B529D1 /* Build configuration list for PBXNativeTarget "SwiftestTests" */;
-			buildPhases = (
-				95F05B50195CE07800B529D1 /* Sources */,
-				95F05B51195CE07800B529D1 /* Frameworks */,
-				95F05B52195CE07800B529D1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftestTests;
-			productName = SwiftestTests;
-			productReference = 95F05B54195CE07800B529D1 /* SwiftestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,10 +285,6 @@
 					};
 					956FD60519820D5700699AD8 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					95F05B53195CE07800B529D1 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 95F05B48195CE07800B529D1;
 					};
 				};
 			};
@@ -332,7 +301,6 @@
 			projectRoot = "";
 			targets = (
 				953F36F719758D1700718CF1 /* Swiftest */,
-				95F05B53195CE07800B529D1 /* SwiftestTests */,
 				956FD60519820D5700699AD8 /* SwiftestSpecs */,
 			);
 		};
@@ -340,13 +308,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		953F36F619758D1700718CF1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95F05B52195CE07800B529D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,13 +363,6 @@
 				956FD60B19820D5700699AD8 /* main.swift in Sources */,
 				956FD61E19820DBD00699AD8 /* HooksSpec.swift in Sources */,
 				956FD62019820DBD00699AD8 /* NumberSpec.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95F05B50195CE07800B529D1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,40 +520,6 @@
 			};
 			name = Release;
 		};
-		95F05B61195CE07800B529D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		95F05B62195CE07800B529D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -619,21 +539,13 @@
 				956FD60D19820D5700699AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95F05B44195CE07800B529D1 /* Build configuration list for PBXProject "Swiftest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F05B5B195CE07800B529D1 /* Debug */,
 				95F05B5C195CE07800B529D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95F05B60195CE07800B529D1 /* Build configuration list for PBXNativeTarget "SwiftestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95F05B61195CE07800B529D1 /* Debug */,
-				95F05B62195CE07800B529D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

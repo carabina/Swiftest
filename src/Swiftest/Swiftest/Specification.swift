@@ -1,16 +1,16 @@
 public class Specification : Runnable {
-  public let ofType = RunnableType.Specification
-  public var context = Specification.Context()
+  let ofType = RunnableType.Specification
+  var context = Specification.Context()
 
   public let subject : String
   let cursor : Cursor
 
-  public init(subject:String, cursor: Cursor = nullCursor) {
+  init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.cursor = cursor
   }
 
-  public func example(
+  func example(
     subject: String,
     fn: VoidBlk,
     cursor: Cursor = nullCursor
@@ -54,7 +54,7 @@ public class Specification : Runnable {
 
   func withExample(ex: Example, fn: VoidBlk) { context.withExample(ex, fn: fn) }
 
-  public func define<T>(fn: Void -> T) -> Void -> T {
+  func define<T>(fn: Void -> T) -> Void -> T {
     let defn = Definition(fn: fn)
     context.definitions.append(defn)
     return defn.block()

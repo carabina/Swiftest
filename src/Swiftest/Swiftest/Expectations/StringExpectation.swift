@@ -24,10 +24,13 @@ public class StringExpectation<T> : ScalarComparison<String> {
   }
 
   public func toContain(fragment: String) {
-    _assert(
-      !subject!.rangeOfString(fragment)?.isEmpty,
-      msg: "expected <\(subject)> to\(_includeNot()) contain <\(fragment)>"
-    )
+    let msg = "expected <\(subject)> to\(_includeNot()) contain <\(fragment)>"
+    
+    if let range = subject?.rangeOfString(fragment) {
+      _assert(!range.isEmpty, msg: msg)
+    } else {
+      _assert(false, msg: msg)
+    }
   }
 }
 

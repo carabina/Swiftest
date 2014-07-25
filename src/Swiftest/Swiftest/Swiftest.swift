@@ -3,13 +3,13 @@ public typealias VoidBlk = Void -> Void
 
 let nullExample = Example(subject : "null example", fn: nullFn)
 let nullSpec = Specification(subject: "null spec")
-public let nullFn: VoidBlk = {}
+let nullFn: VoidBlk = {}
 let nullCursor = Cursor(file: "null", line: 0)
 
 public struct Swiftest {
   public static let reporter = Reporter()
 
-  public static var context = Context()
+  static var context = Context()
   public static var runner: Runner = { (let context) in
     for spec in context.specs { spec.run() }
   }

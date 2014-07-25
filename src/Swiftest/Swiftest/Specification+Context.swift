@@ -1,4 +1,4 @@
-public enum RunnableType : String {
+enum RunnableType : String {
   case Example = "Example"
   case Specification = "Specification"
 }
@@ -9,10 +9,9 @@ public enum HookType : String {
 }
 
 extension Specification {
-  public class Context {
-
-    public var children    : [Runnable] = []
-    public var definitions : [Resettable] = []
+  class Context {
+    var children    : [Runnable] = []
+    var definitions : [Resettable] = []
     var onExample   : Example = nullExample
     var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
       .each : [],

@@ -14,7 +14,7 @@
   <true/>
 
   <key>Description</key>
-  <string>This template adds a OCDSpec2 runner to your Mac project.</string>
+  <string>This template adds a Swiftest runner to your Mac project.</string>
 
   <key>Ancestors</key>
   <array>

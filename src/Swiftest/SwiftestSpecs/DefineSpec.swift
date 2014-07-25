@@ -18,5 +18,16 @@ class DefineSpec : SwiftestSuite {
     it("re-sets the value for each example") {
       expect(counter().num).toEqual(0)
     }
+    
+    describe("nesting") {
+      it("creates a closure for nested examples") {
+        counter().inc()
+        expect(counter().num).toEqual(1)
+      }
+      
+      it("re-sets it for nested examples too") {
+        expect(counter().num).toEqual(0)
+      }
+    }
   }
 }

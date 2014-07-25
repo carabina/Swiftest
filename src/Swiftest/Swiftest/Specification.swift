@@ -1,9 +1,13 @@
-public class Specification : Runnable {
-  let ofType = RunnableType.Specification
-  var context = Specification.Context()
+let runHooks : (Specification.Context, HookType) -> Void = {
+  (let context, hookType) in
+  for blk in context.hooksFor(hookType) { blk() }
+}
 
+public class Specification : Runnable {
   public let subject : String
+  let ofType = RunnableType.Specification
   let cursor : Cursor
+  var context = Specification.Context()
 
   init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
@@ -26,24 +30,21 @@ public class Specification : Runnable {
 
   public func run() {
     Swiftest.reporter.specificationStarted(self)
-
-    let runHooks : HookType -> Void = { (let hookType) in
-      for blk in self.context.hooksFor(hookType) { blk() }
+    
+    let exec : Runnable -> Void = { (let runnable) in
+      runHooks(self.context, .each)
+      runnable.run()
     }
 
     context.sort()
-    runHooks(.all)
+    runHooks(context, .all)
 
     for ex in context.examples() {
       for defn in context.definitions { defn.reset() }
-      runHooks(.each)
-      ex.run()
+      exec(ex)
     }
 
-    for spec in context.specs() {
-      runHooks(.each)
-      spec.run()
-    }
+    for spec in context.specs() { exec(spec) }
 
     Swiftest.reporter.specificationFinished(self)
   }

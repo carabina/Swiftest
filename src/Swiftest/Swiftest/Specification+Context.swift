@@ -18,8 +18,11 @@ extension Specification {
       .all  : []
     ]
 
-    func add(child: Runnable) {
-      children.append(child)
+    func add(ex: Example) { children.append(ex) }
+    
+    func add(spec: Specification) {
+      spec.context.definitions = self.definitions
+      children.append(spec)
     }
 
     func addHook(hook: HookType, fn: VoidBlk) {

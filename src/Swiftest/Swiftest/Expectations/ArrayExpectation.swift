@@ -22,9 +22,9 @@ public class ArrayExpectation<T:Equatable> : BaseExpectation {
 
   public func toContain(expected: T...) {
     _assert(
-      !subject.filter() { (let subjectEl) in
+      subject.filter() { (let subjectEl) in
         !expected.filter({ el in el == subjectEl }).isEmpty
-      }.isEmpty,
+      }.count == expected.count,
       msg: "expected <\(subject)>\(_includeNot()) to contain <\(expected)>"
     )
   }

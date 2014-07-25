@@ -26,11 +26,11 @@ Inspired heavily by
 * auto-loading spec files
 * "void" closure matchers (more to come)
 * beforeEach / beforeAll hooks
+* Mac OSX target template
+* File template
 
 ### To do:
-* iPhone runner (scripts exist for this, just need to implement)
-* change to framework
-* XCode target, project, and file templates
+* iPhone target (scripts exist for this, just need to implement)
 * XCode error/warn reporter integration
 * CocoaPod installation (?)
 * command-line interface (?)

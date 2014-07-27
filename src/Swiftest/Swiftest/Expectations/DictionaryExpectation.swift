@@ -40,6 +40,13 @@ public class DictionaryExpectation<Key:Hashable, Value:Equatable> : BaseExpectat
       msg: "expected <\(subject)> to\(_includeNot()) have entry <\(pair)>"
     )
   }
+  
+  public func toBeEmpty() {
+    _assert(
+      subject.isEmpty,
+      msg: "expected <\(subject) to\(_includeNot()) be empty"
+    )
+  }
 
   func _contains(fn: (Key, Value) -> Bool) -> Bool {
     var found = false

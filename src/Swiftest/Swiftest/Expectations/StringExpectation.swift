@@ -32,6 +32,14 @@ public class StringExpectation<T> : ScalarComparison<String> {
       _assert(false, msg: msg)
     }
   }
+  
+  public func toBeEmpty() -> Void {
+    if let subject = subject? {
+      _assert(subject.isEmpty, msg: "expected <\(subject)> to\(_includeNot()) be empty")
+    } else {
+      _assert(false, msg: "expected <nil array> to\(_includeNot()) be empty")
+    }
+  }
 }
 
 public func expect(

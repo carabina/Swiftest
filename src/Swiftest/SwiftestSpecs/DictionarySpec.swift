@@ -35,5 +35,14 @@ class DictionarySpec : SwiftestSuite {
     it("does not contain a pair") {
       expect(dict).not().toContain(["different-key" : "val"])
     }
+    
+    it("is empty") {
+      let emptyDict: Dictionary<String, String> = [ : ]
+      expect(emptyDict).toBeEmpty()
+    }
+    
+    it("is not empty") {
+      expect(dict).not().toBeEmpty()
+    }
   }
 }

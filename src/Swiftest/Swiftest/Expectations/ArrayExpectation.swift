@@ -28,6 +28,10 @@ public class ArrayExpectation<T:Equatable> : BaseExpectation {
       msg: "expected <\(subject)>\(_includeNot()) to contain <\(expected)>"
     )
   }
+  
+  public func toBeEmpty() {
+    _assert(subject.isEmpty, msg: "expected \(subject) to\(_includeNot()) be empty")
+  }
 }
 
 public func expect<T:Equatable>(

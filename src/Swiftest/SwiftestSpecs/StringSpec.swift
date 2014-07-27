@@ -25,6 +25,15 @@ class StringSpec : SwiftestSuite {
     it("does not start with another string") {
       expect("abcdefg").not().toStartWith("xyz")
     }
+    
+    it("is an empty string") {
+      let str = ""
+      expect(str).toBeEmpty()
+    }
+    
+    it("is not an empty string") {
+      expect("abc").not().toBeEmpty()
+    }
 
     describe("toContain") {
       it("contains another string") {

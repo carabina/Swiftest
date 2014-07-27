@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952F651419854FC5003A3DBA /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61819820DBD00699AD8 /* StringSpec.swift */; };
 		953F372A1975914C00718CF1 /* ArrayExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B75195CE35600B529D1 /* ArrayExpectation.swift */; };
 		953F372B1975914C00718CF1 /* BaseExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B76195CE35600B529D1 /* BaseExpectation.swift */; };
 		953F372C1975914C00718CF1 /* BoolExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B77195CE35600B529D1 /* BoolExpectation.swift */; };
@@ -35,7 +36,6 @@
 		953F37431975915600718CF1 /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F05B73195CE35600B529D1 /* Swiftest.swift */; };
 		953F37441975915F00718CF1 /* Registrar.h in Headers */ = {isa = PBXBuildFile; fileRef = 950912FF195F7A7F00F672FE /* Registrar.h */; };
 		953F37451975915F00718CF1 /* SwiftestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 95091308195FC71000F672FE /* SwiftestSuite.h */; };
-		956FD60719820D5700699AD8 /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951F25C71978293F0000C532 /* Swiftest.framework */; };
 		956FD60B19820D5700699AD8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD60A19820D5700699AD8 /* main.swift */; };
 		956FD61A19820DBD00699AD8 /* ArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD60F19820DBD00699AD8 /* ArraySpec.swift */; };
 		956FD61B19820DBD00699AD8 /* DefineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61019820DBD00699AD8 /* DefineSpec.swift */; };
@@ -43,9 +43,19 @@
 		956FD61E19820DBD00699AD8 /* HooksSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61319820DBD00699AD8 /* HooksSpec.swift */; };
 		956FD62019820DBD00699AD8 /* NumberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61519820DBD00699AD8 /* NumberSpec.swift */; };
 		956FD62219820DBD00699AD8 /* StatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61719820DBD00699AD8 /* StatusSpec.swift */; };
-		956FD62319820DBD00699AD8 /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61819820DBD00699AD8 /* StringSpec.swift */; };
 		956FD62419820DBD00699AD8 /* VoidClosureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61919820DBD00699AD8 /* VoidClosureSpec.swift */; };
+		95850D1819854E3400512D8D /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953F36F819758D1700718CF1 /* Swiftest.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		952F651219854F63003A3DBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95F05B41195CE07800B529D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 953F36F719758D1700718CF1;
+			remoteInfo = Swiftest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		950912FF195F7A7F00F672FE /* Registrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registrar.h; sourceTree = "<group>"; };
@@ -53,7 +63,6 @@
 		95091302195F7AD300F672FE /* Registrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registrar.m; sourceTree = "<group>"; };
 		95091308195FC71000F672FE /* SwiftestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftestSuite.h; sourceTree = "<group>"; };
 		9509130A195FC73E00F672FE /* SwiftestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSuite.m; sourceTree = "<group>"; };
-		951F25C71978293F0000C532 /* Swiftest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swiftest.framework; path = Library/Frameworks/Swiftest.framework; sourceTree = DEVELOPER_DIR; };
 		953F36F819758D1700718CF1 /* Swiftest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Specification+Context.swift"; sourceTree = "<group>"; };
 		95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
@@ -103,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956FD60719820D5700699AD8 /* Swiftest.framework in Frameworks */,
+				95850D1819854E3400512D8D /* Swiftest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,19 +130,9 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
-		951F25C61978293F0000C532 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				951F25C71978293F0000C532 /* Swiftest.framework */,
-			);
-			name = Frameworks;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		956FD60819820D5700699AD8 /* SwiftestSpecs */ = {
 			isa = PBXGroup;
 			children = (
-				951F25C61978293F0000C532 /* Frameworks */,
 				956FD60F19820DBD00699AD8 /* ArraySpec.swift */,
 				956FD61019820DBD00699AD8 /* DefineSpec.swift */,
 				956FD61119820DBD00699AD8 /* DictionarySpec.swift */,
@@ -265,6 +264,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				952F651319854F63003A3DBA /* PBXTargetDependency */,
 			);
 			name = SwiftestSpecs;
 			productName = SwiftestSpecs;
@@ -354,10 +354,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952F651419854FC5003A3DBA /* StringSpec.swift in Sources */,
 				956FD62419820DBD00699AD8 /* VoidClosureSpec.swift in Sources */,
 				956FD62219820DBD00699AD8 /* StatusSpec.swift in Sources */,
 				956FD61C19820DBD00699AD8 /* DictionarySpec.swift in Sources */,
-				956FD62319820DBD00699AD8 /* StringSpec.swift in Sources */,
 				956FD61B19820DBD00699AD8 /* DefineSpec.swift in Sources */,
 				956FD61A19820DBD00699AD8 /* ArraySpec.swift in Sources */,
 				956FD60B19820D5700699AD8 /* main.swift in Sources */,
@@ -367,6 +367,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		952F651319854F63003A3DBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 953F36F719758D1700718CF1 /* Swiftest */;
+			targetProxy = 952F651219854F63003A3DBA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		953F370C19758D1800718CF1 /* Debug */ = {

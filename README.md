@@ -29,12 +29,11 @@ Inspired heavily by
 * Mac OSX target template
 * File template
 
-### Stuff to Do (before any kind of "version")
-* iPhone target (scripts exist for this, just need to implement)
+### To Do (before any kind of "version")
+* iPhone target (current WIP)
 * Time output for test suite stuff
-
-## Down the Road
-* XCode error/warn reporter integration
+* good async stuff (looking at examples from Jasmine 2 - "wait a second, then assert" isn't good enough)
+* Obj-C Adapter
 * CocoaPod installation (?)
 * command-line interface (?)
 

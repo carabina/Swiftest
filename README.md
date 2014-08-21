@@ -29,6 +29,7 @@ Inspired heavily by
 * target templates for iOS/OS X
 
 ### To Do
+* Xcode error reports for failed specs
 * more idiomatic Swift way of handling assertions (WIP)
 * Time output (WIP)
 * good async stuff (looking at examples from Jasmine 2 - "wait a second, then assert" isn't good enough)
@@ -94,16 +95,22 @@ class DefinitionExample : SwiftestSuite {
 [here](https://developer.apple.com/xcode/downloads/) if you get a (free)
 account.*
 
-Clone the Swiftest project into your app's directory.
+Clone the Swiftest project into your existing workspace's code directory.
 
 run `cd Swiftest && ./etc/install_templates` to install the Swiftest templates.
-Add `Swiftest/src/Swiftest/Swiftest.xcodeproj` to your app.
+Add `Swiftest/src/Swiftest/Swiftest.xcodeproj` to your workspace.
 
 Add a new target to your project by clicking on the project's name in the
 sidebar, then clicking the plus icon on the lower-left of the screen. Select
 a Swiftest suite for either OS X or iOS. You have now configured a Swiftest
 runner! Find the newly created target in your scheme menu, run (Cmd+R), and
 you should see an empty test suite (0 examples, 0 failures).
+
+If you are testing a Library or Framework, add it to your "Target Dependencies"
+and "Link Binary With Libraries" lists in the "Build Phases" settings.
+
+If you are testing an Application, add the application's files to the
+"Compile Targets" list.
 
 To start writing specs, add a `New File` to your newly created spec project,
 select the Swiftest Spec template, and name the file as you wish. When you run

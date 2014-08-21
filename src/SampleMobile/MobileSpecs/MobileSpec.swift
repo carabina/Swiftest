@@ -4,8 +4,8 @@ import SampleMobile
 class MobileSpec : SwiftestSuite {
   let spec = describe("MobileSpec") {
 
-    it("fails -- add an example") {
-      expect(true).toBe(false)
+    it("can test a method on a controller") {
+      expect(ViewController().sayHey()).toEqual("Hey")
     }
 
   }

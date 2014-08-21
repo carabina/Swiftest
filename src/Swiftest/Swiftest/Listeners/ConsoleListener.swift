@@ -6,11 +6,11 @@ public class ConsoleListener : BaseListener {
   var pendingCount = 0
   var offset = 0
     
-  public init() { super.init() }
+  public override init() { super.init() }
 
   public override func suiteFinished() {
     for ex in Swiftest.reporter.failedExamples {
-      indentPrint("× \(ex.subject) failed:")
+      indentPrint("× \"\(ex.subject)\" failed:")
       offset += 1
       for exp in ex.expectations.filter(Status.has(.Fail)) {
         indentPrint("\(exp.msg) (\(exp.cursor.relativePath()):\(exp.cursor.line))")
@@ -53,10 +53,13 @@ public class ConsoleListener : BaseListener {
   }
 
   func indentPrint(msg: String) {
-    var str = ""
-    for _ in 1...self.offset { str += "  " }
+    var indentation = ""
+    
+    if(offset > 0) {
+      for _ in 1...self.offset { indentation += "  " }
+    }
 
-    printer(str + msg)
+    printer(indentation + msg)
   }
 
   func runCount() -> Int {

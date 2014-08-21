@@ -8,7 +8,7 @@ public class VoidExpectation : BaseExpectation {
     self.cursor = cursor
   }
 
-  public func toChange<T:Comparable>(predicate: @auto_closure () -> T) -> VoidPredicate<T> {
+  public func toChange<T:Comparable>(predicate: @autoclosure () -> T) -> VoidPredicate<T> {
     return VoidPredicate(predicate: predicate, subject: subject, parent: self)
   }
 

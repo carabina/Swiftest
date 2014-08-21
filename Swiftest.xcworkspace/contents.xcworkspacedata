@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:src/SampleMobile/SampleMobile.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:src/Swiftest/Swiftest.xcodeproj">
    </FileRef>
    <FileRef

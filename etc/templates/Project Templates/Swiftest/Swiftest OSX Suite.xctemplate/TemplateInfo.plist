@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
 <dict>
   <key>Kind</key>
   <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 
   <key>Identifier</key>
-  <string>com.apple.dt.unit.commandLineTool</string>
+  <string>org.swiftest.target.osx</string>
 
   <key>TargetOnly</key>
   <true/>
@@ -14,12 +15,17 @@
   <true/>
 
   <key>Description</key>
-  <string>This template adds a Swiftest runner to your Mac project.</string>
+  <string>Adds a Swiftest runner to your Mac project.</string>
 
   <key>Ancestors</key>
   <array>
     <string>com.apple.dt.unit.base</string>
-    <string>com.apple.dt.unit.macBase</string>
+    <string>com.apple.dt.unit.osxBase</string>
+  </array>
+
+  <key>Platforms</key>
+  <array>
+    <string>com.apple.platform.macosx</string>
   </array>
 
   <key>Targets</key>

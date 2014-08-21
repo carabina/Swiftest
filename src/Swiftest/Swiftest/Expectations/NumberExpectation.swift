@@ -1,6 +1,6 @@
 public class NumberExpectation<T:Comparable> : ScalarComparison<T> {
   
-  init(subject: T?, cursor: Cursor = nullCursor) {
+  override init(subject: T?, cursor: Cursor = nullCursor) {
     super.init(subject: subject, cursor: cursor)
   }
   

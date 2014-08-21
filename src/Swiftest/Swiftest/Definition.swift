@@ -10,10 +10,9 @@ class Definition<T> : Resettable {
     self.fn = fn
   }
 
-  func block() -> Void -> T {
+  func block() -> (Void -> T) {
     return {
-      if !self.value { self.value = self.fn() }
-      
+      if self.value == nil { self.value = self.fn() }
       return self.value!
     }
   }

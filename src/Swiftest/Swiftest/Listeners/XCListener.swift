@@ -13,7 +13,7 @@ class XCListener : BaseListener {
 
   override func suiteFinished() {
     for msg in messages {
-      printer.writeData(msg.dataUsingEncoding(NSUTF8StringEncoding))
+      printer.writeData(msg.dataUsingEncoding(NSUTF8StringEncoding)!)
     }
   }
 }

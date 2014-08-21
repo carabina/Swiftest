@@ -1,6 +1,6 @@
 public class StringExpectation<T> : ScalarComparison<String> {
 
-  public init(subject: String?, cursor: Cursor = nullCursor) {
+  public override init(subject: String?, cursor: Cursor = nullCursor) {
     super.init(subject: subject, cursor: cursor)
   }
 

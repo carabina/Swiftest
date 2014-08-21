@@ -126,6 +126,7 @@ class DefinitionExample : SwiftestSuite {
 
 ### Installation
 *Swiftest requires Xcode6 beta 6*
+
 Clone the Swiftest project into your app's directory.
 
 run `cd Swiftest && ./etc/install_templates` to install the Swiftest templates.

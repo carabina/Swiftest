@@ -28,10 +28,11 @@ Inspired heavily by
 * beforeEach / beforeAll hooks
 * Mac OSX target template
 * File template
+* iPhone target
 
 ### To Do (before any kind of "version")
-* iPhone target (current WIP)
-* Time output for test suite stuff
+* more idiomatic Swift way of handling assertions (WIP)
+* Time outputs test suite (WIP)
 * good async stuff (looking at examples from Jasmine 2 - "wait a second, then assert" isn't good enough)
 * Obj-C Adapter
 * CocoaPod installation (?)
@@ -41,9 +42,6 @@ Inspired heavily by
 
 ```swift
 import Swiftest
-
-// create a class that inherits from SwiftestSuite (it's just NSObject)
-// and define the 'spec' member property of that class using `describe`
 
 class SampleSpec : SwiftestSuite {
   let spec = describe("Swiftest") {
@@ -114,7 +112,7 @@ class DefinitionExample : SwiftestSuite {
   let spec = describe("definitions") {
     var subject = define(Counter(number: 5))
 
-    it("creates the object when you call the function") {
+    it("increments the number of the created Counter") {
       subject().increment()
       expect(subject().number).toEqual(6)
     }
@@ -127,20 +125,19 @@ class DefinitionExample : SwiftestSuite {
 ```
 
 ### Installation
-NOTE: We're working on improving the installation process.
+Clone the Swiftest project into your app's directory.
 
-Swiftest requires XCode6-Beta4
+run `cd Swiftest && ./etc/install_templates` to install the Swiftest templates.
+Add `Swiftest/src/Swiftest/Swiftest.xcodeproj` to your app.
 
-For now, clone this repository and add the Swiftest `xcodeproj` to your own
-project. Create a command-line executable target and place the following in
-`main.swift`:
+Add a new target to your project by clicking on the project's name in the
+sidebar, then clicking the plus icon on the lower-left of the screen. Select
+a Swiftest suite for either OS X or iOS. You have now configured a Swiftest
+runner! Find the newly created target in your scheme menu, run (Cmd+R), and
+you should see an empty test suite (0 examples, 0 failures).
 
-```swift
-import Swiftest
+To start writing specs, add a `New File` to your newly created spec project, 
+select the Swiftest Spec template, and name the file as you wish. When you run
+your specs again, you should see one failing spec.
 
-Swiftest.reporter.addListener(ConsoleListener())
-Swiftest.run()
-```
-
-Then, configure the build to link with libSwiftest and
-run the scheme (Cmd + R) with the command-line executable.
+Issues? Don't get a tissue, file an issue!

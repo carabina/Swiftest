@@ -2,11 +2,14 @@ Swiftest
 ========
 
 Swiftest is a *behavior driven development* testing library for Apple's new-ish
-[Swift](https://developer.apple.com/swift/) language. *Swiftest is currently 
-pre-1.0 and is undergoing changes. The current timeline is to release 1.0 as 
-Apple releases iOS 8 and the 1.0 version of Swift.* The goal of Swiftest is
-to be extensible, fast, and for the core components to be implemented in
-pure Swift with only Foundation.framework as a dependency. Check out the
+[Swift](https://developer.apple.com/swift/) language.
+
+*Swiftest is currently pre-1.0 and is undergoing changes. The current timeline
+is to release 1.0 as Apple releases iOS 8 and the 1.0 version of Swift.*
+
+The goal of Swiftest is to be extensible, fast, and for the core components to
+be implemented in pure Swift with only Foundation.framework as a dependency.
+Check out the
 [Example Project](https://github.com/bppr/Swiftest/tree/master/src/Sample)
 to see more.
 
@@ -25,7 +28,7 @@ Inspired heavily by
 * "void" closure matchers (more to come)
 * target templates for iOS/OS X
 
-### To Do (before any kind of "version")
+### To Do
 * more idiomatic Swift way of handling assertions (WIP)
 * Time output (WIP)
 * good async stuff (looking at examples from Jasmine 2 - "wait a second, then assert" isn't good enough)
@@ -87,7 +90,9 @@ class DefinitionExample : SwiftestSuite {
 ```
 
 ### Installation
-*Swiftest requires Xcode6 beta 6*
+*Swiftest requires the Beta 6 release of Xcode 6. It is available
+[here](https://developer.apple.com/xcode/downloads/) if you get a (free)
+account.*
 
 Clone the Swiftest project into your app's directory.
 

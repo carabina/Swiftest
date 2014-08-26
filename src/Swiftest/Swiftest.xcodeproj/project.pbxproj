@@ -64,11 +64,6 @@
 		95091308195FC71000F672FE /* SwiftestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftestSuite.h; sourceTree = "<group>"; };
 		9509130A195FC73E00F672FE /* SwiftestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSuite.m; sourceTree = "<group>"; };
 		953F36F819758D1700718CF1 /* Swiftest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9540ED1219A588CB004B4D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9540ED1419A588CB004B4D53 /* SwiftestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftestController.swift; path = Support/SwiftestController.swift; sourceTree = "<group>"; };
-		9540ED1619A588CB004B4D53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
-		9540ED1919A588CB004B4D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9540ED1B19A588CB004B4D53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = text; path = Images.xcassets; sourceTree = "<group>"; };
 		95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Specification+Context.swift"; sourceTree = "<group>"; };
 		95478BAE195FF7B00019CFB3 /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
 		955240F7196C5D9F0059DD53 /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
@@ -135,34 +130,6 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
-		9540ED1019A588CB004B4D53 /* MobileSpecs */ = {
-			isa = PBXGroup;
-			children = (
-				9540ED1319A588CB004B4D53 /* Support */,
-				9540ED1119A588CB004B4D53 /* Supporting Files */,
-			);
-			path = MobileSpecs;
-			sourceTree = "<group>";
-		};
-		9540ED1119A588CB004B4D53 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9540ED1219A588CB004B4D53 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9540ED1319A588CB004B4D53 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				9540ED1419A588CB004B4D53 /* SwiftestController.swift */,
-				9540ED1619A588CB004B4D53 /* AppDelegate.swift */,
-				9540ED1819A588CB004B4D53 /* Main.storyboard */,
-				9540ED1B19A588CB004B4D53 /* Images.xcassets */,
-			);
-			name = Support;
-			sourceTree = "<group>";
-		};
 		956FD60819820D5700699AD8 /* SwiftestSpecs */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +160,6 @@
 			children = (
 				95F05B4B195CE07800B529D1 /* Swiftest */,
 				956FD60819820D5700699AD8 /* SwiftestSpecs */,
-				9540ED1019A588CB004B4D53 /* MobileSpecs */,
 				95F05B4A195CE07800B529D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -410,17 +376,6 @@
 			targetProxy = 952F651219854F63003A3DBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9540ED1819A588CB004B4D53 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9540ED1919A588CB004B4D53 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		953F370C19758D1800718CF1 /* Debug */ = {

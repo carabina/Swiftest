@@ -9,7 +9,7 @@ public enum ArrayMatcher<T:Equatable> {
 
     switch self {
     case BeEmpty:
-      return build(nil, { subject.isEmpty }, "to be empty")
+      return build(nil, { subject.isEmpty }, "be empty")
 
     case .Equal(let ex):
       return build(ex(), { subject == ex() }, "equal \(ex())")

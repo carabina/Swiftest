@@ -5,19 +5,19 @@ class DictionarySpec : SwiftestSuite {
     let dict = [ "key" : "val" ]
 
     it("equals") {
-      expect(dict).toEqual([ "key" : "val" ])
+      expect(dict).to(.Equal([ "key" : "val" ]))
     }
 
     it("has a given key") {
-      expect(dict).toHaveKey("key")
+      expect(dict).to(.HaveKey("key"))
     }
 
     it("has a given value") {
-      expect(dict).toHaveValue("val")
+      expect(dict).to(.HaveValue("val"))
     }
 
     it("has a pair") {
-      expect(dict).toContain(["key" : "val"])
+      expect(dict).to(.Contain(["key" : "val"]))
     }
   }
 }

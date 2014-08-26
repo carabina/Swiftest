@@ -8,13 +8,13 @@ public enum EquatableMatcher<T:Equatable> {
     
     switch self {
       case .Be(let ex):
-        return build(ex(), { subject == ex() }, "to equal \(ex())")
+        return build(ex(), { subject == ex() }, "equal \(ex())")
 
       case .Equal(let ex):
-        return build(ex(), { subject == ex() }, "to equal \(ex())")
+        return build(ex(), { subject == ex() }, "equal \(ex())")
 
       case .BeNil:
-        return build(nil, { subject == nil }, "to be nil")
+        return build(nil, { subject == nil }, "be nil")
     }
   }
 }

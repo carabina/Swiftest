@@ -8,11 +8,11 @@ class HooksSpec : SwiftestSuite {
       before() { beforeEachCount += 1 }
 
       it("runs a function before each example") {
-        expect(beforeEachCount).toEqual(1)
+        expect(beforeEachCount).to(.Equal(1))
       }
 
       it("increments the variable again") {
-        expect(beforeEachCount).toEqual(2)
+        expect(beforeEachCount).to(.Equal(2))
       }
 
       describe("nesting") {
@@ -20,7 +20,7 @@ class HooksSpec : SwiftestSuite {
 
         it("runs all the beforeEach blocks preceding it") {
           // this should increment TWICE (once for the preceding block)
-          expect(beforeEachCount).toEqual(4)
+          expect(beforeEachCount).to(.Equal(4))
         }
       }
     }
@@ -29,16 +29,16 @@ class HooksSpec : SwiftestSuite {
       before(.all) { beforeAllCount += 1 }
 
       it("increments the variable") {
-        expect(beforeAllCount).toEqual(1)
+        expect(beforeAllCount).to(.Equal(1))
       }
 
       it("increments the variable only once") {
-        expect(beforeAllCount).toEqual(1)
+        expect(beforeAllCount).to(.Equal(1))
       }
     }
 
     it("only runs the beforeAll for the given suite") {
-      expect(beforeAllCount).toEqual(0)
+      expect(beforeAllCount).to(.Equal(0))
     }
   }
 }

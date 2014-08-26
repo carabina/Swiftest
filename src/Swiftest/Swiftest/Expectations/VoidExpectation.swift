@@ -36,7 +36,7 @@ public class VoidExpectation : BaseExpectation {
       self.msg = msg
     }
 
-    super.evaluateTo(cond)
+    super.eval(cond)
   }
 }
 

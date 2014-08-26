@@ -6,7 +6,7 @@ public class BaseExpectation {
   var example = nullExample
   var cursor  = nullCursor
 
-  func evaluateTo(cond:Bool) {
+  func eval(cond:Bool) {
     self.status = cond ? .Pass : .Fail
 
     switch status {
@@ -21,6 +21,6 @@ public class BaseExpectation {
   
   func _assert(assertion: Assertion) {
     self.msg = assertion.msg
-    evaluateTo(assertion.call() ^ assertion.reverse)
+    self.eval(assertion.call() ^ assertion.reverse)
   }
 }

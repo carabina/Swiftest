@@ -1,3 +1,44 @@
+public enum DictionaryMatcher<K:Hashable, V:Equatable> {
+  case Equal(@autoclosure () -> Dictionary<K, V>)
+  case HaveKey(@autoclosure () -> K)
+  case HaveValue(@autoclosure() -> V)
+  case Contain(@autoclosure() -> Dictionary<K,V>)
+  case BeEmpty
+  
+  func assertion(subject: Dictionary<K, V>, reverse: Bool = false) -> DictAssertion<K,V> {
+    let build = DictionaryAssertionBuild(subject: subject, reverse: reverse).build
+    switch self {
+    
+    case .Equal(let ex):
+      return build(ex(), { subject == ex() }, "equal \(ex())" )
+
+    case .HaveKey(let key):
+      return build(subject, { self.contains(subject) { k, v in k == key() }}, "have key \(key())")
+
+    case .HaveValue(let val):
+      return build(subject, { self.contains(subject) { k, v in v == val() }}, "have value \(val())")
+
+    case .Contain(let dict):
+      return build(subject, { self.contains(subject) { k, v in [k:v] == dict() }}, "have pair \(dict())")
+
+    case .BeEmpty:
+      return build(subject, { subject.isEmpty }, "be empty")
+    
+    }
+  }
+  
+  func contains(subject: Dictionary<K,V>, fn: (K, V) -> Bool) -> Bool {
+    var found = false
+    
+    for (key, value) in subject {
+      if fn(key, value) { found = true }
+    }
+    
+    return found
+  }
+
+}
+
 public class DictionaryExpectation<Key:Hashable, Value:Equatable> : BaseExpectation {
   public typealias Dict = Dictionary<Key,Value>
 
@@ -5,57 +46,15 @@ public class DictionaryExpectation<Key:Hashable, Value:Equatable> : BaseExpectat
 
   public init(subject : Dict, cursor: Cursor = nullCursor) {
     self.subject = subject
-    super.init()
-    self.cursor = cursor
-  }
-
-  public func not() -> DictionaryExpectation {
-    self._reverse = !_reverse
-    return self
-  }
-
-  public func toEqual(expected: Dict) {
-    _assert(
-      subject == expected,
-      msg : "expected <\(subject)> to\(_includeNot()) equal <\(expected)>")
-  }
-
-  public func toHaveKey(key: Key) {
-    _assert(
-      _contains({ (k, v) in k == key }),
-      msg: "expected <\(subject)> to\(_includeNot()) have key <\(key)>"
-    )
-  }
-
-  public func toHaveValue(value: Value) {
-    _assert(
-      _contains({ (k, v) in v == value }),
-      msg: "expected <\(subject)> to\(_includeNot()) have key <\(value)>"
-    )
-  }
-
-  public func toContain(pair: Dict) {
-    _assert(
-      _contains({ (k, v) in [k : v] == pair }),
-      msg: "expected <\(subject)> to\(_includeNot()) have entry <\(pair)>"
-    )
+    super.init(cursor: cursor)
   }
   
-  public func toBeEmpty() {
-    _assert(
-      subject.isEmpty,
-      msg: "expected <\(subject) to\(_includeNot()) be empty"
-    )
+  public func to(matcher: DictionaryMatcher<Key,Value>) {
+    _assert(matcher.assertion(subject))
   }
-
-  func _contains(fn: (Key, Value) -> Bool) -> Bool {
-    var found = false
-
-    for (key, value) in subject {
-      if fn(key, value) { found = true }
-    }
-
-    return found
+  
+  public func notTo(matcher: DictionaryMatcher<Key,Value>) {
+    _assert(matcher.assertion(subject, reverse: true))
   }
 }
 

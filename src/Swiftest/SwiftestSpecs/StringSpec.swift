@@ -3,69 +3,69 @@ import Swiftest
 class StringSpec : SwiftestSuite {
   let spec = describe("string assertions") {
     it("equals another string") {
-      expect("abcdefg").toEqual("abcdefg")
+      expect("abcdefg").to(.Equal("abcdefg"))
     }
     
     it("does not equal another string") {
-      expect("abc").not().toEqual("def")
+      expect("abc").notTo(.Equal("def"))
     }
 
     it("ends with another string") {
-      expect("abcdefg").toEndWith("efg")
+      expect("abcdefg").to(.EndWith("efg"))
     }
     
     it("does not end with another string") {
-      expect("abcdefg").not().toEndWith("xyz")
+      expect("abcdefg").notTo(.EndWith("xyz"))
     }
 
     it("starts with another string") {
-      expect("abcdefg").toStartWith("abc")
+      expect("abcdefg").to(.StartWith("abc"))
     }
     
     it("does not start with another string") {
-      expect("abcdefg").not().toStartWith("xyz")
+      expect("abcdefg").notTo(.StartWith("xyz"))
     }
     
     it("is an empty string") {
       let str = ""
-      expect(str).toBeEmpty()
+      expect(str).to(.BeEmpty)
     }
     
     it("is not an empty string") {
-      expect("abc").not().toBeEmpty()
+      expect("abc").notTo(.BeEmpty)
     }
 
     describe("toContain") {
       it("contains another string") {
-        expect("abcdefg").toContain("bcdef")
+        expect("abcdefg").to(.Contain("bcdef"))
       }
       
       it("does not contain another string") {
-        expect("abcdefg").not().toContain("xyz")
+        expect("abcdefg").notTo(.Contain("xyz"))
       }
       
       it("fails properly when the subject string is not present") {
         var emptyStr : String?
-        expect(emptyStr).not().toContain("abc")
+        expect(emptyStr).notTo(.Contain("abc"))
       }
     }
     
     it("is greater than another string") {
-      expect("def").toBeGreaterThan("abc")
+      expect("def").to(.BeGreaterThan("abc"))
     }
 
     it("is less than another string") {
-      expect("def").toBeLessThan("jkl")
+      expect("def").to(.BeLessThan("jkl"))
     }
 
     it("is a nil String") {
       var str : String?
-      expect(str).toBeNil()
+      expect(str).to(.BeNil)
     }
     
     it("is not a nil string") {
       var str : String? = "abc"
-      expect(str).not().toBeNil()
+      expect(str).notTo(.BeNil)
     }
   }
 }

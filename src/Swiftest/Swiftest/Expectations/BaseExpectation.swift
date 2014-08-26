@@ -1,14 +1,13 @@
+let defaultMessage = "expectation failed"
+
 public class BaseExpectation {
-  let defaultMessage = "expectation failed"
-
-  public var status = Status.Pending
-  var _reverse = false
-  var msg : String
+  var status  = Status.Pending
+  var msg     = defaultMessage
   var example = nullExample
-  var cursor = nullCursor
+  var cursor  = nullCursor
 
-  func _assert(cond:Bool) {
-    self.status = cond ^ _reverse ? .Pass : .Fail
+  func evaluateTo(cond:Bool) {
+    self.status = cond ? .Pass : .Fail
 
     switch status {
     case .Pass: Swiftest.reporter.expectationPassed(self)
@@ -16,21 +15,12 @@ public class BaseExpectation {
     default: ()
     }
   }
-
-  init() {
-    msg = defaultMessage
-  }
-
-  func getStatus() -> Status {
-    return self.status
-  }
-
-  func _assert(cond: Bool, msg: String) {
-    self.msg = msg
-    _assert(cond)
-  }
-
-  func _includeNot() -> String {
-    return _reverse ? " not" : ""
+  
+  init(cursor: Cursor = nullCursor) { self.cursor = cursor }
+  func getStatus() -> Status        { return self.status }
+  
+  func _assert(assertion: Assertion) {
+    self.msg = assertion.msg
+    evaluateTo(assertion.call() ^ assertion.reverse)
   }
 }

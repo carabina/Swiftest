@@ -5,44 +5,44 @@ class DictionarySpec : SwiftestSuite {
     let dict = [ "key" : "val" ]
 
     it("equals another dictionary") {
-      expect(dict).toEqual([ "key" : "val" ])
+      expect(dict).to(.Equal([ "key" : "val" ]))
     }
     
     it("does not equal another dictionary") {
-      expect(dict).not().toEqual([ "another-key" : "val"])
+      expect(dict).notTo(.Equal([ "another-key" : "val"]))
     }
     
     it("has a given key") {
-      expect(dict).toHaveKey("key")
+      expect(dict).to(.HaveKey("key"))
     }
     
     it("does not have a given key") {
-      expect(dict).not().toHaveKey("another-key")
+      expect(dict).notTo(.HaveKey("another-key"))
     }
 
     it("has a given value") {
-      expect(dict).toHaveValue("val")
+      expect(dict).to(.HaveValue("val"))
     }
     
     it("does not have a given value") {
-      expect(dict).not().toHaveValue("another-val")
+      expect(dict).notTo(.HaveValue("another-val"))
     }
 
     it("contains a pair") {
-      expect(dict).toContain(["key" : "val"])
+      expect(dict).to(.Contain(["key" : "val"]))
     }
     
     it("does not contain a pair") {
-      expect(dict).not().toContain(["different-key" : "val"])
+      expect(dict).notTo(.Contain(["different-key" : "val"]))
     }
     
     it("is empty") {
       let emptyDict: Dictionary<String, String> = [ : ]
-      expect(emptyDict).toBeEmpty()
+      expect(emptyDict).to(.BeEmpty)
     }
     
     it("is not empty") {
-      expect(dict).not().toBeEmpty()
+      expect(dict).notTo(.BeEmpty)
     }
   }
 }

@@ -30,7 +30,11 @@ public class ConsoleListener : BaseListener {
     )
   }
 
-  public override func specificationFinished(spec: Specification) { printSpec(spec) }
+  public override func specificationFinished(spec: Specification) {
+    if spec.parent == nil {
+      printSpec(spec)
+    }
+  }
 
   func printExample(example: Example) {
     if example.getStatus() == Status.Pass {
@@ -51,6 +55,7 @@ public class ConsoleListener : BaseListener {
     offset += 1
     
     for ex in spec.context.examples() { printExample(ex) }
+    
     for s in spec.context.specs() { printSpec(s) }
     
     offset -= 1

@@ -9,6 +9,7 @@ public class Specification : Runnable {
   let ofType = RunnableType.Specification
   let cursor : Cursor
   var context = Specification.Context()
+  var parent: Specification?
 
   init(subject:String, cursor: Cursor = nullCursor) {
     self.subject = subject
@@ -27,7 +28,7 @@ public class Specification : Runnable {
     context.addHook(hook, fn: fn)
   }
 
-  func addSpec(spec: Specification) { context.add(spec) }
+  func addSpec(spec: Specification) { spec.parent = self; context.add(spec) }
 
   public func run() {
     timer.start()

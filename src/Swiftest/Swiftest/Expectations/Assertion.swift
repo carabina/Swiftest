@@ -4,7 +4,7 @@ protocol Assertion {
   var reverse : Bool { get }
 }
 
-class BaseAssertion<T> : Assertion {
+class BasicAssertion<T> : Assertion {
   let msg : String
   let call : Void -> Bool
   let reverse : Bool
@@ -67,8 +67,8 @@ class AssertionBuild<T> {
     self.reverse = reverse
   }
   
-  func build(expected: T?, _ call: Void -> Bool, _ msg: String) -> BaseAssertion<T> {
-    return BaseAssertion(
+  func build(expected: T?, _ call: Void -> Bool, _ msg: String) -> BasicAssertion<T> {
+    return BasicAssertion(
       subject: subject,
       expected: expected,
       call: call,
@@ -87,8 +87,8 @@ class ArrayAssertionBuild<T> {
     self.reverse = reverse
   }
   
-  func build(expected: [T]?, _ call: Void -> Bool, _ msg: String) -> BaseAssertion<T> {
-    return BaseAssertion(
+  func build(expected: [T]?, _ call: Void -> Bool, _ msg: String) -> BasicAssertion<T> {
+    return BasicAssertion(
       subject: subject,
       expected: expected,
       call: call,

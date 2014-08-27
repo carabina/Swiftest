@@ -3,8 +3,8 @@ public enum ArrayMatcher<T:Equatable> {
   case Contain(@autoclosure () -> T)
   case ContainEach(@autoclosure () -> [T])
   case BeEmpty
-  
-  func assertion(subject: [T], reverse: Bool = false) -> BaseAssertion<T> {
+
+  func assertion(subject: [T], reverse: Bool = false) -> BasicAssertion<T> {
     let build = ArrayAssertionBuild(subject: subject, reverse: reverse).build
 
     switch self {
@@ -13,21 +13,21 @@ public enum ArrayMatcher<T:Equatable> {
 
     case .Equal(let ex):
       return build(ex(), { subject == ex() }, "equal \(ex())")
-      
+
     case .Contain(let ex):
       let containFn : Void -> Bool = {
         !subject.filter() { s in s == ex() }.isEmpty
       }
-      
+
       return build([ex()], containFn, "contain \(ex())")
-      
+
     case ContainEach(let ex):
       let containFn : Void -> Bool = {
         subject.filter() { (let subjectEl) in
           !ex().filter({ el in el == subjectEl }).isEmpty
         }.count == ex().count
       }
-      
+
       return build(ex(), containFn, "contain each of \(ex())")
     }
   }
@@ -41,11 +41,11 @@ public class ArrayExpectation<T:Equatable> : BaseExpectation {
     self.subject = subject
     super.init(cursor: cursor)
   }
-  
+
   public func to(matcher: ArrayMatcher<T>) {
     _assert(matcher.assertion(subject))
   }
-  
+
   public func notTo(matcher: ArrayMatcher<T>) {
     _assert(matcher.assertion(subject, reverse: true))
   }

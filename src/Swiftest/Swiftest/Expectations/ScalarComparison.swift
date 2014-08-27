@@ -6,7 +6,7 @@ public enum ComparableMatcher<T:Comparable> {
   case BeLessThanOrEqual(@autoclosure () -> T?)
   case BeBetween(@autoclosure () -> T?, @autoclosure () -> T?)
   
-  func assertion(subject: T?, reverse: Bool = false) -> BaseAssertion<T> {
+  func assertion(subject: T?, reverse: Bool = false) -> BasicAssertion<T> {
     let build = AssertionBuild(subject: subject, reverse: reverse).build
     switch self {
 

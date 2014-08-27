@@ -3,7 +3,7 @@ public enum EquatableMatcher<T:Equatable> {
   case Equal(@autoclosure () -> T?)
   case BeNil
 
-  func assertion(subject: T?, reverse: Bool = false) -> BaseAssertion<T> {
+  func assertion(subject: T?, reverse: Bool = false) -> BasicAssertion<T> {
     let build = AssertionBuild(subject: subject, reverse: reverse).build
     
     switch self {

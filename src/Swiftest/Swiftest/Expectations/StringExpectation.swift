@@ -5,7 +5,7 @@ public enum StringMatcher {
   case Contain(@autoclosure () -> String)
   case BeEmpty
 
-  func assertion(subject: String?, reverse: Bool = false) -> BaseAssertion<String> {
+  func assertion(subject: String?, reverse: Bool = false) -> BasicAssertion<String> {
     let build = AssertionBuild(subject: subject, reverse: reverse).build
     
     switch self {

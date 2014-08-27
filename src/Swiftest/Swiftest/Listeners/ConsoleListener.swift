@@ -5,8 +5,10 @@ public class ConsoleListener : BaseListener {
   var failedCount = 0
   var pendingCount = 0
   var offset = 0
+  
+  var suiteStart : NSDate
     
-  public override init() { super.init() }
+  public override init() { suiteStart = NSDate(); super.init(); }
 
   public override func suiteFinished() {
     for ex in Swiftest.reporter.failedExamples {
@@ -20,9 +22,13 @@ public class ConsoleListener : BaseListener {
 
       offset -= 1
     }
+    
+    let elapsedTime = NSString(
+      format: "%f", NSDate().timeIntervalSinceDate(suiteStart)
+    )
 
     printer(
-      ":: RESULTS :: \n" +
+      ":: RESULTS :: completed in \(elapsedTime)s\n" +
       "✓ \(passedCount)/\(runCount()) examples passed :: " +
       "× \(failedCount) failed :: " +
       "★ \(pendingCount) pending\n"
@@ -39,7 +45,7 @@ public class ConsoleListener : BaseListener {
     if offset == 0 { printer("") }
   }
 
-  public override func exampleFinished(example: Example) {
+  public override func exampleFinished(example: Example) {  
     if example.getStatus() == Status.Pass {
       passedCount++
       indentPrint("✓ \(example.subject)")

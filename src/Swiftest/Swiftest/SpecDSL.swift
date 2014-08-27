@@ -27,7 +27,7 @@ public func example(
   file: String = __FILE__,
   line: Int = __LINE__
 ) {
-  current().example(subject, fn: fn, cursor: Cursor(file: file, line: line))
+  current().addExample(subject, fn: fn, cursor: Cursor(file: file, line: line))
 }
 
 public func it(

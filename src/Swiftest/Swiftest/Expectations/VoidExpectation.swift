@@ -1,28 +1,42 @@
+public enum VoidMatcher<T:Comparable> {
+  case Change(@autoclosure () -> T)
+  
+  func assertion(subject: VoidBlk, reverse: Bool, parent: VoidExpectation) -> VoidPredicate<T> {
+    switch self {
+    case .Change(let t):
+      return VoidPredicate(predicate: t, subject: subject, parent: parent)
+    }
+  }
+}
+
 public class VoidExpectation : BaseExpectation {
   var subject: VoidBlk
   var assertions : [Bool] = []
 
   public init(subject: VoidBlk, cursor: Cursor = nullCursor) {
     self.subject = subject
-    super.init()
-    self.cursor = cursor
+    super.init(cursor: cursor)
   }
 
-  public func toChange<T:Comparable>(predicate: @autoclosure () -> T) -> VoidPredicate<T> {
-    return VoidPredicate(predicate: predicate, subject: subject, parent: self)
+  public func to<T:Comparable>(matcher: VoidMatcher<T>) -> VoidPredicate<T> {
+    return matcher.assertion(subject, reverse: false, parent: self)
+  }
+  
+  public func notTo<T:Comparable>(matcher: VoidMatcher<T>) -> VoidPredicate<T> {
+    return matcher.assertion(subject, reverse: true, parent: self)
   }
 
   public override func getStatus() -> Status {
     return assertions.filter({ st in !st }).isEmpty ? .Pass : .Fail
   }
 
-  public override func _assert(cond: Bool, msg: String) {
+  public func _assert(cond: Bool, msg: String) {
     assertions.append(cond)
-    if(self.msg == defaultMessage || !cond) {
+      if(self.msg == defaultMessage || !cond) {
       self.msg = msg
     }
 
-    super._assert(cond)
+    super.eval(cond)
   }
 }
 

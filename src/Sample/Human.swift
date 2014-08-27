@@ -4,6 +4,6 @@ public class Human : Equatable {
   public init(name : String) { self.name = name }
 }
 
- public func ==(p1:Human, p2:Human) -> Bool {
+public func ==(p1:Human, p2:Human) -> Bool {
   return p1.name == p2.name
 }

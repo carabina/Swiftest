@@ -1,36 +1,53 @@
+public enum ArrayMatcher<T:Equatable> {
+  case Equal(@autoclosure () -> [T])
+  case Contain(@autoclosure () -> T)
+  case ContainEach(@autoclosure () -> [T])
+  case BeEmpty
+
+  func assertion(subject: [T], reverse: Bool = false) -> BasicAssertion<T> {
+    let build = ArrayAssertionBuild(subject: subject, reverse: reverse).build
+
+    switch self {
+    case BeEmpty:
+      return build(nil, { subject.isEmpty }, "be empty")
+
+    case .Equal(let ex):
+      return build(ex(), { subject == ex() }, "equal \(ex())")
+
+    case .Contain(let ex):
+      let containFn : Void -> Bool = {
+        !subject.filter() { s in s == ex() }.isEmpty
+      }
+
+      return build([ex()], containFn, "contain \(ex())")
+
+    case ContainEach(let ex):
+      let containFn : Void -> Bool = {
+        subject.filter() { (let subjectEl) in
+          !ex().filter({ el in el == subjectEl }).isEmpty
+        }.count == ex().count
+      }
+
+      return build(ex(), containFn, "contain each of \(ex())")
+    }
+  }
+}
+
 public class ArrayExpectation<T:Equatable> : BaseExpectation {
   typealias List = [T]
   var subject : List
 
   public init(subject: List, cursor: Cursor = nullCursor) {
     self.subject = subject
-    super.init()
-    self.cursor = cursor
+    super.init(cursor: cursor)
   }
 
-  public func not() -> ArrayExpectation {
-    self._reverse = !_reverse
-    return self
+  public func to(matcher: ArrayMatcher<T>) {
+    _assert(matcher.assertion(subject))
   }
 
-  public func toEqual(expected: List) {
-    _assert(
-      subject == expected,
-      msg: "expected <\(subject)> to\(_includeNot()) equal <\(expected)>"
-    )
-  }
-
-  public func toContain(expected: T...) {
-    _assert(
-      subject.filter() { (let subjectEl) in
-        !expected.filter({ el in el == subjectEl }).isEmpty
-      }.count == expected.count,
-      msg: "expected <\(subject)>\(_includeNot()) to contain <\(expected)>"
-    )
-  }
-  
-  public func toBeEmpty() {
-    _assert(subject.isEmpty, msg: "expected \(subject) to\(_includeNot()) be empty")
+  public func notTo(matcher: ArrayMatcher<T>) {
+    _assert(matcher.assertion(subject, reverse: true))
   }
 }
 

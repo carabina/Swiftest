@@ -8,7 +8,7 @@ class HumanSpec : SwiftestSuite {
       let human1 = Human(name: "Bob")
       let human2 = Human(name: "Bob")
       
-      expect(human1).toEqual(human2)
+      expect(human1).to(.Equal(human2))
     }
   
   }

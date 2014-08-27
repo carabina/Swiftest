@@ -1,29 +1,38 @@
+public enum EquatableMatcher<T:Equatable> {
+  case Be(@autoclosure () -> T?)
+  case Equal(@autoclosure () -> T?)
+  case BeNil
+
+  func assertion(subject: T?, reverse: Bool = false) -> BasicAssertion<T> {
+    let build = AssertionBuild(subject: subject, reverse: reverse).build
+    
+    switch self {
+      case .Be(let ex):
+        return build(ex(), { subject == ex() }, "equal \(ex())")
+
+      case .Equal(let ex):
+        return build(ex(), { subject == ex() }, "equal \(ex())")
+
+      case .BeNil:
+        return build(nil, { subject == nil }, "be nil")
+    }
+  }
+}
+
 public class ScalarExpectation<T:Equatable> : BaseExpectation {
   var subject: T?
   
   public init(subject: T?, cursor: Cursor = nullCursor) {
     self.subject = subject
-    super.init()
-    self.cursor = cursor
+    super.init(cursor: cursor)
   }
   
-  public func not() -> ScalarExpectation {
-    self._reverse = !_reverse
-    return self
+  public func to(matcher: EquatableMatcher<T>) {
+    _assert(matcher.assertion(subject))
   }
   
-  public func toEqual(expected: T?) {
-    _assert(
-      subject == expected,
-      msg: "expected <\(subject)> to\(_includeNot()) equal <\(expected)>"
-    )
-  }
-  
-  public func toBeNil() {
-    _assert(
-      subject == nil,
-      msg: "expected <\(subject)> to\(_includeNot()) be nil"
-    )
+  public func notTo(matcher: EquatableMatcher<T>) {
+    _assert(matcher.assertion(subject, reverse: true))
   }
 }
 

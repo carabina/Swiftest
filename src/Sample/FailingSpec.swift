@@ -4,16 +4,16 @@ class FailingSpec : SwiftestSuite {
   let spec = describe("failure") {
 
     it("passing example to better illustrate formatting") {
-      expect(true).not().toBe(false)
+      expect(true).notTo(.Be(false))
     }
 
     it("asplodes") {
-      expect(true).toBe(false)
-      expect(true).not().toBe(true)
+      expect(true).to(.Be(false))
+      expect(true).notTo(.Be(true))
     }
 
     it("formats failure nicely") {
-      expect(1).toEqual(2)
+      expect(1).to(.Equal(2))
     }
   }
 }

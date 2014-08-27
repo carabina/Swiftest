@@ -14,7 +14,7 @@ public class Specification : Runnable {
     self.cursor = cursor
   }
 
-  func example(
+  func addExample(
     subject: String,
     fn: VoidBlk,
     cursor: Cursor = nullCursor

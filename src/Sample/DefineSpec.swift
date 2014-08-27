@@ -12,11 +12,11 @@ class DefineSpec : SwiftestSuite {
 
     it("creates a closure that returns the value") {
       counter().inc()
-      expect(counter().num).toEqual(1)
+      expect(counter().num).to(.Equal(1))
     }
 
     it("re-sets the value for each example") {
-      expect(counter().num).toEqual(0)
+      expect(counter().num).to(.Equal(0))
     }
   }
 }

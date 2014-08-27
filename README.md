@@ -15,25 +15,22 @@ to see more.
 
 Inspired heavily by
 [RSpec](https://github.com/rspec/rspec), [Jasmine](http://jasmine.github.io/),
-[OCDSpec2](https://github.com/OCDSpec/OCDSpec2) and
-[Kiwi](https://github.com/kiwi-bdd/Kiwi)
+and [OCDSpec2](https://github.com/OCDSpec/OCDSpec2)
 
 ### Features
 * a clean, familiar specification DSL
-* expectations for core types, and anything that implements `Equatable`
+* expectations galore: for core types, void functions, anything that implements the Swift `Equatable` protocol
 * fast, clear console reporter
-* nested describe blocks
-* memoized values (similar to RSpec's `let`)
+* nested example groups
+* memoized values (similar to RSpec's `let`) (see [Definitions](#Definitions))
 * hooks for before-all / before-each example
-* "void" closure matchers (more to come)
-* target templates for iOS/OS X
+* target and file templates for iOS/OS X
 
 ### To Do
 * Xcode error reports for failed specs
-* more idiomatic Swift way of handling assertions (WIP)
-* Time output (WIP)
-* good async stuff (looking at examples from Jasmine 2 - "wait a second, then assert" isn't good enough)
-* Obj-C Adapter (as separate project)
+* design asynchronous strategy
+* after-each / after-all hooks
+* Obj-C Adapter (as separate project) (?)
 * CocoaPod installation (?)
 * command-line interface (?)
 
@@ -45,21 +42,21 @@ import Swiftest
 class SampleSpec : SwiftestSuite {
   let spec = describe("Swiftest") {
     it("has tons of expectations") {
-      expect(true).not().toBe(false)
+      expect(true).notTo(.Be(false))
 
-      expect(1 + 1).toEqual(2)
+      expect(1 + 1).to(.Equal(2))
 
-      expect([ "key" : "val" ]).toHaveKey("key")
+      expect([ "key" : "val" ]).to(.HaveKey("key"))
 
-      expect([1, 2, 3]).toContain(1, 3)
+      expect([1, 2, 3]).to(.Contain(1, 3))
     }
 
     it("does nifty stuff with closures") {
       var a = 0
 
-      expect({ a += 1 }).toChange(a).to(1)
-      expect({ a += 1 }).toChange(a).from(1).to(2)
-      expect({ a += 2 }).toChange(a).by(2)
+      expect({ a += 1 }).to(.Change(a)).to(1)
+      expect({ a += 1 }).to(.Change(a)).from(1).to(2)
+      expect({ a += 2 }).to(.Change(a)).by(2)
     }
  }
 }
@@ -80,11 +77,11 @@ class DefinitionExample : SwiftestSuite {
 
     it("increments the number of the created Counter") {
       counter().increment()
-      expect(counter().number).toEqual(6)
+      expect(counter().number).to(.Equal(6))
     }
 
     it("resets the object between each example") {
-      expect(counter().number).toEqual(5)
+      expect(counter().number).to(.Equal(5))
     }
   }
 }

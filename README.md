@@ -28,7 +28,7 @@ and [OCDSpec2](https://github.com/OCDSpec/OCDSpec2)
 
 ### To Do
 * Xcode error reports for failed specs
-* design asynchronous strategy
+* async specs
 * after-each / after-all hooks
 * Obj-C Adapter (as separate project) (?)
 * CocoaPod installation (?)

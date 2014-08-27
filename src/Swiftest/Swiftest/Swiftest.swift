@@ -8,6 +8,7 @@ let nullCursor = Cursor(file: "null", line: 0)
 
 public struct Swiftest {
   public static let reporter = Reporter()
+  public static let timer = Timer()
 
   static var context = Context()
   public static var runner: Runner = { (let context) in
@@ -25,11 +26,13 @@ public struct Swiftest {
   }
 
   public static func run() -> Int {
+    timer.start()
     Registrar.registerAll()
     context.sort()
 
     reporter.suiteStarted()
     runner(context)
+    timer.stop()
     reporter.suiteFinished()
 
     return reporter.failedExamples.count == 0 ? 0 : 1

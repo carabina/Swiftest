@@ -44,6 +44,7 @@
 		956FD62219820DBD00699AD8 /* StatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61719820DBD00699AD8 /* StatusSpec.swift */; };
 		956FD62419820DBD00699AD8 /* VoidClosureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956FD61919820DBD00699AD8 /* VoidClosureSpec.swift */; };
 		95850D1819854E3400512D8D /* Swiftest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953F36F819758D1700718CF1 /* Swiftest.framework */; };
+		958EED5119AD8B330041151B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EED5019AD8B330041151B /* Timer.swift */; };
 		95C96A9219AC398800375F86 /* BoolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C96A9119AC398800375F86 /* BoolSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		956FD61719820DBD00699AD8 /* StatusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusSpec.swift; sourceTree = "<group>"; };
 		956FD61819820DBD00699AD8 /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSpec.swift; sourceTree = "<group>"; };
 		956FD61919820DBD00699AD8 /* VoidClosureSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidClosureSpec.swift; sourceTree = "<group>"; };
+		958EED5019AD8B330041151B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		95C96A9119AC398800375F86 /* BoolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSpec.swift; sourceTree = "<group>"; };
 		95E87B47195E0BA90092F6A8 /* Runnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runnable.swift; sourceTree = "<group>"; };
 		95F05B6A195CE35600B529D1 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				95F05B70195CE35600B529D1 /* SpecDSL.swift */,
 				95F05B71195CE35600B529D1 /* Specification.swift */,
 				95478BAC195FEEBB0019CFB3 /* Specification+Context.swift */,
+				958EED5019AD8B330041151B /* Timer.swift */,
 				95F05B6D195CE35600B529D1 /* Status.swift */,
 				95F05B73195CE35600B529D1 /* Swiftest.swift */,
 				95091301195F7AD300F672FE /* Swiftest-Bridge.h */,
@@ -337,6 +340,7 @@
 				953F37331975914C00718CF1 /* VoidPredicate.swift in Sources */,
 				953F37341975914C00718CF1 /* BaseListener.swift in Sources */,
 				953F37351975914C00718CF1 /* ConsoleListener.swift in Sources */,
+				958EED5119AD8B330041151B /* Timer.swift in Sources */,
 				953F37361975914C00718CF1 /* XCListener.swift in Sources */,
 				953F37371975914C00718CF1 /* Registrar.m in Sources */,
 				953F37381975914C00718CF1 /* SwiftestSuite.m in Sources */,

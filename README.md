@@ -27,6 +27,7 @@ and [OCDSpec2](https://github.com/OCDSpec/OCDSpec2)
 * target and file templates for iOS/OS X
 
 ### To Do
+* refactor reporter / listeners
 * Xcode error reports for failed specs
 * async specs
 * after-each / after-all hooks

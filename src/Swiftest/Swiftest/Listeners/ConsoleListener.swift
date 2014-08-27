@@ -6,11 +6,10 @@ public class ConsoleListener : BaseListener {
   var pendingCount = 0
   var offset = 0
   
-  var suiteStart : NSDate
-    
-  public override init() { suiteStart = NSDate(); super.init(); }
+  public override init() { super.init() }
 
   public override func suiteFinished() {
+    printer("")
     for ex in Swiftest.reporter.failedExamples {
       indentPrint("× \"\(ex.subject)\" failed:")
       offset += 1
@@ -23,29 +22,17 @@ public class ConsoleListener : BaseListener {
       offset -= 1
     }
     
-    let elapsedTime = NSString(
-      format: "%f", NSDate().timeIntervalSinceDate(suiteStart)
-    )
-
     printer(
-      ":: RESULTS :: completed in \(elapsedTime)s\n" +
+      ":: RESULTS :: completed in \(Swiftest.timer.toString())s\n" +
       "✓ \(passedCount)/\(runCount()) examples passed :: " +
       "× \(failedCount) failed :: " +
       "★ \(pendingCount) pending\n"
     )
   }
 
-  public override func specificationStarted(spec: Specification) {
-    indentPrint(spec.subject)
-    offset += 1
-  }
+  public override func specificationFinished(spec: Specification) { printSpec(spec) }
 
-  public override func specificationFinished(spec: Specification) {
-    offset -= 1
-    if offset == 0 { printer("") }
-  }
-
-  public override func exampleFinished(example: Example) {  
+  func printExample(example: Example) {
     if example.getStatus() == Status.Pass {
       passedCount++
       indentPrint("✓ \(example.subject)")
@@ -56,6 +43,17 @@ public class ConsoleListener : BaseListener {
       pendingCount++
       indentPrint("★ \(example.subject)")
     }
+  }
+  
+  func printSpec(spec: Specification) {
+    printer("")
+    indentPrint("\(spec.subject) (\(spec.timer.toString())s)")
+    offset += 1
+    
+    for ex in spec.context.examples() { printExample(ex) }
+    for s in spec.context.specs() { printSpec(s) }
+    
+    offset -= 1
   }
 
   func indentPrint(msg: String) {

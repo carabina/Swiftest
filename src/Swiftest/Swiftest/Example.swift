@@ -2,6 +2,7 @@ public class Example : Runnable {
 
   public var expectations: [BaseExpectation] = []
   public let subject: String
+  public var timer = Timer()
   
   let fn: VoidBlk = nullFn
   let cursor: Cursor
@@ -15,8 +16,10 @@ public class Example : Runnable {
 
   func run() {
     Swiftest.context.current().withExample(self) {
+      self.timer.start()
       Swiftest.reporter.exampleStarted(self)
       self.fn()
+      self.timer.stop()
       Swiftest.reporter.exampleFinished(self)
     }
   }

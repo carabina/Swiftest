@@ -5,6 +5,7 @@ let runHooks : (Specification.Context, HookType) -> Void = {
 
 public class Specification : Runnable {
   public let subject : String
+  public var timer = Timer()
   let ofType = RunnableType.Specification
   let cursor : Cursor
   var context = Specification.Context()
@@ -29,6 +30,7 @@ public class Specification : Runnable {
   func addSpec(spec: Specification) { context.add(spec) }
 
   public func run() {
+    timer.start()
     Swiftest.reporter.specificationStarted(self)
     
     let exec : Runnable -> Void = { (let runnable) in
@@ -45,7 +47,8 @@ public class Specification : Runnable {
     }
 
     for spec in context.specs() { exec(spec) }
-
+    
+    timer.stop()
     Swiftest.reporter.specificationFinished(self)
   }
 

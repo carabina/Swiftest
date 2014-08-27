@@ -1,6 +1,25 @@
 public class ConsoleListener : BaseListener {
 
-  public var printer: String -> Void = println
+  public class Printer {
+    public var out: String -> Void = println
+    public var indentLevel = 0
+    
+    func print(output: String) {
+      var indentation = ""
+    
+      if(indentLevel > 0) {
+        for _ in 1...indentLevel { indentation += "  " }
+      }
+
+      out(indentation + output)
+    }
+
+    func lineBreak() { out("") }
+    func indent() { indentLevel += 1 }
+    func dedent() { indentLevel -= 1 }
+  }
+
+  public var printer = Printer()
   var passedCount = 0
   var failedCount = 0
   var pendingCount = 0
@@ -9,20 +28,22 @@ public class ConsoleListener : BaseListener {
   public override init() { super.init() }
 
   public override func suiteFinished() {
-    printer("")
+    printer.lineBreak()
+    
     for ex in Swiftest.reporter.failedExamples {
-      indentPrint("× \"\(ex.subject)\" failed:")
-      offset += 1
+      printer.print("× \"\(ex.subject)\" failed:")
+      printer.indent()
+      
       for exp in ex.expectations.filter(Status.has(.Fail)) {
-        indentPrint("\(exp.msg) (\(exp.cursor.relativePath()):\(exp.cursor.line))")
+        printer.print("\(exp.msg) (\(exp.cursor.relativePath()):\(exp.cursor.line))")
       }
 
-      printer("")
+      printer.lineBreak()
 
-      offset -= 1
+      printer.dedent()
     }
     
-    printer(
+    printer.print(
       ":: RESULTS :: completed in \(Swiftest.timer.toString())s\n" +
       "✓ \(passedCount)/\(runCount()) examples passed :: " +
       "× \(failedCount) failed :: " +
@@ -37,39 +58,28 @@ public class ConsoleListener : BaseListener {
   func printExample(example: Example) {
     if example.getStatus() == Status.Pass {
       passedCount++
-      indentPrint("✓ \(example.subject)")
+      printer.print("✓ \(example.subject)")
     } else if example.getStatus() == .Fail {
       failedCount++
-      indentPrint("× \(example.subject)")
+      printer.print("× \(example.subject)")
     } else {
       pendingCount++
-      indentPrint("★ \(example.subject)")
+      printer.print("★ \(example.subject)")
     }
   }
   
   func printSpec(spec: Specification) {
-    printer("")
-    indentPrint("\(spec.subject) (\(spec.timer.toString())s)")
-    offset += 1
+    printer.lineBreak()
+    printer.print("\(spec.subject) (\(spec.timer.toString())s)")
+    printer.indent()
     
     for ex in spec.context.examples() { printExample(ex) }
-    
     for s in spec.context.specs() { printSpec(s) }
     
-    offset -= 1
-  }
-
-  func indentPrint(msg: String) {
-    var indentation = ""
-    
-    if(offset > 0) {
-      for _ in 1...self.offset { indentation += "  " }
-    }
-
-    printer(indentation + msg)
+    printer.dedent()
   }
 
   func runCount() -> Int {
-    return passedCount + failedCount + pendingCount
+    return [passedCount, failedCount, pendingCount].reduce(0, +)
   }
 }

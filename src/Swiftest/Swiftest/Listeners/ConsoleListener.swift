@@ -31,9 +31,7 @@ public class ConsoleListener : BaseListener {
   }
 
   public override func specificationFinished(spec: Specification) {
-    if spec.parent == nil {
-      printSpec(spec)
-    }
+    if spec.parents.isEmpty { printSpec(spec) }
   }
 
   func printExample(example: Example) {

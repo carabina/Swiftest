@@ -89,7 +89,7 @@ class DefinitionExample : SwiftestSuite {
 ```
 
 ### Installation
-*Swiftest requires the Beta 6 release of Xcode 6. It is available
+*Swiftest requires a Beta 6+ release of Xcode 6. It is available
 [here](https://developer.apple.com/xcode/downloads/) if you get a (free)
 account.*
 

@@ -1,5 +1,4 @@
 import Swiftest
-import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___ : SwiftestSuite {
   let spec = describe("___FILEBASENAME___") {

@@ -2,6 +2,7 @@ import Swiftest
 
 class ArraySpec : SwiftestSuite {
   let spec = describe("arrays") {
+
     describe("toContain") {
       it("contains an element") {
         expect([1, 2, 3]).to(.Contain(1))

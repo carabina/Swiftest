@@ -5,6 +5,7 @@ public enum DictionaryMatcher<K:Hashable, V:Equatable> {
   case Contain(@autoclosure() -> Dictionary<K,V>)
   case BeEmpty
   
+
   func assertion(subject: Dictionary<K, V>, reverse: Bool = false) -> DictAssertion<K,V> {
     let build = DictionaryAssertionBuild(subject: subject, reverse: reverse).build
     switch self {
@@ -28,23 +29,15 @@ public enum DictionaryMatcher<K:Hashable, V:Equatable> {
   }
   
   func contains(subject: Dictionary<K,V>, fn: (K, V) -> Bool) -> Bool {
-    var found = false
-    
-    for (key, value) in subject {
-      if fn(key, value) { found = true }
-    }
-    
-    return found
+    return !filter(subject, fn).isEmpty
   }
 
 }
 
 public class DictionaryExpectation<Key:Hashable, Value:Equatable> : BaseExpectation {
-  public typealias Dict = Dictionary<Key,Value>
+  var subject : Dictionary<Key,Value>
 
-  var subject : Dict
-
-  public init(subject : Dict, cursor: Cursor = nullCursor) {
+  public init(subject : Dictionary<Key,Value>, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init(cursor: cursor)
   }

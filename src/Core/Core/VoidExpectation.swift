@@ -1,0 +1,38 @@
+public class VoidExpectation : Expectation {
+  let subject : VoidBlk
+  var assertions : [Bool] = []
+  
+  public init(subject: VoidBlk, cursor: Cursor = nullCursor) {
+    self.subject = subject
+    super.init(cursor: cursor)
+  }
+  
+  public func to<T:Comparable>(matcher: VoidMatcher<T>) -> VoidPredicate<T> {
+    return matcher.assertion(subject, reverse: false, parent: self)
+  }
+  
+  public func notTo<T:Comparable>(matcher: VoidMatcher<T>) -> VoidPredicate<T> {
+    return matcher.assertion(subject, reverse: true, parent: self)
+  }
+  
+  public override func status() -> Status {
+    return assertions.filter({ !$0 }).isEmpty ? .Pass : .Fail
+  }
+  
+  public func _assert(cond: Bool, msg: String) {
+    self.assertions.append(cond)
+    if(self.msg == defaultMessage || !cond) { self.msg = msg }
+    
+    super.eval(cond)
+  }
+}
+
+//public func expect(
+//  fn: VoidBlk,
+//  file: String = __FILE__,
+//  line: Int = __LINE__
+//) -> VoidExpectation {
+//  return Swiftest.context.currentExample.addExpectation(
+//    VoidExpectation(subject: fn, cursor: Cursor(file: file, line: line))
+//  )
+//}

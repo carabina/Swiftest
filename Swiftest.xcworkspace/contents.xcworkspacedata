@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:src/SampleMobile/SampleMobile.xcodeproj">
+      location = "group:src/Core/SwiftestCore.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:src/Swiftest/Swiftest.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:src/Sample/Sample.xcodeproj">
+      location = "group:src/SwiftestXC/SwiftestXC/SwiftestXC.xcodeproj">
    </FileRef>
 </Workspace>

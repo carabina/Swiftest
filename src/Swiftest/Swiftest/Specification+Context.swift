@@ -53,7 +53,7 @@ extension Specification {
     }
 
     func sort() {
-      children.sort({ (r1, r2) in r1.ofType.toRaw() < r2.ofType.toRaw() })
+      children.sort({ (r1, r2) in r1.ofType.rawValue < r2.ofType.rawValue })
     }
 
   }

@@ -49,7 +49,7 @@
   [invalidCharacters formUnionWithCharacterSet:[NSCharacterSet symbolCharacterSet]];
 
   return [[name componentsSeparatedByCharactersInSet: invalidCharacters]
-          componentsJoinedByString:@"-"];
+          componentsJoinedByString:@"_"];
 }
 
 @end

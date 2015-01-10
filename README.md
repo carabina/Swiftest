@@ -4,7 +4,7 @@ Swiftest
 Swiftest is a *behavior driven development* testing library for Apple's
 [Swift](https://developer.apple.com/swift/) language.
 
-* [Installing](#Installing)
+[Installation Instructions](#installation)
 
 ### Features
 * a clean, familiar specification DSL: `describe`, `it`, etc.
@@ -16,7 +16,7 @@ Swiftest is a *behavior driven development* testing library for Apple's
   * `Dictionary`: equal, empty, have key, have value, contain sub-dictionary
   * `Closures`: change to, change from, change by
 * nested example groups
-* memoized values (similar to RSpec's `let`) (see [Definitions](#Definitions))
+* memoized values (similar to RSpec's `let`) (see [Definitions](#definitions))
 * hooks for before-each example
 * XCTest-based shell for easy use within XCode
 * separate Core library for multiple shell integrations (command-line shell coming soon)
@@ -88,12 +88,8 @@ class DefinitionExample : SwiftestSpec {
 
 1. Clone the Swiftest project into your existing workspace's code directory.
 2. Add `SwiftestXC.xcodeproj` to your workspace.
-3. Select your test target and add `SwiftestCore.framework` and
-  `SwiftestXC.framework` in the "Link Binary With Libraries" under
-  "Build Phases"
-
-4. Add a spec file. Inherit from `SwiftestSpec`, add a `describe` block
-  and start writing specs!
+3. Select your test target and add `SwiftestCore.framework` and `SwiftestXC.framework` in the "Link Binary With Libraries" under "Build Phases"
+4. Add a spec file. Inherit from `SwiftestSpec`, add a `describe` block and start writing specs!
 
 ## Happily accepting any and all feedback via GitHub issues
 https://github.com/Swiftest/Swiftest

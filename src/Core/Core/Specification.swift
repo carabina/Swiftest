@@ -6,7 +6,7 @@ public class Specification : HasStatus {
   public let fn: VoidBlk
 
   public var children: [Specification] = []
-  public var definitions: [Definition<Any>] = []
+  public var definitions: [Resettable] = []
   public var examples: [Example] = []
   public var hooks = Hooks()
   public var parents: [Specification] = []
@@ -33,7 +33,7 @@ public class Specification : HasStatus {
     definitions += parent.definitions
   }
   
-  public func add(defn: Definition<Any>) {
+  public func define<T>(defn: Definition<T>) {
     definitions.append(defn)
   }
   

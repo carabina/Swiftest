@@ -25,7 +25,7 @@ class HooksSpec: SwiftestSpec {
       }
       
       describe("other nested hooks") {
-        it("only runs the parent specs if it doesn't have a hook defined") {
+        it("only runs parent hooks if no child hooks are defined") {
           expect(eachCount).to(.Equal(5))
         }
       }

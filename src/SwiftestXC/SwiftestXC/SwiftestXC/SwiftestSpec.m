@@ -7,13 +7,13 @@
 
 +(void) initialize {
   if([self self] != [SwiftestSpec self])
-    [Registrar register: self];
+    [Bridge register: self];
 }
 
 +(NSArray*) testInvocations {
   NSMutableArray *invocations = [[NSMutableArray alloc] init];
   
-  for(Result *result in [Registrar forSpec: self]) {
+  for(Result *result in [Bridge forSpec: self]) {
     [invocations addObject: [self addMethod: result]];
   }
 

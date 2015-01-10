@@ -26,10 +26,4 @@ public class Example : HasStatus {
     self.expectations.append(ex)
     return ex
   }
-  
-  public func call() {
-    Swiftest.reporter.exampleStarted(self)
-    self.fn()
-    Swiftest.reporter.exampleFinished(self)
-  }
 }

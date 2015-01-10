@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		9504B88B1A133A4E00C657D0 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504B88A1A133A4E00C657D0 /* Run.swift */; };
 		950673311A60CBF900B23E99 /* SwiftestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950673301A60CBF900B23E99 /* SwiftestCore.framework */; };
+		950673331A619B5900B23E99 /* XCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950673321A619B5900B23E99 /* XCListener.swift */; };
+		950673351A619E5B00B23E99 /* DefinitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950673341A619E5B00B23E99 /* DefinitionSpec.swift */; };
 		9509236E1A16B39200F48704 /* OtherSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509236D1A16B39200F48704 /* OtherSpecs.swift */; };
 		9533FB201A02C5F600E6A2B2 /* SwiftestSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9570A1F71A571639000AC843 /* ExpectationDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570A1F61A571639000AC843 /* ExpectationDSL.swift */; };
-		958990431A05AB0C00F0C4F0 /* Registrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958990421A05AB0C00F0C4F0 /* Registrar.swift */; };
+		958990431A05AB0C00F0C4F0 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958990421A05AB0C00F0C4F0 /* Bridge.swift */; };
 		95D0FC6119FFE8E900B15D6E /* SwiftestXC.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D0FC6019FFE8E900B15D6E /* SwiftestXC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D0FC6719FFE8E900B15D6E /* SwiftestXC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D0FC5B19FFE8E900B15D6E /* SwiftestXC.framework */; };
 		95D0FC6E19FFE8E900B15D6E /* HooksSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0FC6D19FFE8E900B15D6E /* HooksSpec.swift */; };
@@ -34,9 +36,11 @@
 /* Begin PBXFileReference section */
 		9504B88A1A133A4E00C657D0 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		950673301A60CBF900B23E99 /* SwiftestCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftestCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/SwiftestCore.framework"; sourceTree = "<group>"; };
+		950673321A619B5900B23E99 /* XCListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCListener.swift; sourceTree = "<group>"; };
+		950673341A619E5B00B23E99 /* DefinitionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionSpec.swift; sourceTree = "<group>"; };
 		9509236D1A16B39200F48704 /* OtherSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherSpecs.swift; sourceTree = "<group>"; };
 		9570A1F61A571639000AC843 /* ExpectationDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectationDSL.swift; sourceTree = "<group>"; };
-		958990421A05AB0C00F0C4F0 /* Registrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registrar.swift; sourceTree = "<group>"; };
+		958990421A05AB0C00F0C4F0 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		95D0FC5B19FFE8E900B15D6E /* SwiftestXC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftestXC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D0FC5F19FFE8E900B15D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D0FC6019FFE8E900B15D6E /* SwiftestXC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftestXC.h; sourceTree = "<group>"; };
@@ -91,15 +95,16 @@
 		95D0FC5D19FFE8E900B15D6E /* SwiftestXC */ = {
 			isa = PBXGroup;
 			children = (
+				958990421A05AB0C00F0C4F0 /* Bridge.swift */,
 				95F50DF21A133442004B161E /* Context.swift */,
 				9570A1F61A571639000AC843 /* ExpectationDSL.swift */,
-				958990421A05AB0C00F0C4F0 /* Registrar.swift */,
 				9504B88A1A133A4E00C657D0 /* Run.swift */,
 				95F50DF01A1330EF004B161E /* SpecDSL.swift */,
-				95D0FC5E19FFE8E900B15D6E /* Supporting Files */,
 				95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */,
 				95D0FC7719FFEF6B00B15D6E /* SwiftestSpec.m */,
 				95D0FC6019FFE8E900B15D6E /* SwiftestXC.h */,
+				950673321A619B5900B23E99 /* XCListener.swift */,
+				95D0FC5E19FFE8E900B15D6E /* Supporting Files */,
 			);
 			path = SwiftestXC;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				95D0FC6D19FFE8E900B15D6E /* HooksSpec.swift */,
+				950673341A619E5B00B23E99 /* DefinitionSpec.swift */,
 				9509236D1A16B39200F48704 /* OtherSpecs.swift */,
 				95D0FC6B19FFE8E900B15D6E /* Supporting Files */,
 			);
@@ -238,12 +244,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958990431A05AB0C00F0C4F0 /* Registrar.swift in Sources */,
+				958990431A05AB0C00F0C4F0 /* Bridge.swift in Sources */,
 				95F50DF31A133442004B161E /* Context.swift in Sources */,
 				9570A1F71A571639000AC843 /* ExpectationDSL.swift in Sources */,
 				95D0FC7819FFEF6B00B15D6E /* SwiftestSpec.m in Sources */,
 				9504B88B1A133A4E00C657D0 /* Run.swift in Sources */,
 				95F50DF11A1330EF004B161E /* SpecDSL.swift in Sources */,
+				950673331A619B5900B23E99 /* XCListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			files = (
 				95D0FC6E19FFE8E900B15D6E /* HooksSpec.swift in Sources */,
 				9509236E1A16B39200F48704 /* OtherSpecs.swift in Sources */,
+				950673351A619E5B00B23E99 /* DefinitionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

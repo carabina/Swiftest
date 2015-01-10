@@ -13,7 +13,7 @@ struct Context {
         evaluate(spec)
       }
     } else {
-      currentSpec().add(spec)
+      currentSpec.add(spec)
       evaluate(spec)
     }
   }
@@ -24,8 +24,8 @@ struct Context {
     specStack.removeLast()
   }
   
-  static func currentSpec() -> Specification {
-    return specStack[specStack.count - 1]
+  static var currentSpec: Specification {
+    get { return specStack[specStack.count - 1] }
   }
   
   static func toString(type: SwiftestSpec.Type) -> String {

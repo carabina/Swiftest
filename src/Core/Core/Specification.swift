@@ -33,7 +33,7 @@ public class Specification : HasStatus {
     definitions += parent.definitions
   }
   
-  public func define<T>(defn: Definition<T>) {
+  public func add<T>(defn: Definition<T>) {
     definitions.append(defn)
   }
   

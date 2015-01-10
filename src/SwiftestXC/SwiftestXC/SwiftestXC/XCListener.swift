@@ -3,7 +3,7 @@ import SwiftestCore
 class XCListener : Listener {
   override init() { super.init() }
   
-  override func exampleFinished(ex: Example) {
+  override func finished(ex: Example) {
     let isFailing = Status.equals(.Fail)
     
     for failure in ex.expectations.filter({ isFailing($0) }) {

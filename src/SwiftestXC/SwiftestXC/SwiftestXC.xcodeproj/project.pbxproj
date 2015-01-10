@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9504B88B1A133A4E00C657D0 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9504B88A1A133A4E00C657D0 /* Run.swift */; };
 		950673311A60CBF900B23E99 /* SwiftestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950673301A60CBF900B23E99 /* SwiftestCore.framework */; };
 		950673331A619B5900B23E99 /* XCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950673321A619B5900B23E99 /* XCListener.swift */; };
 		9533FB201A02C5F600E6A2B2 /* SwiftestSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9504B88A1A133A4E00C657D0 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		950673301A60CBF900B23E99 /* SwiftestCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftestCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/SwiftestCore.framework"; sourceTree = "<group>"; };
 		950673321A619B5900B23E99 /* XCListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCListener.swift; sourceTree = "<group>"; };
 		954115331A61CC03005A7FF1 /* ArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySpec.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				958990421A05AB0C00F0C4F0 /* Bridge.swift */,
 				95F50DF21A133442004B161E /* Context.swift */,
 				9570A1F61A571639000AC843 /* ExpectationDSL.swift */,
-				9504B88A1A133A4E00C657D0 /* Run.swift */,
 				95F50DF01A1330EF004B161E /* SpecDSL.swift */,
 				95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */,
 				95D0FC7719FFEF6B00B15D6E /* SwiftestSpec.m */,
@@ -266,7 +263,6 @@
 				95F50DF31A133442004B161E /* Context.swift in Sources */,
 				9570A1F71A571639000AC843 /* ExpectationDSL.swift in Sources */,
 				95D0FC7819FFEF6B00B15D6E /* SwiftestSpec.m in Sources */,
-				9504B88B1A133A4E00C657D0 /* Run.swift in Sources */,
 				95F50DF11A1330EF004B161E /* SpecDSL.swift in Sources */,
 				950673331A619B5900B23E99 /* XCListener.swift in Sources */,
 			);

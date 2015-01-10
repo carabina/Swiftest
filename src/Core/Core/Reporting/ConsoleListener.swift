@@ -51,7 +51,7 @@ public class ConsoleListener : Listener {
     )
   }
   
-  public override func specFinished(spec: Specification) {
+  public override func finished(spec: Specification) {
     if spec.parents.isEmpty { printSpec(spec) }
   }
   

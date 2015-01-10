@@ -32,6 +32,6 @@ public func before(fn: VoidBlk) {
 
 public func define<T>(fn: Void -> T) -> (Void -> T) {
   let defn = Definition(fn: fn)
-  Context.currentSpec.define(defn)
+  Context.currentSpec.add(defn)
   return defn.block()
 }

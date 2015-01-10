@@ -9,14 +9,14 @@ private func runHooks(ofType: Hooks.HookType, forSpec spec: Specification) {
 extension Example {
   public class func run(example: Example, spec: Specification) -> VoidBlk {
     return {
-      Swiftest.reporter.exampleStarted(example)
+      Swiftest.reporter.started(example)
 
       runHooks(.Before, forSpec: spec)
       spec.definitions.each({ $0.reset() })
       
       example.fn()
       
-      Swiftest.reporter.exampleFinished(example)
+      Swiftest.reporter.finished(example)
     }
   }
 }

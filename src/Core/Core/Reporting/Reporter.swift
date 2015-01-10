@@ -5,20 +5,20 @@ public struct Reporter {
     listeners.append(lsn)
   }
   
-  func specStarted(spec: Specification) {
-    eachListener({ $0.specStarted(spec) })
+  func started(spec: Specification) {
+    eachListener({ $0.finished(spec) })
   }
   
-  func specFinished(spec: Specification) {
-    eachListener({ $0.specFinished(spec) })
+  func finished(spec: Specification) {
+    eachListener({ $0.finished(spec) })
   }
   
-  func exampleStarted(ex: Example) {
-    eachListener({ $0.exampleStarted(ex) })
+  func started(ex: Example) {
+    eachListener({ $0.started(ex) })
   }
   
-  func exampleFinished(ex: Example) {
-    eachListener({ $0.exampleFinished(ex) })
+  func finished(ex: Example) {
+    eachListener({ $0.finished(ex) })
   }
   
   func suiteStarted() {

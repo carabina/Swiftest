@@ -1,6 +1,11 @@
 import SwiftestCore
 import ObjectiveC
 
+private func blocksFor(spec: Specification) -> [Bridge.Result] {
+  return spec.children.map(blocksFor)
+    .reduce(spec.examples.map(Bridge.Result.build(spec)), +)
+}
+
 @objc
 public class Bridge {
   struct Static {
@@ -38,10 +43,7 @@ public class Bridge {
   }
   
   public class func forSpec(type: SwiftestSpec.Type) -> [Result] {
-    if let spec = Context.specFor(type) {
-      return Run.blocksFor(spec)
-    }
-    
+    if let spec = Context.specFor(type) { return blocksFor(spec) }
     return []
   }
 }

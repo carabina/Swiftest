@@ -33,8 +33,7 @@ class SwiftestExample : SwiftestSpec {
 * separate Core library for multiple shell integrations (command-line shell coming soon)
 * minimalist
 
-### To-Do
-* improve generic-ness of void closure matchers
+### Road Map to 1.0
 * after-each
 * command-line shell
 * potentially separate expectation library into separate project

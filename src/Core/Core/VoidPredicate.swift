@@ -1,3 +1,24 @@
+public protocol Numeric : Equatable {
+  func +(lhs: Self, rhs: Self) -> Self
+  func -(lhs: Self, rhs: Self) -> Self
+  func *(lhs: Self, rhs: Self) -> Self
+  func /(lhs: Self, rhs: Self) -> Self
+  func %(lhs: Self, rhs: Self) -> Self
+}
+
+extension Double : Numeric {}
+extension Float  : Numeric {}
+extension Int    : Numeric {}
+extension Int8   : Numeric {}
+extension Int16  : Numeric {}
+extension Int32  : Numeric {}
+extension Int64  : Numeric {}
+extension UInt   : Numeric {}
+extension UInt8  : Numeric {}
+extension UInt16 : Numeric {}
+extension UInt32 : Numeric {}
+extension UInt64 : Numeric {}
+
 public class VoidPredicate<T:Equatable> {
   var initialVal : T
   let predicate : Void -> T
@@ -29,11 +50,11 @@ public class VoidPredicate<T:Equatable> {
     )
   }
   
-  public func by(delta: Int) {
-    if let oldVal = initialVal as? Int {
+  public func by<U:Numeric>(delta: U) {
+    if let oldVal = initialVal as? U {
       subject()
       _assert(
-        predicate() as Int == oldVal + delta,
+        predicate() as U == oldVal + delta,
         msg: "expected change (by \(delta)) from \(initialVal) to " +
         "\(oldVal + delta), changed to \(predicate())"
       )

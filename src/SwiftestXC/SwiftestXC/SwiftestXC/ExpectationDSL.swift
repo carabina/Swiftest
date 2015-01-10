@@ -45,7 +45,7 @@ public func expect<T:Equatable>(
 }
 
 public func expect(
-  subject: String,
+  subject: String?,
   file: String = __FILE__,
   line: Int = __LINE__
 ) -> StringExpectation {

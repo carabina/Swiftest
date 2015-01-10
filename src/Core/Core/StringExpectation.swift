@@ -1,7 +1,7 @@
 public class StringExpectation : Expectation {
-  let subject : String
+  let subject : String?
   
-  public init(subject: String, cursor: Cursor = nullCursor) {
+  public init(subject: String?, cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init(cursor: cursor)
   }

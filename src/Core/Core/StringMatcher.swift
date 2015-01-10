@@ -16,7 +16,10 @@ public enum StringMatcher {
 
     case .Contain(let str):
       return build(
-        fn: { subject?.rangeOfString(str())?.isEmpty ?? false },
+        fn: {
+          if let range = subject?.rangeOfString(str()) { return !range.isEmpty }
+          return false
+        },
         msg: "contain \(str())"
       )
       

@@ -1,8 +1,8 @@
 # Swiftest Documentation
 
 ## Table of Contents
-* [Installation](doc/installation.md)
-* [Basic Usage](doc/basics.md)
-* [Expectations](doc/expectations.md)
-* [Hooks](doc/hooks.md)
-* [Definitions](doc/definitions.md)
+* [Installation](installation.md)
+* [Basic Usage](basics.md)
+* [Expectations](expectations.md)
+* [Hooks](hooks.md)
+* [Definitions](definitions.md)

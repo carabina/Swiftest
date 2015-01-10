@@ -35,6 +35,5 @@ class SwiftestExample : SwiftestSpec {
 
 ### Road Map to 1.0
 * after-each
-* command-line shell
-* potentially separate expectation library into separate project
+* pending specs?
 * cocoapods integration

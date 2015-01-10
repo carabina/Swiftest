@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950673311A60CBF900B23E99 /* SwiftestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950673301A60CBF900B23E99 /* SwiftestCore.framework */; };
+		95047C5C1A61F188009CC02B /* SwiftestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE6B221A61EAAA00E8B959 /* SwiftestCore.framework */; };
 		950673331A619B5900B23E99 /* XCListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950673321A619B5900B23E99 /* XCListener.swift */; };
 		9533FB201A02C5F600E6A2B2 /* SwiftestSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9541153B1A61CC03005A7FF1 /* ArraySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115331A61CC03005A7FF1 /* ArraySpec.swift */; };
@@ -15,7 +15,6 @@
 		9541153D1A61CC03005A7FF1 /* DefineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115351A61CC03005A7FF1 /* DefineSpec.swift */; };
 		9541153E1A61CC03005A7FF1 /* DictionarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115361A61CC03005A7FF1 /* DictionarySpec.swift */; };
 		9541153F1A61CC03005A7FF1 /* NumberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115371A61CC03005A7FF1 /* NumberSpec.swift */; };
-		954115401A61CC03005A7FF1 /* StatusSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115381A61CC03005A7FF1 /* StatusSpec.swift */; };
 		954115411A61CC03005A7FF1 /* StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954115391A61CC03005A7FF1 /* StringSpec.swift */; };
 		954115421A61CC03005A7FF1 /* VoidClosureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9541153A1A61CC03005A7FF1 /* VoidClosureSpec.swift */; };
 		9570A1F71A571639000AC843 /* ExpectationDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570A1F61A571639000AC843 /* ExpectationDSL.swift */; };
@@ -29,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		955848681A61F10700693A8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE6B1D1A61EAAA00E8B959 /* SwiftestCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 95DBB1EC19EDBB8F0015A37D;
+			remoteInfo = SwiftestCore;
+		};
 		95D0FC6819FFE8E900B15D6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95D0FC5219FFE8E900B15D6E /* Project object */;
@@ -36,17 +42,22 @@
 			remoteGlobalIDString = 95D0FC5A19FFE8E900B15D6E;
 			remoteInfo = SwiftestXC;
 		};
+		95DE6B211A61EAAA00E8B959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95DE6B1D1A61EAAA00E8B959 /* SwiftestCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95DBB1ED19EDBB8F0015A37D;
+			remoteInfo = SwiftestCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		950673301A60CBF900B23E99 /* SwiftestCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftestCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Swiftest-cfbpzcdigcqbrmdzkiyzlbnjozgg/Build/Products/Debug/SwiftestCore.framework"; sourceTree = "<group>"; };
 		950673321A619B5900B23E99 /* XCListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCListener.swift; sourceTree = "<group>"; };
 		954115331A61CC03005A7FF1 /* ArraySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySpec.swift; sourceTree = "<group>"; };
 		954115341A61CC03005A7FF1 /* BoolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolSpec.swift; sourceTree = "<group>"; };
 		954115351A61CC03005A7FF1 /* DefineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefineSpec.swift; sourceTree = "<group>"; };
 		954115361A61CC03005A7FF1 /* DictionarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySpec.swift; sourceTree = "<group>"; };
 		954115371A61CC03005A7FF1 /* NumberSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberSpec.swift; sourceTree = "<group>"; };
-		954115381A61CC03005A7FF1 /* StatusSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusSpec.swift; sourceTree = "<group>"; };
 		954115391A61CC03005A7FF1 /* StringSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringSpec.swift; sourceTree = "<group>"; };
 		9541153A1A61CC03005A7FF1 /* VoidClosureSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidClosureSpec.swift; sourceTree = "<group>"; };
 		9570A1F61A571639000AC843 /* ExpectationDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectationDSL.swift; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 		95D0FC6D19FFE8E900B15D6E /* HooksSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HooksSpec.swift; sourceTree = "<group>"; };
 		95D0FC7719FFEF6B00B15D6E /* SwiftestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftestSpec.m; sourceTree = "<group>"; };
 		95D0FC7919FFEFD700B15D6E /* SwiftestSpec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftestSpec.h; sourceTree = "<group>"; };
+		95DE6B1D1A61EAAA00E8B959 /* SwiftestCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftestCore.xcodeproj; path = ../../Core/SwiftestCore.xcodeproj; sourceTree = "<group>"; };
 		95F50DF01A1330EF004B161E /* SpecDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDSL.swift; sourceTree = "<group>"; };
 		95F50DF21A133442004B161E /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950673311A60CBF900B23E99 /* SwiftestCore.framework in Frameworks */,
+				95047C5C1A61F188009CC02B /* SwiftestCore.framework in Frameworks */,
 				95D0FC6719FFE8E900B15D6E /* SwiftestXC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +98,7 @@
 		95D0FC5119FFE8E900B15D6E = {
 			isa = PBXGroup;
 			children = (
-				950673301A60CBF900B23E99 /* SwiftestCore.framework */,
+				95DE6B1D1A61EAAA00E8B959 /* SwiftestCore.xcodeproj */,
 				95D0FC5D19FFE8E900B15D6E /* SwiftestXC */,
 				95D0FC6A19FFE8E900B15D6E /* SwiftestXCTests */,
 				95D0FC5C19FFE8E900B15D6E /* Products */,
@@ -135,7 +147,6 @@
 				954115361A61CC03005A7FF1 /* DictionarySpec.swift */,
 				95D0FC6D19FFE8E900B15D6E /* HooksSpec.swift */,
 				954115371A61CC03005A7FF1 /* NumberSpec.swift */,
-				954115381A61CC03005A7FF1 /* StatusSpec.swift */,
 				954115391A61CC03005A7FF1 /* StringSpec.swift */,
 				9541153A1A61CC03005A7FF1 /* VoidClosureSpec.swift */,
 				95D0FC6B19FFE8E900B15D6E /* Supporting Files */,
@@ -149,6 +160,14 @@
 				95D0FC6C19FFE8E900B15D6E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95DE6B1E1A61EAAA00E8B959 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95DE6B221A61EAAA00E8B959 /* SwiftestCore.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +214,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				955848691A61F10700693A8F /* PBXTargetDependency */,
 				95D0FC6919FFE8E900B15D6E /* PBXTargetDependency */,
 			);
 			name = SwiftestXCTests;
@@ -229,6 +249,12 @@
 			mainGroup = 95D0FC5119FFE8E900B15D6E;
 			productRefGroup = 95D0FC5C19FFE8E900B15D6E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 95DE6B1E1A61EAAA00E8B959 /* Products */;
+					ProjectRef = 95DE6B1D1A61EAAA00E8B959 /* SwiftestCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				95D0FC5A19FFE8E900B15D6E /* SwiftestXC */,
@@ -236,6 +262,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		95DE6B221A61EAAA00E8B959 /* SwiftestCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftestCore.framework;
+			remoteRef = 95DE6B211A61EAAA00E8B959 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		95D0FC5919FFE8E900B15D6E /* Resources */ = {
@@ -278,7 +314,6 @@
 				954115421A61CC03005A7FF1 /* VoidClosureSpec.swift in Sources */,
 				9541153D1A61CC03005A7FF1 /* DefineSpec.swift in Sources */,
 				9541153E1A61CC03005A7FF1 /* DictionarySpec.swift in Sources */,
-				954115401A61CC03005A7FF1 /* StatusSpec.swift in Sources */,
 				9541153F1A61CC03005A7FF1 /* NumberSpec.swift in Sources */,
 				954115411A61CC03005A7FF1 /* StringSpec.swift in Sources */,
 			);
@@ -287,6 +322,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		955848691A61F10700693A8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftestCore;
+			targetProxy = 955848681A61F10700693A8F /* PBXContainerItemProxy */;
+		};
 		95D0FC6919FFE8E900B15D6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95D0FC5A19FFE8E900B15D6E /* SwiftestXC */;

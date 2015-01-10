@@ -15,12 +15,3 @@ public class ArrayExpectation<T:Equatable> : Expectation {
   }
 }
 
-//public func expect<T:Equatable>(
-//  subject: [T],
-//  file: String = __FILE__,
-//  line: Int = __LINE__
-//) -> ArrayExpectation<T> {
-//  return Swiftest.context.currentExample.addExpectation(
-//    ArrayExpectation(subject: subject, cursor: Cursor(file: file, line: line))
-//  )
-//}

@@ -12,16 +12,22 @@ public class Example : HasStatus {
     self.cursor = cursor
   }
   
-  func addExpectation<T:Expectation>(ex: T) -> T {
+  public func addExpectation<T:Expectation>(ex: T) -> T {
     self.expectations.append(ex)
     return ex
   }
   
-  func status() -> Status {
+  public func status() -> Status {
     for st in [Status.Fail, Status.Pending] {
       if(Status.has(st, within: expectations)) { return st }
     }
     
     return expectations.isEmpty ? .Pending : .Pass
+  }
+  
+  public func call() {
+    Swiftest.reporter.exampleStarted(self)
+    self.fn()
+    Swiftest.reporter.exampleFinished(self)
   }
 }

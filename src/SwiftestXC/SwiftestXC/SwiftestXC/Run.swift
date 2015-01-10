@@ -1,10 +1,12 @@
 import SwiftestCore
+import Foundation
 
-func runHooks(ofType: HookType, forSpec: Specification) {
-  for hook in forSpec.hooks.ofType(ofType) { hook() }
+func runHooks(forSpec: Specification) {
+  for hook in forSpec.hooks[.Before] { hook() }
 }
 
-@objc public class Result {
+@objc
+public class Result {
   public let name: String
   public let block: VoidBlock
   
@@ -16,18 +18,21 @@ func runHooks(ofType: HookType, forSpec: Specification) {
 
 struct Run {
   static func blocksFor(spec: Specification) -> [Result] {
-    var immediateExamples : [Result] = spec.examples.map() { (let ex) in
+    
+    var examples: [Result] = spec.examples.map() { (let ex) in
       return Result(name: ex.subject, block: {
-        runHooks(.Each, spec)
-        for defn in spec.definitions { defn.reset() }
-        ex.fn()
+        Context.withExample(ex) {
+          runHooks(spec)
+          for defn in spec.definitions { defn.reset() }
+          ex.call()
+        }
       })
     }
         
-    for child : [Result] in spec.children.map({ self.blocksFor($0) }) {
-      immediateExamples += child
+    for res: [Result] in spec.children.map({ self.blocksFor($0) }) {
+      examples += res
     }
     
-    return immediateExamples
+    return examples
   }
 }

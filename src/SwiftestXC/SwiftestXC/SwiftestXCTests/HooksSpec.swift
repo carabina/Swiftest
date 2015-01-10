@@ -2,24 +2,33 @@ import SwiftestXC
 
 class HooksSpec: SwiftestSpec {
   let spec = describe("hooks") {
-    var value : Bool?
-    
-    before() { value = true }
-    
-    it("sets the value before each example") {
-      XCTAssert(value!, "the value should be true")
-    }
-    
-    describe("nested hooks") {
-      before() { value = false }
-      
-      it("sets the value using the most recent block") {
-        XCTAssert(value == false, "the value is REALLY false")
+
+    var eachCount = 0
+
+    describe("each") {
+      before() { eachCount += 1 }
+
+      it("gets run before each example") {
+        expect(eachCount).to(.Equal(1))
       }
-    }
-    
-    it("goes back to using only the blocks in the current scope") {
-      XCTAssert(value == true, "the value is back to true")
+
+      it("has run twice for the second example") {
+        expect(eachCount).to(.Equal(2))
+      }
+
+      describe("nested hooks") {
+        before() { eachCount += 1 }
+
+        it("run the blocks of the parent specs as well as nested") {
+          expect(eachCount).to(.Equal(4))
+        }
+      }
+      
+      describe("other nested hooks") {
+        it("only runs the parent specs if it doesn't have a hook defined") {
+          expect(eachCount).to(.Equal(5))
+        }
+      }
     }
   }
 }

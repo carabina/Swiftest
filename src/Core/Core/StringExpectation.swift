@@ -15,12 +15,3 @@ public class StringExpectation : Expectation {
   }
 }
 
-//public func expect(
-//  subject: String,
-//  file: String = __FILE__,
-//  line: Int = __LINE__
-//) -> StringExpectation {
-//  return Swiftest.context.currentExample.addExpectation(
-//    StringExpectation(subject: subject, cursor: Cursor(file: file, line: line))
-//  )
-//}

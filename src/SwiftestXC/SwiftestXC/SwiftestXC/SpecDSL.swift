@@ -1,17 +1,5 @@
 import SwiftestCore
 
-public enum HookTypeXC {
-  case Each
-  case All
-  
-  func toHook() -> HookType {
-    switch self {
-    case .Each: return HookType.Each
-    case .All: return HookType.All
-    }
-  }
-}
-
 public func describe(
   subject: String,
   blk: VoidBlk,
@@ -38,10 +26,6 @@ public func it(
   )
 }
 
-public func before(type: HookTypeXC, fn: VoidBlk) {
-  Context.currentSpec().hooks.add(type.toHook(), hook: fn)
-}
-
 public func before(fn: VoidBlk) {
-  Context.currentSpec().hooks.add(.Each, hook: fn)
+  Context.currentSpec().addHook(.Before, fn)
 }

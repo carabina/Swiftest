@@ -1,5 +1,5 @@
-func runHooks(ofType: HookType, forSpec: Specification) {
-  for hook in forSpec.hooks.ofType(ofType) { hook() }
+func runHooks(type: Hooks.HookType, forSpec: Specification) {
+  for hook in forSpec.hooks[type] { hook() }
 }
 
 extension Swiftest {
@@ -7,16 +7,14 @@ extension Swiftest {
     spec.timer.time() {
       Swiftest.reporter.specStarted(spec)
       
-      runHooks(.All, spec)
-      
       for ex in spec.examples {
-        runHooks(.Each, spec)
+        runHooks(.Before, spec)
         for defn in spec.definitions { defn.reset() }
         self.runExample(ex)
       }
       
       for child in spec.children {
-        runHooks(.Each, spec)
+        runHooks(.Before, spec)
         self.runSpec(child)
       }
     }

@@ -14,13 +14,3 @@ public class DictionaryExpectation<K:Hashable,V:Equatable> : Expectation {
     _assert(matcher.assertion(subject, reverse: true))
   }
 }
-
-//public func expect<K:Hashable,V:Equatable>(
-//  subject: Dictionary<K,V>,
-//  file: String = __FILE__,
-//  line: Int = __LINE__
-//) -> DictionaryExpectation<K,V> {
-//  return Swiftest.context.currentExample.addExpectation(
-//    DictionaryExpectation(subject: subject, cursor: Cursor(file: file, line: line))
-//  )
-//}

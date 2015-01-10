@@ -27,12 +27,3 @@ public class VoidExpectation : Expectation {
   }
 }
 
-//public func expect(
-//  fn: VoidBlk,
-//  file: String = __FILE__,
-//  line: Int = __LINE__
-//) -> VoidExpectation {
-//  return Swiftest.context.currentExample.addExpectation(
-//    VoidExpectation(subject: fn, cursor: Cursor(file: file, line: line))
-//  )
-//}

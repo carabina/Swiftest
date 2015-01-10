@@ -2,9 +2,9 @@ let defaultMessage = "expectation failed"
 
 public class Expectation : HasStatus {
   var _status = Status.Pending
-  var msg = defaultMessage
+  public var msg = defaultMessage
   
-  let cursor : Cursor
+  public let cursor : Cursor
   
   init(cursor: Cursor = nullCursor) { self.cursor = cursor }
   

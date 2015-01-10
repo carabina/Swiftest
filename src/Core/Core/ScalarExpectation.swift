@@ -15,12 +15,3 @@ public class ScalarExpectation<T:Equatable> : Expectation {
   }
 }
 
-//public func expect<T:Equatable>(
-//  subject: T?,
-//  file: String = __FILE__,
-//  line: Int = __LINE__
-//) -> ScalarExpectation<T> {
-//  return Swiftest.context.currentExample.addExpectation(
-//    ScalarExpectation(subject: subject, cursor: Cursor(file: file, line: line))
-//  )
-//}

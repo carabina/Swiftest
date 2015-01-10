@@ -20,24 +20,25 @@ public class Specification : HasStatus {
   public func add(example: Example) { examples.append(example) }
 
   public func add(spec: Specification) {
-    spec.addParent(spec)
+    spec.addParent(self)
     children.append(spec)
   }
   
-  public func addParent(spec: Specification) {
-    parents.append(spec)
-    definitions += spec.definitions
+  public func addParent(parent: Specification) {
+    parents.append(parent)
+    hooks = parent.hooks
+    definitions += parent.definitions
   }
   
-  func add(defn: Definition<Any>) {
+  public func add(defn: Definition<Any>) {
     definitions.append(defn)
   }
   
-  func addHook(ofType: HookType, hook: VoidBlk) {
-    hooks.add(ofType, hook: hook)
+  public func addHook(hookType: Hooks.HookType, hook: VoidBlk) {
+    hooks.add(.Before, hook)
   }
 
-  func status() -> Status {
+  public func status() -> Status {
     return Status.has(.Fail, within: examples) ? .Fail : .Pass
   }
 }

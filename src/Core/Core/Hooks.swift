@@ -1,21 +1,18 @@
-public enum HookType : String {
-  case All = "All"
-  case Each = "Each"
-}
-
-public class Hooks {
-  init() {}
+public struct Hooks {
   
-  var beforeHooks : Dictionary<HookType, [VoidBlk]> = [
-    .Each : [],
-    .All  : []
-  ]
-  
-  public func ofType(hookType: HookType) -> [VoidBlk] {
-    return beforeHooks[hookType] ?? []
+  public enum HookType {
+    case Before
+    case After
   }
   
-  public func add(hookType: HookType, hook: VoidBlk) {
-    beforeHooks[hookType]?.append(hook)
+  var hooks: Dictionary<HookType, [VoidBlk]> = [ .Before : [], .After  : [] ]
+  
+  public mutating func add(type: HookType, fn: VoidBlk) {
+    hooks[type]?.append(fn)
+  }
+  
+  public subscript(index: HookType) -> [VoidBlk] {
+    get { return hooks[index] ?? [] }
+    set { hooks[index] = newValue }
   }
 }

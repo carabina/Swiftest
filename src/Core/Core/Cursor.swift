@@ -1,8 +1,8 @@
 public struct Cursor {
   public var file: String
-  public var line: Int
+  public var line: UInt
   
-  public init(file: String, line: Int) {
+  public init(file: String, line: UInt) {
     self.file = file
     self.line = line
   }

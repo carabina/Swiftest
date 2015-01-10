@@ -10,7 +10,7 @@ class XCListener : Listener {
       XCTFail(
         failure.msg,
         file: failure.cursor.file,
-        line: UInt(failure.cursor.line)
+        line: failure.cursor.line
       )
     }
   }

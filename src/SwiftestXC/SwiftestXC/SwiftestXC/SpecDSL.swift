@@ -4,7 +4,7 @@ public func describe(
   subject: String,
   blk: VoidBlk,
   file: String = __FILE__,
-  line: Int = __LINE__
+  line: UInt = __LINE__
 ) -> String {
   Context.described(Specification(
     subject: subject,
@@ -19,7 +19,7 @@ public func it(
   subject: String,
   blk: VoidBlk,
   file: String = __FILE__,
-  line: Int = __LINE__
+  line: UInt = __LINE__
 ) {
   Context.currentSpec.add(
     Example(subject: subject, fn: blk, cursor: Cursor(file: file, line: line))

@@ -8,7 +8,7 @@ public class Expectation : HasStatus {
   
   init(cursor: Cursor = nullCursor) { self.cursor = cursor }
   
-  public func status() -> Status { return _status }
+  public var status: Status { get { return _status }}
 
   func eval(cond: Bool) { self._status = cond ? .Pass : .Fail }
   

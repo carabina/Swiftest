@@ -10,6 +10,9 @@ public class Specification : HasStatus {
   public var examples: [Example] = []
   public var hooks = Hooks()
   public var parents: [Specification] = []
+  public var status: Status {
+    get { return Status.has(.Fail, within: self.examples) ? .Fail : .Pass }
+  }
   
   public init(subject: String, _ fn: VoidBlk, cursor: Cursor = nullCursor) {
     self.subject = subject
@@ -35,10 +38,6 @@ public class Specification : HasStatus {
   }
   
   public func addHook(hookType: Hooks.HookType, hook: VoidBlk) {
-    hooks.add(.Before, hook)
-  }
-
-  public func status() -> Status {
-    return Status.has(.Fail, within: examples) ? .Fail : .Pass
+    hooks.add(hookType, hook)
   }
 }

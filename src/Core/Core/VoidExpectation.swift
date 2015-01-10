@@ -15,8 +15,8 @@ public class VoidExpectation : Expectation {
     return matcher.assertion(subject, reverse: true, parent: self)
   }
   
-  public override func status() -> Status {
-    return assertions.filter({ !$0 }).isEmpty ? .Pass : .Fail
+  override public var status: Status {
+    get { return self.assertions.filter({ !$0 }).isEmpty ? .Pass : .Fail }
   }
   
   public func _assert(cond: Bool, msg: String) {

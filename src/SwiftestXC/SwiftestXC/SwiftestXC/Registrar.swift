@@ -5,8 +5,14 @@ class XCListener : Listener {
   override init() { super.init() }
   
   override func exampleFinished(ex: Example) {
-    for failure in ex.expectations.filter({ $0.status() == Status.Fail }) {
-      XCTFail(failure.msg, file: failure.cursor.file, line: UInt(failure.cursor.line))
+    let isFailing = Status.equals(.Fail)
+    
+    for failure in ex.expectations.filter({ isFailing($0) }) {
+      XCTFail(
+        failure.msg,
+        file: failure.cursor.file,
+        line: UInt(failure.cursor.line)
+      )
     }
   }
 }
@@ -34,5 +40,3 @@ class XCListener : Listener {
     return []
   }
 }
-
-public typealias ScalarExpectation = SwiftestCore.ScalarExpectation

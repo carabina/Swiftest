@@ -56,10 +56,10 @@ public class ConsoleListener : Listener {
   }
   
   func printExample(example: Example) {
-    if example.status() == .Pass {
+    if example.status == .Pass {
       passedCount++
       printer.print("✓ \(example.subject)")
-    } else if example.status() == .Fail {
+    } else if example.status == .Fail {
       failedExamples.append(example)
       printer.print("× \(example.subject)")
     } else {

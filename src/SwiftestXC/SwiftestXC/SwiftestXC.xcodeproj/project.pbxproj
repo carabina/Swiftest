@@ -25,6 +25,7 @@
 		95D0FC7819FFEF6B00B15D6E /* SwiftestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D0FC7719FFEF6B00B15D6E /* SwiftestSpec.m */; };
 		95F50DF11A1330EF004B161E /* SpecDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F50DF01A1330EF004B161E /* SpecDSL.swift */; };
 		95F50DF31A133442004B161E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F50DF21A133442004B161E /* Context.swift */; };
+		B573488A1A72D79F00B6F3F2 /* SwiftestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE6B221A61EAAA00E8B959 /* SwiftestCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B573488A1A72D79F00B6F3F2 /* SwiftestCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +433,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,7 +455,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 			};
 			name = Release;
 		};

@@ -31,7 +31,7 @@ public class Bridge {
   
   public class func setup() {
     dispatch_once(&Static.token) {
-      var lsn = XCListener()
+      let lsn = XCListener()
       Swiftest.reporter.addListener(lsn)
     }
   }

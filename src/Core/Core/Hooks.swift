@@ -5,7 +5,7 @@ public struct Hooks {
     case After
   }
   
-  var hooks: Dictionary<HookType, [VoidBlk]> = [ .Before : [], .After  : [] ]
+  var hooks: [HookType: [VoidBlk]] = [ .Before : [], .After  : [] ]
   
   public mutating func add(type: HookType, fn: VoidBlk) {
     hooks[type]?.append(fn)

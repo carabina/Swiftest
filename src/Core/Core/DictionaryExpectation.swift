@@ -1,7 +1,7 @@
 public class DictionaryExpectation<K:Hashable,V:Equatable> : Expectation {
-  let subject: Dictionary<K,V>
+  let subject: [K: V]
   
-  public init(subject: Dictionary<K,V>, cursor: Cursor = nullCursor) {
+  public init(subject: [K: V], cursor: Cursor = nullCursor) {
     self.subject = subject
     super.init(cursor: cursor)
   }

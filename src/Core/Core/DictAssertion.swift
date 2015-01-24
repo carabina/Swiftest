@@ -4,7 +4,7 @@ struct DictAssertion<K:Hashable, V> : Assertion {
   let msg: String
 
   static func build(
-    subject: Dictionary<K, V>?,
+    subject: [K: V]?,
     reverse: Bool
   )(fn: Void -> Bool, msg: String) -> DictAssertion {
     let verb = reverse ? "to" : "not to"

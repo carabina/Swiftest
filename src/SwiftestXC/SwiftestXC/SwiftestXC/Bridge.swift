@@ -1,4 +1,4 @@
-import SwiftestCore
+@exported import SwiftestCore
 import ObjectiveC
 
 private func blocksFor(spec: Specification) -> [Bridge.Result] {
@@ -12,7 +12,8 @@ public class Bridge {
     static var token : dispatch_once_t = 0
   }
   
-  @objc public class Result {
+  @objc
+  public class Result {
     public let name: String
     public let block: VoidBlock
     

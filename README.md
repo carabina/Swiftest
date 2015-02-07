@@ -35,5 +35,10 @@ class SwiftestExample : SwiftestSpec {
 
 ### Road Map to 1.0
 * after-each
-* pending specs?
+* around-each configurable -- this would be for database setup/teardown, etc
+* pending specs
 * cocoapods integration
+
+### Other Things I Wanna Try
+* quick-check-esque plugin
+* command-line runner with better console output

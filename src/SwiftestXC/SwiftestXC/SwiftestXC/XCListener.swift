@@ -6,7 +6,7 @@ class XCListener : Listener {
   override func finished(ex: Example) {
     let isFailing = Status.equals(.Fail)
     
-    for failure in ex.expectations.filter({ isFailing($0) }) {
+    for failure in ex.expectations.filter({ isFailing(two: $0) }) {
       XCTFail(
         failure.msg,
         file: failure.cursor.file,

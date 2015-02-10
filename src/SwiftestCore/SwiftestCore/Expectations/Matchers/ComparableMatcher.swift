@@ -1,37 +1,41 @@
-public enum ComparableMatcher<T:Comparable> {
-  typealias CompValue = @autoclosure () -> T?
-  
-  case Equal(CompValue)
-  case BeGreaterThan(CompValue)
-  case BeLessThan(CompValue)
-  case BeGreaterThanOrEqual(CompValue)
-  case BeLessThanOrEqual(CompValue)
-  case BeBetween(CompValue, CompValue)
-  
-  func assertion(subject: T?, reverse: Bool = false) -> BasicAssertion<T> {
-    let build = BasicAssertion.build(subject, reverse: reverse)
-    
-    switch self {
-    case .Equal(let ex):
-      return build(fn: { subject == ex() }, msg: "equal \(ex())")
-      
-    case .BeGreaterThan(let ex):
-      return build(fn: { subject > ex() }, msg: "be greater than \(ex())")
-      
-    case .BeLessThan(let ex):
-      return build(fn: { subject < ex() }, msg: "be less than \(ex())")
-      
-    case .BeGreaterThanOrEqual(let ex):
-      return build(fn: { subject >= ex() }, msg: "be greater than \(ex())")
-      
-    case .BeLessThanOrEqual(let ex):
-      return build(fn: { subject <= ex() }, msg: "be less than or equal \(ex())")
-      
-    case .BeBetween(let lower, let upper):
-      return build(
-        fn: { subject > lower() && subject < upper() },
-        msg: "be between \(upper()) \(lower())"
-      )
-    }
+public class ComparableMatcher<T:Comparable> : Matcher {
+  typealias SubjectType = T
+
+  let subject: T?
+  let core: MatcherCore
+
+  required public init(subject: T?, callback: AssertionBlock, reverse: Bool) {
+    self.subject = subject
+    self.core = MatcherCore(callback: callback, reverse: reverse)
+  }
+
+  public func beGreaterThan(expected: T) {
+    core.assert(fn: { return self.subject > expected },
+      msg: "equal \(expected)")
+  }
+
+  public func beLessThan(expected: T) {
+    core.assert(fn: { return self.subject < expected },
+      msg: "be less than \(expected)")
+  }
+
+  public func beGreaterThanOrEqual(expected: T) {
+    core.assert(fn: { return self.subject >= expected },
+      msg: "be greater than or equal to \(expected)")
+  }
+
+  public func beLessThanOrEqual(expected: T) {
+    core.assert(fn: { return self.subject <= expected },
+      msg: "be greater than or equal to \(expected)")
+  }
+
+  public func beBetween(lower: T, _ upper: T) {
+    core.assert(fn: { return self.subject > lower && self.subject < upper },
+      msg: "be between \(lower) and \(upper)")
+  }
+
+  public func beWithin(lower: T, upper: T) {
+    core.assert(fn: { return self.subject >= lower && self.subject <= upper },
+      msg: "be within the range of \(lower) to \(upper)")
   }
 }

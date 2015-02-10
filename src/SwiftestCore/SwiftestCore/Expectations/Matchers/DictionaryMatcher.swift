@@ -1,42 +1,43 @@
-public enum DictionaryMatcher<K:Hashable, V:Equatable> {
-  case Equal(@autoclosure () -> [K: V])
-  case HaveKey(@autoclosure () -> K)
-  case HaveValue(@autoclosure() -> V)
-  case Contain(@autoclosure() -> [K:V])
-  case BeEmpty
+public class DictionaryMatcher<K:Hashable, V:Equatable> : Matcher {
+  public typealias SubjectType = [K : V]
 
-  func assertion(subject: [K: V], reverse: Bool = false) -> DictAssertion<K,V> {
-    let build = DictAssertion.build(subject, reverse: reverse)
+  let subject: SubjectType?
+  let core: MatcherCore
 
-    switch self {
-    case .Equal(let ex):
-      return build(fn: { subject == ex() }, msg: "equal \(ex())" )
+  required public init(subject: SubjectType?, callback: AssertionBlock, reverse: Bool) {
+    self.subject = subject
+    self.core = MatcherCore(callback: callback, reverse: reverse)
+  }
 
-    case .HaveKey(let key):
-      return build(
-        fn: { self.contains(subject) { k, v in k == key() }},
-        msg: "have key \(key())"
-      )
+  public func equal(expected: [K : V]) {
+    core.assert(fn: { self.subject! == expected }, msg: "equal \(expected)")
+  }
 
-    case .HaveValue(let val):
-      return build(
-        fn: { self.contains(subject) { k, v in v == val() }},
-        msg: "have value \(val())"
-      )
+  public func beEmpty() {
+    core.assert(fn: { self.subject?.isEmpty ?? false },
+      msg: "be empty")
+  }
 
-    case .Contain(let dict):
-      return build(
-        fn: { self.contains(subject) { k, v in [k:v] == dict() }},
-        msg: "have pair \(dict())"
-      )
+  public func haveKey(key: K) {
+    core.assert(fn: { self.contains() { k, v in k == key }},
+      msg: "to have key \(key)")
+  }
 
-    case .BeEmpty:
-      return build(fn: { subject.isEmpty }, msg: "be empty")
+  public func haveValue(value: V) {
+    core.assert(fn: { self.contains() { k, v in v == value }},
+      msg: "to have value \(value)")
+  }
+
+  public func contain(dict: [K: V]) {
+    core.assert(fn: { self.contains() { k, v in [k:v] == dict }},
+      msg: "contain \(dict)")
+  }
+
+  private func contains(fn: (K, V) -> Bool) -> Bool {
+    if let subject = self.subject {
+      return !filter(subject, fn).isEmpty
     }
-  }
 
-  private func contains(subject: [K: V], fn: (K, V) -> Bool) -> Bool {
-    return !filter(subject, fn).isEmpty
+    return false
   }
-
 }

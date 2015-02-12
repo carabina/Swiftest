@@ -1,9 +1,5 @@
-extension Array {
-  func each(block: T -> Void) { for e in self { block(e) }}
-}
-
 private func runHooks(ofType: Hooks.HookType, forSpec spec: Specification) {
-  spec.hooks[ofType].each({ $0() })
+  for hook in spec.hooks[ofType] { hook() }
 }
 
 extension Example {
@@ -12,7 +8,7 @@ extension Example {
       Swiftest.reporter.started(example)
 
       runHooks(.Before, forSpec: spec)
-      spec.definitions.each({ $0.reset() })
+      for defn in spec.definitions { defn.reset() }
       
       example.fn()
       

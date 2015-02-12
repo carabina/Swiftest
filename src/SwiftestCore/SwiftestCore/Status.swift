@@ -7,7 +7,7 @@ public enum Status {
   case Pass
   case Fail
 
-  public static func equals(one: Status)(_ two: HasStatus) -> Bool {
+  public static func equals(one: Status)(two: HasStatus) -> Bool {
     return one == two.status
   }
 

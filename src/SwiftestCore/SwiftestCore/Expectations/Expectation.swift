@@ -35,16 +35,16 @@ public class Expectation<T, M:Matcher where M.SubjectType == T> : Expectable {
   }
 }
 
-public class ArrayExpectation<T, M:Matcher where M.SubjectType == [T]> : Expectable {
+public class ArrayExpectation<T:Equatable> : Expectable {
   let subject: [T]?
   public let result: ExpectationResult
 
-  public var to : M {
-    get { return M(subject: subject, callback: result.assert, reverse: false) }
+  public var to : ArrayMatcher<T> {
+    get { return ArrayMatcher(subject: subject, callback: result.assert, reverse: false) }
   }
 
-  public var notTo : M {
-    get { return M(subject: subject, callback: result.assert, reverse: true) }
+  public var notTo : ArrayMatcher<T> {
+    get { return ArrayMatcher(subject: subject, callback: result.assert, reverse: true) }
   }
 
   public init(subject: [T]?, cursor: Cursor = nullCursor) {
@@ -53,16 +53,16 @@ public class ArrayExpectation<T, M:Matcher where M.SubjectType == [T]> : Expecta
   }
 }
 
-public class DictionaryExpectation<K:Hashable, V:Equatable, M:Matcher where M.SubjectType == [K:V]> : Expectable {
+public class DictionaryExpectation<K:Hashable, V:Equatable> : Expectable {
   let subject: [K : V]?
   public let result: ExpectationResult
 
-  public var to : M {
-    get { return M(subject: subject, callback: result.assert, reverse: false) }
+  public var to : DictionaryMatcher<K, V> {
+    get { return DictionaryMatcher(subject: subject, callback: result.assert, reverse: false) }
   }
 
-  public var notTo : M {
-    get { return M(subject: subject, callback: result.assert, reverse: true) }
+  public var notTo : DictionaryMatcher<K, V> {
+    get { return DictionaryMatcher(subject: subject, callback: result.assert, reverse: true) }
   }
 
   public init(subject: [K : V]?, cursor: Cursor = nullCursor) {

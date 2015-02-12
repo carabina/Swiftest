@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95B71D451A895796005D152A /* Matcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B71D441A895796005D152A /* Matcher.swift */; };
 		95C8AE321A86A4C2005C312D /* SwiftestCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8AE311A86A4C2005C312D /* SwiftestCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95C8AE691A86A560005C312D /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE481A86A560005C312D /* Cursor.swift */; };
 		95C8AE6A1A86A560005C312D /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE491A86A560005C312D /* Definition.swift */; };
 		95C8AE6B1A86A560005C312D /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE4A1A86A560005C312D /* Example.swift */; };
 		95C8AE6C1A86A560005C312D /* Example+Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE4B1A86A560005C312D /* Example+Run.swift */; };
-		95C8AE6D1A86A560005C312D /* ArrayExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE4D1A86A560005C312D /* ArrayExpectation.swift */; };
-		95C8AE6E1A86A560005C312D /* Assertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE4F1A86A560005C312D /* Assertion.swift */; };
-		95C8AE6F1A86A560005C312D /* BasicAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE501A86A560005C312D /* BasicAssertion.swift */; };
-		95C8AE701A86A560005C312D /* DictAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE511A86A560005C312D /* DictAssertion.swift */; };
-		95C8AE711A86A560005C312D /* DictionaryExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE521A86A560005C312D /* DictionaryExpectation.swift */; };
 		95C8AE721A86A560005C312D /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE531A86A560005C312D /* Expectation.swift */; };
 		95C8AE731A86A560005C312D /* ArrayMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE551A86A560005C312D /* ArrayMatcher.swift */; };
 		95C8AE741A86A560005C312D /* ComparableMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE561A86A560005C312D /* ComparableMatcher.swift */; };
@@ -24,11 +20,6 @@
 		95C8AE761A86A560005C312D /* EquatableMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE581A86A560005C312D /* EquatableMatcher.swift */; };
 		95C8AE771A86A560005C312D /* StringMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE591A86A560005C312D /* StringMatcher.swift */; };
 		95C8AE781A86A560005C312D /* VoidMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5A1A86A560005C312D /* VoidMatcher.swift */; };
-		95C8AE791A86A560005C312D /* ScalarComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5B1A86A560005C312D /* ScalarComparison.swift */; };
-		95C8AE7A1A86A560005C312D /* ScalarExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5C1A86A560005C312D /* ScalarExpectation.swift */; };
-		95C8AE7B1A86A560005C312D /* StringExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5D1A86A560005C312D /* StringExpectation.swift */; };
-		95C8AE7C1A86A560005C312D /* VoidExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5E1A86A560005C312D /* VoidExpectation.swift */; };
-		95C8AE7D1A86A560005C312D /* VoidPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE5F1A86A560005C312D /* VoidPredicate.swift */; };
 		95C8AE7E1A86A560005C312D /* Hooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE601A86A560005C312D /* Hooks.swift */; };
 		95C8AE7F1A86A560005C312D /* ConsoleListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE621A86A560005C312D /* ConsoleListener.swift */; };
 		95C8AE801A86A560005C312D /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE631A86A560005C312D /* Listener.swift */; };
@@ -36,10 +27,10 @@
 		95C8AE821A86A560005C312D /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE651A86A560005C312D /* Specification.swift */; };
 		95C8AE831A86A560005C312D /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE661A86A560005C312D /* Status.swift */; };
 		95C8AE841A86A560005C312D /* Swiftest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE671A86A560005C312D /* Swiftest.swift */; };
-		95C8AE851A86A560005C312D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8AE681A86A560005C312D /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95B71D441A895796005D152A /* Matcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matcher.swift; sourceTree = "<group>"; };
 		95C8AE2C1A86A4C2005C312D /* SwiftestCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftestCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C8AE301A86A4C2005C312D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C8AE311A86A4C2005C312D /* SwiftestCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftestCore.h; sourceTree = "<group>"; };
@@ -47,11 +38,6 @@
 		95C8AE491A86A560005C312D /* Definition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		95C8AE4A1A86A560005C312D /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		95C8AE4B1A86A560005C312D /* Example+Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Example+Run.swift"; sourceTree = "<group>"; };
-		95C8AE4D1A86A560005C312D /* ArrayExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExpectation.swift; sourceTree = "<group>"; };
-		95C8AE4F1A86A560005C312D /* Assertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
-		95C8AE501A86A560005C312D /* BasicAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAssertion.swift; sourceTree = "<group>"; };
-		95C8AE511A86A560005C312D /* DictAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictAssertion.swift; sourceTree = "<group>"; };
-		95C8AE521A86A560005C312D /* DictionaryExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExpectation.swift; sourceTree = "<group>"; };
 		95C8AE531A86A560005C312D /* Expectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
 		95C8AE551A86A560005C312D /* ArrayMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayMatcher.swift; sourceTree = "<group>"; };
 		95C8AE561A86A560005C312D /* ComparableMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableMatcher.swift; sourceTree = "<group>"; };
@@ -59,11 +45,6 @@
 		95C8AE581A86A560005C312D /* EquatableMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableMatcher.swift; sourceTree = "<group>"; };
 		95C8AE591A86A560005C312D /* StringMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringMatcher.swift; sourceTree = "<group>"; };
 		95C8AE5A1A86A560005C312D /* VoidMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidMatcher.swift; sourceTree = "<group>"; };
-		95C8AE5B1A86A560005C312D /* ScalarComparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalarComparison.swift; sourceTree = "<group>"; };
-		95C8AE5C1A86A560005C312D /* ScalarExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScalarExpectation.swift; sourceTree = "<group>"; };
-		95C8AE5D1A86A560005C312D /* StringExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExpectation.swift; sourceTree = "<group>"; };
-		95C8AE5E1A86A560005C312D /* VoidExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidExpectation.swift; sourceTree = "<group>"; };
-		95C8AE5F1A86A560005C312D /* VoidPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidPredicate.swift; sourceTree = "<group>"; };
 		95C8AE601A86A560005C312D /* Hooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hooks.swift; sourceTree = "<group>"; };
 		95C8AE621A86A560005C312D /* ConsoleListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleListener.swift; sourceTree = "<group>"; };
 		95C8AE631A86A560005C312D /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
@@ -71,7 +52,6 @@
 		95C8AE651A86A560005C312D /* Specification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 		95C8AE661A86A560005C312D /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		95C8AE671A86A560005C312D /* Swiftest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftest.swift; sourceTree = "<group>"; };
-		95C8AE681A86A560005C312D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +94,6 @@
 				95C8AE651A86A560005C312D /* Specification.swift */,
 				95C8AE661A86A560005C312D /* Status.swift */,
 				95C8AE671A86A560005C312D /* Swiftest.swift */,
-				95C8AE681A86A560005C312D /* Timer.swift */,
 				95C8AE311A86A4C2005C312D /* SwiftestCore.h */,
 				95C8AE2F1A86A4C2005C312D /* Supporting Files */,
 			);
@@ -132,28 +111,10 @@
 		95C8AE4C1A86A560005C312D /* Expectations */ = {
 			isa = PBXGroup;
 			children = (
-				95C8AE4D1A86A560005C312D /* ArrayExpectation.swift */,
-				95C8AE4E1A86A560005C312D /* Assertions */,
-				95C8AE521A86A560005C312D /* DictionaryExpectation.swift */,
-				95C8AE531A86A560005C312D /* Expectation.swift */,
 				95C8AE541A86A560005C312D /* Matchers */,
-				95C8AE5B1A86A560005C312D /* ScalarComparison.swift */,
-				95C8AE5C1A86A560005C312D /* ScalarExpectation.swift */,
-				95C8AE5D1A86A560005C312D /* StringExpectation.swift */,
-				95C8AE5E1A86A560005C312D /* VoidExpectation.swift */,
-				95C8AE5F1A86A560005C312D /* VoidPredicate.swift */,
+				95C8AE531A86A560005C312D /* Expectation.swift */,
 			);
 			path = Expectations;
-			sourceTree = "<group>";
-		};
-		95C8AE4E1A86A560005C312D /* Assertions */ = {
-			isa = PBXGroup;
-			children = (
-				95C8AE4F1A86A560005C312D /* Assertion.swift */,
-				95C8AE501A86A560005C312D /* BasicAssertion.swift */,
-				95C8AE511A86A560005C312D /* DictAssertion.swift */,
-			);
-			path = Assertions;
 			sourceTree = "<group>";
 		};
 		95C8AE541A86A560005C312D /* Matchers */ = {
@@ -163,6 +124,7 @@
 				95C8AE561A86A560005C312D /* ComparableMatcher.swift */,
 				95C8AE571A86A560005C312D /* DictionaryMatcher.swift */,
 				95C8AE581A86A560005C312D /* EquatableMatcher.swift */,
+				95B71D441A895796005D152A /* Matcher.swift */,
 				95C8AE591A86A560005C312D /* StringMatcher.swift */,
 				95C8AE5A1A86A560005C312D /* VoidMatcher.swift */,
 			);
@@ -257,20 +219,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C8AE6E1A86A560005C312D /* Assertion.swift in Sources */,
-				95C8AE711A86A560005C312D /* DictionaryExpectation.swift in Sources */,
 				95C8AE781A86A560005C312D /* VoidMatcher.swift in Sources */,
-				95C8AE7D1A86A560005C312D /* VoidPredicate.swift in Sources */,
 				95C8AE6C1A86A560005C312D /* Example+Run.swift in Sources */,
-				95C8AE7B1A86A560005C312D /* StringExpectation.swift in Sources */,
 				95C8AE841A86A560005C312D /* Swiftest.swift in Sources */,
 				95C8AE811A86A560005C312D /* Reporter.swift in Sources */,
 				95C8AE7E1A86A560005C312D /* Hooks.swift in Sources */,
 				95C8AE801A86A560005C312D /* Listener.swift in Sources */,
-				95C8AE701A86A560005C312D /* DictAssertion.swift in Sources */,
 				95C8AE751A86A560005C312D /* DictionaryMatcher.swift in Sources */,
 				95C8AE7F1A86A560005C312D /* ConsoleListener.swift in Sources */,
-				95C8AE851A86A560005C312D /* Timer.swift in Sources */,
 				95C8AE741A86A560005C312D /* ComparableMatcher.swift in Sources */,
 				95C8AE721A86A560005C312D /* Expectation.swift in Sources */,
 				95C8AE831A86A560005C312D /* Status.swift in Sources */,
@@ -280,11 +236,7 @@
 				95C8AE691A86A560005C312D /* Cursor.swift in Sources */,
 				95C8AE6B1A86A560005C312D /* Example.swift in Sources */,
 				95C8AE761A86A560005C312D /* EquatableMatcher.swift in Sources */,
-				95C8AE6F1A86A560005C312D /* BasicAssertion.swift in Sources */,
-				95C8AE6D1A86A560005C312D /* ArrayExpectation.swift in Sources */,
-				95C8AE791A86A560005C312D /* ScalarComparison.swift in Sources */,
-				95C8AE7A1A86A560005C312D /* ScalarExpectation.swift in Sources */,
-				95C8AE7C1A86A560005C312D /* VoidExpectation.swift in Sources */,
+				95B71D451A895796005D152A /* Matcher.swift in Sources */,
 				95C8AE771A86A560005C312D /* StringMatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +378,7 @@
 				95C8AE441A86A4C2005C312D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

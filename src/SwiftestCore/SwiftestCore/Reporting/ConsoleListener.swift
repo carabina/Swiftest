@@ -35,7 +35,7 @@ public class ConsoleListener : Listener {
       printer.indent()
       
       for exp in ex.expectations.filter(Status.equals(.Fail)) {
-        printer.print("\(exp.msg) (\(exp.cursor.relativePath()):\(exp.cursor.line))")
+        printer.print("\(exp.msg) (\(exp.cursor.file):\(exp.cursor.line))")
       }
       
       printer.lineBreak()
@@ -44,7 +44,7 @@ public class ConsoleListener : Listener {
     }
     
     printer.print(
-      ":: RESULTS :: completed in \(Swiftest.timer.toString())s\n" +
+      ":: RESULTS ::" +
         "✓ \(passedCount)/\(runCount()) examples passed :: " +
         "× \(failedExamples.count) failed :: " +
       "★ \(pendingCount) pending\n"
@@ -70,7 +70,7 @@ public class ConsoleListener : Listener {
   
   func printSpec(spec: Specification) {
     printer.lineBreak()
-    printer.print("\(spec.subject) (\(spec.timer.toString())s)")
+    printer.print(spec.subject)
     printer.indent()
     
     for ex in spec.examples { printExample(ex) }
@@ -80,7 +80,7 @@ public class ConsoleListener : Listener {
   }
   
   func runCount() -> Int {
-    return [passedCount, failedExamples.count, pendingCount].reduce(0, +)
+    return [passedCount, failedExamples.count, pendingCount].reduce(0, combine: +)
   }
 }
 

@@ -1,11 +1,9 @@
 public class Example : HasStatus {
-  let timer = Timer()
-  
   public let subject: String
   public let cursor : Cursor
   public let fn: VoidBlk
   
-  public var expectations: [Expectation] = []
+  public var expectations: [ExpectationResult] = []
   public var status: Status {
     get {
       for st in [Status.Fail, Status.Pending] {
@@ -22,8 +20,7 @@ public class Example : HasStatus {
     self.cursor = cursor
   }
   
-  public func addExpectation<T:Expectation>(ex: T) -> T {
+  public func addExpectation(ex: ExpectationResult) {
     self.expectations.append(ex)
-    return ex
   }
 }

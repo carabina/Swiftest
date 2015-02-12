@@ -1,30 +1,34 @@
-public enum StringMatcher {
-  case EndWith(@autoclosure () -> String)
-  case StartWith(@autoclosure () -> String)
-  case Contain(@autoclosure () -> String)
-  case BeEmpty
-  
-  func assertion(subject: String?, reverse: Bool = false) -> Assertion {
-    let build = BasicAssertion.build(subject, reverse: reverse)
+public class StringMatcher : Matcher {
+  typealias SubjectType = String
 
-    switch self {
-    case .EndWith(let str):
-      return build(fn: { subject?.hasSuffix(str()) ?? false }, msg: "end with \(str())")
-      
-    case .StartWith(let str):
-      return build(fn: { subject?.hasPrefix(str()) ?? false }, msg: "start with \(str())")
+  let subject: String?
+  let core: MatcherCore
 
-    case .Contain(let str):
-      return build(
-        fn: {
-          if let range = subject?.rangeOfString(str()) { return !range.isEmpty }
-          return false
-        },
-        msg: "contain \(str())"
-      )
-      
-    case .BeEmpty:
-      return build(fn: { subject?.isEmpty ?? false }, msg: "be empty")
-    }
+  required public init(subject: String?, callback: AssertionBlock, reverse: Bool) {
+    self.subject = subject
+    self.core = MatcherCore(callback: callback, reverse: reverse)
+  }
+
+  public func startWith(prefix: String) {
+    core.assert(
+      fn: { return self.subject?.hasPrefix(prefix) ?? false },
+      msg: "start with \(prefix)"
+    )
+  }
+
+  public func endWith(suffix: String) {
+    core.assert(fn: { return self.subject?.hasSuffix(suffix) ?? false },
+      msg: "end with \(suffix)")
+  }
+
+  public func contain(str: String) {
+    core.assert(
+      fn: { return !(self.subject?.rangeOfString(str)?.isEmpty ?? true) },
+      msg: "contain \(str)"
+    )
+  }
+
+  public func beEmpty() {
+    core.assert(fn: { self.subject?.isEmpty ?? false }, msg: "be empty")
   }
 }

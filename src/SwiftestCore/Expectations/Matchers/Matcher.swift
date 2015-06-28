@@ -15,7 +15,7 @@ class MatcherCore {
     self.reverse = reverse
   }
 
-  func assert(# fn: Void -> Bool, msg: String) {
+  func assert(fn fn: Void -> Bool, msg: String) {
     callback(Assertion(call: fn, msg: msg, reverse: reverse))
   }
 }

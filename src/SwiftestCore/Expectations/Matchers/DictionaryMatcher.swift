@@ -35,7 +35,7 @@ public class DictionaryMatcher<K:Hashable, V:Equatable> : Matcher {
 
   private func contains(fn: (K, V) -> Bool) -> Bool {
     if let subject = self.subject {
-      return !filter(subject, fn).isEmpty
+      return !subject.filter(fn).isEmpty
     }
 
     return false

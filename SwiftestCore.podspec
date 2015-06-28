@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/Swiftest/SwiftestCore.git",
                  :tag => "0.0.2" }
 
-  s.source_files  = "src/SwiftestCore/SwiftestCore/**/*.swift"
+  s.source_files  = "src/SwiftestCore/**/*.swift"
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"

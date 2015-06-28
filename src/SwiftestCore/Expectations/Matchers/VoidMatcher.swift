@@ -54,7 +54,7 @@ public class VoidPredicate<T:Equatable> {
     if let oldVal = initialVal as? U {
       subject()
       _assert(
-        fn() as U == oldVal + delta,
+        fn() as! U == oldVal + delta,
         msg: "expected change (by \(delta)) from \(initialVal) to " +
         "\(oldVal + delta), changed to \(fn())"
       )

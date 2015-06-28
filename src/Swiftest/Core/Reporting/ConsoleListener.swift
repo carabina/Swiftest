@@ -44,15 +44,15 @@ public class ConsoleListener : Listener {
     }
 
     printer.call(
-      ":: RESULTS ::" +
+      ":: RESULTS :: " +
         "✓ \(passedCount)/\(runCount()) examples passed :: " +
         "× \(failedExamples.count) failed :: " +
-      "★ \(pendingCount) pending\n"
+        "★ \(pendingCount) pending\n"
     )
   }
 
   public override func finished(spec: Specification) {
-    if spec.parents.isEmpty { printSpec(spec) }
+    if spec.parents.count == 1 { printSpec(spec) }
   }
 
   func printExample(example: Example) {

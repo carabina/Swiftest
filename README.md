@@ -1,4 +1,7 @@
-# SwiftestCore
-Swiftest's creamy center
+A spike of Swiftest using [Swish](https://github.com/bppr/Swish)
 
-See [Swiftest](https://github.com/Swiftest/Swiftest) for details
+`swish run` to run the single test.
+
+Coming tomorrow, an example app and probably a bunch of refactors to Swish.
+
+Joy. Rapture. Bed.

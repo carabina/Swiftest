@@ -1,34 +1,34 @@
 public struct Reporter {
-  var listeners: [Listener] = [ConsoleListener()]
-  
+  var listeners: [Listener] = []
+
   mutating public func addListener(lsn: Listener) {
     listeners.append(lsn)
   }
-  
-  func started(spec: Specification) {
+
+  public func started(spec: Specification) {
+    eachListener({ $0.started(spec) })
+  }
+
+  public func finished(spec: Specification) {
     eachListener({ $0.finished(spec) })
   }
-  
-  func finished(spec: Specification) {
-    eachListener({ $0.finished(spec) })
-  }
-  
-  func started(ex: Example) {
+
+  public func started(ex: Example) {
     eachListener({ $0.started(ex) })
   }
-  
-  func finished(ex: Example) {
+
+  public func finished(ex: Example) {
     eachListener({ $0.finished(ex) })
   }
-  
-  func suiteStarted() {
+
+  public func suiteStarted() {
     eachListener({ $0.suiteStarted() })
   }
-  
-  func suiteFinished() {
+
+  public func suiteFinished() {
     eachListener({ $0.suiteFinished() })
   }
-  
+
   func eachListener(fn: (Listener -> Void)) {
     for lsn in listeners { fn(lsn) }
   }

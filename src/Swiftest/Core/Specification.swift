@@ -9,7 +9,11 @@ public class Specification : HasStatus {
   public var hooks = Hooks()
   public var parents: [Specification] = []
   public var status: Status {
-    get { return Status.has(.Fail, within: self.examples) ? .Fail : .Pass }
+    get {
+      return examples.filter() {
+        $0.status == Status.Fail
+      }.isEmpty ? Status.Fail : Status.Pass
+    }
   }
 
   public init(subject: String, _ fn: VoidBlk = {}, cursor: Cursor = nullCursor) {

@@ -7,7 +7,7 @@ public class Example : HasStatus {
   public var status: Status {
     get {
       for st in [Status.Fail, Status.Pending] {
-        if(Status.has(st, within: expectations)) { return st }
+        if !(expectations.filter({ $0.status == st })).isEmpty { return st }
       }
 
       return expectations.isEmpty ? .Pending : .Pass

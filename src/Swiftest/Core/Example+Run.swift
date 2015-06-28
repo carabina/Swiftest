@@ -9,9 +9,9 @@ extension Example {
 
       runHooks(.Before, forSpec: spec)
       for defn in spec.definitions { defn.reset() }
-      
+
       example.fn()
-      
+
       Swiftest.reporter.finished(example)
     }
   }

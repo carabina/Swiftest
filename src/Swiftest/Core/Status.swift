@@ -10,9 +10,4 @@ public enum Status {
   public static func equals(one: Status)(_ two: HasStatus) -> Bool {
     return one == two.status
   }
-
-  public static func has(st: Status, within: [HasStatus]) -> Bool {
-    return !within.filter(equals(st)).isEmpty
-  }
-
 }

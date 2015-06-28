@@ -1,9 +1,7 @@
 import SwiftestCore
+import ObjectiveC
 
-describe("true") {
-  it("is supa true") {
-    expect(true).to.equal(true)
-  }
+func initSpecs() {
 }
 
 func runSpec(spec: Specification) {
@@ -19,7 +17,9 @@ func runSpec(spec: Specification) {
 }
 
 func runSpecs() {
+  initSpecs()
   let listener = ConsoleListener()
+
   Swiftest.reporter.addListener(listener)
   Swiftest.reporter.suiteStarted()
 

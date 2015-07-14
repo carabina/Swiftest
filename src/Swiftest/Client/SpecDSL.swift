@@ -6,11 +6,13 @@ public func describe(
   line: UInt = __LINE__,
   _ blk: Void -> Void
 ) -> String {
-  Context.described(Specification(
+  let spec = Specification(
     subject: subject,
     blk,
     cursor: Cursor(file: file, line: line)
-  ))
+  )
+
+  Context.described(spec)
 
   return subject
 }

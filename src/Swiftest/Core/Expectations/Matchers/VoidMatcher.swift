@@ -29,6 +29,7 @@ public class VoidPredicate<T:Equatable> {
   public init(fn: Void -> T, subject: VoidBlk, parent: VoidMatcher) {
     self.subject = subject
     self.initialVal = fn()
+
     self.fn = fn
   }
 
@@ -79,7 +80,7 @@ public class VoidMatcher : Matcher {
     self.core = MatcherCore(callback: callback, reverse: reverse)
   }
 
-  public func change<T:Equatable>(t: Void -> T) -> VoidPredicate<T> {
-    return VoidPredicate(fn: t, subject: subject!, parent: self)
+  public func change<T:Equatable>(fn: (Void -> T)) -> VoidPredicate<T> {
+    return VoidPredicate(fn: fn, subject: subject!, parent: self)
   }
 }

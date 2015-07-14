@@ -1,8 +1,4 @@
-import SwiftestCore
-import ObjectiveC
-
-func initSpecs() {
-}
+@exported import SwiftestCore
 
 func runSpec(spec: Specification) {
   Swiftest.reporter.started(spec)
@@ -16,18 +12,15 @@ func runSpec(spec: Specification) {
   Swiftest.reporter.finished(spec)
 }
 
-func runSpecs() {
-  initSpecs()
-  let listener = ConsoleListener()
-
-  Swiftest.reporter.addListener(listener)
+public func run() {
+  for hook in Context.beforeHooks { hook() }
   Swiftest.reporter.suiteStarted()
 
-  for spec in Context.specs {
-    runSpec(spec)
-  }
+  Context.rootSpecs.forEach(runSpec)
 
+  finished()
   Swiftest.reporter.suiteFinished()
 }
 
-runSpecs()
+func finished() {
+}

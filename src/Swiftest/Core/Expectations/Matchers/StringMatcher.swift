@@ -24,7 +24,7 @@ extension String {
 }
 
 public class StringMatcher : Matcher {
-  typealias SubjectType = String
+  public typealias SubjectType = String
 
   let subject: String?
   let core: MatcherCore
@@ -48,7 +48,7 @@ public class StringMatcher : Matcher {
 
   public func contain(str: String) {
     core.assert(
-                fn: { return !(self.subject?.contains(str) ?? false) },
+                fn: { return (self.subject?.contains(str) ?? false) },
                 msg: "contain \(str)"
                 )
   }

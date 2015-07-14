@@ -52,7 +52,7 @@ public class ConsoleListener : Listener {
   }
 
   public override func finished(spec: Specification) {
-    if spec.parents.count == 1 { printSpec(spec) }
+    if spec.parents == [nullSpec] { printSpec(spec) }
   }
 
   func printExample(example: Example) {

@@ -43,3 +43,12 @@ public class Specification : HasStatus {
     hooks.add(hookType, fn: hook)
   }
 }
+
+extension Specification : Equatable {}
+
+public func ==(lhs: Specification, rhs: Specification) -> Bool {
+  func subject(example: Example) -> String { return example.subject }
+
+  return lhs.subject == rhs.subject && 
+    lhs.examples.map(subject) == rhs.examples.map(subject)
+}

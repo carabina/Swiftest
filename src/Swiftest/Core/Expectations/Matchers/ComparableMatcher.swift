@@ -1,5 +1,5 @@
 public class ComparableMatcher<T:Comparable> : Matcher {
-  typealias SubjectType = T
+  public typealias SubjectType = T
 
   let subject: T?
   let core: MatcherCore

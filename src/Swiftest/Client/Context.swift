@@ -1,18 +1,23 @@
 import SwiftestCore
 
 struct Context {
-  static var specs : [Specification] = []
+  static var rootSpecs : [Specification] = []
   static var specStack = [nullSpec]
   static var currentExample = nullExample
+  static var beforeHooks: [VoidBlk] = [
+    { Swiftest.reporter.addListener(ConsoleListener()) }
+  ]
 
   static func described(spec: Specification) {
-    if specStack.count == 1 { specs.append(spec) }
+    if specStack == [nullSpec] {
+      rootSpecs.append(spec)
+    }
 
     currentSpec.add(spec)
-    evaluate(spec)
+    walkSpecTree(spec)
   }
 
-  static func evaluate(spec: Specification) {
+  static func walkSpecTree(spec: Specification) {
     specStack.append(spec)
     spec.fn()
     specStack.removeLast()

@@ -1,13 +1,7 @@
-import Swish
+import SwishProjects
 
-Swish.project("Swiftest") { project in
-  project.module("SwiftestCore") { target in
-    target.sourceDir = "src/Swiftest/Core"
-  }
-
-  project.module("SwiftestClient", ["SwiftestCore"]) { target in
-    target.sourceDir = "src/Swiftest/Client"
-  }
-
-  project.task("build", ["SwiftestCore:build", "SwiftestClient:build"])
+defineProject { project in
+	project.name = "Swiftest"
+	project.description = "a BDD framework for Swift development on Mac and Linux"
+	project.authors = ["Brian Pratt"]
 }

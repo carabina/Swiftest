@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 root_dir=$(pwd)
 core_dir="$root_dir/build/SwiftestCore"
 client_dir="$root_dir/build/SwiftestClient"
@@ -10,12 +12,12 @@ tempfile="/tmp/swiftest-specs-$(date +%s).swift"
 cat $files > $tempfile
 echo "SwiftestClient.run()" >> $tempfile
 
-# DYLD_LIBRARY_PATH="$dyld_path" xcrun --sdk macosx swiftc $includes \
-#   -lSwiftestCore -lSwiftestClient $tempfile -o build/tests
-#
-# DYLD_LIBRARY_PATH=$dyld_path build/tests
+DYLD_LIBRARY_PATH="$dyld_path" xcrun --sdk macosx swiftc $includes \
+  -lSwiftestCore -lSwiftestClient $tempfile -o build/tests
 
-DYLD_LIBRARY_PATH="$dyld_path" xcrun --sdk macosx swift $includes \
-  -lSwiftestCore -lSwiftestClient $tempfile
+DYLD_LIBRARY_PATH=$dyld_path build/tests
+
+# DYLD_LIBRARY_PATH="$dyld_path" xcrun --sdk macosx swift $includes \
+#   -lSwiftestCore -lSwiftestClient $tempfile
 
 rm $tempfile

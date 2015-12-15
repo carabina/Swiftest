@@ -42,4 +42,4 @@ try Swiftest.run()
 ```
 
 For further instructions on installing and configuring Swiftest, see the [wiki
-page](https://github.com/bppr/Swiftest/wiki/Installation).
+page](https://github.com/bppr/Swiftest/wiki/Installation-&-Configuration).

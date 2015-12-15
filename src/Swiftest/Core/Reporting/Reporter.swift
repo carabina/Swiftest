@@ -1,5 +1,5 @@
 public struct Reporter {
-  var listeners: [Listener] = []
+  public var listeners: [Listener] = []
 
   mutating public func addListener(lsn: Listener) {
     listeners.append(lsn)

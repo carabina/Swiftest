@@ -1,10 +1,13 @@
+func setDefaultListener() {
+  guard reporter.listeners.count == 0 else { return }
+  reporter.addListener(ConsoleListener())
+}
+
 struct Context {
   static var rootSpecs : [Specification] = []
   static var specStack = [nullSpec]
   static var currentExample = nullExample
-  static var beforeHooks: [VoidBlk] = [
-    { Swiftest.reporter.addListener(ConsoleListener()) }
-  ]
+  static var beforeHooks: [VoidBlk] = [setDefaultListener]
 
   static func described(spec: Specification) {
     if specStack == [nullSpec] {

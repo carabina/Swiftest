@@ -23,7 +23,7 @@ To see all the available assertions and features available, check out the [examp
 Swiftest can be installed using the Swift package manager. Add this line to your `Package.swift` file to install the latest version.
 
 ```swift
-.Package(url: "https://github.com/bppr/Swiftest.git", version: Version(0,1,1))
+.Package(url: "https://github.com/bppr/Swiftest.git", Version(0,1,1))
 ```
 
 For further instructions on installing and configuring Swiftest, see the [wiki page](https://github.com/bppr/Swiftest/wiki/Installation).

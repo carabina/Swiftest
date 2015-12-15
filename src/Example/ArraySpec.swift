@@ -16,7 +16,6 @@ class ArraySpec: Swiftest.Spec {
       }
 
       it("does not contain many elements") {
-        expect([1, 2, 3]).notTo.contain(3, 4)
         expect([1, 2, 3]).notTo.contain(4, 5)
       }
     }
@@ -32,10 +31,10 @@ class ArraySpec: Swiftest.Spec {
     it("is empty") {
       var emptyList : [Int] = []
       expect(emptyList).to.beEmpty()
-		}
+    }
 
     it("is not empty") {
       expect([1, 2, 3]).notTo.beEmpty()
-		}
+    }
   }
 }

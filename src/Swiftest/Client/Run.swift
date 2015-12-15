@@ -16,7 +16,7 @@ public func run() throws {
   for hook in Context.beforeHooks { hook() }
   Swiftest.reporter.suiteStarted()
 
-  let failures = Context.rootSpecs.filter { spec in
+  let failures = try Context.rootSpecs.filter { spec in
     try runSpec(spec)
     return spec.status == .Fail
   }

@@ -10,4 +10,4 @@ Swiftest.register([
   StringSpec.self
 ])
 
-Swiftest.run()
+try Swiftest.run()

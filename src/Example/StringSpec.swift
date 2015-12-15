@@ -11,7 +11,7 @@ class StringSpec: Swiftest.Spec {
     }
 
     it("ends with another string") {
-      expect("abcdefg").to.endWith("efg")
+      expect("abefgcdefg").to.endWith("efg")
     }
 
     it("does not end with another string") {

@@ -27,6 +27,29 @@ extension String {
 
     return nil
   }
+
+  func indicesOf(fragment: String) -> [String.Index] {
+    var results: [String.Index] = []
+
+    guard let startAt = characters.indexOf(fragment.first) else {
+      return results
+    }
+
+    var i = startIndex.distanceTo(startAt)
+
+    while i <= (self.length - fragment.length) {
+      let range = Range(
+        start: startIndex.advancedBy(i),
+        end:   startIndex.advancedBy(i + fragment.length)
+      )
+
+      if self[range] == fragment { results.append(range.startIndex) }
+
+      i++
+    }
+
+    return results
+  }
 }
 
 public class StringMatcher : Matcher {
@@ -49,7 +72,7 @@ public class StringMatcher : Matcher {
 
   public func endWith(suffix: String) {
     core.assert(
-      fn: { return self.subject?.indexOf(suffix) == self.subject?.endIndex.advancedBy(-1 * suffix.length) },
+      fn: { return self.subject?.indicesOf(suffix).last == self.subject?.endIndex.advancedBy(-1 * suffix.length) },
       msg: "end with \(suffix)"
     )
   }

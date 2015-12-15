@@ -4,15 +4,14 @@ public class Specification : HasStatus {
   public let fn: VoidBlk
 
   public var children: [Specification] = []
-  public var definitions: [Resettable] = []
   public var examples: [Example] = []
   public var hooks = Hooks()
   public var parents: [Specification] = []
   public var status: Status {
     get {
-      return examples.filter() {
+      return examples.filter {
         $0.status == Status.Fail
-      }.isEmpty ? Status.Fail : Status.Pass
+      }.isEmpty ? Status.Pass : Status.Fail
     }
   }
 
@@ -32,11 +31,6 @@ public class Specification : HasStatus {
   public func addParent(parent: Specification) {
     parents.append(parent)
     hooks = parent.hooks
-    definitions += parent.definitions
-  }
-
-  public func add<T>(defn: Definition<T>) {
-    definitions.append(defn)
   }
 
   public func addHook(hookType: Hooks.HookType, hook: VoidBlk) {

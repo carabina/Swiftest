@@ -1,5 +1,3 @@
-import SwiftestCore
-
 private func __add<T:Expectable>(ex: T) -> T {
   Context.currentExample.addExpectation(ex.result)
   return ex

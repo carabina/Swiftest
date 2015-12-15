@@ -1,4 +1,4 @@
-import SwiftestClient
+import Swiftest
 
 // describe("void closure expectations") {
 //

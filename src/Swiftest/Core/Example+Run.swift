@@ -8,7 +8,6 @@ extension Example {
       Swiftest.reporter.started(example)
 
       runHooks(.Before, forSpec: spec)
-      for defn in spec.definitions { defn.reset() }
 
       example.fn()
 

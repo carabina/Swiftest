@@ -1,4 +1,4 @@
-@exported import SwiftestCore
+import OS
 
 func runSpec(spec: Specification) {
   Swiftest.reporter.started(spec)
@@ -16,11 +16,12 @@ public func run() {
   for hook in Context.beforeHooks { hook() }
   Swiftest.reporter.suiteStarted()
 
-  Context.rootSpecs.forEach(runSpec)
+  let failures = Context.rootSpecs.filter { spec in
+    runSpec(spec)
+    return spec.status == .Fail
+  }
 
-  finished()
   Swiftest.reporter.suiteFinished()
-}
 
-func finished() {
+  exit(failures.count == 0 ? 0 : 1)
 }

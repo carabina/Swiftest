@@ -1,5 +1,3 @@
-import SwiftestCore
-
 struct Context {
   static var rootSpecs : [Specification] = []
   static var specStack = [nullSpec]
@@ -31,5 +29,15 @@ struct Context {
     currentExample = ex
     fn()
     currentExample = nullExample
+  }
+}
+
+public class Spec {
+  required public init() {}
+}
+
+public func register(specTypes: [Spec.Type]) {
+  for specType in specTypes { 
+    let _ = specType.init() 
   }
 }

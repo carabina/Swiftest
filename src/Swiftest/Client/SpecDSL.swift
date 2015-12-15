@@ -1,5 +1,3 @@
-import SwiftestCore
-
 public func describe(
   subject: String,
   file: String = __FILE__,
@@ -30,10 +28,4 @@ public func it(
 
 public func before(fn: VoidBlk) {
   Context.currentSpec.addHook(.Before, hook: fn)
-}
-
-public func define<T>(fn: Void -> T) -> (Void -> T) {
-  let defn = Definition(fn: fn)
-  Context.currentSpec.add(defn)
-  return defn.block()
 }

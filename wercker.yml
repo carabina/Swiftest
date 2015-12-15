@@ -1,0 +1,11 @@
+box: swiftlang/swift
+
+build:
+  steps:
+    - script:
+      name: build example
+      code: swift build
+
+    - script:
+      name: run example specs
+      code: ./.build/debug/Example

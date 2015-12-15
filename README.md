@@ -26,4 +26,4 @@ Swiftest can be installed using the Swift package manager.
 .Package(url: "https://github.com/bppr/Swiftest.git", majorVersion: 0, minorVersion: 1)
 ```
 
-For further instructions on installing and configuring Swiftest, see the [wiki page](github.com/bppr/Swiftest/wiki/Installation).
+For further instructions on installing and configuring Swiftest, see the [wiki page](https://github.com/bppr/Swiftest/wiki/Installation).

@@ -9,7 +9,7 @@ _A 100% pure Swift, Foundation-less, XCTest-less BDD framework._
 * runs on Linux and Mac
 * familiar syntax inspired by RSpec and Jasmine
 * natural, readable assertions for most Swift core types
-* works with Swift generics (compatible with objects implementing `Equatable` or `Comparable`)
+* works with Swift protocols (compatible with objects implementing `Equatable` or `Comparable`)
 * free of dependencies (except LibC)
 * before/after suite / spec hooks
 * command-line client
@@ -20,7 +20,7 @@ _A 100% pure Swift, Foundation-less, XCTest-less BDD framework._
 To see all the available assertions and features available, check out the [example project](src/Example).
 
 ## Installation
-Swiftest can be installed using the Swift package manager.
+Swiftest can be installed using the Swift package manager. Add this line to your `Package.swift` file to install the latest version.
 
 ```swift
 .Package(url: "https://github.com/bppr/Swiftest.git", majorVersion: 0, minorVersion: 1)

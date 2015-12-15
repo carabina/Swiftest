@@ -19,7 +19,7 @@ public func it(
   subject: String,
   file: String = __FILE__,
   line: UInt = __LINE__,
-  _ blk: VoidBlk = {}
+  _ blk: ExampleFn = {}
 ) {
   Context.currentSpec.add(
     Example(subject: subject, fn: blk, cursor: Cursor(file: file, line: line))

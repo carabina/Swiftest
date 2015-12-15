@@ -1,7 +1,7 @@
 public class Example : HasStatus {
   public let subject: String
   public let cursor : Cursor
-  public let fn: VoidBlk
+  public let fn: ExampleFn
 
   public var expectations: [ExpectationResult] = []
   public var status: Status {
@@ -14,7 +14,7 @@ public class Example : HasStatus {
     }
   }
 
-  public init(subject: String, fn: VoidBlk, cursor: Cursor = nullCursor) {
+  public init(subject: String, fn: ExampleFn, cursor: Cursor = nullCursor) {
     self.subject = subject
     self.fn = fn
     self.cursor = cursor

@@ -32,10 +32,10 @@ class ArraySpec: Swiftest.Spec {
     it("is empty") {
       var emptyList : [Int] = []
       expect(emptyList).to.beEmpty()
-    }
+		}
 
     it("is not empty") {
       expect([1, 2, 3]).notTo.beEmpty()
-    }
+		}
   }
 }

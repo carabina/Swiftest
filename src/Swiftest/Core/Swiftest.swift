@@ -4,3 +4,5 @@ public let nullExample = Example(subject: "null", fn: {})
 public var reporter = Reporter()
 
 public typealias VoidBlk = (Void -> Void)
+public typealias ExampleFn = (Void throws -> Void)
+

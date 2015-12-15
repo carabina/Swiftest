@@ -25,9 +25,9 @@ struct Context {
     get { return specStack[specStack.count - 1] }
   }
 
-  static func withExample(ex: Example, fn: VoidBlk) {
+  static func withExample(ex: Example, fn: ExampleFn) throws {
     currentExample = ex
-    fn()
+    try fn()
     currentExample = nullExample
   }
 }

@@ -1,23 +1,23 @@
 import OS
 
-func runSpec(spec: Specification) {
+func runSpec(spec: Specification) throws {
   Swiftest.reporter.started(spec)
 
   for example in spec.examples {
-    Context.withExample(example, fn: Example.run(example, spec: spec))
+    try Context.withExample(example, fn: Example.run(example, spec: spec))
   }
 
-  for child in spec.children { runSpec(child) }
+  for child in spec.children { try runSpec(child) }
 
   Swiftest.reporter.finished(spec)
 }
 
-public func run() {
+public func run() throws {
   for hook in Context.beforeHooks { hook() }
   Swiftest.reporter.suiteStarted()
 
   let failures = Context.rootSpecs.filter { spec in
-    runSpec(spec)
+    try runSpec(spec)
     return spec.status == .Fail
   }
 

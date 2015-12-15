@@ -46,6 +46,16 @@ public func expect<T:Comparable>(
 public func expect(
   file: String = __FILE__,
   line: UInt = __LINE__,
+  subject: Void throws -> Void
+) -> Expectation<Void throws -> Void, ThrowableVoidMatcher> {
+  return __add(
+    Expectation(subject: subject, cursor: Cursor(file: file, line: line))
+  )
+}
+
+public func expect(
+  file: String = __FILE__,
+  line: UInt = __LINE__,
   subject: VoidBlk?
 ) -> Expectation<VoidBlk, VoidMatcher> {
   return __add(

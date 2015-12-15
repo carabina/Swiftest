@@ -1,7 +1,5 @@
-Swiftest
+Swiftest &nbsp; [![wercker status](https://app.wercker.com/status/90bfae733696f02ab6d2c0d6ad81b5fe/s/master "wercker status")](https://app.wercker.com/project/bykey/90bfae733696f02ab6d2c0d6ad81b5fe)
 ========
-
-[![wercker status](https://app.wercker.com/status/90bfae733696f02ab6d2c0d6ad81b5fe/m/master "wercker status")](https://app.wercker.com/project/bykey/90bfae733696f02ab6d2c0d6ad81b5fe)
 
 Current Version: 0.1.3
 

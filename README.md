@@ -1,6 +1,8 @@
 Swiftest
 ========
 
+[![wercker status](https://app.wercker.com/status/90bfae733696f02ab6d2c0d6ad81b5fe/m/master "wercker status")](https://app.wercker.com/project/bykey/90bfae733696f02ab6d2c0d6ad81b5fe)
+
 Current Version: 0.1.2
 
 _A 100% pure Swift, Foundation-less, XCTest-less BDD framework._

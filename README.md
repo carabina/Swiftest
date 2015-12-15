@@ -3,7 +3,7 @@ Swiftest
 
 [![wercker status](https://app.wercker.com/status/90bfae733696f02ab6d2c0d6ad81b5fe/m/master "wercker status")](https://app.wercker.com/project/bykey/90bfae733696f02ab6d2c0d6ad81b5fe)
 
-Current Version: 0.1.2
+Current Version: 0.1.3
 
 _A 100% pure Swift, Foundation-less, XCTest-less BDD framework._
 
@@ -25,7 +25,23 @@ To see all the available assertions and features available, check out the [examp
 Swiftest can be installed using the Swift package manager. Add this line to your `Package.swift` file to install the latest version.
 
 ```swift
-.Package(url: "https://github.com/bppr/Swiftest.git", Version(0,1,2))
+.Package(url: "https://github.com/bppr/Swiftest.git", Version(0,1,3))
 ```
 
-For further instructions on installing and configuring Swiftest, see the [wiki page](https://github.com/bppr/Swiftest/wiki/Installation).
+## Configuration
+Create a spec target that depends on the module under test. In your
+`main.swift` file of your spec target, register your spec classes.
+
+```swift
+import Swiftest
+
+Swiftest.register([
+  MyFirstSpec.self,
+  MySecondSpec.self
+])
+
+try Swiftest.run()
+```
+
+For further instructions on installing and configuring Swiftest, see the [wiki
+page](https://github.com/bppr/Swiftest/wiki/Installation).

@@ -1,5 +1,4 @@
 import Swiftest
-import OS
 
 Swiftest.register([
   ArraySpec.self,

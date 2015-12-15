@@ -1,4 +1,4 @@
-import OS
+@_exported import OS
 
 func runSpec(spec: Specification) throws {
   Swiftest.reporter.started(spec)

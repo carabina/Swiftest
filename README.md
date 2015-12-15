@@ -1,7 +1,18 @@
 Swiftest
 ========
 
+Current Version: 0.1.0
+
 _A 100% pure Swift, Foundation-less, XCTest-less BDD framework._
+
+## Features
+* familiar syntax inspired by RSpec and Jasmine
+* runs on Linux and Mac
+* free of dependencies (except LibC)
+* before/after suite / spec hooks
+* command-line client
+
+To see all the available assertions and features available, check out the [example project](src/Example).
 
 ## Installation
 
@@ -38,6 +49,8 @@ Now, to create our main test executable. Create a file called `main.swift` and
 drop this into that file.
 
 ```swift
+import Swiftest
+
 Swiftest.register([
   MyFirstSpec.self
 ])
@@ -49,5 +62,6 @@ Swiftest.run()
 Now, build your project (`swift build`) and run your specs
 (`./.build/debug/Specs`). You should see spec output!
 
-Much more in the way of documentation and features coming soon including formatters,
-customizable runners, extension, you name it!
+Much more in the way of documentation and features coming 
+soon including formatters, customizable runners, extensions, 
+you name it!
